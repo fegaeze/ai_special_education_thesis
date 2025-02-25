@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "problem_type": "Additive Compare",
+    "variant": "Compare-More: Smaller Quantity Unknown",
+    "story": "Lily has 12 oranges. She has 5 more oranges than Max. How many oranges does Max have?",
+    "steps": [
+      "Lily has 12 oranges (big box), and she has 5 more oranges than Max (difference).",
+      "We want to know how many oranges Max has. We know Lily’s number, but Max has fewer.",
+      "To find Max’s oranges, we take away the extra 5 oranges from Lily’s total.",
+      "Math Sentence: 12 - 5 = 7.",
+      "Max has 7 oranges! 🍊✨"
+    ],
+    "solution": 7
+  },
+  {
+    "id": 2,
+    "problem_type": "Additive Compare",
+    "variant": "Compare-More: Smaller Quantity Unknown",
+    "story": "There were 10 friends reading books. There were 3 more friends reading books than playing board games. How many friends were playing board games?",
+    "steps": [
+      "10 friends were reading books (big box), and that’s 3 more than the number playing board games (difference).",
+      "We need to find out how many friends were playing board games.",
+      "To do this, we take the 3 extra friends away from the 10 book readers.",
+      "Math Sentence: 10 - 3 = 7.",
+      "So, 7 friends were playing board games! 🎲📚"
+    ],
+    "solution": 7
+  },
+  {
+    "id": 3,
+    "problem_type": "Additive Compare",
+    "variant": "Compare-More: Smaller Quantity Unknown",
+    "story": "One night Maria caught 12 lightning bugs in a jar. She caught 2 more lightning bugs than Theo. How many lightning bugs did Theo catch?",
+    "steps": [
+      "Maria caught 12 lightning bugs (big box), and she caught 2 more than Theo (difference).",
+      "We are looking for the number of bugs Theo caught.",
+      "To find Theo’s bugs, we subtract the extra 2 bugs from Maria’s total.",
+      "Math Sentence: 12 - 2 = 10.",
+      "Theo caught 10 lightning bugs! 🌟🐞"
+    ],
+    "solution": 10
+  },
+  {
+    "id": 4,
+    "problem_type": "Additive Compare",
+    "variant": "Compare-More: Smaller Quantity Unknown",
+    "story": "The brown mouse has 15 breadcrumbs. The brown mouse has 6 more breadcrumbs than the white mouse. How many breadcrumbs does the white mouse have?",
+    "steps": [
+      "The brown mouse has 15 breadcrumbs (big box), and that’s 6 more than the white mouse (difference).",
+      "We need to find out how many breadcrumbs the white mouse has.",
+      "To do this, we take away the extra 6 breadcrumbs from the brown mouse’s total.",
+      "Math Sentence: 15 - 6 = 9.",
+      "The white mouse has 9 breadcrumbs! 🐭🍞"
+    ],
+    "solution": 9
+  },
+  {
+    "id": 5,
+    "problem_type": "Additive Compare",
+    "variant": "Compare-More: Smaller Quantity Unknown",
+    "story": "Isaac found 20 seashells at the beach. Isaac found 3 more seashells than Kira. How many seashells did Kira find at the beach?",
+    "steps": [
+      "Isaac found 20 seashells (big box), and he found 3 more than Kira (difference).",
+      "We want to find out how many seashells Kira found.",
+      "To do this, we subtract the extra 3 seashells from Isaac’s total.",
+      "Math Sentence: 20 - 3 = 17.",
+      "Kira found 17 seashells! 🏖🐚"
+    ],
+    "solution": 17
+  },
+  {
+    "id": 6,
+    "problem_type": "Additive Compare",
+    "variant": "Compare-More: Smaller Quantity Unknown",
+    "story": "There were 18 penguins catching fish in the water. There were 5 more penguins catching fish than sitting on an iceberg. How many penguins are sitting on an iceberg?",
+    "steps": [
+      "18 penguins were catching fish (big box), and that’s 5 more than the ones sitting on the iceberg (difference).",
+      "We need to find out how many penguins are on the iceberg.",
+      "To do this, we subtract the 5 extra penguins from the fishing penguins.",
+      "Math Sentence: 18 - 5 = 13.",
+      "There are 13 penguins sitting on the iceberg! 🐧❄️"
+    ],
+    "solution": 13
+  },
+  {
+    "id": 7,
+    "problem_type": "Additive Compare",
+    "variant": "Compare-More: Smaller Quantity Unknown",
+    "story": "Olivia has some teddy bear crackers. Lexi has 25 teddy bear crackers. Lexi has 10 more teddy bear crackers than Olivia. How many teddy bear crackers does Olivia have?",
+    "steps": [
+      "Lexi has 25 teddy bear crackers (big box), and that’s 10 more than Olivia’s crackers (difference).",
+      "We need to find out how many crackers Olivia has.",
+      "To do this, we subtract the 10 extra crackers from Lexi’s total.",
+      "Math Sentence: 25 - 10 = 15.",
+      "Olivia has 15 teddy bear crackers! 🐻🍪"
+    ],
+    "solution": 15
+  },
+  {
+    "id": 8,
+    "problem_type": "Additive Compare",
+    "variant": "Compare-More: Smaller Quantity Unknown",
+    "story": "Some monkeys were playing in a tree and 12 monkeys playing on the ground. 10 more monkeys were playing on the ground than in the tree. How many monkeys were playing in a tree?",
+    "steps": [
+      "12 monkeys were playing on the ground (big box), and that’s 10 more than the ones in the tree (difference).",
+      "We want to know how many monkeys were in the tree.",
+      "To find out, we subtract the extra 10 monkeys from the ground total.",
+      "Math Sentence: 12 - 10 = 2.",
+      "There were 2 monkeys playing in the tree! 🐒🌳"
+    ],
+    "solution": 2
+  },
+  {
+    "id": 9,
+    "problem_type": "Additive Compare",
+    "variant": "Compare-More: Smaller Quantity Unknown",
+    "story": "Julia and Felix are each carrying baskets of apples. Felix has 18 apples in his basket. He has 1 more apple than Julia. How many apples does Julia have?",
+    "steps": [
+      "Felix has 18 apples (big box), and he has 1 more apple than Julia (difference).",
+      "We want to find out how many apples Julia has.",
+      "To do this, we subtract the 1 extra apple from Felix’s total.",
+      "Math Sentence: 18 - 1 = 17.",
+      "Julia has 17 apples in her basket! 🍏✨"
+    ],
+    "solution": 17
+  },
+  {
+    "id": 10,
+    "problem_type": "Additive Compare",
+    "variant": "Compare-More: Smaller Quantity Unknown",
+    "story": "Olivia has 22 stickers. She has 11 more stickers than Noah. How many stickers does Noah have?",
+    "steps": [
+      "Olivia has 22 stickers (big box), and that’s 11 more than Noah (difference).",
+      "We need to find out how many stickers Noah has.",
+      "To do this, we subtract the extra 11 stickers from Olivia’s total.",
+      "Math Sentence: 22 - 11 = 11.",
+      "Noah has 11 stickers! 🎨✨"
+    ],
+    "solution": 11
+  }
+]
