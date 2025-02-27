@@ -1,142 +1,88 @@
 [
-  {
-    "id": 1,
-    "problem_type": "Part-Part-Whole",
-    "variant": "Change-Join: Whole Unknown",
-    "story": "For her reading assignment, Ashley read 27 pages on Saturday, and another 23 on Sunday. How many pages did she read over the weekend?",
-    "steps": [
-      "What are we trying to find out? We need to figure out how many pages Ashley read in total over the weekend.",
-      "On Saturday, Ashley read 27 pages (that's one small box). On Sunday, she read 23 more pages (that's the second small box).",
-      "Now, to find the total number of pages, we just add the pages from Saturday and Sunday together to fill the big box with the total.",
-      "Math Sentence: 27 + 23 = 50.",
-      "So, Ashley read 50 pages over the weekend!"
-    ],
-    "solution": 50
-  },
-  {
-    "id": 2,
-    "problem_type": "Part-Part-Whole",
-    "variant": "Change-Join: Whole Unknown",
-    "story": "There are 16 mice playing in a field. Eight more mice come and start playing, too. How many mice are playing in the field?",
-    "steps": [
-      "What are we trying to figure out? We need to know how many mice are playing in the field after more mice arrive.",
-      "There are 16 mice already playing in the field (that’s the first small box). Then, 8 more mice come to play (that’s the second small box).",
-      "To find the total, we add the 8 new mice to the 16 mice already there. This will fill the big box with the total.",
-      "Math Sentence: 16 + 8 = 24.",
-      "So, now there are 24 mice playing in the field!"
-    ],
-    "solution": 24
-  },
-  {
-    "id": 3,
-    "problem_type": "Part-Part-Whole",
-    "variant": "Change-Join: Whole Unknown",
-    "story": "Fifty-two ladybugs are crawling around in the garden. Fifty-six more ladybugs join them. How many ladybugs are in the garden altogether?",
-    "steps": [
-      "What are we looking for here? We want to find out how many ladybugs are in the garden after the new ones arrive.",
-      "There are 52 ladybugs in the garden (that’s the first small box), and 56 more ladybugs come to join them (that’s the second small box).",
-      "To find the total number of ladybugs, we simply add the new ladybugs to the ones already in the garden to fill the big box with the total.",
-      "Math Sentence: 52 + 56 = 108.",
-      "So, there are 108 ladybugs in the garden now!"
-    ],
-    "solution": 108
-  },
-  {
-    "id": 4,
-    "problem_type": "Part-Part-Whole",
-    "variant": "Change-Join: Whole Unknown",
-    "story": "Steve loses 4 teeth in first grade. In second grade, he loses 3 more teeth. How many teeth does Steve lose?",
-    "steps": [
-      "What are we figuring out? We need to find out how many teeth Steve has lost in total.",
-      "Steve lost 4 teeth in first grade (that’s the first small box), and then he lost 3 more teeth in second grade (that’s the second small box).",
-      "Now, we just add the two amounts together to fill the big box with the total number of teeth Steve lost.",
-      "Math Sentence: 4 + 3 = 7.",
-      "So, Steve lost 7 teeth in total!"
-    ],
-    "solution": 7
-  },
-  {
-    "id": 5,
-    "problem_type": "Part-Part-Whole",
-    "variant": "Change-Join: Whole Unknown",
-    "story": "Dr. Bright was 21 years old when he invented a robot. It took him another 43 years to invent something else. How old was he then?",
-    "steps": [
-      "What do we need to figure out? We need to find out how old Dr. Bright is after 43 years.",
-      "Dr. Bright was 21 years old when he made the robot (that’s the first small box), and then it took him 43 more years to invent something else (that’s the second small box).",
-      "To find out how old he is now, we add the 43 years to his age at the start to fill up the big box with the total age.",
-      "Math Sentence: 21 + 43 = 64.",
-      "So, Dr. Bright is 64 years old now!"
-    ],
-    "solution": 64
-  },
-  {
-    "id": 6,
-    "problem_type": "Part-Part-Whole",
-    "variant": "Change-Join: Whole Unknown",
-    "story": "Ten balloons are tied to a bench. Mr. Dylan ties 8 more balloons to the bench. How many balloons are tied to the bench now?",
-    "steps": [
-      "What are we trying to find out? We need to know how many balloons are tied to the bench after Mr. Dylan adds more balloons.",
-      "There are 10 balloons already tied to the bench (that’s one small box), and Mr. Dylan ties 8 more balloons (that’s the second small box).",
-      "To find the total number of balloons, we just add the new ones to the original 10 to fill up the big box.",
-      "Math Sentence: 10 + 8 = 18.",
-      "So, now there are 18 balloons tied to the bench!"
-    ],
-    "solution": 18
-  },
-  {
-    "id": 7,
-    "problem_type": "Part-Part-Whole",
-    "variant": "Change-Join: Whole Unknown",
-    "story": "A soccer team scores 3 goals in the first half of the game. In the second half, they score 5 more goals. How many goals does the soccer team score in total?",
-    "steps": [
-      "What are we trying to figure out? We need to know how many goals the soccer team scored in total.",
-      "The team scored 3 goals in the first half (that’s the first small box), and then they scored 5 more goals in the second half (that’s the second small box).",
-      "To find the total number of goals, we add the 3 goals from the first half to the 5 goals from the second half to fill up the big box.",
-      "Math Sentence: 3 + 5 = 8.",
-      "So, the soccer team scored 8 goals in total!"
-    ],
-    "solution": 8
-  },
-  {
-    "id": 8,
-    "problem_type": "Part-Part-Whole",
-    "variant": "Change-Join: Whole Unknown",
-    "story": "Eight girls are building a sandcastle. Five more girls come to help them. How many girls are building the sandcastle now?",
-    "steps": [
-      "What do we need to figure out? We need to know how many girls are building the sandcastle after more girls come to help.",
-      "There are 8 girls already building the sandcastle (that’s the first small box), and 5 more girls come to help (that’s the second small box).",
-      "To find the total, we just add the 5 new girls to the 8 girls who were already there to fill up the big box.",
-      "Math Sentence: 8 + 5 = 13.",
-      "So, there are 13 girls building the sandcastle now!"
-    ],
-    "solution": 13
-  },
-  {
-    "id": 9,
-    "problem_type": "Part-Part-Whole",
-    "variant": "Change-Join: Whole Unknown",
-    "story": "Ivan has 54 chickens on the farm. His dad buys 60 more chickens and 20 geese. How many name tags will Ivan need for all the chickens?",
-    "steps": [
-      "What do we need to find? We want to know how many name tags Ivan needs for all the chickens.",
-      "Ivan has 54 chickens on the farm (that's one small box), and his dad buys 60 more chickens (that’s the second small box).",
-      "To figure out the total number of chickens, we add the 60 new chickens to the 54 chickens Ivan already has to fill the big box.",
-      "Math Sentence: 54 + 60 = 114.",
-      "So, Ivan will need 114 name tags for all the chickens!"
-    ],
-    "solution": 114
-  },
-  {
-    "id": 10,
-    "problem_type": "Part-Part-Whole",
-    "variant": "Change-Join: Whole Unknown",
-    "story": "A bakery sells 42 loaves of bread in the morning and 35 more in the afternoon. How many loaves of bread are sold in total?",
-    "steps": [
-      "What are we trying to find out? We need to know how many loaves of bread the bakery sold altogether.",
-      "The bakery sold 42 loaves of bread in the morning (that's the first small box), and 35 more loaves in the afternoon (that’s the second small box).",
-      "To find the total number of loaves, we just add the morning’s 42 loaves to the afternoon’s 35 loaves to fill the big box.",
-      "Math Sentence: 42 + 35 = 77.",
-      "So, the bakery sold 77 loaves of bread in total!"
-    ],
-    "solution": 77
-  }
+    {
+        "id": 1,
+        "problem_type": "Part-Part-Whole",
+        "variant": "Change-Join: Whole Unknown",
+        "question": "For her reading assignment, Ashley read 27 pages on Saturday, and another 23 on Sunday. How many pages did she read over the weekend?",
+        "story_structure": {
+            "who_or_what": "Ashley and her reading assignment",
+            "events": [
+                {
+                    "order": 1,
+                    "action": "Ashley read 27 pages on Saturday.",
+                    "quantity": 27
+                },
+                {
+                    "order": 2,
+                    "action": "Ashley read 23 extra pages on Sunday.",
+                    "quantity": 23
+                }
+            ],
+            "goal": "Find the total number of pages read over the weekend."
+        },
+        "story_grammar_questions": [
+            {
+                "question": "Which sentence (or question) tells about the 'whole' or 'combined' amount?",
+                "answer": "How many pages did Ashley read over the weekend?",
+                "quantity": "Unknown"
+            },
+            {
+                "question": "Which sentence (or question) tells about one of the parts that make up the whole?",
+                "answer": "Ashley read 27 pages on Saturday.",
+                "quantity": 27
+            },
+            {
+                "question": "Which sentence (or question) tells about another part that makes up the whole?",
+                "answer": "Ashley read 23 pages on Sunday.",
+                "quantity": 23
+            }
+        ],
+        "math_solution": {
+            "final_answer": 50,
+            "explanation": "We add the pages Ashley read on Saturday and Sunday: 27 + 23 = 50 pages over the weekend."
+        }
+    },
+    {
+        "id": 2,
+        "problem_type": "Part-Part-Whole",
+        "variant": "Change-Join: Whole Unknown",
+        "question": "There are 16 mice playing in a field. Eight more mice come and start playing, too. How many mice are playing in the field?",
+        "story_structure": {
+            "who_or_what": "Mice playing in a field",
+            "events": [
+                {
+                    "order": 1,
+                    "action": "Initially, there are 16 mice playing.",
+                    "quantity": 16
+                },
+                {
+                    "order": 2,
+                    "action": "Eight more mice join them.",
+                    "quantity": 8
+                }
+            ],
+            "goal": "Find the overall number of mice in the field."
+        },
+        "story_grammar_questions": [
+            {
+                "question": "Which sentence (or question) tells about the 'whole' or 'combined' amount?",
+                "answer": "How many mice are playing in the field?",
+                "quantity": "Unknown"
+            },
+            {
+                "question": "Which sentence (or question) tells about one of the parts that make up the whole?",
+                "answer": "There are 16 mice playing in the field.",
+                "quantity": 16
+            },
+            {
+                "question": "Which sentence (or question) tells about another part that makes up the whole?",
+                "answer": "8 more mice come and start playing.",
+                "quantity": 8
+            }
+        ],
+        "math_solution": {
+            "final_answer": 24,
+            "explanation": "We add the mice that were already playing and the new ones: 16 + 8 = 24 mice playing in the field."
+        }
+    }
 ]

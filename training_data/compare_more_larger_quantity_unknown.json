@@ -1,143 +1,88 @@
 [
-  {
-    "id": 1,
-    "problem_type": "Additive Compare",
-    "variant": "Compare-More: Larger Quantity Unknown",
-    "story": "A toad ate 4 dragonflies. A snake ate 3 more dragonflies than the toad. How many dragonflies did the snake eat?",
-    "steps": [
-      "A toad ate 4 dragonflies (small box), and a snake ate 3 more dragonflies than the toad (difference).",
-      "We want to know how many dragonflies the snake ate in total. We know the toad’s number, but not the snake’s.",
-      "To find the total, we add the 3 extra dragonflies to the toad’s dragonflies.",
-      "Math Sentence: 4 + 3 = 7.",
-      "The snake ate 7 dragonflies! 🐍✨"
-    ],
-    "solution": 7
-  },
-  {
-    "id": 2,
-    "problem_type": "Additive Compare",
-    "variant": "Compare-More: Larger Quantity Unknown",
-    "story": "James has 8 fish in his aquarium. Sara has 5 more fish in her aquarium than James. How many fish does Sara have in her aquarium?",
-    "steps": [
-      "James has 8 fish (small box), and Sara has 5 more fish than James (difference).",
-      "We want to know how many fish Sara has in total. We know James’s number, but not Sara’s.",
-      "To find the total, we add the 5 extra fish to James’s fish.",
-      "Math Sentence: 8 + 5 = 13.",
-      "Sara has 13 fish in her aquarium! 🐠✨"
-    ],
-    "solution": 13
-  },
-  {
-    "id": 3,
-    "problem_type": "Additive Compare",
-    "variant": "Compare-More: Larger Quantity Unknown",
-    "story": "A crested penguin ate 4 fish. A king penguin ate 6 more fish than the crested penguin. How many fish did the king penguin eat?",
-    "steps": [
-      "A crested penguin ate 4 fish (small box), and a king penguin ate 6 more fish than the crested penguin (difference).",
-      "We want to know how many fish the king penguin ate in total. We know the crested penguin’s number, but not the king penguin’s.",
-      "To find the total, we add the 6 extra fish to the crested penguin’s fish.",
-      "Math Sentence: 4 + 6 = 10.",
-      "The king penguin ate 10 fish! 🐧🐟"
-    ],
-    "solution": 10
-  },
-  {
-    "id": 4,
-    "problem_type": "Additive Compare",
-    "variant": "Compare-More: Larger Quantity Unknown",
-    "story": "The toy store has 8 small teddy bears. It has 10 more large teddy bears than small ones. How many large teddy bears does the toy store have?",
-    "steps": [
-      "The toy store has 8 small teddy bears (small box), and 10 more large teddy bears than small ones (difference).",
-      "We want to know how many large teddy bears there are in total. We know the small teddy bears, but not the large ones.",
-      "To find the total, we add the 10 extra teddy bears to the small teddy bears.",
-      "Math Sentence: 8 + 10 = 18.",
-      "The toy store has 18 large teddy bears! 🧸✨"
-    ],
-    "solution": 18
-  },
-  {
-    "id": 5,
-    "problem_type": "Additive Compare",
-    "variant": "Compare-More: Larger Quantity Unknown",
-    "story": "There are 5 people in a car. There are 12 more people on a bus than in the car. How many people are on the bus?",
-    "steps": [
-      "There are 5 people in the car (small box), and 12 more people on the bus than in the car (difference).",
-      "We want to know how many people are on the bus in total. We know the car’s number, but not the bus’s.",
-      "To find the total, we add the 12 extra people to the car’s people.",
-      "Math Sentence: 5 + 12 = 17.",
-      "There are 17 people on the bus! 🚌👫"
-    ],
-    "solution": 17
-  },
-  {
-    "id": 6,
-    "problem_type": "Additive Compare",
-    "variant": "Compare-More: Larger Quantity Unknown",
-    "story": "Ivan has 8 quarters. Gaby has 2 more quarters than Ivan. How many quarters does Gaby have?",
-    "steps": [
-      "Ivan has 8 quarters (small box), and Gaby has 2 more quarters than Ivan (difference).",
-      "We want to know how many quarters Gaby has in total. We know Ivan’s number, but not Gaby’s.",
-      "To find the total, we add the 2 extra quarters to Ivan’s quarters.",
-      "Math Sentence: 8 + 2 = 10.",
-      "Gaby has 10 quarters! 💰✨"
-    ],
-    "solution": 10
-  },
-  {
-    "id": 7,
-    "problem_type": "Additive Compare",
-    "variant": "Compare-More: Larger Quantity Unknown",
-    "story": "Mia has 6 crayons. Leo has 4 more crayons than Mia. How many crayons does Leo have?",
-    "steps": [
-      "Mia has 6 crayons (small box), and Leo has 4 more crayons than Mia (difference).",
-      "We want to know how many crayons Leo has in total. We know Mia’s number, but not Leo’s.",
-      "To find the total, we add the 4 extra crayons to Mia’s crayons.",
-      "Math Sentence: 6 + 4 = 10.",
-      "Leo has 10 crayons! 🖍✨"
-    ],
-    "solution": 10
-  },
-  {
-    "id": 8,
-    "problem_type": "Additive Compare",
-    "variant": "Compare-More: Larger Quantity Unknown",
-    "story": "A bakery sold 14 muffins in the morning. In the afternoon, it sold 7 more muffins than in the morning. How many muffins did the bakery sell in the afternoon?",
-    "steps": [
-      "The bakery sold 14 muffins in the morning (small box), and 7 more muffins in the afternoon than in the morning (difference).",
-      "We want to know how many muffins were sold in the afternoon in total. We know the morning’s number, but not the afternoon’s.",
-      "To find the total, we add the 7 extra muffins to the morning’s muffins.",
-      "Math Sentence: 14 + 7 = 21.",
-      "The bakery sold 21 muffins in the afternoon! 🧁✨"
-    ],
-    "solution": 21
-  },
-  {
-    "id": 9,
-    "problem_type": "Additive Compare",
-    "variant": "Compare-More: Larger Quantity Unknown",
-    "story": "Liam has 9 marbles. Emma has 5 more marbles than Liam. How many marbles does Emma have?",
-    "steps": [
-      "Liam has 9 marbles (small box), and Emma has 5 more marbles than Liam (difference).",
-      "We want to know how many marbles Emma has in total. We know Liam’s number, but not Emma’s.",
-      "To find the total, we add the 5 extra marbles to Liam’s marbles.",
-      "Math Sentence: 9 + 5 = 14.",
-      "Emma has 14 marbles! 🔵✨"
-    ],
-    "solution": 14
-  },
-  {
-    "id": 10,
-    "problem_type": "Additive Compare",
-    "variant": "Compare-More: Larger Quantity Unknown",
-    "story": "A farm has 20 chickens. It has 8 more chickens than ducks. How many ducks does the farm have?",
-    "steps": [
-      "The farm has 20 chickens (big box), and there are 8 more chickens than ducks (difference).",
-      "We want to know how many ducks there are in total. We know the chickens, but not the ducks.",
-      "To find the total, we subtract the extra 8 from the chickens.",
-      "Math Sentence: 20 - 8 = 12.",
-      "The farm has 12 ducks! 🦆✨"
-    ],
-    "solution": 12
-  }
+    {
+        "id": 1,
+        "problem_type": "Additive Compare",
+        "variant": "Compare-More: Larger Quantity Unknown",
+        "question": "A toad ate 4 dragonflies. A snake ate 3 more dragonflies than the toad. How many dragonflies did the snake eat?",
+        "story_structure": {
+            "who_or_what": "A toad and a snake eating dragonflies",
+            "events": [
+                {
+                    "order": 1,
+                    "action": "The toad ate 4 dragonflies.",
+                    "quantity": 4
+                },
+                {
+                    "order": 2,
+                    "action": "The snake ate 3 more dragonflies than the toad.",
+                    "quantity": 3
+                }
+            ],
+            "goal": "Find the number of dragonflies the snake ate."
+        },
+        "story_grammar_questions": [
+            {
+                "question": "Which sentence (or question) describes one quantity as 'more' than the other?",
+                "answer": "A snake ate 3 more dragonflies than the toad.",
+                "quantity": 3
+            },
+            {
+                "question": "Which sentence (or question) tells about the bigger quantity?",
+                "answer": "How many dragonflies did the snake eat?",
+                "quantity": "Unknown"
+            },
+            {
+                "question": "Which sentence (or question) tells about the smaller quantity?",
+                "answer": "A toad ate 4 dragonflies.",
+                "quantity": 4
+            }
+        ],
+        "math_solution": {
+            "final_answer": 7,
+            "explanation": "We add the toad's 4 dragonflies to the additional 3 dragonflies that the snake ate: 4 + 3 = 7 dragonflies."
+        }
+    },
+    {
+        "id": 2,
+        "problem_type": "Additive Compare",
+        "variant": "Compare-More: Larger Quantity Unknown",
+        "question": "James has 8 fish in his aquarium. Sara has 5 more fish in her aquarium than James. How many fish does Sara have in her aquarium?",
+        "story_structure": {
+            "who_or_what": "James, Sara with their fish aquariums",
+            "events": [
+                {
+                    "order": 1,
+                    "action": "James has 8 fish in his aquarium.",
+                    "quantity": 8
+                },
+                {
+                    "order": 2,
+                    "action": "Sara has 5 more fish in her aquarium than James.",
+                    "quantity": 5
+                }
+            ],
+            "goal": "Find the number of fish Sara has in her aquarium."
+        },
+        "story_grammar_questions": [
+            {
+                "question": "Which sentence (or question) describes one quantity as 'more' than the other?",
+                "answer": "Sara has 5 more fish in her aquarium than James.",
+                "quantity": 5
+            },
+            {
+                "question": "Which sentence (or question) tells about the bigger quantity?",
+                "answer": "How many fish does Sara have in her aquarium?",
+                "quantity": "Unknown"
+            },
+            {
+                "question": "Which sentence (or question) tells about the smaller quantity?",
+                "answer": "James has 8 fish in his aquarium.",
+                "quantity": 8
+            }
+        ],
+        "math_solution": {
+            "final_answer": 13,
+            "explanation": "We add James's 8 fish to the additional 5 fish that Sara has compared to James: 8 + 5 = 13 fish."
+        }
+    }
 ]
-

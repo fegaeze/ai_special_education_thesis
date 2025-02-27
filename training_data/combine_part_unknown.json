@@ -1,152 +1,88 @@
 [
-  {
-    "id": 1,
-    "problem_type": "Part-Part-Whole",
-    "variant": "Combine: Part Unknown",
-    "story": "Nine tropical fish were swimming in an aquarium. Two of them were angelfish. How many were not angelfish?",
-    "steps": [
-      "What are we trying to find out? We need to figure out how many fish were not angelfish.",
-      "We know there are 9 tropical fish in total (big box), and 2 of them are angelfish (small box).",
-      "There’s a box missing! The missing part is how many fish are not angelfish, and that’s what we need to find.",
-      "To find the missing part, we subtract the angelfish from the total number of fish!",
-      "Math Sentence: 9 - 2 = 7.",
-      "So, there are 7 fish that are not angelfish!"
-    ],
-    "solution": 7
-  },
-  {
-    "id": 2,
-    "problem_type": "Part-Part-Whole",
-    "variant": "Combine: Part Unknown",
-    "story": "There were 32 penguins on an iceberg. Five of the penguins were sleeping. How many penguins were not sleeping?",
-    "steps": [
-      "What do we need to find out? We need to know how many penguins were not sleeping.",
-      "There are 32 penguins on the iceberg (big box), and 5 of them are sleeping (small box).",
-      "Notice that there's a missing box! This box tells us how many penguins are not sleeping.",
-      "To find the missing part, we subtract the number of sleeping penguins from the total!",
-      "Math Sentence: 32 - 5 = 27.",
-      "So, 27 penguins were not sleeping!"
-    ],
-    "solution": 27
-  },
-  {
-    "id": 3,
-    "problem_type": "Part-Part-Whole",
-    "variant": "Combine: Part Unknown",
-    "story": "Nathan baked 36 cookies for his class. Twenty-five of them were shaped like crescent moons. How many of the cookies were round?",
-    "steps": [
-      "What do we want to know? We need to find how many cookies were round.",
-      "Nathan baked 36 cookies in total (big box), and 25 of them were crescent moon-shaped (small box).",
-      "There’s a missing box! This box is where we’ll put the number of round cookies.",
-      "To find how many round cookies there are, we subtract the crescent moon-shaped cookies from the total!",
-      "Math Sentence: 36 - 25 = 11.",
-      "So, Nathan made 11 round cookies!"
-    ],
-    "solution": 11
-  },
-  {
-    "id": 4,
-    "problem_type": "Part-Part-Whole",
-    "variant": "Combine: Part Unknown",
-    "story": "Nika has 10 teddy bears. Three of them have bows. How many of her bears do not have bows?",
-    "steps": [
-      "What are we trying to find out? We need to know how many of Nika’s teddy bears do not have bows.",
-      "We know Nika has 10 teddy bears in total (big box), and 3 of them have bows (small box).",
-      "There’s a box missing! We’re looking for how many bears don’t have bows, and that’s the missing part!",
-      "To find out, we subtract the bears with bows from the total number of bears!",
-      "Math Sentence: 10 - 3 = 7.",
-      "So, Nika has 7 bears without bows!"
-    ],
-    "solution": 7
-  },
-  {
-    "id": 5,
-    "problem_type": "Part-Part-Whole",
-    "variant": "Combine: Part Unknown",
-    "story": "There were 26 people on the Ferris wheel. Eighteen of them were kids. How many adults were on the Ferris wheel?",
-    "steps": [
-      "What are we trying to find out? We need to know how many adults were on the Ferris wheel.",
-      "There are 26 people in total (big box), and 18 of them are kids (small box).",
-      "We’re missing the box for the adults! That’s what we need to find.",
-      "To figure it out, we subtract the number of kids from the total number of people!",
-      "Math Sentence: 26 - 18 = 8.",
-      "So, there were 8 adults on the Ferris wheel!"
-    ],
-    "solution": 8
-  },
-  {
-    "id": 6,
-    "problem_type": "Part-Part-Whole",
-    "variant": "Combine: Part Unknown",
-    "story": "There are 85 students eating lunch in the cafeteria. Thirty-eight of the students brought their lunch from home. How many students did not bring their lunch from home?",
-    "steps": [
-      "What are we looking for? We need to know how many students did not bring lunch from home.",
-      "There are 85 students in total (big box), and 38 of them brought their lunch from home (small box).",
-      "Notice the missing box! That’s where the students who didn’t bring their lunch go.",
-      "To find out how many students didn’t bring lunch from home, we subtract the ones who did from the total!",
-      "Math Sentence: 85 - 38 = 47.",
-      "So, 47 students did not bring their lunch from home!"
-    ],
-    "solution": 47
-  },
-  {
-    "id": 7,
-    "problem_type": "Part-Part-Whole",
-    "variant": "Combine: Part Unknown",
-    "story": "Desmond bought 20 apples at the store. He got 6 red apples. How many green apples did he buy?",
-    "steps": [
-      "What are we trying to figure out? We need to find out how many green apples Desmond bought.",
-      "Desmond bought 20 apples in total (big box), and 6 of them are red apples (small box).",
-      "There’s a missing box here! This is where we put the number of green apples.",
-      "To find the number of green apples, we subtract the red apples from the total number of apples!",
-      "Math Sentence: 20 - 6 = 14.",
-      "So, Desmond bought 14 green apples!"
-    ],
-    "solution": 14
-  },
-  {
-    "id": 8,
-    "problem_type": "Part-Part-Whole",
-    "variant": "Combine: Part Unknown",
-    "story": "Fifteen children are outside playing in the snow. Thirteen of them are sledding down a hill. How many children are not sledding down the hill?",
-    "steps": [
-      "What are we looking for? We need to find out how many children are not sledding down the hill.",
-      "There are 15 children playing in total (big box), and 13 of them are sledding (small box).",
-      "There’s a missing box, and that’s where we put the number of children who are not sledding.",
-      "To figure this out, we subtract the sledding children from the total number of children!",
-      "Math Sentence: 15 - 13 = 2.",
-      "So, 2 children are not sledding down the hill!"
-    ],
-    "solution": 2
-  },
-  {
-    "id": 9,
-    "problem_type": "Part-Part-Whole",
-    "variant": "Combine: Part Unknown",
-    "story": "Javier is watching 8 monkeys at the zoo. Six of the monkeys are climbing in the tree. How many of the monkeys are not climbing in the tree?",
-    "steps": [
-      "What are we looking for? We need to figure out how many monkeys are not climbing in the tree.",
-      "Javier is watching 8 monkeys in total (big box), and 6 of them are climbing (small box).",
-      "There’s a missing box! This is the number of monkeys that are not climbing in the tree.",
-      "To find how many monkeys are not climbing, we subtract the climbing monkeys from the total number of monkeys!",
-      "Math Sentence: 8 - 6 = 2.",
-      "So, there are 2 monkeys that are not climbing in the tree!"
-    ],
-    "solution": 2
-  },
-  {
-    "id": 10,
-    "problem_type": "Part-Part-Whole",
-    "variant": "Combine: Part Unknown",
-    "story": "Felix checked out 12 books from the library. He checked out 5 fiction books and some nonfiction books. How many nonfiction books did he check out?",
-    "steps": [
-      "What are we looking for? We need to find out how many nonfiction books Felix checked out.",
-      "Felix checked out 12 books in total (big box), and 5 of them were fiction books (small box).",
-      "The nonfiction books box is missing! That’s the part we need to figure out.",
-      "To find the number of nonfiction books, we subtract the fiction books from the total!",
-      "Math Sentence: 12 - 5 = 7.",
-      "So, Felix checked out 7 nonfiction books!"
-    ],
-    "solution": 7
-  }
+    {
+        "id": 1,
+        "problem_type": "Part-Part-Whole",
+        "variant": "Combine: Part Unknown",
+        "question": "Nine tropical fish were swimming in an aquarium. Two of them were angelfish. How many were not angelfish?",
+        "story_structure": {
+            "who_or_what": "Tropical fish in an aquarium",
+            "events": [
+                {
+                    "order": 1,
+                    "action": "There are 9 tropical fish",
+                    "quantity": 9
+                },
+                {
+                    "order": 2,
+                    "action": "2 of them are identified as angelfish.",
+                    "quantity": 2
+                }
+            ],
+            "goal": "Find the number of tropical fish that are not angelfish."
+        },
+        "story_grammar_questions": [
+            {
+                "question": "Which sentence (or question) tells about the 'whole' or 'combined' amount?",
+                "answer": "There were 9 tropical fish in the aquarium.",
+                "quantity": 9
+            },
+            {
+                "question": "Which sentence (or question) tells about one of the parts that make up the whole?",
+                "answer": "2 of them were angelfish.",
+                "quantity": 2
+            },
+            {
+                "question": "Which sentence (or question) tells about the part that is not angelfish?",
+                "answer": "How many were not angelfish?",
+                "quantity": "Unknown"
+            }
+        ],
+        "math_solution": {
+            "final_answer": 7,
+            "explanation": "We subtract the angelfish from the total number of tropical fish: 9 - 2 = 7 fish that were not angelfish."
+        }
+    },
+    {
+        "id": 2,
+        "problem_type": "Part-Part-Whole",
+        "variant": "Combine: Part Unknown",
+        "question": "There were 32 penguins on an iceberg. Five of the penguins were sleeping. How many penguins were not sleeping?",
+        "story_structure": {
+            "who_or_what": "Penguins on an iceberg",
+            "events": [
+                {
+                    "order": 1,
+                    "action": "There are 32 penguins on the iceberg.",
+                    "quantity": 32
+                },
+                {
+                    "order": 2,
+                    "action": "5 of the penguins are sleeping.",
+                    "quantity": 5
+                }
+            ],
+            "goal": "Find the total number of penguins that are not sleeping."
+        },
+        "story_grammar_questions": [
+            {
+                "question": "Which sentence (or question) tells about the 'whole' or 'combined' amount?",
+                "answer": "There were 32 penguins on the iceberg.",
+                "quantity": 32
+            },
+            {
+                "question": "Which sentence (or question) tells about one of the parts that make up the whole?",
+                "answer": "5 of the penguins were sleeping.",
+                "quantity": 5
+            },
+            {
+                "question": "Which sentence (or question) tells about the part that is not sleeping?",
+                "answer": "How many penguins were not sleeping?",
+                "quantity": "Unknown"
+            }
+        ],
+        "math_solution": {
+            "final_answer": 27,
+            "explanation": "We subtract the number of sleeping penguins from the total number of penguins: 32 - 5 = 27 penguins that were not sleeping."
+        }
+    }
 ]

@@ -1,198 +1,98 @@
 [
-  {
-    "id": 1,
-    "problem_type": "Part-Part-Whole",
-    "variant": "Change-Separate: Whole Unknown",
-    "story": "The library has some books about snakes on the shelf. Then 8 of them were checked out. Now there are 5 books about snakes still on the shelf. How many books about snakes were on the shelf to start with?",
-    "steps": [
-      "What do we need to find out? We need to figure out how many books were on the shelf at first.",
-      "There are 5 books left on the shelf (that's one small box) and 8 books were checked out (that's the other small box).",
-      "To find the total number of books, we add the ones left on the shelf to the ones that were checked out.",
-      "Math Sentence: 5 + 8 = 13.",
-      "So, there were 13 books about snakes on the shelf at the start!"
-    ],
-    "solution": 13
-  },
-  {
-    "id": 2,
-    "problem_type": "Part-Part-Whole",
-    "variant": "Change-Separate: Whole Unknown",
-    "story": "The dentist had some patients waiting. He saw 3 of them. Then he still had 9 patients to see. How many patients were waiting at the start?",
-    "steps": [
-      "What do we need to find out? We need to figure out how many patients were waiting.",
-      "There are 9 patients still waiting (that's one small box), and 3 patients the dentist already saw (that's the other small box).",
-      "To find the total number of patients, we add the ones still waiting to the ones already seen.",
-      "Math Sentence: 9 + 3 = 12.",
-      "So, there were 12 patients waiting at the start!"
-    ],
-    "solution": 12
-  },
-  {
-    "id": 3,
-    "problem_type": "Part-Part-Whole",
-    "variant": "Change-Separate: Whole Unknown",
-    "story": "There were some students on the school bus. Then 10 of the students got off the bus. Now there are 13 students still on the bus. How many students were on the bus to start with?",
-    "steps": [
-      "What do we need to find out? We need to figure out how many students were on the bus at the start.",
-      "There are 13 students still on the bus (that's one small box), and 10 students got off the bus (that's the other small box).",
-      "To find the total number of students, we add the ones still on the bus to the ones who got off.",
-      "Math Sentence: 13 + 10 = 23.",
-      "So, there were 23 students on the bus at the start!"
-    ],
-    "solution": 23
-  },
-  {
-    "id": 4,
-    "problem_type": "Part-Part-Whole",
-    "variant": "Change-Separate: Whole Unknown",
-    "story": "Marwan had some colorful marbles. He gave 5 of them to his friend Jose. Now he has 32 marbles left. How many marbles did Marwan have before he gave some away?",
-    "steps": [
-      "What do we need to find out? We need to figure out how many marbles Marwan had before he gave some away.",
-      "Marwan has 32 marbles left (that's one small box), and he gave 5 marbles to his friend (that's the other small box).",
-      "To find the total number of marbles, we add the ones left to the ones he gave away.",
-      "Math Sentence: 32 + 5 = 37.",
-      "So, Marwan had 37 marbles before he gave some away!"
-    ],
-    "solution": 37
-  },
-  {
-    "id": 5,
-    "problem_type": "Part-Part-Whole",
-    "variant": "Change-Separate: Whole Unknown",
-    "story": "Nettie captured some crickets in a shoebox. Twelve of them escaped. Now she has 20 crickets left. How many crickets did Nettie capture?",
-    "steps": [
-      "What do we need to find out? We need to figure out how many crickets Nettie captured.",
-      "Nettie has 20 crickets left in the shoebox (that's one small box), and 12 crickets escaped (that's the other small box).",
-      "To find the total number of crickets, we add the ones left to the ones that escaped.",
-      "Math Sentence: 20 + 12 = 32.",
-      "So, Nettie captured 32 crickets!"
-    ],
-    "solution": 32
-  },
-  {
-    "id": 6,
-    "problem_type": "Part-Part-Whole",
-    "variant": "Change-Separate: Whole Unknown",
-    "story": "Tom had some pieces of candy. He gave 3 to his sister and ate 2 himself. He has 10 pieces of candy left. How many pieces of candy did Tom have before he gave some away and ate some?",
-    "steps": [
-      "What do we need to find out? We need to figure out how many pieces of candy Tom had before he gave some away and ate some.",
-      "Tom has 10 pieces of candy left (that's one small box), and he gave 3 pieces to his sister and ate 2 himself (that's the other small box).",
-      "To find the total number of pieces of candy, we add the ones left to the ones he gave and ate.",
-      "Math Sentence: 10 + 3 + 2 = 15.",
-      "So, Tom had 15 pieces of candy before!"
-    ],
-    "solution": 15
-  },
-  {
-    "id": 7,
-    "problem_type": "Part-Part-Whole",
-    "variant": "Change-Separate: Whole Unknown",
-    "story": "Lily has some stickers. She gave 4 to her friend and 6 to her mom. Now she has 12 stickers. How many stickers did Lily have at first?",
-    "steps": [
-      "What do we need to find out? We need to figure out how many stickers Lily had at first.",
-      "Lily has 12 stickers left (that's one small box), and she gave away 4 to her friend and 6 to her mom (that's the other small box).",
-      "To find the total number of stickers, we add the ones left to the ones she gave away.",
-      "Math Sentence: 12 + 4 + 6 = 22.",
-      "So, Lily had 22 stickers at first!"
-    ],
-    "solution": 22
-  },
-  {
-    "id": 8,
-    "problem_type": "Part-Part-Whole",
-    "variant": "Change-Separate: Whole Unknown",
-    "story": "There were some apples in the basket. John took 8 apples out, and then his sister took 5 apples. Now there are 7 apples left in the basket. How many apples were in the basket to start with?",
-    "steps": [
-      "What do we need to find out? We need to figure out how many apples were in the basket at the start.",
-      "There are 7 apples left in the basket (that's one small box), and John took 8 apples out, while his sister took 5 apples (that's the other small box).",
-      "To find the total number of apples, we add the ones left to the ones that were taken out.",
-      "Math Sentence: 7 + 8 + 5 = 20.",
-      "So, there were 20 apples in the basket to start with!"
-    ],
-    "solution": 20
-  },
-  {
-    "id": 9,
-    "problem_type": "Part-Part-Whole",
-    "variant": "Change-Separate: Whole Unknown",
-    "story": "Samantha had some money. She spent $12 on a toy and then had $8 left. How much money did Samantha have to start with?",
-    "steps": [
-      "What do we need to find out? We need to figure out how much money Samantha had at the start.",
-      "Samantha has $8 left (that's one small box), and she spent $12 on a toy (that's the other small box).",
-      "To find the total amount of money, we add the money left to the money she spent.",
-      "Math Sentence: 8 + 12 = 20.",
-      "So, Samantha had $20 to start with!"
-    ],
-    "solution": 20
-  },
-  {
-    "id": 10,
-    "problem_type": "Part-Part-Whole",
-    "variant": "Change-Separate: Whole Unknown",
-    "story": "There were some students in the classroom. When the bell rang, ten students went to the library, and twenty students went to the playground. How many students were in the classroom before the bell rang?",
-    "steps": [
-      "What do we need to find out? We need to figure out how many students were in the classroom before the bell rang.",
-      "There were 10 students who went to the library and 20 students who went to the playground (these are the small boxes).",
-      "To find the total number of students, we add the ones who went to the library to the ones who went to the playground.",
-      "Math Sentence: 10 + 20 = 30.",
-      "So, there were 30 students in the classroom before the bell rang!"
-    ],
-    "solution": 30
-  },
-  {
-    "id": 11,
-    "problem_type": "Part-Part-Whole",
-    "variant": "Change-Separate: Whole Unknown",
-    "story": "Some giant sea turtles were swimming toward the shore. Four stopped to rest. There are 6 sea turtles still swimming. How many sea turtles were swimming toward the shore at the start?",
-    "steps": [
-      "What do we need to find out? We need to figure out how many sea turtles were swimming toward the shore at the start.",
-      "There are 6 sea turtles still swimming (that's one small box), and 4 sea turtles stopped to rest (that's the other small box).",
-      "To find the total number of sea turtles, we add the ones still swimming to the ones that stopped to rest.",
-      "Math Sentence: 6 + 4 = 10.",
-      "So, there were 10 sea turtles swimming toward the shore at the start!"
-    ],
-    "solution": 10
-  },
-  {
-    "id": 12,
-    "problem_type": "Part-Part-Whole",
-    "variant": "Change-Separate: Whole Unknown",
-    "story": "Robert had some Goldfish crackers. He ate 7 of them. Then he had 3 left. How many Goldfish crackers did Robert have before he ate some?",
-    "steps": [
-      "What do we need to find out? We need to figure out how many Goldfish crackers Robert had before he ate some.",
-      "Robert has 3 Goldfish crackers left (that's one small box), and he ate 7 crackers (that's the other small box).",
-      "To find the total number of Goldfish crackers, we add the ones left to the ones he ate.",
-      "Math Sentence: 3 + 7 = 10.",
-      "So, Robert had 10 Goldfish crackers before he ate some!"
-    ],
-    "solution": 10
-  },
-  {
-    "id": 13,
-    "problem_type": "Part-Part-Whole",
-    "variant": "Change-Separate: Whole Unknown",
-    "story": "A gorilla had some bananas. She ate 6 of them. Then she had 5 left. How many bananas did the gorilla have before she ate some?",
-    "steps": [
-      "What do we need to find out? We need to figure out how many bananas the gorilla had before she ate some.",
-      "The gorilla has 5 bananas left (that's one small box), and she ate 6 bananas (that's the other small box).",
-      "To find the total number of bananas, we add the ones left to the ones she ate.",
-      "Math Sentence: 5 + 6 = 11.",
-      "So, the gorilla had 11 bananas before she ate some!"
-    ],
-    "solution": 11
-  },
-  {
-    "id": 14,
-    "problem_type": "Part-Part-Whole",
-    "variant": "Change-Separate: Whole Unknown",
-    "story": "Jane made some cookies. She gave 4 cookies to her friend. Then she had 8 cookies left. How many cookies did Jane have before she gave some away?",
-    "steps": [
-      "What do we need to find out? We need to figure out how many cookies Jane had before she gave some away.",
-      "Jane has 8 cookies left (that's one small box), and she gave 4 cookies to her friend (that's the other small box).",
-      "To find the total number of cookies, we add the ones left to the ones she gave away.",
-      "Math Sentence: 8 + 4 = 12.",
-      "So, Jane had 12 cookies before she gave some away!"
-    ],
-    "solution": 12
-  }
+    {
+        "id": 1,
+        "problem_type": "Part-Part-Whole",
+        "variant": "Change-Separate: Whole Unknown",
+        "question": "The library has some books about snakes on the shelf. Then 8 of them were checked out. Now there are 5 books about snakes still on the shelf. How many books about snakes were on the shelf to start with?",
+        "story_structure": {
+            "who_or_what": "A collection of snake books in a library",
+            "events": [
+                {
+                    "order": 1,
+                    "action": "The library has an unknown number of books on the shelf",
+                    "quantity": "Unknown"
+                },
+                {
+                    "order": 2,
+                    "action": "8 books were checked out.",
+                    "quantity": 8
+                },
+                {
+                    "order": 3,
+                    "action": "5 books are still on the shelf.",
+                    "quantity": 5
+                }
+            ],
+            "goal": "Find the original number of snake books on the shelf."
+        },
+        "story_grammar_questions": [
+            {
+                "question": "Which sentence (or question) tells about the 'whole' or 'combined' amount?",
+                "answer": ["The library has some books about snakes on the shelf", "How many books about snakes were on the shelf to start with?"],
+                "quantity": "Unknown"
+            },
+            {
+                "question": "Which sentence (or question) tells about one of the parts that make up the whole?",
+                "answer": "8 books were checked out.",
+                "quantity": 8
+            },
+            {
+                "question": "Which sentence (or question) tells about another part that makes up the whole?",
+                "answer": "5 books are still on the shelf.",
+                "quantity": 5
+            }
+        ],
+        "math_solution": {
+            "final_answer": 13,
+            "explanation": "We add the books that were checked out (8) to the books that are still on the shelf (5): 8 + 5 = 13 books."
+        }
+    },
+    {
+        "id": 2,
+        "problem_type": "Part-Part-Whole",
+        "variant": "Change-Separate: Whole Unknown",
+        "question": "The dentist had some patients waiting. He saw 3 of them. Then he still had 9 patients to see. How many patients were waiting at the start?",
+        "story_structure": {
+            "who_or_what": "A dentist and his patients",
+            "events": [
+                {
+                    "order": 1,
+                    "action": "A group of patients is waiting.",
+                    "quantity": "Unknown"
+                },
+                {
+                    "order": 2,
+                    "action": "The dentist sees 3 patients",
+                    "quantity": 3
+                },
+                {
+                    "order": 3,
+                    "action": "Nine patients remain waiting.",
+                    "quantity": 9
+                }
+            ],
+            "goal": "Find the total number of patients who were waiting initially."
+        },
+        "story_grammar_questions": [
+            {
+                "question": "Which sentence (or question) tells about the 'whole' or 'combined' amount?",
+                "answer": ["The dentist had some patients waiting.", "How many patients were waiting at the start?"],
+                "quantity": "Unknown"
+            },
+            {
+                "question": "Which sentence (or question) tells about one of the parts that make up the whole?",
+                "answer": "3 patients were seen.",
+                "quantity": 3
+            },
+            {
+                "question": "Which sentence (or question) tells about another part that makes up the whole?",
+                "answer": "9 patients are still waiting.",
+                "quantity": 9
+            }
+        ],
+        "math_solution": {
+            "final_answer": 12,
+            "explanation": "We add the patients that have been seen (3) to the patients that are still waiting (9): 3 + 9 = 12 patients."
+        }
+    }
 ]

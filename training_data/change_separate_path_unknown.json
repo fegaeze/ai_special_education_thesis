@@ -1,142 +1,103 @@
 [
-  {
-    "id": 1,
-    "problem_type": "Part-Part-Whole",
-    "variant": "Change-Separate: Part Unknown",
-    "story": "Ashley bought a big bag of candy to share with her friends. In total, there were 296 candies. She gave 105 candies to Marissa. She also gave 86 candies to Kayla. How many candies were left?",
-    "steps": [
-      "Ashley starts with 296 candies in her bag (big box), and she gives away 105 to Marissa and 86 to Kayla (small boxes).",
-      "Now we need to find out how many candies are left after giving some away.",
-      "First, let's add up the candies she gave away: 105 + 86 = 191.",
-      "Math Sentence: 296 - 191 = 105.",
-      "So, Ashley has 105 candies left to share!"
-    ],
-    "solution": 105
-  },
-  {
-    "id": 2,
-    "problem_type": "Part-Part-Whole",
-    "variant": "Change-Separate: Part Unknown",
-    "story": "The delivery truck carried 50 boxes. Some were unloaded at the first stop. Then there were 35 boxes left on the truck. How many boxes were unloaded at the first stop?",
-    "steps": [
-      "The truck started with 50 boxes (big box), and there were 35 boxes left (small box).",
-      "We want to figure out how many boxes got unloaded.",
-      "To find that, we subtract the 35 boxes still on the truck from the 50 boxes it had at first.",
-      "Math Sentence: 50 - 35 = 15.",
-      "So, 15 boxes were unloaded at the first stop!"
-    ],
-    "solution": 15
-  },
-  {
-    "id": 3,
-    "problem_type": "Part-Part-Whole",
-    "variant": "Change-Separate: Part Unknown",
-    "story": "There were 23 morpho butterflies on a bush. Some of them flew away. Then there were 5 left on the bush. How many butterflies flew away?",
-    "steps": [
-      "There were 23 butterflies on the bush at the start (big box), and 5 butterflies stayed behind (small box).",
-      "We need to find out how many butterflies flew away.",
-      "To do that, we subtract the 5 butterflies from the 23 butterflies that were there at first.",
-      "Math Sentence: 23 - 5 = 18.",
-      "So, 18 butterflies flew away!"
-    ],
-    "solution": 18
-  },
-  {
-    "id": 4,
-    "problem_type": "Part-Part-Whole",
-    "variant": "Change-Separate: Part Unknown",
-    "story": "Eighteen icicles were hanging from my roof. My brother knocked some down. Then there were 12 left. How many icicles did my brother knock down?",
-    "steps": [
-      "There were 18 icicles hanging on the roof at first (big box), and 12 icicles are still there (small box).",
-      "We need to find out how many icicles my brother knocked down.",
-      "To do this, we subtract the 12 icicles left from the 18 icicles that were hanging at first.",
-      "Math Sentence: 18 - 12 = 6.",
-      "My brother knocked down 6 icicles!"
-    ],
-    "solution": 6
-  },
-  {
-    "id": 5,
-    "problem_type": "Part-Part-Whole",
-    "variant": "Change-Separate: Part Unknown",
-    "story": "The gorilla had 41 bananas. She ate some. Then she had 20 bananas left. How many bananas did the gorilla eat?",
-    "steps": [
-      "The gorilla starts with 41 bananas (big box), and she has 20 bananas left (small box).",
-      "We need to figure out how many bananas the gorilla ate.",
-      "We subtract the 20 bananas left from the 41 bananas she started with.",
-      "Math Sentence: 41 - 20 = 21.",
-      "So, the gorilla ate 21 bananas!"
-    ],
-    "solution": 21
-  },
-  {
-    "id": 6,
-    "problem_type": "Part-Part-Whole",
-    "variant": "Change-Separate: Part Unknown",
-    "story": "Sasha bought 12 apples. She gave 3 apples to her mother. How many apples does Sasha have left?",
-    "steps": [
-      "Sasha starts with 12 apples (big box), and she gave away 3 apples to her mother (small box).",
-      "We need to figure out how many apples Sasha has left.",
-      "To do that, we subtract the 3 apples she gave away from the 12 apples she had at first.",
-      "Math Sentence: 12 - 3 = 9.",
-      "So, Sasha has 9 apples left!"
-    ],
-    "solution": 9
-  },
-  {
-    "id": 7,
-    "problem_type": "Part-Part-Whole",
-    "variant": "Change-Separate: Part Unknown",
-    "story": "Kevin found 15 bird feathers in the park. On his way home he lost 4 of the feathers. How many feathers does Kevin have now?",
-    "steps": [
-      "Kevin finds 15 bird feathers (big box), and he loses 4 feathers (small box).",
-      "We need to figure out how many feathers Kevin has left.",
-      "To do that, we subtract the 4 feathers he lost from the 15 feathers he found.",
-      "Math Sentence: 15 - 4 = 11.",
-      "So, Kevin has 11 feathers left!"
-    ],
-    "solution": 11
-  },
-  {
-    "id": 8,
-    "problem_type": "Part-Part-Whole",
-    "variant": "Change-Separate: Part Unknown",
-    "story": "Elijah checked out 14 books from the library. He read 8 of the books and returned them to the library. How many books does Elijah still have checked out?",
-    "steps": [
-      "Elijah starts with 14 books checked out (big box), and he returned 8 books to the library (small box).",
-      "We need to find out how many books Elijah still has checked out.",
-      "To do this, we subtract the 8 books he returned from the 14 books he checked out.",
-      "Math Sentence: 14 - 8 = 6.",
-      "So, Elijah still has 6 books checked out!"
-    ],
-    "solution": 6
-  },
-  {
-    "id": 9,
-    "problem_type": "Part-Part-Whole",
-    "variant": "Change-Separate: Part Unknown",
-    "story": "Donna has 10 dresses. She outgrew 3 of them and gave them to her younger sister. How many dresses does Donna have left?",
-    "steps": [
-      "Donna starts with 10 dresses (big box), and she gave 3 dresses to her younger sister (small box).",
-      "We need to figure out how many dresses Donna has left.",
-      "To do that, we subtract the 3 dresses she gave away from the 10 dresses she had.",
-      "Math Sentence: 10 - 3 = 7.",
-      "So, Donna has 7 dresses left!"
-    ],
-    "solution": 7
-  },
-  {
-    "id": 10,
-    "problem_type": "Part-Part-Whole",
-    "variant": "Change-Separate: Part Unknown",
-    "story": "The grocery store had 24 tubes of toothpaste. Customers bought 6 of the tubes. How many tubes of toothpaste did the store have left?",
-    "steps": [
-      "The store starts with 24 tubes of toothpaste (big box), and 6 tubes were bought by customers (small box).",
-      "We need to find out how many tubes of toothpaste the store has left.",
-      "To do that, we subtract the 6 tubes sold from the 24 tubes the store started with.",
-      "Math Sentence: 24 - 6 = 18.",
-      "So, the store has 18 tubes of toothpaste left!"
-    ],
-    "solution": 18
-  }
+    {
+        "id": 1,
+        "problem_type": "Part-Part-Whole",
+        "variant": "Change-Separate: Part Unknown",
+        "question": "Ashley bought a big bag of candy to share with her friends. In total, there were 296 candies. She gave 105 candies to Marissa. She also gave 86 candies to Kayla. How many candies were left?",
+        "story_structure": {
+            "who_or_what": "Ashley and her bag of candies",
+            "events": [
+                {
+                    "order": 1,
+                    "action": "Ashley bought 296 candies to share",
+                    "quantity": "296"
+                },
+                {
+                    "order": 2,
+                    "action": "Ashley gave 105 candies to Marissa.",
+                    "quantity": 105
+                },
+                {
+                    "order": 3,
+                    "action": "Ashley gave 86 candies to Kayla.",
+                    "quantity": 86
+                }
+            ],
+            "goal": "Find the number candies left after sharing."
+        },
+        "story_grammar_questions": [
+            {
+                "question": "Which sentence (or question) tells about the 'whole' or 'combined' amount?",
+                "answer": "Ashley had 296 candies in total.",
+                "quantity": 296
+            },
+            {
+                "question": "Which sentence (or question) tells about one of the parts that make up the whole?",
+                "answer": "Ashley gave 105 candies to Marissa.",
+                "quantity": 105
+            },
+            {
+                "question": "Which sentence (or question) tells about another part that makes up the whole?",
+                "answer": "Ashley gave 86 candies to Kayla.",
+                "quantity": 86
+            },
+            {
+                "question": "Which sentence (or question) tells about another part that makes up the whole?",
+                "answer": "How many candies were left?",
+                "quantity": "Unknown"
+            }
+        ],
+        "math_solution": {
+            "final_answer": 105,
+            "explanation": "To find how many candies were left, we subtract the candies given away from the total. 296 (total) - 105 (to Marissa) - 86 (to Kayla) = 105 candies left."
+        }
+    },
+    {
+        "id": 2,
+        "problem_type": "Part-Part-Whole",
+        "variant": "Change-Separate: Part Unknown",
+        "question": "The delivery truck carried 50 boxes. Some were unloaded at the first stop. Then there were 35 boxes left on the truck. How many boxes were unloaded at the first stop?",
+        "story_structure": {
+            "who_or_what": "A delivery truck and its boxes",
+            "events": [
+                {
+                    "order": 1,
+                    "action": "The truck started with 50 boxes.",
+                    "quantity": 50
+                },
+                {
+                    "order": 2,
+                    "action": "Some were unloaded at the first stop",
+                    "quantity": "Unknown"
+                },
+                {
+                    "order": 3,
+                    "action": "There were 35 boxes left on the truck.",
+                    "quantity": 35
+                }
+            ],
+            "goal": "Find the number of boxes that were unloaded."
+        },
+        "story_grammar_questions": [
+            {
+                "question": "Which sentence (or question) tells about the 'whole' or 'combined' amount?",
+                "answer": "The truck started with 50 boxes.",
+                "quantity": 50
+            },
+            {
+                "question": "Which sentence (or question) tells about one of the parts that make up the whole?",
+                "answer": "There were 35 boxes left on the truck.",
+                "quantity": 35
+            },
+            {
+                "question": "Which sentence (or question) tells about another part that make up the whole?",
+                "answer": ["Some were unloaded at the first stop", "How many boxes were unloaded at the first stop?"],
+                "quantity": "Unknown"
+            }
+        ],
+        "math_solution": {
+            "final_answer": 15,
+            "explanation": "To find how many boxes were unloaded, we subtract the boxes left from the total number of boxes. 50 (total) - 35 (left) = 15 boxes unloaded."
+        }
+    }
 ]

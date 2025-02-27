@@ -1,142 +1,93 @@
 [
-  {
-    "id": 1,
-    "problem_type": "Part-Part-Whole",
-    "variant": "Change-Join: Part Unknown",
-    "story": "Raul has 3 pet mice. Then Xavier gives him some more mice. Now Raul has 8 mice. How many mice did Xavier give to Raul?",
-    "steps": [
-      "What are we trying to find? We need to figure out how many mice Xavier gave to Raul.",
-      "Raul had 3 mice already, and now he has 8 mice. That’s like a small box of 3 and a bigger box of 8.",
-      "To figure out how many more mice Xavier gave, we can take the small box away from the big box: 8 - 3.",
-      "Math Sentence: 8 - 3 = 5.",
-      "So, Xavier gave Raul 5 more mice!"
-    ],
-    "solution": 5
-  },
-  {
-    "id": 2,
-    "problem_type": "Part-Part-Whole",
-    "variant": "Change-Join: Part Unknown",
-    "story": "I cut up 5 apples to make a pie, but it is not enough. I need 8 apples for the pie. How many more apples do I need to cut up?",
-    "steps": [
-      "What are we looking for? We want to know how many more apples I need to cut.",
-      "I already have 5 apples (small box), but I need 8 apples in total (big box).",
-      "To find out how many more apples I need, we subtract the 5 apples I have from the 8 apples I need.",
-      "Math Sentence: 8 - 5 = 3.",
-      "So, I need to cut up 3 more apples!"
-    ],
-    "solution": 3
-  },
-  {
-    "id": 3,
-    "problem_type": "Part-Part-Whole",
-    "variant": "Change-Join: Part Unknown",
-    "story": "Twelve penguins are napping on an iceberg. More penguins join them. Now there are 25 penguins napping on the iceberg. How many more penguins join them?",
-    "steps": [
-      "Let’s figure this out! We want to know how many more penguins joined the iceberg.",
-      "At first, there were 12 penguins (small box), and now there are 25 penguins (big box).",
-      "To find out how many penguins joined, we subtract the smaller number from the bigger number: 25 - 12.",
-      "Math Sentence: 25 - 12 = 13.",
-      "So, 13 more penguins joined the iceberg!"
-    ],
-    "solution": 13
-  },
-  {
-    "id": 4,
-    "problem_type": "Part-Part-Whole",
-    "variant": "Change-Join: Part Unknown",
-    "story": "Zaida has some t-shirts before she goes to camp. Her mom buys her 6 more. Now Zaida has 13 t-shirts. How many t-shirts did Zaida have before her mom bought more?",
-    "steps": [
-      "What do we need to figure out? We need to know how many t-shirts Zaida had before her mom bought 6 more.",
-      "Zaida has 13 t-shirts now (big box), and her mom bought her 6 new ones (small box).",
-      "To figure out how many t-shirts she started with, we take away the 6 t-shirts her mom bought from the 13 she has now.",
-      "Math Sentence: 13 - 6 = 7.",
-      "So, Zaida had 7 t-shirts before her mom bought more!"
-    ],
-    "solution": 7
-  },
-  {
-    "id": 5,
-    "problem_type": "Part-Part-Whole",
-    "variant": "Change-Join: Part Unknown",
-    "story": "Gina has 30 gummy bears. She buys some more. Now she has 75 gummy bears. How many gummy bears does Gina buy?",
-    "steps": [
-      "What are we figuring out? We need to figure out how many gummy bears Gina bought.",
-      "Gina had 30 gummy bears to start with (small box), and now she has 75 gummy bears in total (big box).",
-      "To find out how many she bought, we subtract the number of gummy bears she started with from the total number she has now.",
-      "Math Sentence: 75 - 30 = 45.",
-      "So, Gina bought 45 gummy bears!"
-    ],
-    "solution": 45
-  },
-  {
-    "id": 6,
-    "problem_type": "Part-Part-Whole",
-    "variant": "Change-Join: Part Unknown",
-    "story": "Rosa draws 6 pictures. She wants to draw 15 altogether. How many more pictures does she need to draw?",
-    "steps": [
-      "What do we need to find out? We need to know how many more pictures Rosa needs to draw.",
-      "Rosa already has 6 pictures (small box), and she wants 15 pictures in total (big box).",
-      "To figure out how many more she needs to draw, we subtract the 6 pictures she has from the 15 she wants.",
-      "Math Sentence: 15 - 6 = 9.",
-      "So, Rosa needs to draw 9 more pictures!"
-    ],
-    "solution": 9
-  },
-  {
-    "id": 7,
-    "problem_type": "Part-Part-Whole",
-    "variant": "Change-Join: Part Unknown",
-    "story": "The freight train has 52 box cars on it. Then some more box cars are hooked on to the train. The train now has 119 box cars hooked up to it. How many more box cars are hooked on to the train?",
-    "steps": [
-      "What do we need to figure out? We need to find out how many more box cars are on the train.",
-      "The train starts with 52 box cars (small box), and now it has 119 box cars in total (big box).",
-      "To find out how many were added, we subtract the 52 box cars from the 119 box cars.",
-      "Math Sentence: 119 - 52 = 67.",
-      "So, 67 more box cars were added to the train!"
-    ],
-    "solution": 67
-  },
-  {
-    "id": 8,
-    "problem_type": "Part-Part-Whole",
-    "variant": "Change-Join: Part Unknown",
-    "story": "Emma has some teddy bear stickers. She buys 12 more teddy bear stickers. Now she has 46 teddy bear stickers altogether. How many teddy bear stickers did Emma have to start with?",
-    "steps": [
-      "What are we figuring out? We need to know how many teddy bear stickers Emma had before she bought more.",
-      "Emma has 46 teddy bear stickers now (big box), and she bought 12 more (small box).",
-      "To find out how many stickers she started with, we subtract the 12 stickers she bought from the total 46 stickers.",
-      "Math Sentence: 46 - 12 = 34.",
-      "So, Emma had 34 teddy bear stickers before!"
-    ],
-    "solution": 34
-  },
-  {
-    "id": 9,
-    "problem_type": "Part-Part-Whole",
-    "variant": "Change-Join: Part Unknown",
-    "story": "Some sailboats are out on the lake. Ten more sailboats come onto the lake. Now there are 22 sailboats. How many sailboats were on the lake to start with?",
-    "steps": [
-      "What are we trying to find out? We want to know how many sailboats were there before the new ones came.",
-      "There were some sailboats already on the lake (small box), and now there are 22 sailboats (big box).",
-      "To figure out how many sailboats were there before, we subtract the 10 new sailboats from the 22 sailboats.",
-      "Math Sentence: 22 - 10 = 12.",
-      "So, there were 12 sailboats on the lake to start with!"
-    ],
-    "solution": 12
-  },
-  {
-    "id": 10,
-    "problem_type": "Part-Part-Whole",
-    "variant": "Change-Join: Part Unknown",
-    "story": "On Monday it rains 2 inches. It will rain some more on Tuesday. It rained 7 inches altogether on both days. How many inches does it rain on Tuesday?",
-    "steps": [
-      "What are we figuring out? We need to know how much it rained on Tuesday.",
-      "It rained 2 inches on Monday (small box), and it rained a total of 7 inches over both days (big box).",
-      "To find out how much rain fell on Tuesday, subtract the 2 inches from the 7 inches.",
-      "Math Sentence: 7 - 2 = 5.",
-      "So, it rained 5 inches on Tuesday!"
-    ],
-    "solution": 5
-  }
+    {
+        "id": 1,
+        "problem_type": "Part-Part-Whole",
+        "variant": "Change-Join: Part Unknown",
+        "question": "Rosa draws 6 pictures. She wants to draw 15 altogether. How many more pictures does she need to draw?",
+        "story_structure": {
+            "who_or_what": "Rosa and her picture drawing goal",
+            "events": [
+                {
+                    "order": 1,
+                    "action": "Rosa draws 6 pictures already.",
+                    "quantity": 6
+                },
+                {
+                    "order": 2,
+                    "action": "She sets a goal to draw a total of 15 pictures.",
+                    "quantity": 15
+                }
+            ],
+            "goal": "Find the number of additional pictures Rosa needs to draw to fulfil her goal."
+        },
+        "story_grammar_questions": [
+            {
+                "question": "Which sentence (or question) tells about the 'whole' or 'combined' amount?",
+                "answer": "She wants to draw 15 pictures altogether.",
+                "quantity": 15
+            },
+            {
+                "question": "Which sentence (or question) tells about one of the parts that make up the whole?",
+                "answer": "Rosa draws 6 pictures.",
+                "quantity": 6
+            },
+            {
+                "question": "Which sentence (or question) tells about the part that is unknown?",
+                "answer": "How many more pictures does she need to draw?",
+                "quantity": "Unknown"
+            }
+        ],
+        "math_solution": {
+            "final_answer": 9,
+            "explanation": "We subtract the pictures Rosa has already drawn from the total pictures she wants to draw: 15 - 6 = 9 more pictures."
+        }
+    },
+    {
+        "id": 2,
+        "problem_type": "Part-Part-Whole",
+        "variant": "Change-Join: Part Unknown",
+        "question": "The freight train has 52 box cars on it. Then some more box cars are hooked on to the train. The train now has 119 box cars hooked up to it. How many more box cars are hooked on to the train?",
+        "story_structure": {
+            "who_or_what": "A freight train and its box cars",
+            "events": [
+                {
+                    "order": 1,
+                    "action": "The train initially has 52 box cars.",
+                    "quantity": 52
+                },
+                {
+                    "order": 2,
+                    "action": "Additional box cars are hooked on to the train.",
+                    "quantity": "Unknown"
+                },
+                {
+                    "order": 3,
+                    "action": "The new total of 119 box cars is reached",
+                    "quantity": 119
+                }
+            ],
+            "goal": "Find the number of extra box cars that were added."
+        },
+        "story_grammar_questions": [
+            {
+                "question": "Which sentence (or question) tells about the 'whole' or 'combined' amount?",
+                "answer": "The train now has 119 box cars hooked up to it.",
+                "quantity": 119
+            },
+            {
+                "question": "Which sentence (or question) tells about one of the parts that make up the whole?",
+                "answer": "The train has 52 box cars on it.",
+                "quantity": 52
+            },
+            {
+                "question": "Which sentence (or question) tells about the part that is unknown?",
+                "answer": ["Then some more box cars are hooked on to the train", "How many more box cars are hooked on to the train?"],
+                "quantity": "Unknown"
+            }
+        ],
+        "math_solution": {
+            "final_answer": 67,
+            "explanation": "We subtract the number of box cars already on the train from the total number of box cars: 119 - 52 = 67 more box cars."
+        }
+    }
 ]
