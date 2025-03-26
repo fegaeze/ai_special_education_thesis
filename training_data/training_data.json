@@ -45,57 +45,6 @@
   {
     "id": 2,
     "problem_type": "Part-Part-Whole",
-    "variant": "Change-Join: Part Unknown",
-    "question": "The freight train has 52 box cars on it. Then some more box cars are hooked on to the train. The train now has 119 box cars hooked up to it. How many more box cars are hooked on to the train?",
-    "story_structure": {
-      "who_or_what": "A freight train and its box cars",
-      "events": [
-        {
-          "order": 1,
-          "action": "The train initially has 52 box cars.",
-          "quantity": 52
-        },
-        {
-          "order": 2,
-          "action": "Additional box cars are hooked on to the train.",
-          "quantity": "Unknown"
-        },
-        {
-          "order": 3,
-          "action": "The new total of 119 box cars is reached",
-          "quantity": 119
-        }
-      ],
-      "goal": "Find the number of extra box cars that were added."
-    },
-    "story_grammar_questions": [
-      {
-        "question": "Which sentence (or question) tells about the 'whole' or 'combined' amount?",
-        "answer": "The train now has 119 box cars hooked up to it.",
-        "quantity": 119
-      },
-      {
-        "question": "Which sentence (or question) tells about one of the parts that make up the whole?",
-        "answer": "The train has 52 box cars on it.",
-        "quantity": 52
-      },
-      {
-        "question": "Which sentence (or question) tells about the part that is unknown?",
-        "answer": [
-          "Then some more box cars are hooked on to the train",
-          "How many more box cars are hooked on to the train?"
-        ],
-        "quantity": "Unknown"
-      }
-    ],
-    "math_solution": {
-      "final_answer": 67,
-      "explanation": "We subtract the number of box cars already on the train from the total number of box cars: 119 - 52 = 67 more box cars."
-    }
-  },
-  {
-    "id": 3,
-    "problem_type": "Part-Part-Whole",
     "variant": "Change-Join: Whole Unknown",
     "question": "For her reading assignment, Ashley read 27 pages on Saturday, and another 23 on Sunday. How many pages did she read over the weekend?",
     "story_structure": {
@@ -137,50 +86,7 @@
     }
   },
   {
-    "id": 4,
-    "problem_type": "Part-Part-Whole",
-    "variant": "Change-Join: Whole Unknown",
-    "question": "There are 16 mice playing in a field. Eight more mice come and start playing, too. How many mice are playing in the field?",
-    "story_structure": {
-      "who_or_what": "Mice playing in a field",
-      "events": [
-        {
-          "order": 1,
-          "action": "Initially, there are 16 mice playing.",
-          "quantity": 16
-        },
-        {
-          "order": 2,
-          "action": "Eight more mice join them.",
-          "quantity": 8
-        }
-      ],
-      "goal": "Find the overall number of mice in the field."
-    },
-    "story_grammar_questions": [
-      {
-        "question": "Which sentence (or question) tells about the 'whole' or 'combined' amount?",
-        "answer": "How many mice are playing in the field?",
-        "quantity": "Unknown"
-      },
-      {
-        "question": "Which sentence (or question) tells about one of the parts that make up the whole?",
-        "answer": "There are 16 mice playing in the field.",
-        "quantity": 16
-      },
-      {
-        "question": "Which sentence (or question) tells about another part that makes up the whole?",
-        "answer": "8 more mice come and start playing.",
-        "quantity": 8
-      }
-    ],
-    "math_solution": {
-      "final_answer": 24,
-      "explanation": "We add the mice that were already playing and the new ones: 16 + 8 = 24 mice playing in the field."
-    }
-  },
-  {
-    "id": 5,
+    "id": 3,
     "problem_type": "Part-Part-Whole",
     "variant": "Change-Separate: Part Unknown",
     "question": "Ashley bought a big bag of candy to share with her friends. In total, there were 296 candies. She gave 105 candies to Marissa. She also gave 86 candies to Kayla. How many candies were left?",
@@ -233,58 +139,7 @@
     }
   },
   {
-    "id": 6,
-    "problem_type": "Part-Part-Whole",
-    "variant": "Change-Separate: Part Unknown",
-    "question": "The delivery truck carried 50 boxes. Some were unloaded at the first stop. Then there were 35 boxes left on the truck. How many boxes were unloaded at the first stop?",
-    "story_structure": {
-      "who_or_what": "A delivery truck and its boxes",
-      "events": [
-        {
-          "order": 1,
-          "action": "The truck started with 50 boxes.",
-          "quantity": 50
-        },
-        {
-          "order": 2,
-          "action": "Some were unloaded at the first stop",
-          "quantity": "Unknown"
-        },
-        {
-          "order": 3,
-          "action": "There were 35 boxes left on the truck.",
-          "quantity": 35
-        }
-      ],
-      "goal": "Find the number of boxes that were unloaded."
-    },
-    "story_grammar_questions": [
-      {
-        "question": "Which sentence (or question) tells about the 'whole' or 'combined' amount?",
-        "answer": "The truck started with 50 boxes.",
-        "quantity": 50
-      },
-      {
-        "question": "Which sentence (or question) tells about one of the parts that make up the whole?",
-        "answer": "There were 35 boxes left on the truck.",
-        "quantity": 35
-      },
-      {
-        "question": "Which sentence (or question) tells about another part that make up the whole?",
-        "answer": [
-          "Some were unloaded at the first stop",
-          "How many boxes were unloaded at the first stop?"
-        ],
-        "quantity": "Unknown"
-      }
-    ],
-    "math_solution": {
-      "final_answer": 15,
-      "explanation": "To find how many boxes were unloaded, we subtract the boxes left from the total number of boxes. 50 (total) - 35 (left) = 15 boxes unloaded."
-    }
-  },
-  {
-    "id": 7,
+    "id": 4,
     "problem_type": "Part-Part-Whole",
     "variant": "Change-Separate: Whole Unknown",
     "question": "The library has some books about snakes on the shelf. Then 8 of them were checked out. Now there are 5 books about snakes still on the shelf. How many books about snakes were on the shelf to start with?",
@@ -335,58 +190,7 @@
     }
   },
   {
-    "id": 8,
-    "problem_type": "Part-Part-Whole",
-    "variant": "Change-Separate: Whole Unknown",
-    "question": "The dentist had some patients waiting. He saw 3 of them. Then he still had 9 patients to see. How many patients were waiting at the start?",
-    "story_structure": {
-      "who_or_what": "A dentist and his patients",
-      "events": [
-        {
-          "order": 1,
-          "action": "A group of patients is waiting.",
-          "quantity": "Unknown"
-        },
-        {
-          "order": 2,
-          "action": "The dentist sees 3 patients",
-          "quantity": 3
-        },
-        {
-          "order": 3,
-          "action": "Nine patients remain waiting.",
-          "quantity": 9
-        }
-      ],
-      "goal": "Find the total number of patients who were waiting initially."
-    },
-    "story_grammar_questions": [
-      {
-        "question": "Which sentence (or question) tells about the 'whole' or 'combined' amount?",
-        "answer": [
-          "The dentist had some patients waiting.",
-          "How many patients were waiting at the start?"
-        ],
-        "quantity": "Unknown"
-      },
-      {
-        "question": "Which sentence (or question) tells about one of the parts that make up the whole?",
-        "answer": "3 patients were seen.",
-        "quantity": 3
-      },
-      {
-        "question": "Which sentence (or question) tells about another part that makes up the whole?",
-        "answer": "9 patients are still waiting.",
-        "quantity": 9
-      }
-    ],
-    "math_solution": {
-      "final_answer": 12,
-      "explanation": "We add the patients that have been seen (3) to the patients that are still waiting (9): 3 + 9 = 12 patients."
-    }
-  },
-  {
-    "id": 9,
+    "id": 5,
     "problem_type": "Part-Part-Whole",
     "variant": "Combine: Part Unknown",
     "question": "Nine tropical fish were swimming in an aquarium. Two of them were angelfish. How many were not angelfish?",
@@ -429,50 +233,7 @@
     }
   },
   {
-    "id": 10,
-    "problem_type": "Part-Part-Whole",
-    "variant": "Combine: Part Unknown",
-    "question": "There were 32 penguins on an iceberg. Five of the penguins were sleeping. How many penguins were not sleeping?",
-    "story_structure": {
-      "who_or_what": "Penguins on an iceberg",
-      "events": [
-        {
-          "order": 1,
-          "action": "There are 32 penguins on the iceberg.",
-          "quantity": 32
-        },
-        {
-          "order": 2,
-          "action": "5 of the penguins are sleeping.",
-          "quantity": 5
-        }
-      ],
-      "goal": "Find the total number of penguins that are not sleeping."
-    },
-    "story_grammar_questions": [
-      {
-        "question": "Which sentence (or question) tells about the 'whole' or 'combined' amount?",
-        "answer": "There were 32 penguins on the iceberg.",
-        "quantity": 32
-      },
-      {
-        "question": "Which sentence (or question) tells about one of the parts that make up the whole?",
-        "answer": "5 of the penguins were sleeping.",
-        "quantity": 5
-      },
-      {
-        "question": "Which sentence (or question) tells about the part that is not sleeping?",
-        "answer": "How many penguins were not sleeping?",
-        "quantity": "Unknown"
-      }
-    ],
-    "math_solution": {
-      "final_answer": 27,
-      "explanation": "We subtract the number of sleeping penguins from the total number of penguins: 32 - 5 = 27 penguins that were not sleeping."
-    }
-  },
-  {
-    "id": 11,
+    "id": 6,
     "problem_type": "Part-Part-Whole",
     "variant": "Combine: Whole Unknown",
     "question": "Hugo and his two friends decided to make their community cleaner by picking up 150 pieces of litter. His two friends picked up 45 and 48 pieces of litter, and Hugo picked up 67 pieces of litter. How many pieces of litter did the three friends pick up altogether?",
@@ -521,60 +282,7 @@
     }
   },
   {
-    "id": 12,
-    "problem_type": "Part-Part-Whole",
-    "variant": "Combine: Whole Unknown",
-    "question": "The largest toy soldier battle on the playground involved Tim's 58 soldiers, Ramon's 64 soldiers, and Nadine's 80 soldiers. How many toy soldiers participated in that battle?",
-    "story_structure": {
-      "who_or_what": "Tim, Ramon, and Nadine with their toy soldiers",
-      "events": [
-        {
-          "order": 1,
-          "action": "Tim has 58 soldiers.",
-          "quantity": 58
-        },
-        {
-          "order": 2,
-          "action": "Ramon has 64 soldiers.",
-          "quantity": 64
-        },
-        {
-          "order": 3,
-          "action": "Nadine has 80 soldiers.",
-          "quantity": 80
-        }
-      ],
-      "goal": "Find the total number of toy soldiers in the battle."
-    },
-    "story_grammar_questions": [
-      {
-        "question": "Which sentence (or question) tells about the 'whole' or 'combined' amount?",
-        "answer": "How many toy soldiers participated in that battle?",
-        "quantity": "Unknown"
-      },
-      {
-        "question": "Which sentence (or question) tells about one of the parts that makes up the whole?",
-        "answer": "Tim brought 58 soldiers.",
-        "quantity": 58
-      },
-      {
-        "question": "Which sentence (or question) tells about another part that makes up the whole?",
-        "answer": "Ramon brought 64 soldiers.",
-        "quantity": 64
-      },
-      {
-        "question": "Which sentence (or question) tells about another part that makes up the whole?",
-        "answer": "Nadine brought 80 soldiers.",
-        "quantity": 80
-      }
-    ],
-    "math_solution": {
-      "final_answer": 202,
-      "explanation": "We add up the number of soldiers each person brought. First, add Tim's and Ramon's soldiers (58 + 64), then add Nadine's soldiers (80). This gives us a total of 202 toy soldiers."
-    }
-  },
-  {
-    "id": 13,
+    "id": 7,
     "problem_type": "Additive Compare",
     "variant": "Compare-Less: Difference Unknown",
     "question": "While Gideon was camping with his family for a week, it rained for 3 days. When he looked at the weather records, he saw that the amount of rain was 3 mm, 6 mm, and 5 mm on the three days. During the same week, it rained 26 mm at his house. How much less rain did he experience while camping?",
@@ -627,50 +335,7 @@
     }
   },
   {
-    "id": 14,
-    "problem_type": "Additive Compare",
-    "variant": "Compare-Less: Difference Unknown",
-    "question": "Alice has 5 apples, and Bob has 7 apples. How many fewer apples does Alice have than Bob?",
-    "story_structure": {
-      "who_or_what": "Alice and Bob's apples",
-      "events": [
-        {
-          "order": 1,
-          "action": "Alice has 5 apples.",
-          "quantity": 5
-        },
-        {
-          "order": 2,
-          "action": "Bob has 7 apples.",
-          "quantity": 7
-        }
-      ],
-      "goal": "Determine the difference in the number of apples between Alice and Bob."
-    },
-    "story_grammar_questions": [
-      {
-        "question": "Which sentence (or question) describes one quantity as 'fewer' than the other?",
-        "answer": "How many fewer apples does Alice have than Bob?",
-        "quantity": "Unknown"
-      },
-      {
-        "question": "Which sentence (or question) tells about the larger quantity?",
-        "answer": "Bob has 7 apples.",
-        "quantity": 7
-      },
-      {
-        "question": "Which sentence (or question) tells about the smaller quantity?",
-        "answer": "Alice has 5 apples.",
-        "quantity": 5
-      }
-    ],
-    "math_solution": {
-      "final_answer": 2,
-      "explanation": "Subtract Alice's apples from Bob's apples: 7 - 5 = 2 fewer apples."
-    }
-  },
-  {
-    "id": 15,
+    "id": 8,
     "problem_type": "Additive Compare",
     "variant": "Compare-Less: Larger Quantity Unknown",
     "question": "Julia has 10 apples. Julia has 3 fewer apples than Bonita. How many apples does Bonita have?",
@@ -713,50 +378,7 @@
     }
   },
   {
-    "id": 16,
-    "problem_type": "Additive Compare",
-    "variant": "Compare-Less: Larger Quantity Unknown",
-    "question": "Today 9 children in our class wore boots to school. That’s 5 fewer than the number of students who wore shoes. How many students wore shoes to school?",
-    "story_structure": {
-      "who_or_what": "Types of shoes some children wore to school",
-      "events": [
-        {
-          "order": 1,
-          "action": "9 children in class wore boots to school.",
-          "quantity": 9
-        },
-        {
-          "order": 2,
-          "action": "5 extra children wore shoes to school",
-          "quantity": 5
-        }
-      ],
-      "goal": "Determine the number of students who wore shoes to school."
-    },
-    "story_grammar_questions": [
-      {
-        "question": "Which sentence (or question) describes one quantity as 'fewer' than the other?",
-        "answer": "That’s 5 fewer than the number of students who wore shoes.",
-        "quantity": 5
-      },
-      {
-        "question": "Which sentence (or question) tells about the smaller quantity?",
-        "answer": "Today 9 children in our class wore boots to school.",
-        "quantity": 9
-      },
-      {
-        "question": "Which sentence (or question) tells about the larger quantity?",
-        "answer": "How many students wore shoes to school?",
-        "quantity": "Unknown"
-      }
-    ],
-    "math_solution": {
-      "final_answer": 14,
-      "explanation": "Since the number of students wearing shoes is 5 more than those wearing boots, add 5 to 9: 9 + 5 = 14."
-    }
-  },
-  {
-    "id": 17,
+    "id": 9,
     "problem_type": "Additive Compare",
     "variant": "Compare-Less: Smaller Quantity Unknown",
     "question": "Anna rode her bike for 10 miles. Nina rode her bike 3 fewer miles than Anna. How many miles did Nina ride her bike?",
@@ -799,50 +421,7 @@
     }
   },
   {
-    "id": 18,
-    "problem_type": "Additive Compare",
-    "variant": "Compare-Less: Smaller Quantity Unknown",
-    "question": "Andrew and Sahar both have comic book collections. Andrew has 20 fewer comic books than Sahar. Sahar has 24 comic books in her collection. How many comic books are in Andrew’s collection?",
-    "story_structure": {
-      "who_or_what": "Andrew, Sahar with their comic books",
-      "events": [
-        {
-          "order": 1,
-          "action": "Andrew has 20 fewer comic books than Sahar.",
-          "quantity": 20
-        },
-        {
-          "order": 2,
-          "action": "Sahar has 24 comic books in her collection.",
-          "quantity": 24
-        }
-      ],
-      "goal": "Find the number of comic books in Andrew’s collection."
-    },
-    "story_grammar_questions": [
-      {
-        "question": "Which sentence (or question) describes one quantity as 'fewer' than the other?",
-        "answer": "Andrew has 20 fewer comic books than Sahar.",
-        "quantity": 20
-      },
-      {
-        "question": "Which sentence (or question) tells about the larger quantity?",
-        "answer": "Sahar has 24 comic books in her collection.",
-        "quantity": 24
-      },
-      {
-        "question": "Which sentence (or question) tells about the smaller quantity?",
-        "answer": "How many comic books are in Andrew’s collection?",
-        "quantity": "Unknown"
-      }
-    ],
-    "math_solution": {
-      "final_answer": 4,
-      "explanation": "Subtract the 20 fewer comic books from Sahar's 24 comic books: 24 - 20 = 4 comic books."
-    }
-  },
-  {
-    "id": 19,
+    "id": 10,
     "problem_type": "Additive Compare",
     "variant": "Compare-More: Difference Unknown",
     "question": "Justin has 8 apples. Calvin has 3 apples. How many more apples does Justin have than Calvin?",
@@ -885,50 +464,7 @@
     }
   },
   {
-    "id": 20,
-    "problem_type": "Additive Compare",
-    "variant": "Compare-More: Difference Unknown",
-    "question": "10 birds were sitting on a tree branch. 2 birds were sitting on a telephone wire. How many more birds were on the tree branch than on the wire?",
-    "story_structure": {
-      "who_or_what": "Birds sitting on the tree branch and on the telephone wire",
-      "events": [
-        {
-          "order": 1,
-          "action": "10 birds were sitting on a tree branch.",
-          "quantity": 10
-        },
-        {
-          "order": 2,
-          "action": "2 birds were sitting on a telephone wire.",
-          "quantity": 2
-        }
-      ],
-      "goal": "Find the difference in the number of birds between the tree branch and the telephone wire."
-    },
-    "story_grammar_questions": [
-      {
-        "question": "Which sentence (or question) describes one quantity as 'more' than the other?",
-        "answer": "How many more birds were on the tree branch than on the wire?",
-        "quantity": "Unknown"
-      },
-      {
-        "question": "Which sentence (or question) tells about the larger quantity?",
-        "answer": "10 birds were sitting on a tree branch.",
-        "quantity": 10
-      },
-      {
-        "question": "Which sentence (or question) tells about the smaller quantity?",
-        "answer": "2 birds were sitting on a telephone wire.",
-        "quantity": 2
-      }
-    ],
-    "math_solution": {
-      "final_answer": 8,
-      "explanation": "Subtract the 2 birds on the telephone wire from the 10 birds on the tree branch: 10 - 2 = 8."
-    }
-  },
-  {
-    "id": 21,
+    "id": 11,
     "problem_type": "Additive Compare",
     "variant": "Compare-More: Larger Quantity Unknown",
     "question": "A toad ate 4 dragonflies. A snake ate 3 more dragonflies than the toad. How many dragonflies did the snake eat?",
@@ -971,50 +507,7 @@
     }
   },
   {
-    "id": 22,
-    "problem_type": "Additive Compare",
-    "variant": "Compare-More: Larger Quantity Unknown",
-    "question": "James has 8 fish in his aquarium. Sara has 5 more fish in her aquarium than James. How many fish does Sara have in her aquarium?",
-    "story_structure": {
-      "who_or_what": "James, Sara with their fish aquariums",
-      "events": [
-        {
-          "order": 1,
-          "action": "James has 8 fish in his aquarium.",
-          "quantity": 8
-        },
-        {
-          "order": 2,
-          "action": "Sara has 5 more fish in her aquarium than James.",
-          "quantity": 5
-        }
-      ],
-      "goal": "Find the number of fish Sara has in her aquarium."
-    },
-    "story_grammar_questions": [
-      {
-        "question": "Which sentence (or question) describes one quantity as 'more' than the other?",
-        "answer": "Sara has 5 more fish in her aquarium than James.",
-        "quantity": 5
-      },
-      {
-        "question": "Which sentence (or question) tells about the bigger quantity?",
-        "answer": "How many fish does Sara have in her aquarium?",
-        "quantity": "Unknown"
-      },
-      {
-        "question": "Which sentence (or question) tells about the smaller quantity?",
-        "answer": "James has 8 fish in his aquarium.",
-        "quantity": 8
-      }
-    ],
-    "math_solution": {
-      "final_answer": 13,
-      "explanation": "We add James's 8 fish to the additional 5 fish that Sara has compared to James: 8 + 5 = 13 fish."
-    }
-  },
-  {
-    "id": 23,
+    "id": 12,
     "problem_type": "Additive Compare",
     "variant": "Compare-More: Smaller Quantity Unknown",
     "question": "Lily has 12 oranges. She has 5 more oranges than Max. How many oranges does Max have?",
@@ -1054,49 +547,6 @@
     "math_solution": {
       "final_answer": 7,
       "explanation": "We subtract the additional 5 oranges from Lily's 12 oranges to determine Max's oranges: 12 - 5 = 7 oranges."
-    }
-  },
-  {
-    "id": 24,
-    "problem_type": "Additive Compare",
-    "variant": "Compare-More: Smaller Quantity Unknown",
-    "question": "There were 10 friends reading books. There were 3 more friends reading books than playing board games. How many friends were playing board games?",
-    "story_structure": {
-      "who_or_what": "Some friends reading books and playing board games",
-      "events": [
-        {
-          "order": 1,
-          "action": "There were 10 friends reading books.",
-          "quantity": 10
-        },
-        {
-          "order": 2,
-          "action": "There were 3 more friends reading books than playing board games.",
-          "quantity": 3
-        }
-      ],
-      "goal": "Find the number of friends playing board games."
-    },
-    "story_grammar_questions": [
-      {
-        "question": "Which sentence (or question) describes one quantity as 'more' than the other?",
-        "answer": "There were 3 more friends reading books than playing board games.",
-        "quantity": 3
-      },
-      {
-        "question": "Which sentence (or question) tells about the bigger quantity?",
-        "answer": "There were 10 friends reading books.",
-        "quantity": 10
-      },
-      {
-        "question": "Which sentence (or question) tells about the smaller quantity?",
-        "answer": "How many friends were playing board games?",
-        "quantity": "Unknown"
-      }
-    ],
-    "math_solution": {
-      "final_answer": 7,
-      "explanation": "Subtract the additional 3 friends from the 10 friends reading books to find the number of friends playing board games: 10 - 3 = 7."
     }
   }
 ]
