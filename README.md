@@ -18,7 +18,7 @@ ai_special_education_thesis/
 │   ├── scripts/          # Database seeding scripts
 │   ├── package.json
 │   └── ...
-├── ai-evaluator/          # AI evaluation tools
+├── ai_evaluator/          # AI evaluation tools
 ├── package.json           # Root package.json (monorepo)
 └── deploy.md             # Deployment guide
 ```
