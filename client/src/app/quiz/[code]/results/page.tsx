@@ -5,7 +5,6 @@ import { Card } from "@/components/ui/card";
 import { ROUTES } from "@/lib/config";
 import { CongratulatoryPage } from "../../components/CongratulatoryPage";
 import { useEffect, useState } from "react";
-import { toast } from "sonner";
 import { LoadingComponent } from "../../components/LoadingComponent";
 import { QuizProtectedRoute } from "@/components/shared/QuizProtectedRoute";
 import { useQuizContext } from "@/contexts/QuizContext";
@@ -30,10 +29,11 @@ export default function QuizResultsPage() {
   }, [searchParams, router]);
 
   const handleExitToHome = () => {
-    clearQuiz(); // Clear all quiz state
+    // Set the completion flag BEFORE clearing quiz to suppress error toast
     if (typeof window !== "undefined") {
       sessionStorage.setItem("quiz-completed-redirect", "true");
     }
+    clearQuiz(); // Clear all quiz state
     router.push(ROUTES.quiz);
   };
 
@@ -42,8 +42,10 @@ export default function QuizResultsPage() {
   }
 
   return (
-    <Card className="min-h-150 p-8 mb-6 bg-white/95 backdrop-blur-sm border-0 shadow-2xl flex flex-col items-center">
-      <CongratulatoryPage onExitHome={handleExitToHome} />
-    </Card>
+    <QuizProtectedRoute quizCode={code}>
+      <Card className="min-h-150 p-8 mb-6 bg-white/95 backdrop-blur-sm border-0 shadow-2xl flex flex-col items-center">
+        <CongratulatoryPage onExitHome={handleExitToHome} />
+      </Card>
+    </QuizProtectedRoute>
   );
 }

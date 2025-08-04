@@ -1,7 +1,5 @@
 import { Router } from "express";
 import prisma from "../config/prisma";
-import { validateQuery } from "../lib/validation";
-import { problemFilterSchema } from "../lib/validation";
 import { Prisma } from "@prisma/client";
 
 const router = Router();

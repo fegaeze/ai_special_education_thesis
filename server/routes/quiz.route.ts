@@ -2,6 +2,8 @@ import express, { Request, Response, NextFunction } from "express";
 import Joi from "joi";
 import prisma from "../config/prisma";
 import authMiddleware from "../middleware/auth";
+import { SERVER_CONFIG } from "../config/server";
+import { AIModelName } from "@prisma/client";
 
 // Extend Express Request to include teacher info
 interface AuthenticatedRequest extends Request {
@@ -141,7 +143,7 @@ router.post(
           },
           modelEvaluations: {
             some: {
-              modelName: "GOOGLE_GEMINI_2_5_FLASH",
+              modelName: SERVER_CONFIG.DEFAULT_MODEL as AIModelName,
               isAnswerCorrect: true,
               isModelMappingCorrect: true,
               predictedCategory: {
@@ -157,7 +159,7 @@ router.post(
           groundTruth: true,
           modelEvaluations: {
             where: {
-              modelName: "GOOGLE_GEMINI_2_5_FLASH",
+              modelName: SERVER_CONFIG.DEFAULT_MODEL as AIModelName,
             },
             take: 1,
           },
@@ -534,7 +536,7 @@ router.get(
         include: {
           modelEvaluations: {
             where: {
-              modelName: "GOOGLE_GEMINI_2_5_FLASH", // Use Gemini as default
+              modelName: SERVER_CONFIG.DEFAULT_MODEL as AIModelName, // Use environment variable
             },
             select: {
               id: true,
