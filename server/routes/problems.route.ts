@@ -2,7 +2,7 @@ import { Router } from "express";
 import prisma from "../config/prisma";
 import { validateQuery } from "../lib/validation";
 import { problemFilterSchema } from "../lib/validation";
-import { Prisma } from "../generated/prisma";
+import { Prisma } from "@prisma/client";
 
 const router = Router();
 
@@ -28,7 +28,11 @@ router.get("/modelEvaluations", async (req, res, next) => {
       orderBy: { createdAt: "desc" },
       include: {
         groundTruth: true,
-        modelEvaluations: true,
+        modelEvaluations: {
+          include: {
+            groundTruth: true,
+          },
+        },
       },
     });
 
