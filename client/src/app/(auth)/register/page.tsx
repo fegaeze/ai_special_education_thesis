@@ -14,7 +14,7 @@ import { VALIDATION_MESSAGES } from "@/lib/errors";
 const registerSchema = z
   .object({
     fullName: z.string().min(1, VALIDATION_MESSAGES.FULL_NAME_REQUIRED),
-    email: z.email({ message: VALIDATION_MESSAGES.EMAIL_INVALID }),
+    email: z.string().email({ message: VALIDATION_MESSAGES.EMAIL_INVALID }),
     password: z.string().min(8, VALIDATION_MESSAGES.PASSWORD_MIN_LENGTH),
     confirmPassword: z
       .string()

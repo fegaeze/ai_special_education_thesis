@@ -12,7 +12,7 @@ import { Button } from "@/components/ui/button";
 import { VALIDATION_MESSAGES } from "@/lib/errors";
 
 const loginSchema = z.object({
-  email: z.email({ message: VALIDATION_MESSAGES.EMAIL_INVALID }),
+  email: z.string().email({ message: VALIDATION_MESSAGES.EMAIL_INVALID }),
   password: z.string().min(1, VALIDATION_MESSAGES.PASSWORD_REQUIRED),
 });
 
