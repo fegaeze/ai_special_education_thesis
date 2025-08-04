@@ -14,6 +14,15 @@ const app = express();
 app.use(cors(CORS_CONFIG));
 app.use(express.json());
 
+// Health check route
+app.get("/", (req: Request, res: Response) => {
+  res.json({ 
+    message: "Nutikas API Server", 
+    status: "running",
+    timestamp: new Date().toISOString()
+  });
+});
+
 app.use("/api/classes", classRoutes);
 app.use("/api/teachers/auth", teacherAuthRoutes);
 app.use("/api/problems", problemsRoutes);

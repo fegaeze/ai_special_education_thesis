@@ -32,7 +32,11 @@ export const SERVER_CONFIG = {
 // CORS Configuration
 export const CORS_CONFIG = {
   origin: process.env.NODE_ENV === "production" 
-    ? [process.env.CORS_ORIGIN || "https://nutikas.vercel.app"]
+    ? [
+        "https://nutikas.vercel.app",
+        "https://nutikas-frontend.vercel.app",
+        ...(process.env.CORS_ORIGIN ? [process.env.CORS_ORIGIN] : [])
+      ]
     : ["http://localhost:3000", "http://localhost:3001"],
   credentials: true,
   optionsSuccessStatus: 200,

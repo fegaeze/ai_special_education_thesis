@@ -76,7 +76,7 @@ export default function TeacherLoginPage() {
         <Button
           type="submit"
           variant="default"
-          className="w-full flex items-center justify-center gap-2"
+          className="w-full flex items-center justify-center gap-2 text-white"
           disabled={isLoading}
         >
           {isLoading ? (
