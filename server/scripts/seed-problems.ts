@@ -1,7 +1,7 @@
 import { readFileSync, readdirSync, appendFileSync } from "fs";
 import { join } from "path";
 import prisma from "../config/prisma";
-import { Category, AIModelName, Subcategory } from "../generated/prisma";
+import { Category, AIModelName, Subcategory } from "@prisma/client";
 
 type JsonModelEvaluation = {
   modelName: string;
