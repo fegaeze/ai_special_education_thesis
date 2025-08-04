@@ -1,0 +1,11 @@
+server/
+old/
+ai_evaluator/
+data/
+prisma/
+generated/
+*.log
+.env
+.env.*
+node_modules/
+.DS_Store 

@@ -3,10 +3,5 @@
   "outputDirectory": "client/.next",
   "framework": "nextjs",
   "installCommand": "cd client && npm install",
-  "devCommand": "cd client && npm run dev",
-  "functions": {
-    "client/app/api/**/*.js": {
-      "runtime": "nodejs18.x"
-    }
-  }
+  "devCommand": "cd client && npm run dev"
 } 
