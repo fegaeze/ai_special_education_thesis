@@ -5,13 +5,15 @@
   "main": "dist/server.js",
   "scripts": {
     "dev": "nodemon --watch '*.ts' --watch 'routes/**/*.ts' --watch 'config/**/*.ts' --watch 'middleware/**/*.ts' --watch 'lib/**/*.ts' --exec ts-node server.ts",
-    "build": "prisma generate && prisma migrate deploy && tsc",
+    "build": "prisma generate && prisma migrate deploy && tsc && npm run seed:problems",
+    "build:prod": "prisma generate && prisma migrate deploy && tsc && npm run seed:problems",
     "start": "node dist/server.js",
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate dev",
     "prisma:migrate:deploy": "prisma migrate deploy",
     "prisma:studio": "prisma studio",
     "seed:problems": "ts-node scripts/seed-problems.ts",
+    "seed:problems:prod": "NODE_ENV=production ts-node scripts/seed-problems.ts",
     "lint": "eslint .",
     "format": "prettier --write .",
     "postinstall": "prisma generate"

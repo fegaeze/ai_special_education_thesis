@@ -217,6 +217,14 @@ function validateProblem(problem: JsonProblem): boolean {
 // -----------------------------
 async function seedProblems() {
   console.log("🌱 Seeding started...");
+  
+  // Check if data already exists to prevent duplicate seeding
+  const existingProblems = await prisma.problem.count();
+  if (existingProblems > 0) {
+    console.log(`⚠️ Database already contains ${existingProblems} problems. Skipping seed to prevent duplicates.`);
+    return;
+  }
+  
   const seedDir = join(__dirname, "../data/seed");
   const files = readdirSync(seedDir).filter((f) => f.endsWith(".json"));
 
