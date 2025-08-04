@@ -243,10 +243,7 @@
         {
           "order": 1,
           "action": "His two friends picked up 45 and 48 pieces of litter.",
-          "quantity": [
-            45,
-            48
-          ]
+          "quantity": [45, 48]
         },
         {
           "order": 2,
@@ -265,10 +262,7 @@
       {
         "question": "Which sentence (or question) tells about one of the parts that makes up the whole?",
         "answer": "His two friends picked up 45 and 48 pieces of litter.",
-        "quantity": [
-          45,
-          48
-        ]
+        "quantity": [45, 48]
       },
       {
         "question": "Which sentence (or question) tells about another part that makes up the whole?",

@@ -1,0 +1,166 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "./generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Teacher {
+  id             Int           @id @default(autoincrement())
+  email          String        @unique
+  hashedPassword String
+  createdAt      DateTime      @default(now())
+  name           String
+  classes        Class[]
+  quizSessions   QuizSession[]
+}
+
+model Class {
+  id           Int           @id @default(autoincrement())
+  name         String
+  teacherId    Int
+  createdAt    DateTime      @default(now())
+  teacher      Teacher       @relation(fields: [teacherId], references: [id])
+  quizSessions QuizSession[]
+  students     Student[]
+
+  @@unique([teacherId, name])
+}
+
+model Student {
+  id              Int              @id @default(autoincrement())
+  name            String
+  classId         Int
+  userName        String           @unique
+  quizAttempts    QuizAttempt[]
+  quizCodes       QuizCode[]
+  class           Class            @relation(fields: [classId], references: [id])
+}
+
+model Problem {
+  id               Int               @id @default(autoincrement())
+  content          String
+  answer           Int
+  createdAt        DateTime          @default(now())
+  groundTruthId    Int               @unique
+  groundTruth      GroundTruth       @relation(fields: [groundTruthId], references: [id])
+  modelEvaluations ModelEvaluation[]
+  quizResponses    QuizResponse[]
+}
+
+model GroundTruth {
+  id               Int               @id @default(autoincrement())
+  category         Category
+  subcategory      Subcategory
+  answer           Int
+  modelAnswers     Json
+  problem          Problem?
+  modelEvaluations ModelEvaluation[]
+}
+
+model ModelEvaluation {
+  id                     Int         @id @default(autoincrement())
+  problemId              Int
+  tokenUsage             Json
+  createdAt              DateTime    @default(now())
+  predictedCategory      Category?
+  predictedSubcategory   Subcategory?
+  modelName              AIModelName
+  answer                 Int?
+  isAnswerCorrect        Boolean
+  isModelMappingCorrect  Boolean
+  modelAnswers           Json?
+  storyGrammarPrompts    Json?
+  groundTruthId          Int
+  modelAnswerReasoning   String?
+  subCategoryReasoning   String?
+  supercategoryReasoning String
+  groundTruth            GroundTruth @relation(fields: [groundTruthId], references: [id])
+  problem                Problem     @relation(fields: [problemId], references: [id])
+}
+
+model QuizSession {
+  id        Int           @id @default(autoincrement())
+  classId   Int
+  teacherId Int
+  startTime DateTime      @default(now())
+  endTime   DateTime?
+  status    QuizStatus    @default(ACTIVE)
+  settings  Json?         // Store quiz settings
+  attempts  QuizAttempt[]
+  quizCodes QuizCode[]
+  class     Class         @relation(fields: [classId], references: [id])
+  teacher   Teacher       @relation(fields: [teacherId], references: [id])
+}
+
+model QuizCode {
+  code      String      @id @unique
+  sessionId Int
+  studentId Int
+  createdAt DateTime    @default(now())
+  session   QuizSession @relation(fields: [sessionId], references: [id])
+  student   Student     @relation(fields: [studentId], references: [id])
+}
+
+model QuizAttempt {
+  id         Int            @id @default(autoincrement())
+  sessionId  Int
+  studentId  Int
+  startTime  DateTime       @default(now())
+  endTime    DateTime?      // When student finishes
+  responses  QuizResponse[]
+  session    QuizSession    @relation(fields: [sessionId], references: [id])
+  student    Student        @relation(fields: [studentId], references: [id])
+}
+
+model QuizResponse {
+  id                    Int         @id @default(autoincrement())
+  attemptId             Int
+  problemId             Int
+  studentAnswer         Int?
+  timeSpent             Int
+  
+  // Story grammar tracking
+  storyGrammarAnswers   Json?       // Track each prompt answer
+  finalAnswerCorrect    Boolean?    // Was final answer correct?
+  storyGrammarCorrect   Boolean?    // Were story grammar answers correct?
+  
+  attempt               QuizAttempt @relation(fields: [attemptId], references: [id])
+  problem               Problem     @relation(fields: [problemId], references: [id])
+}
+
+enum Category {
+  Change
+  Combine
+  Compare
+  Unknown
+}
+
+enum Subcategory {
+  CWU
+  CPU
+  CJWU
+  CJPU
+  CSWU
+  CSPU
+  CMDU
+  CMLQU
+  CMSQU
+  CLDU
+  CLLQU
+  CLSQU
+}
+
+enum AIModelName {
+  OPENAI_GPT_4_1
+  ANTHROPIC_CLAUDE_SONNET_4
+  GOOGLE_GEMINI_2_5_FLASH
+}
+
+enum QuizStatus {
+  ACTIVE
+  COMPLETED
+}

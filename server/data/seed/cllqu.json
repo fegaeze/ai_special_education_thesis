@@ -1,0 +1,1412 @@
+[
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "Kadi has 5 apples, which is 2 apples less than Mari. How many apples does Mari have?",
+    "output": "This problem is contrasting two quantities - Kadi's apples and Mari's apples - to establish their relationship. The phrase 'which is 2 apples less than Mari' directly compares the two amounts and asks us to find the difference between them. There is no change happening over time, and we're not combining separate quantities. The focus is purely on the comparative relationship between two static amounts.",
+    "category": "Compare",
+    "subcategory": "CLLQU",
+    "subReasoning": "The problem states that Kadi has 5 apples, which is 2 apples less than Mari. This establishes a Compare-Less relationship where Kadi's amount is being compared as less than Mari's amount. Using the compare model formula Bigger = Smaller + Difference, we can identify: Smaller = 5 apples (Kadi's amount), Difference = 2 apples, and Bigger = unknown (Mari's amount). Since we're looking for Mari's amount, which is the larger quantity in this comparison, this is a Compare-Less, Larger Quantity Unknown problem.",
+    "tokenUsage": {
+      "prompt": 452,
+      "completion": 224,
+      "total": 676
+    },
+    "modelAnswers": {
+      "bigger": null,
+      "smaller": 5,
+      "difference": 2
+    },
+    "answer": 7,
+    "reasoning": "Mari has the bigger amount. Kadi has 5 apples and this is 2 less than Mari, so Mari = 5 + 2 = 7 apples.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many apples does Kadi have?",
+        "boxTarget": "smaller",
+        "context": "This question helps us find the smaller amount in our story. We need to look for the number that tells us exactly how many apples Kadi has."
+      },
+      {
+        "text": "How many fewer apples does Kadi have than Mari?",
+        "boxTarget": "difference",
+        "context": "This question helps us find how much less one person has compared to the other. We're looking for the number that tells us the gap between Kadi's apples and Mari's apples."
+      },
+      {
+        "text": "How many apples does Mari have?",
+        "boxTarget": "bigger",
+        "context": "This question helps us find the larger amount in our story. This is what we're trying to figure out - the number of apples that Mari has."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLLQU",
+    "groundTruthAnswer": 7,
+    "groundTruthModelAnswers": {
+      "bigger": null,
+      "smaller": 5,
+      "difference": 2
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "Joonas has 8 pencils, which is 4 pencils less than Triin. How many pencils does Triin have?",
+    "output": "This problem compares two quantities - Joonas's pencils versus Triin's pencils. The key phrase 'which is 4 pencils less than Triin' establishes a comparative relationship between the two amounts. We're finding how much more Triin has compared to Joonas, which is a comparison of two static quantities rather than a change over time or a combination of parts.",
+    "category": "Compare",
+    "subcategory": "CLLQU",
+    "subReasoning": "The problem states that Joonas has 8 pencils, which is 4 pencils less than Triin. This establishes a comparison where Joonas has fewer pencils than Triin, making it a Compare-Less problem since the focus is on 'less than.' Using the compare model Bigger = Smaller + Difference, I can identify: Smaller = 8 (Joonas's pencils), Difference = 4 (how many less Joonas has), and Bigger = unknown (Triin's pencils). Since we're looking for the larger quantity (Triin's pencils), this is a Compare-Less, Larger Quantity Unknown problem.",
+    "tokenUsage": {
+      "prompt": 457,
+      "completion": 246,
+      "total": 703
+    },
+    "modelAnswers": {
+      "bigger": null,
+      "smaller": 8,
+      "difference": 4
+    },
+    "answer": 12,
+    "reasoning": "Bigger = 8 + 4 = 12, so Triin has 12 pencils.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many pencils does Joonas have?",
+        "boxTarget": "smaller",
+        "context": "This question helps us find the number we know for sure from the story. We can look right in the problem to find this information about Joonas's pencils."
+      },
+      {
+        "text": "How many fewer pencils does Joonas have compared to Triin?",
+        "boxTarget": "difference",
+        "context": "This question helps us figure out the gap between how many pencils each person has. The story tells us Joonas has some number less than Triin, so we need to find that difference."
+      },
+      {
+        "text": "How many pencils does Triin have?",
+        "boxTarget": "bigger",
+        "context": "This question asks about the person who has more pencils. We don't know this number yet, but we can figure it out using what we know about Joonas and the difference between them."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLLQU",
+    "groundTruthAnswer": 12,
+    "groundTruthModelAnswers": {
+      "bigger": null,
+      "smaller": 8,
+      "difference": 4
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "Siim has 10 candies, which is 3 candies less than his brother. How many candies does his brother have?",
+    "output": "This problem establishes a comparison between Siim's candies and his brother's candies. The phrase 'which is 3 candies less than his brother' shows we're contrasting two amounts to understand their relative difference. No transformation or change is occurring, and we're not adding separate quantities together. The focus is on the comparative relationship between two static amounts.",
+    "category": "Compare",
+    "subcategory": "CLLQU",
+    "subReasoning": "The problem states that Siim has 10 candies, which is 3 candies less than his brother. This establishes a comparison where Siim has fewer candies than his brother. The comparison direction focuses on 'less than', making this a Compare-Less problem. Using the compare model where Bigger = Smaller + Difference, we can identify: Siim (10 candies) is the smaller quantity, the difference is 3 candies, and the brother's amount is the larger quantity that we need to find. Since we know the smaller quantity (10) and the difference (3), but need to find the larger quantity (brother's candies), this is a Compare-Less, Larger Quantity Unknown problem.",
+    "tokenUsage": {
+      "prompt": 454,
+      "completion": 235,
+      "total": 689
+    },
+    "modelAnswers": {
+      "bigger": null,
+      "smaller": 10,
+      "difference": 3
+    },
+    "answer": 13,
+    "reasoning": "Siim has 10 candies, which is 3 less than his brother. So his brother is the bigger amount. Using Bigger = Smaller + Difference: Brother's candies = 10 + 3 = 13.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many candies does Siim have?",
+        "boxTarget": "smaller",
+        "context": "This question helps us find the smaller amount in our story. We need to look for the number that tells us exactly how many candies Siim has right now."
+      },
+      {
+        "text": "How many fewer candies does Siim have compared to his brother?",
+        "boxTarget": "difference",
+        "context": "This question helps us find how much less Siim has than his brother. We're looking for the number that tells us the gap between what Siim has and what his brother has."
+      },
+      {
+        "text": "How many candies does Siim's brother have?",
+        "boxTarget": "bigger",
+        "context": "This question helps us find the bigger amount in our story. This is what we're trying to figure out - the number of candies that Siim's brother has."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLLQU",
+    "groundTruthAnswer": 13,
+    "groundTruthModelAnswers": {
+      "bigger": null,
+      "smaller": 10,
+      "difference": 3
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "Emil has 6 books, which is 2 books less than Kaarel. How many books does Kaarel have?",
+    "output": "This problem compares Emil's quantity of books to Kaarel's quantity of books. The phrase 'which is 2 books less than Kaarel' creates a comparative relationship where we need to determine the difference between their amounts. There's no change happening over time and no combining of separate quantities - just a direct comparison of two static amounts.",
+    "category": "Compare",
+    "subcategory": "CLLQU",
+    "subReasoning": "This problem states that Emil has 6 books, which is 2 books less than Kaarel. The comparison direction is 'less than,' making this a Compare-Less problem. Using the compare model where Bigger = Smaller + Difference, I can identify: Kaarel has the bigger quantity (unknown), Emil has the smaller quantity (6 books), and the difference is 2 books. Since we know the smaller quantity and the difference but need to find the larger quantity (Kaarel's books), this is a Compare-Less, Larger Quantity Unknown problem.",
+    "tokenUsage": {
+      "prompt": 451,
+      "completion": 224,
+      "total": 675
+    },
+    "modelAnswers": {
+      "bigger": null,
+      "smaller": 6,
+      "difference": 2
+    },
+    "answer": 8,
+    "reasoning": "Bigger = 6 + 2 = 8, so Kaarel has 8 books.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many books does Emil have?",
+        "boxTarget": "smaller",
+        "context": "This question helps us find the number we know for sure from the story. We're looking for how many books Emil has, which the problem tells us directly."
+      },
+      {
+        "text": "How many fewer books does Emil have than Kaarel?",
+        "boxTarget": "difference",
+        "context": "This question helps us find how much less Emil has compared to Kaarel. We're looking for the gap between their amounts - how many books Emil is missing to have the same as Kaarel."
+      },
+      {
+        "text": "How many books does Kaarel have?",
+        "boxTarget": "bigger",
+        "context": "This question helps us find what we're trying to figure out. Kaarel has more books than Emil, so we need to find his total number of books."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLLQU",
+    "groundTruthAnswer": 8,
+    "groundTruthModelAnswers": {
+      "bigger": null,
+      "smaller": 6,
+      "difference": 2
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "Meril has 9 stickers, which is 5 stickers less than Hanna. How many stickers does Hanna have?",
+    "output": "This problem contrasts Meril's sticker collection with Hanna's sticker collection. The key comparative phrase 'which is 5 stickers less than Hanna' establishes the relationship between the two quantities. We're determining how much more Hanna has compared to Meril, which is a comparison problem focused on the difference between two static amounts.",
+    "category": "Compare",
+    "subcategory": "CLLQU",
+    "subReasoning": "The problem states that Meril has 9 stickers, which is 5 stickers less than Hanna. This establishes a comparison where Meril's quantity is being described as less than Hanna's quantity, making this a Compare-Less problem. Using the compare model where Bigger = Smaller + Difference, we can identify: Hanna has the bigger quantity (unknown), Meril has the smaller quantity (9 stickers), and the difference is 5 stickers. Since we know the smaller quantity and the difference, but we need to find the larger quantity (how many stickers Hanna has), this is a Compare-Less, Larger Quantity Unknown problem.",
+    "tokenUsage": {
+      "prompt": 456,
+      "completion": 205,
+      "total": 661
+    },
+    "modelAnswers": {
+      "bigger": null,
+      "smaller": 9,
+      "difference": 5
+    },
+    "answer": 14,
+    "reasoning": "Bigger = 9 + 5 = 14, so Hanna has 14 stickers.",
+    "storyGrammarPrompts": [
+      {
+        "text": "Who has fewer stickers in this story?",
+        "boxTarget": "smaller",
+        "context": "This question helps you find who starts with the smaller amount. Look for clues in the story about who has less!"
+      },
+      {
+        "text": "How many fewer stickers does one person have?",
+        "boxTarget": "difference",
+        "context": "This question asks you to find the gap between how many stickers each person has. Look for words like 'less than' or 'fewer' to help you!"
+      },
+      {
+        "text": "Who has more stickers in this story?",
+        "boxTarget": "bigger",
+        "context": "This question helps you figure out who has the larger amount of stickers. Think about who the story is comparing Meril to!"
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLLQU",
+    "groundTruthAnswer": 14,
+    "groundTruthModelAnswers": {
+      "bigger": null,
+      "smaller": 9,
+      "difference": 5
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "Kaisa has 11 colored pencils, which is 3 colored pencils less than Annabel. How many colored pencils does Annabel have?",
+    "output": "This problem compares two quantities - Kaisa's colored pencils versus Annabel's colored pencils. The phrase 'which is 3 colored pencils less than Annabel' creates a comparative relationship where we need to find the difference between their amounts. No change over time is described, and we're not combining separate quantities. The focus is on contrasting two static amounts.",
+    "category": "Compare",
+    "subcategory": "CLLQU",
+    "subReasoning": "This problem states that Kaisa has 11 colored pencils, which is 3 colored pencils less than Annabel. The comparison direction is 'less than', making this a Compare-Less problem. Using the compare model where Bigger = Smaller + Difference, I can identify: Kaisa (11 pencils) is the smaller quantity, the difference is 3 pencils, and Annabel's amount is the bigger quantity that we need to find. Since we know the smaller quantity (11) and the difference (3), but need to find the larger quantity (Annabel's pencils), this is a Compare-Less, Larger Quantity Unknown problem.",
+    "tokenUsage": {
+      "prompt": 459,
+      "completion": 244,
+      "total": 703
+    },
+    "modelAnswers": {
+      "bigger": null,
+      "smaller": 11,
+      "difference": 3
+    },
+    "answer": 14,
+    "reasoning": "Bigger = 11 + 3 = 14, so Annabel has 14 colored pencils.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many colored pencils does Kaisa have?",
+        "boxTarget": "smaller",
+        "context": "This question helps us find the smaller amount in our story. We need to look for the number that tells us exactly how many colored pencils Kaisa has."
+      },
+      {
+        "text": "How many fewer colored pencils does Kaisa have than Annabel?",
+        "boxTarget": "difference",
+        "context": "This question helps us find how much less one person has compared to the other. We're looking for the number that tells us the gap between what Kaisa has and what Annabel has."
+      },
+      {
+        "text": "Who has more colored pencils, and how many do they have?",
+        "boxTarget": "bigger",
+        "context": "This question helps us figure out which person has the larger amount of colored pencils. We need to think about who has more and find that number - this is what we're trying to solve for!"
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLLQU",
+    "groundTruthAnswer": 14,
+    "groundTruthModelAnswers": {
+      "bigger": null,
+      "smaller": 11,
+      "difference": 3
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "Tõnn has 7 cars, which is 6 cars less than Karol. How many cars does Karol have?",
+    "output": "This problem establishes a comparison between Tõnn's cars and Karol's cars. The comparative phrase 'which is 6 cars less than Karol' shows we're contrasting two amounts to understand their difference. There's no transformation happening over time and no combination of separate parts - just a direct comparison of two static quantities to determine how much more one person has than the other.",
+    "category": "Compare",
+    "subcategory": "CLLQU",
+    "subReasoning": "The problem states that Tõnn has 7 cars, which is 6 cars less than Karol. This establishes a comparison where Tõnn's quantity is described as being less than Karol's quantity, making this a Compare-Less problem. Using the Compare Model format Bigger = Smaller + Difference, we have: Karol's cars = Tõnn's cars + Difference, which translates to Karol's cars = 7 + 6. We know the smaller quantity (Tõnn has 7 cars) and we know the difference (6 cars), but we need to find the larger quantity (how many cars Karol has). Since we're looking for the larger quantity in a compare-less context, this is CLLQU.",
+    "tokenUsage": {
+      "prompt": 454,
+      "completion": 235,
+      "total": 689
+    },
+    "modelAnswers": {
+      "bigger": null,
+      "smaller": 7,
+      "difference": 6
+    },
+    "answer": 13,
+    "reasoning": "Bigger = 7 + 6 = 13, so Karol has 13 cars.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many cars does Tõnn have?",
+        "boxTarget": "smaller",
+        "context": "This question asks you to find the number that we already know from the story. Look for the number that tells us exactly how many cars Tõnn has right now."
+      },
+      {
+        "text": "How many fewer cars does Tõnn have compared to Karol?",
+        "boxTarget": "difference",
+        "context": "This question helps you find how much less Tõnn has than Karol. Look for words like 'less than' or 'fewer than' in the story to find this number."
+      },
+      {
+        "text": "How many cars does Karol have?",
+        "boxTarget": "bigger",
+        "context": "This question asks you to find the number we don't know yet - the one we're trying to figure out. This is what the problem is asking us to solve."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLLQU",
+    "groundTruthAnswer": 13,
+    "groundTruthModelAnswers": {
+      "bigger": null,
+      "smaller": 7,
+      "difference": 6
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "Liina has 4 red balloons, which is 2 red balloons less than Madli. How many red balloons does Madli have?",
+    "output": "This problem compares Liina's balloon quantity to Madli's balloon quantity. The phrase 'which is 2 red balloons less than Madli' creates a comparative relationship where we need to determine the difference between their amounts. No change is occurring over time, and we're not adding together separate quantities. The focus is purely on the comparative relationship between two static amounts.",
+    "category": "Compare",
+    "subcategory": "CLLQU",
+    "subReasoning": "This problem states that Liina has 4 red balloons, which is 2 red balloons less than Madli. The comparison direction is 'less than', making this a Compare-Less problem. Using the compare model where Bigger = Smaller + Difference, I can identify: Madli has the bigger quantity (unknown), Liina has the smaller quantity (4 balloons), and the difference is 2 balloons. Since we know the smaller quantity and the difference but need to find the larger quantity (how many balloons Madli has), this is a Compare-Less, Larger Quantity Unknown problem.",
+    "tokenUsage": {
+      "prompt": 459,
+      "completion": 225,
+      "total": 684
+    },
+    "modelAnswers": {
+      "bigger": null,
+      "smaller": 4,
+      "difference": 2
+    },
+    "answer": 6,
+    "reasoning": "Bigger = 4 + 2 = 6, so Madli has 6 red balloons.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many red balloons does Liina have?",
+        "boxTarget": "smaller",
+        "context": "This question helps us find the smaller amount in our story. We need to look for the number that tells us exactly how many balloons Liina has."
+      },
+      {
+        "text": "How many fewer red balloons does Liina have than Madli?",
+        "boxTarget": "difference",
+        "context": "This question helps us find how much less Liina has compared to Madli. We're looking for the number that tells us the difference between what they have."
+      },
+      {
+        "text": "How many red balloons does Madli have?",
+        "boxTarget": "bigger",
+        "context": "This question helps us find the larger amount in our story. This is what we're trying to figure out - Madli's number of balloons."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLLQU",
+    "groundTruthAnswer": 6,
+    "groundTruthModelAnswers": {
+      "bigger": null,
+      "smaller": 4,
+      "difference": 2
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "Riin has 13 drawings, which is 7 drawings less than the teacher. How many drawings does the teacher have?",
+    "output": "This problem contrasts Riin's number of drawings with the teacher's number of drawings. The comparative phrase 'which is 7 drawings less than the teacher' establishes the relationship between these two quantities. We're finding how much more the teacher has compared to Riin, which is a comparison of two static amounts rather than a change over time or a combination of parts.",
+    "category": "Compare",
+    "subcategory": "CLLQU",
+    "subReasoning": "This problem states that Riin has 13 drawings, which is 7 drawings less than the teacher. The comparison direction is 'less than,' making this a Compare-Less problem. Using the Compare model where Bigger = Smaller + Difference, I can identify: the teacher has the bigger quantity (unknown), Riin has the smaller quantity (13 drawings), and the difference is 7 drawings. Since we know the smaller quantity and the difference but need to find the larger quantity (how many drawings the teacher has), this is a Compare-Less, Larger Quantity Unknown problem.",
+    "tokenUsage": {
+      "prompt": 451,
+      "completion": 238,
+      "total": 689
+    },
+    "modelAnswers": {
+      "bigger": null,
+      "smaller": 13,
+      "difference": 7
+    },
+    "answer": 20,
+    "reasoning": "Bigger = 13 + 7 = 20, so the teacher has 20 drawings.",
+    "storyGrammarPrompts": [
+      {
+        "text": "Who has fewer drawings in this story?",
+        "boxTarget": "smaller",
+        "context": "This question helps you find the person who has the smaller amount. Look for clues in the story about who has less. The word 'less' is a hint that someone has fewer drawings than the other person."
+      },
+      {
+        "text": "How many fewer drawings does Riin have compared to the teacher?",
+        "boxTarget": "difference",
+        "context": "This question asks you to find the gap between how many drawings each person has. Look for a number in the story that tells you how much less one person has than the other."
+      },
+      {
+        "text": "Who has more drawings in this story?",
+        "boxTarget": "bigger",
+        "context": "This question helps you figure out which person has the larger amount of drawings. Think about who the story is comparing Riin to - that person has more drawings than Riin does."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLLQU",
+    "groundTruthAnswer": 20,
+    "groundTruthModelAnswers": {
+      "bigger": null,
+      "smaller": 13,
+      "difference": 7
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "Marko has 15 Lego blocks, which is 5 Lego blocks less than his brother. How many Lego blocks does his brother have?",
+    "output": "This problem compares Marko's Lego blocks to his brother's Lego blocks. The phrase 'which is 5 Lego blocks less than his brother' creates a comparative relationship where we need to understand the difference between their amounts. There's no change happening over time and no combining of separate quantities - just a direct comparison of two static amounts to determine the relative difference.",
+    "category": "Compare",
+    "subcategory": "CLLQU",
+    "subReasoning": "This problem states that Marko has 15 Lego blocks, which is 5 blocks less than his brother. The comparison direction focuses on 'less than', making this a Compare-Less problem. Using the compare model where Bigger = Smaller + Difference, we can identify: Marko (15 blocks) is the smaller quantity, the difference is 5 blocks, and the brother's amount is the bigger quantity that we need to find. Since we're looking for the larger quantity (the brother's blocks), this is a Compare-Less, Larger Quantity Unknown problem.",
+    "tokenUsage": {
+      "prompt": 460,
+      "completion": 244,
+      "total": 704
+    },
+    "modelAnswers": {
+      "bigger": null,
+      "smaller": 15,
+      "difference": 5
+    },
+    "answer": 20,
+    "reasoning": "Bigger = 15 + 5 = 20, so the brother has 20 Lego blocks.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many Lego blocks does Marko have?",
+        "boxTarget": "smaller",
+        "context": "This question helps us find the number we already know from the story. We're looking for how many Lego blocks Marko has right now."
+      },
+      {
+        "text": "How many fewer Lego blocks does Marko have than his brother?",
+        "boxTarget": "difference",
+        "context": "This question helps us find how much less Marko has compared to his brother. The story tells us Marko has some number 'less than' his brother, so we need to find that difference."
+      },
+      {
+        "text": "How many Lego blocks does Marko's brother have?",
+        "boxTarget": "bigger",
+        "context": "This question helps us find what we're trying to figure out. We need to find how many Lego blocks the brother has, which will be more than what Marko has."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLLQU",
+    "groundTruthAnswer": 20,
+    "groundTruthModelAnswers": {
+      "bigger": null,
+      "smaller": 15,
+      "difference": 5
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "Kadi has 5 apples, which is 2 apples less than Mari. How many apples does Mari have?",
+    "output": "The problem describes two quantities (apples Kadi has and apples Mari has) and establishes a relationship between them based on a difference ('2 apples less than Mari'). The question asks to find the quantity of Mari's apples by comparing it to Kadi's, rather than describing a change over time or combining separate groups.",
+    "category": "Compare",
+    "subcategory": "CLLQU",
+    "subReasoning": "The problem states 'Kadi has 5 apples, which is 2 apples less than Mari.' This explicitly uses the phrase 'less than', indicating it is a Compare-Less problem. We are given Kadi's amount (5) and the difference (2). According to the 'Bigger = Smaller + Difference' model, Kadi's apples (5) are the 'Smaller' quantity, and the difference is 2. Mari's apples represent the 'Bigger' or 'Larger' quantity. Since the question asks 'How many apples does Mari have?', the Larger Quantity is unknown.",
+    "tokenUsage": {
+      "prompt": 401,
+      "completion": 244,
+      "total": 645
+    },
+    "modelAnswers": {
+      "bigger": null,
+      "smaller": 5,
+      "difference": 2
+    },
+    "answer": 7,
+    "reasoning": "The problem states Kadi has 5 apples, which is 2 apples less than Mari. This means Kadi's amount is the 'Smaller' quantity (5), and the 'Difference' is 2. Mari's amount is the 'Bigger' quantity. Using the formula Bigger = Smaller + Difference, we get Bigger = 5 + 2 = 7. Therefore, Mari has 7 apples.",
+    "storyGrammarPrompts": [
+      {
+        "text": "Who has fewer apples, Kadi or Mari?",
+        "boxTarget": "smaller",
+        "context": "Here we're trying to figure out who has the smaller amount of apples. Is it Kadi, or is it Mari? The story tells us one of them has fewer apples. We'll put how many apples that person has here!"
+      },
+      {
+        "text": "How many more apples does Mari have than Kadi?",
+        "boxTarget": "difference",
+        "context": "This is where we put the number that tells us how much bigger or smaller one amount is compared to the other. The story tells us the difference in apples between Mari and Kadi. What number is that?"
+      },
+      {
+        "text": "How many apples does Mari have?",
+        "boxTarget": "bigger",
+        "context": "This is what we want to find out! The story is asking us to figure out how many apples Mari has. We'll find this number using the other numbers we found."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLLQU",
+    "groundTruthAnswer": 7,
+    "groundTruthModelAnswers": {
+      "bigger": null,
+      "smaller": 5,
+      "difference": 2
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "Joonas has 8 pencils, which is 4 pencils less than Triin. How many pencils does Triin have?",
+    "output": "This problem compares the number of pencils Joonas has to the number Triin has using a 'less than' relationship. It asks to determine Triin's quantity based on this comparison, not on a change or a combination of parts.",
+    "category": "Compare",
+    "subcategory": "CLLQU",
+    "subReasoning": "The problem states '8 pencils, which is 4 pencils less than Triin', directly indicating a 'Compare-Less' situation. Following the 'Bigger = Smaller + Difference' model: Joonas (Smaller) = 8, Difference = 4. Triin is the 'Bigger' quantity. Since the Larger Quantity (Triin's pencils) is unknown, it falls under LQU.",
+    "tokenUsage": {
+      "prompt": 404,
+      "completion": 236,
+      "total": 640
+    },
+    "modelAnswers": {
+      "bigger": null,
+      "smaller": 8,
+      "difference": 4
+    },
+    "answer": 12,
+    "reasoning": "Joonas has 8 pencils, which is 4 pencils LESS than Triin. This means Joonas's amount is the 'smaller' amount, and Triin's amount is the 'bigger' amount. The 'difference' is 4. Using the formula Bigger = Smaller + Difference, we get Bigger = 8 + 4 = 12. So, Triin has 12 pencils.",
+    "storyGrammarPrompts": [
+      {
+        "text": "Who has more pencils, Joonas or Triin?",
+        "boxTarget": "bigger",
+        "context": "Hmm, the problem tells us that Joonas has 8 pencils, and that's 4 pencils LESS than Triin. So, who has a bigger pile of pencils? Is it Joonas or Triin?"
+      },
+      {
+        "text": "How many pencils does the person with fewer pencils have?",
+        "boxTarget": "smaller",
+        "context": "The problem tells us one person has fewer pencils. How many pencils do they have exactly? Look closely at the numbers in the story!"
+      },
+      {
+        "text": "How many more pencils does the person with more pencils have?",
+        "boxTarget": "difference",
+        "context": "The story tells us that Joonas has 4 pencils LESS than Triin. That 'less' word tells us how many more pencils the other person has. What number tells us the difference in their pencils?"
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLLQU",
+    "groundTruthAnswer": 12,
+    "groundTruthModelAnswers": {
+      "bigger": null,
+      "smaller": 8,
+      "difference": 4
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "Siim has 10 candies, which is 3 candies less than his brother. How many candies does his brother have?",
+    "output": "The core of this problem is a comparison between Siim's candies and his brother's candies, specifically stating Siim has '3 candies less'. The goal is to find the brother's quantity through this comparison, indicating a Compare category problem.",
+    "category": "Compare",
+    "subcategory": "CLLQU",
+    "subReasoning": "The problem states that Siim has 10 candies, which is 3 candies 'less than' his brother. This immediately signals a 'Compare–Less' problem. Using the COMPS framework where 'Bigger = Smaller + Difference', we can assign the given values. Siim's candies (10) are the 'Smaller' quantity because his brother has more. The 'Difference' is 3 (3 candies less). The unknown is the brother's candies, which represent the 'Larger' quantity. Therefore, it is a Compare–Less, Larger Quantity Unknown problem.",
+    "tokenUsage": {
+      "prompt": 406,
+      "completion": 201,
+      "total": 607
+    },
+    "modelAnswers": {
+      "bigger": null,
+      "smaller": 10,
+      "difference": 3
+    },
+    "answer": 13,
+    "reasoning": "The problem states Siim's 10 candies are '3 candies less than his brother'. This means Siim has the 'smaller' amount, and his brother has the 'bigger' amount. The difference is 3. Using the formula Bigger = Smaller + Difference, we get Bigger = 10 + 3 = 13. So, his brother has 13 candies.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many candies does Siim have?",
+        "boxTarget": "smaller",
+        "context": "This is how many candies Siim has to start our problem! Look in the story to find this number."
+      },
+      {
+        "text": "How many fewer candies does Siim have than his brother?",
+        "boxTarget": "difference",
+        "context": "This special number tells us the difference between Siim's candies and his brother's candies. It tells us how much 'less' Siim has."
+      },
+      {
+        "text": "How many candies does Siim's brother have?",
+        "boxTarget": "bigger",
+        "context": "This is the big question we need to answer! We're trying to figure out how many candies Siim's brother has."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLLQU",
+    "groundTruthAnswer": 13,
+    "groundTruthModelAnswers": {
+      "bigger": null,
+      "smaller": 10,
+      "difference": 3
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "Emil has 6 books, which is 2 books less than Kaarel. How many books does Kaarel have?",
+    "output": "The problem establishes a relationship of difference between Emil's books and Kaarel's books ('2 books less than'). The question then asks for Kaarel's quantity based on this comparative information, fitting the Compare category.",
+    "category": "Compare",
+    "subcategory": "CLLQU",
+    "subReasoning": "The problem states, 'Emil has 6 books, which is 2 books less than Kaarel.' This immediately tells us it's a 'Compare-Less' problem because it directly uses the phrase 'less than'. Now we need to identify the unknown. We can set up the 'Bigger = Smaller + Difference' model. Kaarel has more books, so Kaarel's books are the 'Bigger' quantity. Emil's books are the 'Smaller' quantity (6 books). The 'Difference' is 2 books. So, the equation is: Kaarel's books = 6 + 2. Since Kaarel's amount is the 'Bigger' quantity and it is unknown, the problem is a 'Compare-Less, Larger Quantity Unknown' (CLLQU) type.",
+    "tokenUsage": {
+      "prompt": 402,
+      "completion": 223,
+      "total": 625
+    },
+    "modelAnswers": {
+      "bigger": null,
+      "smaller": 6,
+      "difference": 2
+    },
+    "answer": 8,
+    "reasoning": "Emil has 6 books, and this is 2 books less than Kaarel. This means Emil's books are the 'Smaller' amount, and Kaarel's books are the 'Bigger' amount. The difference is 2. Using the formula Bigger = Smaller + Difference, we get Bigger = 6 + 2 = 8. So, Kaarel has 8 books.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many books does Emil have?",
+        "boxTarget": "smaller",
+        "context": "We need to find out how many books Emil has in the story. Look closely at the problem to see the number that tells us about Emil's books!"
+      },
+      {
+        "text": "How many fewer books does Emil have than Kaarel?",
+        "boxTarget": "difference",
+        "context": "The problem tells us that Emil has '2 books less' than Kaarel. This number tells us the difference between their books. It's like asking, 'How many more books would Emil need to have the same as Kaarel?'"
+      },
+      {
+        "text": "How many books does Kaarel have?",
+        "boxTarget": "bigger",
+        "context": "This is the big question the problem wants us to answer! We need to figure out how many books Kaarel has because Emil has fewer books than Kaarel."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLLQU",
+    "groundTruthAnswer": 8,
+    "groundTruthModelAnswers": {
+      "bigger": null,
+      "smaller": 6,
+      "difference": 2
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "Meril has 9 stickers, which is 5 stickers less than Hanna. How many stickers does Hanna have?",
+    "output": "This problem is about contrasting the number of stickers Meril has with the number Hanna has. The phrasing '5 stickers less than Hanna' is a direct comparison, and the question seeks to find Hanna's quantity through this comparison, which aligns with the Compare category.",
+    "category": "Compare",
+    "subcategory": "CLLQU",
+    "subReasoning": "The problem states that Meril has 9 stickers, which is '5 stickers less than Hanna'. This directly indicates a 'Compare-Less' scenario because the comparison highlights a smaller quantity relative to a larger one. Using the model Bigger = Smaller + Difference: Hanna's stickers (Bigger) = Meril's stickers (Smaller) + 5 (Difference). The problem asks 'How many stickers does Hanna have?', which means the Larger Quantity (Hanna's stickers) is unknown.",
+    "tokenUsage": {
+      "prompt": 402,
+      "completion": 213,
+      "total": 615
+    },
+    "modelAnswers": {
+      "bigger": null,
+      "smaller": 9,
+      "difference": 5
+    },
+    "answer": 14,
+    "reasoning": "Meril has 9 stickers, which is 5 stickers less than Hanna. This means Meril's stickers (9) represent the smaller amount, and the difference is 5. We are looking for Hanna's stickers, which is the bigger amount. Using the formula Bigger = Smaller + Difference, we get Bigger = 9 + 5 = 14. So, Hanna has 14 stickers.",
+    "storyGrammarPrompts": [
+      {
+        "text": "Who has the smaller number of stickers?",
+        "boxTarget": "smaller",
+        "context": "We need to find out whose stickers are the 'smaller' amount in this story. Look at the problem and see which person has fewer stickers."
+      },
+      {
+        "text": "What is the difference in the number of stickers?",
+        "boxTarget": "difference",
+        "context": "The 'difference' tells us how many more stickers one person has than the other. It's like asking, 'How many stickers are between Meril's and Hanna's?'"
+      },
+      {
+        "text": "Who has the bigger number of stickers?",
+        "boxTarget": "bigger",
+        "context": "Now we need to figure out which person has the 'bigger' amount of stickers. Who do you think has more stickers, Meril or Hanna?"
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLLQU",
+    "groundTruthAnswer": 14,
+    "groundTruthModelAnswers": {
+      "bigger": null,
+      "smaller": 9,
+      "difference": 5
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "Kaisa has 11 colored pencils, which is 3 colored pencils less than Annabel. How many colored pencils does Annabel have?",
+    "output": "The problem provides Kaisa's quantity and states it is '3 colored pencils less than Annabel'. This explicitly sets up a comparison between two individuals' possessions to find the unknown quantity, thereby classifying it as a Compare problem.",
+    "category": "Compare",
+    "subcategory": "CLLQU",
+    "subReasoning": "The problem states that Kaisa has 11 pencils, which is '3 colored pencils less than Annabel'. This indicates a comparison where one quantity is less than another, making it a Compare-Less problem. We are given the smaller quantity (Kaisa's 11 pencils) and the difference (3 pencils). We need to find the larger quantity (Annabel's pencils). Using the COMPS model 'Bigger = Smaller + Difference', we have Bigger = 11 + 3. Therefore, the Larger Quantity is unknown.",
+    "tokenUsage": {
+      "prompt": 409,
+      "completion": 233,
+      "total": 642
+    },
+    "modelAnswers": {
+      "bigger": null,
+      "smaller": 11,
+      "difference": 3
+    },
+    "answer": 14,
+    "reasoning": "The problem states Kaisa has 11 pencils, which is 3 less than Annabel. This means Kaisa's amount is the 'smaller' value, and Annabel's amount is the 'bigger' value. The 'difference' is 3. Using the formula Bigger = Smaller + Difference, we get Bigger = 11 + 3 = 14. So, Annabel has 14 colored pencils.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many colored pencils does Kaisa have?",
+        "boxTarget": "smaller",
+        "context": "Hmm, let's think about Kaisa. The story tells us exactly how many colored pencils she has. Can you find that number?"
+      },
+      {
+        "text": "How many fewer colored pencils does Kaisa have than Annabel?",
+        "boxTarget": "difference",
+        "context": "Now let's think about the difference between Kaisa's pencils and Annabel's pencils. The story tells us that Kaisa has a certain number *less* than Annabel. How many less is that?"
+      },
+      {
+        "text": "How many colored pencils does Annabel have?",
+        "boxTarget": "bigger",
+        "context": "This is what we need to figure out! The story is asking us to find Annabel's colored pencils. We don't know this number yet, so we'll put a question mark here for now."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLLQU",
+    "groundTruthAnswer": 14,
+    "groundTruthModelAnswers": {
+      "bigger": null,
+      "smaller": 11,
+      "difference": 3
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "Tõnn has 7 cars, which is 6 cars less than Karol. How many cars does Karol have?",
+    "output": "The problem describes a relationship where Tõnn's car count is '6 cars less than Karol's'. This indicates a comparison between two distinct quantities, and the question asks to determine one quantity based on the comparison to the other, making it a Compare problem.",
+    "category": "Compare",
+    "subcategory": "CLLQU",
+    "subReasoning": "The problem states that Tõnn's cars are '6 cars less than Karol'. This directly indicates a 'Compare–Less' situation. Using the model 'Bigger = Smaller + Difference', we know Tõnn (Smaller) has 7 cars, and the Difference is 6 cars. The unknown is Karol's cars, which represent the 'Bigger' or 'Larger Quantity'. Therefore, it is a Compare–Less, Larger Quantity Unknown problem.",
+    "tokenUsage": {
+      "prompt": 403,
+      "completion": 186,
+      "total": 589
+    },
+    "modelAnswers": {
+      "bigger": null,
+      "smaller": 7,
+      "difference": 6
+    },
+    "answer": 13,
+    "reasoning": "The problem states Tõnn has 7 cars, which is 6 cars less than Karol. This means Tõnn's amount is the 'Smaller' quantity, and the 'Difference' is 6. Karol's amount is the 'Bigger' quantity. Using the formula Bigger = Smaller + Difference, we get Bigger = 7 + 6 = 13. Therefore, Karol has 13 cars.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many cars does Tõnn have?",
+        "boxTarget": "smaller",
+        "context": "We need to find out the number of cars Tõnn has. Look carefully in the story to see that number!"
+      },
+      {
+        "text": "What is the difference in the number of cars Tõnn and Karol have?",
+        "boxTarget": "difference",
+        "context": "This is where we put how much less Tõnn has than Karol. The story tells us this difference!"
+      },
+      {
+        "text": "How many cars does Karol have?",
+        "boxTarget": "bigger",
+        "context": "This is what we are trying to find! The story asks us to figure out how many cars Karol has in total."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLLQU",
+    "groundTruthAnswer": 13,
+    "groundTruthModelAnswers": {
+      "bigger": null,
+      "smaller": 7,
+      "difference": 6
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "Liina has 4 red balloons, which is 2 red balloons less than Madli. How many red balloons does Madli have?",
+    "output": "The problem establishes a comparative relationship between Liina's balloons and Madli's balloons, stating Liina has '2 red balloons less'. The objective is to find Madli's quantity by understanding this difference, which is characteristic of a Compare problem.",
+    "category": "Compare",
+    "subcategory": "CLLQU",
+    "subReasoning": "The problem states that Liina has 4 red balloons, which is '2 red balloons less than Madli'. This directly indicates a 'Compare-Less' problem. Using the formula 'Bigger = Smaller + Difference', we know: Liina's balloons (Smaller) = 4, and the Difference = 2. We are looking for Madli's balloons, which is the 'Bigger' quantity. Therefore, the Larger Quantity is unknown.",
+    "tokenUsage": {
+      "prompt": 406,
+      "completion": 221,
+      "total": 627
+    },
+    "modelAnswers": {
+      "bigger": null,
+      "smaller": 4,
+      "difference": 2
+    },
+    "answer": 6,
+    "reasoning": "We are given that Liina has 4 red balloons and this is 2 red balloons less than what Madli has. This means Madli's amount is the 'Bigger' quantity, Liina's amount is the 'Smaller' quantity, and 2 is the 'Difference'. Using the formula Bigger = Smaller + Difference, we have Bigger = 4 + 2 = 6. So, Madli has 6 red balloons.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many red balloons does Liina have?",
+        "boxTarget": "smaller",
+        "context": "Here, we want to know how many red balloons Liina has right in the beginning. Look in the story to find that number!"
+      },
+      {
+        "text": "How many fewer red balloons does Liina have than Madli?",
+        "boxTarget": "difference",
+        "context": "This question asks about the 'difference.' It wants to know how many more or fewer red balloons one friend has compared to the other.  How many less did Liina have than Madli?"
+      },
+      {
+        "text": "How many red balloons does Madli have?",
+        "boxTarget": "bigger",
+        "context": "This is the big question we need to answer! We're trying to figure out how many red balloons Madli has in total. This is the 'bigger' amount."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLLQU",
+    "groundTruthAnswer": 6,
+    "groundTruthModelAnswers": {
+      "bigger": null,
+      "smaller": 4,
+      "difference": 2
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "Riin has 13 drawings, which is 7 drawings less than the teacher. How many drawings does the teacher have?",
+    "output": "This problem presents a direct comparison: Riin's drawings are '7 drawings less than the teacher's'. The question asks for the teacher's quantity based on this comparative difference, fitting the criteria for a Compare problem.",
+    "category": "Compare",
+    "subcategory": "CLLQU",
+    "subReasoning": "The problem states 'Riin has 13 drawings, which is 7 drawings less than the teacher.' This explicitly uses the phrase 'less than', indicating a Compare-Less problem. We are given the smaller quantity (Riin's drawings = 13) and the difference (7). The question asks 'How many drawings does the teacher have?', which is the larger quantity. Therefore, it is a Compare-Less, Larger Quantity Unknown problem.",
+    "tokenUsage": {
+      "prompt": 406,
+      "completion": 236,
+      "total": 642
+    },
+    "modelAnswers": {
+      "bigger": null,
+      "smaller": 13,
+      "difference": 7
+    },
+    "answer": 20,
+    "reasoning": "The teacher has more drawings than Riin. Riin's drawings (smaller) are 13, and the difference is 7. So, Bigger (teacher's drawings) = Smaller + Difference = 13 + 7 = 20.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How much did Riin have?",
+        "boxTarget": "smaller",
+        "context": "Here we want to find out about Riin's drawings. The problem tells us how many drawings Riin has. Can you find that number in the story?"
+      },
+      {
+        "text": "What is the difference between Riin's drawings and the teacher's drawings?",
+        "boxTarget": "difference",
+        "context": "Now let's think about how Riin's drawings are different from the teacher's drawings. The story tells us that Riin has 7 drawings *less* than the teacher. How many fewer drawings does Riin have than the teacher?"
+      },
+      {
+        "text": "How much did the teacher have?",
+        "boxTarget": "bigger",
+        "context": "Our story wants us to find out how many drawings the teacher has. The teacher has more drawings than Riin. Do you see the question asking us about the teacher's drawings?"
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLLQU",
+    "groundTruthAnswer": 20,
+    "groundTruthModelAnswers": {
+      "bigger": null,
+      "smaller": 13,
+      "difference": 7
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "Marko has 15 Lego blocks, which is 5 Lego blocks less than his brother. How many Lego blocks does his brother have?",
+    "output": "The problem compares the number of Lego blocks Marko has to his brother's amount, specifying Marko has '5 Lego blocks less'. The core task is to determine the brother's quantity through this comparison, classifying it as a Compare problem.",
+    "category": "Compare",
+    "subcategory": "CLLQU",
+    "subReasoning": "The problem states 'Marko has 15 Lego blocks, which is 5 Lego blocks less than his brother.' This immediately indicates a 'Compare–Less' scenario because the comparison is framed in terms of 'less than.' To fit into the 'Bigger = Smaller + Difference' model: Marko's blocks (15) are implicitly the 'Smaller' quantity in relation to his brother's blocks, as Marko has 'less' than his brother. The 'Difference' is given as 5. The 'Bigger' quantity, which is the number of blocks his brother has, is the unknown. Therefore, it is a Compare–Less 'Larger Quantity Unknown' problem.",
+    "tokenUsage": {
+      "prompt": 408,
+      "completion": 195,
+      "total": 603
+    },
+    "modelAnswers": {
+      "bigger": null,
+      "smaller": 15,
+      "difference": 5
+    },
+    "answer": 20,
+    "reasoning": "We are given that Marko has 15 Lego blocks, and this amount is 5 less than his brother's amount. This means Marko's amount is the 'smaller' quantity, and the 'difference' is 5. We need to find the 'bigger' quantity (his brother's blocks). Using the formula Bigger = Smaller + Difference, we get Bigger = 15 + 5 = 20. So, his brother has 20 Lego blocks.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many Lego blocks does Marko have?",
+        "boxTarget": "smaller",
+        "context": "This question asks us to find out how many Lego blocks Marko has. The problem tells us this right away!"
+      },
+      {
+        "text": "How many fewer Lego blocks does Marko have than his brother?",
+        "boxTarget": "difference",
+        "context": "This question helps us figure out the difference in Lego blocks between Marko and his brother.  It tells us how many *less* Marko has."
+      },
+      {
+        "text": "How many Lego blocks does his brother have?",
+        "boxTarget": "bigger",
+        "context": "This is the big question we need to answer! It asks about the total number of Lego blocks his brother has, which we are trying to find out."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLLQU",
+    "groundTruthAnswer": 20,
+    "groundTruthModelAnswers": {
+      "bigger": null,
+      "smaller": 15,
+      "difference": 5
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "Kadi has 5 apples, which is 2 apples less than Mari. How many apples does Mari have?",
+    "output": "This problem sets up a comparison between Kadi's and Mari's apples, emphasizing the difference (2 apples) between their amounts, not a change over time or a grouping together. The phrase 'less than' signals a comparison.",
+    "category": "Compare",
+    "subcategory": "CLLQU",
+    "subReasoning": "The problem states that Kadi has 5 apples, which is 2 apples less than Mari. The comparison direction is 'less than', so it is a Compare–Less problem. Mari (the larger quantity) is unknown, while the smaller quantity (Kadi's apples) and the difference (2 apples) are both given. Therefore, the unknown is the larger quantity.",
+    "tokenUsage": {
+      "prompt": 391,
+      "completion": 189,
+      "total": 580
+    },
+    "modelAnswers": {
+      "bigger": null,
+      "smaller": 5,
+      "difference": 2
+    },
+    "answer": 7,
+    "reasoning": "Bigger = 5 + 2 = 7, so Mari has 7 apples.",
+    "storyGrammarPrompts": [
+      {
+        "text": "Who has fewer apples — Kadi or Mari?",
+        "boxTarget": "smaller",
+        "context": "This question helps you think about which person in the story has the smaller number of apples, so we know where to start."
+      },
+      {
+        "text": "How many more apples does Mari have than Kadi?",
+        "boxTarget": "difference",
+        "context": "This question helps you find out how much more one person has than the other. It's all about what makes their apple amounts different!"
+      },
+      {
+        "text": "Who has more apples, and how can we figure out how many apples that is?",
+        "boxTarget": "bigger",
+        "context": "This question encourages you to think about who has the bigger amount in the story, and how we can find that total by using what we already know."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLLQU",
+    "groundTruthAnswer": 7,
+    "groundTruthModelAnswers": {
+      "bigger": null,
+      "smaller": 5,
+      "difference": 2
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "Joonas has 8 pencils, which is 4 pencils less than Triin. How many pencils does Triin have?",
+    "output": "The problem contrasts the number of pencils Joonas has to Triin, indicating by how many pencils Joonas's quantity is less. The focus is on the difference between the two, which is characteristic of a Compare problem.",
+    "category": "Compare",
+    "subcategory": "CLLQU",
+    "subReasoning": "The problem states that Joonas has 8 pencils, which is 4 pencils less than Triin. This establishes a 'less than' comparison, making it a Compare–Less problem. The problem gives the smaller quantity (Joonas: 8 pencils) and the difference (4 pencils less), and asks for the larger quantity (Triin's pencils). Therefore, the unknown is the Larger Quantity. According to the COMPS framework, this is classified as Compare–Less, Larger Quantity Unknown (CLLQU).",
+    "tokenUsage": {
+      "prompt": 395,
+      "completion": 213,
+      "total": 608
+    },
+    "modelAnswers": {
+      "bigger": null,
+      "smaller": 8,
+      "difference": 4
+    },
+    "answer": 12,
+    "reasoning": "Bigger = 8 + 4 = 12, so Triin has 12 pencils.",
+    "storyGrammarPrompts": [
+      {
+        "text": "Who has fewer pencils, Joonas or Triin? How many pencils does that person have?",
+        "boxTarget": "smaller",
+        "context": "Let's figure out which person has the smaller amount in this story, and count how many pencils they have. This helps us see what number we already know."
+      },
+      {
+        "text": "How many more pencils does Triin have than Joonas?",
+        "boxTarget": "difference",
+        "context": "We're looking for how much bigger Triin's group of pencils is compared to Joonas'. This helps us understand the difference between them."
+      },
+      {
+        "text": "Who has more pencils, Joonas or Triin? How many pencils does that person have?",
+        "boxTarget": "bigger",
+        "context": "Now, let's think about the person with the larger number of pencils. We'll use the information from the story to figure out how many pencils this person has."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLLQU",
+    "groundTruthAnswer": 12,
+    "groundTruthModelAnswers": {
+      "bigger": null,
+      "smaller": 8,
+      "difference": 4
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "Siim has 10 candies, which is 3 candies less than his brother. How many candies does his brother have?",
+    "output": "Here, Siim's candies are compared to his brother's, with the information that Siim has 3 fewer candies. Finding his brother's amount requires understanding the difference, making this a Compare problem.",
+    "category": "Compare",
+    "subcategory": "CLLQU",
+    "subReasoning": "The problem states that Siim has 10 candies, which is 3 candies less than his brother. The comparison is expressed as 'less than,' so this is a Compare–Less problem. According to the COMPS model, Bigger (brother) = Smaller (Siim) + Difference (3 candies). The unknown in the sentence is the larger quantity, which is the number of candies the brother has. Therefore, this is the Compare–Less, Larger Quantity Unknown (CLLQU) type.",
+    "tokenUsage": {
+      "prompt": 394,
+      "completion": 181,
+      "total": 575
+    },
+    "modelAnswers": {
+      "bigger": null,
+      "smaller": 10,
+      "difference": 3
+    },
+    "answer": 13,
+    "reasoning": "Bigger = 10 + 3 = 13, so Siim's brother has 13 candies.",
+    "storyGrammarPrompts": [
+      {
+        "text": "Who has more candies, Siim or his brother?",
+        "boxTarget": "bigger",
+        "context": "Let's think about who has the larger number of candies in the story. We're looking for the person with the bigger amount."
+      },
+      {
+        "text": "How many candies does Siim have?",
+        "boxTarget": "smaller",
+        "context": "This question is about finding out the number of candies Siim has. Remember to look back at what the story says about Siim."
+      },
+      {
+        "text": "How many more candies does Siim's brother have than Siim?",
+        "boxTarget": "difference",
+        "context": "Now, let's figure out the difference between the two amounts. We're looking for how many more candies the brother has compared to Siim."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLLQU",
+    "groundTruthAnswer": 13,
+    "groundTruthModelAnswers": {
+      "bigger": null,
+      "smaller": 10,
+      "difference": 3
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "Emil has 6 books, which is 2 books less than Kaarel. How many books does Kaarel have?",
+    "output": "The problem compares Emil's number of books to Kaarel's, specifying that Emil has 2 fewer. The relationship is defined through comparison, focusing on the difference, not a change or a grouping. Thus, it is a Compare problem.",
+    "category": "Compare",
+    "subcategory": "CLLQU",
+    "subReasoning": "The problem states that Emil has 6 books, which is 2 books less than Kaarel. This is a comparison in the 'less than' direction, so it is a Compare–Less problem. According to the compare model, the larger quantity (Kaarel) is equal to the smaller quantity (Emil) plus the difference (2 books). The unknown in the problem is the larger quantity—how many books Kaarel has. Therefore, this is a Compare–Less, Larger Quantity Unknown problem.",
+    "tokenUsage": {
+      "prompt": 394,
+      "completion": 188,
+      "total": 582
+    },
+    "modelAnswers": {
+      "bigger": null,
+      "smaller": 6,
+      "difference": 2
+    },
+    "answer": 8,
+    "reasoning": "Bigger = 6 + 2 = 8, so Kaarel has 8 books.",
+    "storyGrammarPrompts": [
+      {
+        "text": "Who has fewer books—Emil or Kaarel?",
+        "boxTarget": "smaller",
+        "context": "This question helps us find out which person in the story has the smaller number of books. We're looking for the person with less, not more."
+      },
+      {
+        "text": "How many more books does Kaarel have than Emil?",
+        "boxTarget": "difference",
+        "context": "This question helps us think about how much extra Kaarel has compared to Emil. We want to know the difference in the number of books they each have."
+      },
+      {
+        "text": "Who has more books in the story?",
+        "boxTarget": "bigger",
+        "context": "This question helps us figure out which friend is holding the bigger amount of books. Let's think about who has a larger number in this story."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLLQU",
+    "groundTruthAnswer": 8,
+    "groundTruthModelAnswers": {
+      "bigger": null,
+      "smaller": 6,
+      "difference": 2
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "Meril has 9 stickers, which is 5 stickers less than Hanna. How many stickers does Hanna have?",
+    "output": "This is a Compare problem because Meril's stickers are described in terms of being fewer than Hanna's by a set difference. The focus is on contrasting two quantities.",
+    "category": "Compare",
+    "subcategory": "CLLQU",
+    "subReasoning": "The problem states that Meril has 9 stickers, which is 5 stickers less than Hanna. The comparison is 'less than,' as it says Meril has fewer than Hanna. Using the compare model: Bigger (Hanna) = Smaller (Meril) + Difference (5). We know the smaller quantity (Meril: 9) and the difference (5), and we are asked to find the larger quantity (Hanna). Therefore, this is a Compare–Less, Larger Quantity Unknown problem.",
+    "tokenUsage": {
+      "prompt": 392,
+      "completion": 211,
+      "total": 603
+    },
+    "modelAnswers": {
+      "bigger": null,
+      "smaller": 9,
+      "difference": 5
+    },
+    "answer": 14,
+    "reasoning": "Bigger = 9 + 5 = 14, so Hanna has 14 stickers.",
+    "storyGrammarPrompts": [
+      {
+        "text": "Who has fewer stickers in the story, and how many stickers do they have?",
+        "boxTarget": "smaller",
+        "context": "This question helps us find out the number of stickers Meril has, because she is the one with the smaller amount. We're looking for the person who has fewer stickers and exactly how many she has."
+      },
+      {
+        "text": "How many more stickers does the other person have?",
+        "boxTarget": "difference",
+        "context": "This question is asking us to find out the difference between how many stickers Meril has and how many Hanna has. We're thinking about how much bigger Hanna's number is."
+      },
+      {
+        "text": "Who has more stickers, and how many stickers do they have?",
+        "boxTarget": "bigger",
+        "context": "This question helps us figure out who has the most stickers (that’s Hanna!) and we want to find out her total number of stickers."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLLQU",
+    "groundTruthAnswer": 14,
+    "groundTruthModelAnswers": {
+      "bigger": null,
+      "smaller": 9,
+      "difference": 5
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "Kaisa has 11 colored pencils, which is 3 colored pencils less than Annabel. How many colored pencils does Annabel have?",
+    "output": "The problem contrasts Kaisa's colored pencils to Annabel's, noting that Kaisa has 3 fewer. The language is comparative, thus this is a Compare problem.",
+    "category": "Compare",
+    "subcategory": "CLLQU",
+    "subReasoning": "The problem states that Kaisa has 11 colored pencils, which is 3 less than Annabel. This uses a 'less than' comparison, indicating Compare–Less. We know Kaisa's (smaller) quantity and the difference; the unknown is Annabel's (larger) quantity. Therefore, this is a Compare–Less, Larger Quantity Unknown (CLLQU) problem.",
+    "tokenUsage": {
+      "prompt": 396,
+      "completion": 197,
+      "total": 593
+    },
+    "modelAnswers": {
+      "bigger": null,
+      "smaller": 11,
+      "difference": 3
+    },
+    "answer": 14,
+    "reasoning": "Bigger = 11 + 3 = 14, so Annabel has 14 colored pencils.",
+    "storyGrammarPrompts": [
+      {
+        "text": "Who has fewer colored pencils, Kaisa or Annabel?",
+        "boxTarget": "smaller",
+        "context": "This question helps us find out which person in the story has the smaller amount of colored pencils. It lets us see who starts with fewer in the story."
+      },
+      {
+        "text": "How many more colored pencils does Annabel have than Kaisa?",
+        "boxTarget": "difference",
+        "context": "This question is about how much more one person has than the other. We are looking for the difference between the two friends’ colored pencils."
+      },
+      {
+        "text": "Who has more colored pencils, and how many do they have?",
+        "boxTarget": "bigger",
+        "context": "This question helps us think about the person in the story who has the most colored pencils. We're trying to figure out the biggest number from the story."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLLQU",
+    "groundTruthAnswer": 14,
+    "groundTruthModelAnswers": {
+      "bigger": null,
+      "smaller": 11,
+      "difference": 3
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "Tõnn has 7 cars, which is 6 cars less than Karol. How many cars does Karol have?",
+    "output": "Tõnn's cars are being contrasted to Karol's by stating Tõnn has 6 fewer. There is no change event or combining of quantities; it is simply a comparison.",
+    "category": "Compare",
+    "subcategory": "CLLQU",
+    "subReasoning": "The problem states that Tõnn has 7 cars, which is 6 cars less than Karol. The comparison is 'less than', so it is a Compare–Less problem. Using the compare model (Bigger = Smaller + Difference), Karol has the larger quantity (unknown), Tõnn has the smaller quantity (7 cars), and the difference is 6. The unknown is the larger quantity. Therefore, it is Compare–Less, Larger Quantity Unknown.",
+    "tokenUsage": {
+      "prompt": 394,
+      "completion": 204,
+      "total": 598
+    },
+    "modelAnswers": {
+      "bigger": null,
+      "smaller": 7,
+      "difference": 6
+    },
+    "answer": 13,
+    "reasoning": "Bigger = 7 + 6 = 13, so Karol has 13 cars.",
+    "storyGrammarPrompts": [
+      {
+        "text": "Who had fewer cars, Tõnn or Karol? How many cars did Tõnn have?",
+        "boxTarget": "smaller",
+        "context": "This question helps us find out how many cars the person with less has. Let's figure out Tõnn's number of cars."
+      },
+      {
+        "text": "How many more cars did Karol have than Tõnn?",
+        "boxTarget": "difference",
+        "context": "This question helps us see how much more Karol had compared to Tõnn. Let's think about how many extra cars Karol has."
+      },
+      {
+        "text": "Who had more cars, Tõnn or Karol? How many cars did Karol have?",
+        "boxTarget": "bigger",
+        "context": "Now let's find out who had more and figure out the total number of cars Karol has. We're looking for the biggest amount."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLLQU",
+    "groundTruthAnswer": 13,
+    "groundTruthModelAnswers": {
+      "bigger": null,
+      "smaller": 7,
+      "difference": 6
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "Liina has 4 red balloons, which is 2 red balloons less than Madli. How many red balloons does Madli have?",
+    "output": "Liina's balloons are described by comparing to Madli's, namely that she has 2 fewer. The problem is about establishing the difference, so it fits the Compare category.",
+    "category": "Compare",
+    "subcategory": "CLLQU",
+    "subReasoning": "The problem states that Liina has 4 red balloons, which is 2 red balloons less than Madli. The direction of comparison is 'less than' (Liina has fewer than Madli), so it's a Compare–Less problem. Using the compare model: Bigger (Madli) = Smaller (Liina) + Difference (2). The unknown is the larger quantity—how many balloons Madli has. Therefore, the correct subcategory is Compare–Less, Larger Quantity Unknown.",
+    "tokenUsage": {
+      "prompt": 397,
+      "completion": 184,
+      "total": 581
+    },
+    "modelAnswers": {
+      "bigger": null,
+      "smaller": 4,
+      "difference": 2
+    },
+    "answer": 6,
+    "reasoning": "Bigger = 4 + 2 = 6, so Madli has 6 red balloons.",
+    "storyGrammarPrompts": [
+      {
+        "text": "Who has more red balloons, Madli or Liina?",
+        "boxTarget": "bigger",
+        "context": "This question helps you notice which person has the bigger amount of balloons in the story. Let’s see who has the most!"
+      },
+      {
+        "text": "How many red balloons does Liina have?",
+        "boxTarget": "smaller",
+        "context": "This part is about finding the number of red balloons Liina has. We can look at the story to see her amount."
+      },
+      {
+        "text": "How many fewer red balloons does Liina have than Madli?",
+        "boxTarget": "difference",
+        "context": "This question helps us see how big the gap is between Liina’s balloons and Madli’s, so we know how much more Madli has."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLLQU",
+    "groundTruthAnswer": 6,
+    "groundTruthModelAnswers": {
+      "bigger": null,
+      "smaller": 4,
+      "difference": 2
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "Riin has 13 drawings, which is 7 drawings less than the teacher. How many drawings does the teacher have?",
+    "output": "This problem contrasts Riin's number of drawings to the teacher's, using the difference to define the relationship. There is no time element or combining, only comparison.",
+    "category": "Compare",
+    "subcategory": "CLLQU",
+    "subReasoning": "The problem states that Riin has 13 drawings, which is 7 drawings less than the teacher. The comparison direction is 'less than,' indicating this is a Compare–Less problem. In the compare model, the teacher (larger quantity) has an unknown number of drawings, Riin (smaller quantity) has 13, and the difference is 7. The unknown is the larger quantity (the teacher's drawings). Therefore, this problem is Compare–Less, Larger Quantity Unknown.",
+    "tokenUsage": {
+      "prompt": 394,
+      "completion": 181,
+      "total": 575
+    },
+    "modelAnswers": {
+      "bigger": null,
+      "smaller": 13,
+      "difference": 7
+    },
+    "answer": 20,
+    "reasoning": "Bigger = 13 + 7 = 20, so the teacher has 20 drawings.",
+    "storyGrammarPrompts": [
+      {
+        "text": "Who has fewer drawings, Riin or the teacher?",
+        "boxTarget": "smaller",
+        "context": "This question helps us figure out which person has the smaller number of drawings in the story."
+      },
+      {
+        "text": "How many more drawings does the teacher have than Riin?",
+        "boxTarget": "difference",
+        "context": "This question asks about the difference between what the teacher has and what Riin has. It's about how many extra drawings the teacher has."
+      },
+      {
+        "text": "Who has more drawings, and how can we find out how many drawings that is?",
+        "boxTarget": "bigger",
+        "context": "This question helps us think about the person with the bigger number of drawings and how to figure out that amount using the other information."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLLQU",
+    "groundTruthAnswer": 20,
+    "groundTruthModelAnswers": {
+      "bigger": null,
+      "smaller": 13,
+      "difference": 7
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "Marko has 15 Lego blocks, which is 5 Lego blocks less than his brother. How many Lego blocks does his brother have?",
+    "output": "Marko's Lego blocks are fewer than his brother's by 5 blocks. The structure is about comparing their numbers, so it is a Compare problem.",
+    "category": "Compare",
+    "subcategory": "CLLQU",
+    "subReasoning": "The problem states that Marko has 15 Lego blocks, which is 5 blocks less than his brother. The comparison direction is 'less than,' which indicates this is a Compare–Less problem. The unknown is how many Lego blocks his brother has (the larger quantity). According to the COMPS framework, this fits the Compare–Less, Larger Quantity Unknown (CLLQU) category.",
+    "tokenUsage": {
+      "prompt": 397,
+      "completion": 187,
+      "total": 584
+    },
+    "modelAnswers": {
+      "bigger": null,
+      "smaller": 15,
+      "difference": 5
+    },
+    "answer": 20,
+    "reasoning": "Bigger = 15 + 5 = 20, so Marko's brother has 20 Lego blocks.",
+    "storyGrammarPrompts": [
+      {
+        "text": "Who has fewer Lego blocks in the story?",
+        "boxTarget": "smaller",
+        "context": "Let's think about which person has the smaller amount of Lego blocks. This helps us see who we start with before finding out about the other person."
+      },
+      {
+        "text": "How many more Lego blocks does his brother have than Marko?",
+        "boxTarget": "difference",
+        "context": "We're looking for how many extra blocks Marko's brother has compared to Marko. This is the difference between their Lego blocks."
+      },
+      {
+        "text": "Who has more Lego blocks, and how many do they have?",
+        "boxTarget": "bigger",
+        "context": "Now, let's think about the person with the bigger collection of Lego blocks. We're trying to find out exactly how many blocks that is!"
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLLQU",
+    "groundTruthAnswer": 20,
+    "groundTruthModelAnswers": {
+      "bigger": null,
+      "smaller": 15,
+      "difference": 5
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  }
+]

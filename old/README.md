@@ -1,7 +1,6 @@
 # AI Special Education Thesis
 
-
-Note: 
+Note:
 
 General Scaling law - The more tokens an LLM is trained on and the more parameters it has, then the smarter it gets... We want a model that maximizes these two
 
@@ -15,17 +14,20 @@ General Scaling law - The more tokens an LLM is trained on and the more paramete
 
 - https://www.promptingguide.ai/
 
-
 - Maybe reliance on past classification? RAG
 
 ### Zero-Shot Prompting
+
 ### Few-shot prompting
+
 ### Chain-of-Thought Prompting (NOTE: Emergent Ability that arises with sufficiently large language models)
-    Might be interesting to use this: 
+
+    Might be interesting to use this:
     A combination with few-shot prompting.
     Examples that include reasoning steps.
-### Meta Prompting 
-    Assumes LLM has innate knowledge
 
+### Meta Prompting
+
+    Assumes LLM has innate knowledge
 
 ### Prompt Chaining

@@ -1,0 +1,1412 @@
+[
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "5 tables were brought to the school cafeteria. Now there are 15 tables in the cafeteria. How many tables were there before?",
+    "output": "This problem describes a quantity that changes over time due to an action. Tables were brought (added) to the cafeteria, which increased the total number from an unknown starting amount to 15. The problem follows a before-and-after structure where the cafeteria's table count transformed through the action of bringing in 5 more tables.",
+    "category": "Change",
+    "subcategory": "CJPU",
+    "subReasoning": "First, I need to determine the situation type. The problem states that 5 tables were brought to the cafeteria, which means the quantity is increasing over time, so this is a Join problem. Next, I'll identify the quantities using the Start + Change = Result structure: Start (unknown - how many tables were there before), Change (5 tables brought), Result (15 tables now). Since this is a Join problem, the Start and Change are Parts, while the Result is the Whole. The unknown value is the Start, which represents a Part in this Join scenario. Therefore, this is a Change-Join, Part Unknown problem.",
+    "tokenUsage": {
+      "prompt": 452,
+      "completion": 227,
+      "total": 679
+    },
+    "modelAnswers": {
+      "start": null,
+      "change": 5,
+      "end": 15
+    },
+    "answer": 10,
+    "reasoning": "This is an increase problem. 5 tables were brought (change = +5), resulting in 15 total tables (end = 15). Using Start + Change = End: ? + 5 = 15 → 15 - 5 = 10, so there were 10 tables before.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many tables were added to the cafeteria?",
+        "boxTarget": "change",
+        "context": "This question helps us find out how many tables were brought in. Look for the part of the story that tells us about tables being added or brought to the cafeteria."
+      },
+      {
+        "text": "How many tables are in the cafeteria now?",
+        "boxTarget": "end",
+        "context": "This question asks us to find the total number of tables after everything happened. Look for words like 'now there are' to find this number in the story."
+      },
+      {
+        "text": "How many tables were in the cafeteria at the very beginning?",
+        "boxTarget": "start",
+        "context": "This question asks us to figure out how many tables were already there before any new ones were brought in. This is what we need to solve for in this problem."
+      }
+    ],
+    "groundTruthCategory": "Change",
+    "groundTruthSubcategory": "CJPU",
+    "groundTruthAnswer": 10,
+    "groundTruthModelAnswers": {
+      "start": null,
+      "change": 5,
+      "end": 15
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "Hugo had 5 euros saved to buy his favorite computer game. His dad gave him some more money. Now Hugo has 17 euros. How much money did his dad give him?",
+    "output": "This problem shows a transformation where Hugo's money amount changes over time. He starts with 5 euros, then his dad gives him more money (an action that increases his total), resulting in 17 euros. The problem has a clear before-and-after structure with the giving action causing the change in Hugo's money amount.",
+    "category": "Change",
+    "subcategory": "CJPU",
+    "subReasoning": "In this problem, Hugo's money is increasing over time - he starts with 5 euros and ends with 17 euros after his dad gives him more money. This indicates a Join situation. Using the structure Start + Change = Result: Start = 5 euros (Hugo's initial savings), Change = unknown (the money his dad gave him), and Result = 17 euros (Hugo's final amount). In a Join problem, the Start and Change are Parts, while the Result is the Whole. Since the Change (the amount dad gave) is unknown, and the Change represents a Part in the Join model, this is a Part Unknown problem.",
+    "tokenUsage": {
+      "prompt": 459,
+      "completion": 217,
+      "total": 676
+    },
+    "modelAnswers": {
+      "start": 5,
+      "change": null,
+      "end": 17
+    },
+    "answer": 12,
+    "reasoning": "This is an increase (Join) problem. Hugo started with 5 euros, his dad gave him some money (unknown change), and he ended with 17 euros. Using Start + Change = End: 5 + ? = 17 → 17 - 5 = 12, so his dad gave him 12 euros.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How much money did Hugo have saved at the beginning?",
+        "boxTarget": "start",
+        "context": "This question helps us find out how many euros Hugo had before his dad gave him any extra money. We're looking for the amount he started with."
+      },
+      {
+        "text": "How much money does Hugo have now after his dad helped him?",
+        "boxTarget": "end",
+        "context": "This question helps us find out the total amount of euros Hugo has after everything happened in the story. We're looking for how much he ended up with."
+      },
+      {
+        "text": "How much money did Hugo's dad give him?",
+        "boxTarget": "change",
+        "context": "This question helps us find out how many euros Hugo's dad added to what Hugo already had. We're looking for the extra money that was given to Hugo."
+      }
+    ],
+    "groundTruthCategory": "Change",
+    "groundTruthSubcategory": "CJPU",
+    "groundTruthAnswer": 12,
+    "groundTruthModelAnswers": {
+      "start": 5,
+      "change": null,
+      "end": 17
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "Juss had 9 stickers. A friend gave him some more stickers. Now he has 14 stickers. How many stickers did the friend give him?",
+    "output": "This describes a change situation where Juss's sticker collection transforms over time. He begins with 9 stickers, then receives more from a friend (an action that increases his collection), ending up with 14 stickers. The problem follows a temporal sequence where the friend's giving action causes the change in quantity.",
+    "category": "Change",
+    "subcategory": "CJPU",
+    "subReasoning": "Step 1: The quantity is increasing over time - Juss starts with 9 stickers and ends up with 14 stickers after receiving more from a friend, so this is a Join problem. Step 2: Using the structure Start + Change = Result, I can identify: Start = 9 stickers (initial amount), Change = unknown (stickers given by friend), Result = 14 stickers (final amount). Step 3: In a Join problem, the Start and Change are Parts, while the Result is the Whole. Since the Change (how many stickers the friend gave) is unknown, and the Change represents a Part in the join model, this is a Part Unknown problem.",
+    "tokenUsage": {
+      "prompt": 458,
+      "completion": 234,
+      "total": 692
+    },
+    "modelAnswers": {
+      "start": 9,
+      "change": null,
+      "end": 14
+    },
+    "answer": 5,
+    "reasoning": "This is an increase problem. Juss started with 9 stickers, received some more from a friend, and ended with 14 stickers. Using Start + Change = End: 9 + ? = 14 → 14 - 9 = 5, so the friend gave him 5 stickers.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many stickers did Juss have at the beginning?",
+        "boxTarget": "start",
+        "context": "This question helps us find where Juss started in his sticker story. We're looking for the number of stickers he had before his friend gave him any more."
+      },
+      {
+        "text": "How many stickers does Juss have now at the end?",
+        "boxTarget": "end",
+        "context": "This question helps us find where Juss ended up in his sticker story. We're looking for the total number of stickers he has after his friend gave him some more."
+      },
+      {
+        "text": "How many stickers did his friend give him?",
+        "boxTarget": "change",
+        "context": "This question helps us find what changed in Juss's sticker collection. We're looking for the number of new stickers his friend added to what he already had."
+      }
+    ],
+    "groundTruthCategory": "Change",
+    "groundTruthSubcategory": "CJPU",
+    "groundTruthAnswer": 5,
+    "groundTruthModelAnswers": {
+      "start": 9,
+      "change": null,
+      "end": 14
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "The snowman first got 1 carrot nose and 3 stone buttons. Later, a few more stone buttons were added. Now the snowman has 6 'noses and buttons' altogether. How many stone buttons were added later?",
+    "output": "This problem describes a transformation over time where the snowman's decorations change. Initially the snowman has 4 items total (1 nose + 3 buttons), then more buttons are added later, resulting in 6 total items. The temporal language 'first' and 'later' clearly indicates a before-and-after structure where adding buttons causes the change.",
+    "category": "Change",
+    "subcategory": "CJPU",
+    "subReasoning": "In this problem, the snowman starts with 1 carrot nose and 3 stone buttons, which gives us a starting amount of 4 items total (1 + 3 = 4). Then, some stone buttons are added later, which means the quantity is increasing over time, making this a Join problem. The final result is 6 'noses and buttons' altogether. Using the structure Start + Change = Result, we have: Start = 4 items, Change = unknown number of stone buttons added, Result = 6 items total. In a Join problem, the Start and Change are Parts, while the Result is the Whole. Since the Change (the number of stone buttons added later) is the unknown value, and Change represents a Part in the Join model, this is a Change-Join, Part Unknown problem.",
+    "tokenUsage": {
+      "prompt": 472,
+      "completion": 226,
+      "total": 698
+    },
+    "modelAnswers": {
+      "start": 4,
+      "change": null,
+      "end": 6
+    },
+    "answer": 2,
+    "reasoning": "The snowman started with 1 carrot nose + 3 stone buttons = 4 items total. After adding more buttons, there are 6 items total. Using 4 + ? = 6 → 6 - 4 = 2, so 2 stone buttons were added later.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many noses and buttons did the snowman have at the beginning?",
+        "boxTarget": "start",
+        "context": "This question helps you find what the snowman started with. Count up the carrot nose and the stone buttons he got first, before any more were added."
+      },
+      {
+        "text": "How many noses and buttons does the snowman have now?",
+        "boxTarget": "end",
+        "context": "This question asks about the final amount. Look for the total number of noses and buttons the snowman has after everything was added."
+      },
+      {
+        "text": "How many stone buttons were added to the snowman later?",
+        "boxTarget": "change",
+        "context": "This question asks about what changed - the extra stone buttons that were put on the snowman after he already had his nose and first buttons. This is what we need to figure out!"
+      }
+    ],
+    "groundTruthCategory": "Change",
+    "groundTruthSubcategory": "CJPU",
+    "groundTruthAnswer": 2,
+    "groundTruthModelAnswers": {
+      "start": 4,
+      "change": null,
+      "end": 6
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "There were 3 chocolate cookies on the cookie plate, and later some jam cookies were added. Now there are 10 cookies on the plate. How many jam cookies were added?",
+    "output": "This shows a change situation where the number of cookies on the plate transforms over time. The plate starts with 3 chocolate cookies, then jam cookies are added (an action that increases the total), resulting in 10 cookies total. The temporal sequence and the adding action indicate a transformation of the plate's contents.",
+    "category": "Change",
+    "subcategory": "CJPU",
+    "subReasoning": "Step 1: The situation involves cookies being added to a plate, so the quantity is increasing over time, making this a Join problem. Step 2: Using the structure Start ± Change = Result, I can identify: Start = 3 chocolate cookies (initial amount), Change = some jam cookies were added (unknown), Result = 10 cookies total (final amount). Step 3: In a Join problem, the Start and Change are Parts, while the Result is the Whole. Since the Change (jam cookies added) is unknown, and Change represents a Part in the Join model, this is a Part Unknown problem.",
+    "tokenUsage": {
+      "prompt": 458,
+      "completion": 217,
+      "total": 675
+    },
+    "modelAnswers": {
+      "start": 3,
+      "change": null,
+      "end": 10
+    },
+    "answer": 7,
+    "reasoning": "3 + ? = 10 → 10 - 3 = 7, so 7 jam cookies were added.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many chocolate cookies were on the plate at the beginning?",
+        "boxTarget": "start",
+        "context": "This question helps us figure out what we started with before anything changed. Look back at the very beginning of the story to find this number."
+      },
+      {
+        "text": "How many cookies are on the plate now, after the jam cookies were added?",
+        "boxTarget": "end",
+        "context": "This question asks us to find out what we have at the end of the story, after everything happened. Look for the total number of cookies on the plate now."
+      },
+      {
+        "text": "How many jam cookies were added to the plate?",
+        "boxTarget": "change",
+        "context": "This question asks about what changed in our story. We want to find out how many new cookies joined the chocolate cookies that were already there."
+      }
+    ],
+    "groundTruthCategory": "Change",
+    "groundTruthSubcategory": "CJPU",
+    "groundTruthAnswer": 7,
+    "groundTruthModelAnswers": {
+      "start": 3,
+      "change": null,
+      "end": 10
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "First, 5 heart-shaped decorations were glued to the Valentine's Day card. Later, some star decorations were added. Now the card has 13 decorations in total. How many stars were added later?",
+    "output": "This problem describes a change where the card's decoration count transforms over time. Initially 5 heart decorations are on the card, then star decorations are added later, resulting in 13 total decorations. The temporal markers 'first' and 'later' along with the adding action show a clear before-and-after transformation.",
+    "category": "Change",
+    "subcategory": "CJPU",
+    "subReasoning": "Step 1: The quantity is increasing over time - decorations are being added to the card, so this is a Join problem. Step 2: Using the structure Start ± Change = Result: Start = 5 heart-shaped decorations (initial amount), Change = some star decorations (unknown amount added), Result = 13 total decorations (final amount). Step 3: Since this is a Join problem, the Start (5) and Change (unknown stars) are Parts, while the Result (13) is the Whole. The unknown value is the Change, which represents a Part in this model structure.",
+    "tokenUsage": {
+      "prompt": 468,
+      "completion": 247,
+      "total": 715
+    },
+    "modelAnswers": {
+      "start": 5,
+      "change": null,
+      "end": 13
+    },
+    "answer": 8,
+    "reasoning": "This is an increase problem. Started with 5 heart decorations, then star decorations were added, ending with 13 total decorations. Using Start + Change = End: 5 + ? = 13 → 13 - 5 = 8, so 8 star decorations were added.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many heart-shaped decorations were on the card at the beginning?",
+        "boxTarget": "start",
+        "context": "This question asks you to find what we started with before anything else happened. Look for the number of decorations that were put on the card first, before any other decorations were added."
+      },
+      {
+        "text": "How many decorations are on the card now, after everything was added?",
+        "boxTarget": "end",
+        "context": "This question asks you to find the total number of decorations on the card when everything is finished. Look for the word 'total' or phrases like 'now the card has' to find this number."
+      },
+      {
+        "text": "How many star decorations were added to the card?",
+        "boxTarget": "change",
+        "context": "This question asks you to find how many decorations were added later. This is what we don't know yet - it's what the problem is asking us to figure out!"
+      }
+    ],
+    "groundTruthCategory": "Change",
+    "groundTruthSubcategory": "CJPU",
+    "groundTruthAnswer": 8,
+    "groundTruthModelAnswers": {
+      "start": 5,
+      "change": null,
+      "end": 13
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "At first, 3 hedgehogs were seen in the forest. Later, a few squirrels were also spotted. A total of 9 animals were seen in the forest. How many squirrels were seen later?",
+    "output": "This describes a change in the observed animal count over time. Initially 3 hedgehogs were spotted, then additional squirrels were spotted later, changing the total observed animals to 9. The temporal structure 'at first' and 'later' indicates a transformation in what was observed, not just combining separate groups.",
+    "category": "Change",
+    "subcategory": "CJPU",
+    "subReasoning": "First, I need to determine if this is a Join or Separate situation. The problem describes an initial amount of hedgehogs, then additional squirrels are spotted, resulting in a total number of animals. Since the quantity is increasing over time (animals are being added to the count), this is a Join problem. Next, I'll identify the quantities using Start + Change = Result: Start = 3 hedgehogs, Change = unknown number of squirrels, Result = 9 total animals. The unknown is the Change (number of squirrels). In a Join problem, both Start and Change are Parts, while Result is the Whole. Since the Change is unknown, this means a Part is unknown, making this a Change-Join, Part Unknown problem.",
+    "tokenUsage": {
+      "prompt": 468,
+      "completion": 228,
+      "total": 696
+    },
+    "modelAnswers": {
+      "start": 3,
+      "change": null,
+      "end": 9
+    },
+    "answer": 6,
+    "reasoning": "This is an increase problem. We start with 3 hedgehogs, then squirrels are added (change), resulting in 9 total animals. Using Start + Change = End: 3 + ? = 9 → 9 - 3 = 6, so 6 squirrels were seen later.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many hedgehogs were in the forest at first?",
+        "boxTarget": "start",
+        "context": "This question helps us find where our story begins. We need to look for the number that tells us how many animals were there before anything else happened."
+      },
+      {
+        "text": "How many animals were seen in the forest altogether?",
+        "boxTarget": "end",
+        "context": "This question asks us to find the total number of animals at the end of the story. Look for words like 'total' or 'altogether' to help you find this number."
+      },
+      {
+        "text": "How many squirrels were added to the forest?",
+        "boxTarget": "change",
+        "context": "This question asks us to figure out what changed in our story. We need to find how many new animals (the squirrels) joined the hedgehogs that were already there."
+      }
+    ],
+    "groundTruthCategory": "Change",
+    "groundTruthSubcategory": "CJPU",
+    "groundTruthAnswer": 6,
+    "groundTruthModelAnswers": {
+      "start": 3,
+      "change": null,
+      "end": 9
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "Mart built his castle with 12 Lego bricks. He had with 7 bricks in his box, then got some more from Tiit. How many bricks did Tiit give him?",
+    "output": "This problem shows a change in Mart's brick collection over time. He starts with 7 bricks, then receives more from Tiit (an action that increases his total), ending up with enough to build a 12-brick castle. The getting action represents a transformation where Mart's brick count changes from 7 to 12.",
+    "category": "Change",
+    "subcategory": "CJPU",
+    "subReasoning": "Looking at this problem, I need to determine if the quantity is increasing or decreasing. Mart started with 7 bricks in his box, then got some more from Tiit, and ended up with 12 bricks total for his castle. This shows an increase in the number of bricks, so this is a Join problem. Using the structure Start + Change = Result: Start = 7 bricks (what Mart had initially), Change = unknown (bricks from Tiit), Result = 12 bricks (total used for castle). In a Join problem, the Start and Change are Parts, while the Result is the Whole. Since the Change (how many bricks Tiit gave) is unknown, and the Change represents a Part in the whole-part relationship, this is a Part Unknown problem.",
+    "tokenUsage": {
+      "prompt": 467,
+      "completion": 238,
+      "total": 705
+    },
+    "modelAnswers": {
+      "start": 7,
+      "change": null,
+      "end": 12
+    },
+    "answer": 5,
+    "reasoning": "Mart started with 7 bricks, then got some more from Tiit to end up with 12 bricks total for his castle. Using Start + Change = End: 7 + ? = 12 → 12 - 7 = 5, so Tiit gave him 5 bricks.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many bricks did Mart have in his box at the beginning?",
+        "boxTarget": "start",
+        "context": "This question helps us find where Mart started. We want to know how many Lego bricks were already in his box before he got any more from his friend."
+      },
+      {
+        "text": "How many bricks did Mart use to build his whole castle?",
+        "boxTarget": "end",
+        "context": "This question helps us find how many bricks Mart ended up with altogether. We want to know the total number of Lego bricks he used to make his castle."
+      },
+      {
+        "text": "How many bricks did Tiit give to Mart?",
+        "boxTarget": "change",
+        "context": "This question helps us find what changed. We want to figure out how many more bricks Mart got from Tiit to add to the ones he already had."
+      }
+    ],
+    "groundTruthCategory": "Change",
+    "groundTruthSubcategory": "CJPU",
+    "groundTruthAnswer": 5,
+    "groundTruthModelAnswers": {
+      "start": 7,
+      "change": null,
+      "end": 12
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "Mia watched 3 bunny cartoons in the morning. Later in the day, she watched some dinosaur cartoons. In total, Mia watched 9 cartoons. How many dinosaur cartoons did she watch later?",
+    "output": "This describes a change in Mia's cartoon viewing count over time. She starts by watching 3 cartoons in the morning, then watches additional dinosaur cartoons later in the day, transforming her total watched from 3 to 9. The temporal progression from morning to later in the day shows a change in her viewing activity.",
+    "category": "Change",
+    "subcategory": "CJPU",
+    "subReasoning": "First, I need to determine if this is a Join or Separate situation. Mia starts with 3 bunny cartoons in the morning, then adds some dinosaur cartoons later, resulting in a total of 9 cartoons. Since the quantity is increasing over time (adding more cartoons), this is a Join problem. Next, I'll identify the quantities using Start + Change = Result: Start = 3 bunny cartoons, Change = unknown number of dinosaur cartoons, Result = 9 total cartoons. In a Join problem, the Start and Change are Parts, while the Result is the Whole. Since the Change (dinosaur cartoons) is the unknown value, and Change represents a Part in the Join model, this is a Part Unknown problem.",
+    "tokenUsage": {
+      "prompt": 472,
+      "completion": 248,
+      "total": 720
+    },
+    "modelAnswers": {
+      "start": 3,
+      "change": null,
+      "end": 9
+    },
+    "answer": 6,
+    "reasoning": "This is an increase problem. Mia started with 3 bunny cartoons, then added some dinosaur cartoons to end up with 9 total cartoons. Using the equation 3 + ? = 9, we solve: 9 - 3 = 6. So she watched 6 dinosaur cartoons later.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many bunny cartoons did Mia watch in the morning?",
+        "boxTarget": "start",
+        "context": "This question helps us find what Mia started with. We're looking for the number of cartoons she watched first, before anything else happened in her day."
+      },
+      {
+        "text": "How many cartoons did Mia watch in total by the end of the day?",
+        "boxTarget": "end",
+        "context": "This question helps us find how many cartoons Mia watched altogether. We're looking for the final number when we count up all the cartoons she watched during her whole day."
+      },
+      {
+        "text": "How many dinosaur cartoons did Mia watch later in the day?",
+        "boxTarget": "change",
+        "context": "This question helps us find what was added to change Mia's cartoon count. We're looking for the number of cartoons she watched after the bunny cartoons to reach her total."
+      }
+    ],
+    "groundTruthCategory": "Change",
+    "groundTruthSubcategory": "CJPU",
+    "groundTruthAnswer": 6,
+    "groundTruthModelAnswers": {
+      "start": 3,
+      "change": null,
+      "end": 9
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "There were 8 friends sitting together at the lunch table. Later, a few more friends joined. Now 13 friends are sitting together. How many friends joined?",
+    "output": "This problem describes a change where the number of friends at the table transforms over time. Initially 8 friends are sitting together, then more friends join (an action that increases the group), resulting in 13 friends total. The joining action represents a clear transformation with a before-and-after structure.",
+    "category": "Change",
+    "subcategory": "CJPU",
+    "subReasoning": "This is a Change problem where the quantity is increasing over time - friends are joining the table, so this is a Join situation. Using the model Start + Change = Result: Start = 8 friends (initial amount), Change = unknown (the few more friends who joined), Result = 13 friends (final amount). Since we're looking for the Change value, and in Join problems the Start and Change are both Parts while the Result is the Whole, the unknown Change represents a Part. Therefore, this is a Change-Join, Part Unknown problem.",
+    "tokenUsage": {
+      "prompt": 455,
+      "completion": 225,
+      "total": 680
+    },
+    "modelAnswers": {
+      "start": 8,
+      "change": null,
+      "end": 13
+    },
+    "answer": 5,
+    "reasoning": "This is an increase (Join) problem. We start with 8 friends, some join (unknown change), and end with 13 friends. Using Start + Change = End: 8 + ? = 13 → 13 - 8 = 5, so 5 friends joined.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many friends were sitting at the lunch table at the beginning?",
+        "boxTarget": "start",
+        "context": "This question helps us find out how many friends were already there before anyone new came to join them. Look for the number that tells us about the very beginning of the story."
+      },
+      {
+        "text": "How many friends are sitting at the lunch table now?",
+        "boxTarget": "end",
+        "context": "This question asks us to find the total number of friends after everyone joined together. Look for the number that tells us how many friends there are altogether at the end."
+      },
+      {
+        "text": "How many friends joined the lunch table?",
+        "boxTarget": "change",
+        "context": "This question is asking for the number of new friends who came to sit down. This is what we need to figure out by using the other numbers we found in the story."
+      }
+    ],
+    "groundTruthCategory": "Change",
+    "groundTruthSubcategory": "CJPU",
+    "groundTruthAnswer": 5,
+    "groundTruthModelAnswers": {
+      "start": 8,
+      "change": null,
+      "end": 13
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "5 tables were brought to the school cafeteria. Now there are 15 tables in the cafeteria. How many tables were there before?",
+    "output": "This problem describes a situation where the number of tables in the cafeteria changes over time due to an event (5 tables being brought in). It starts with an unknown quantity, has an action that increases it, and results in a new total, fitting the 'before-and-after' structure of a Change problem.",
+    "category": "Change",
+    "subcategory": "CJPU",
+    "subReasoning": "The problem describes an increase in the number of tables (from an initial unknown amount, 5 tables were added, resulting in 15 tables). Therefore, it is a Join problem. The structure is Start + Change = Result. We have an unknown Start, a Change of 5 tables, and a Result of 15 tables. In a Join problem, the Start and Change are considered Parts, and the Result is the Whole. Since the Start (one of the Parts) is unknown, this classifies it as a Change-Join, Part Unknown (CJPU) problem.",
+    "tokenUsage": {
+      "prompt": 406,
+      "completion": 193,
+      "total": 599
+    },
+    "modelAnswers": {
+      "start": null,
+      "change": 5,
+      "end": 15
+    },
+    "answer": 10,
+    "reasoning": "This is a Join problem because tables were brought to the cafeteria, increasing the total. The 'end' amount is 15 tables. The 'change' amount is 5 tables (brought). We need to find the 'start' amount. According to the formula Start + Change = End, we have Start + 5 = 15. To find Start, we subtract 5 from 15: 15 - 5 = 10. So there were 10 tables before.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many tables were in the cafeteria to begin with?",
+        "boxTarget": "start",
+        "context": "This is the number of tables that were already in the cafeteria before any new ones came in. It's like asking, 'What did we start with?'"
+      },
+      {
+        "text": "How many tables were brought to the cafeteria?",
+        "boxTarget": "change",
+        "context": "This is how many tables were added or brought in to the cafeteria. It's the 'change' that happened!"
+      },
+      {
+        "text": "How many tables are in the cafeteria now?",
+        "boxTarget": "end",
+        "context": "This is the total number of tables in the cafeteria after everything happened. It's what we ended up with!"
+      }
+    ],
+    "groundTruthCategory": "Change",
+    "groundTruthSubcategory": "CJPU",
+    "groundTruthAnswer": 10,
+    "groundTruthModelAnswers": {
+      "start": null,
+      "change": 5,
+      "end": 15
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "Hugo had 5 euros saved to buy his favorite computer game. His dad gave him some more money. Now Hugo has 17 euros. How much money did his dad give him?",
+    "output": "This problem shows Hugo's money increasing over time. He starts with 5 euros, his dad's action of 'giving him some more money' causes a transformation, and he ends up with 17 euros. This is a clear representation of a Change situation where an initial quantity is altered by an event to become a final quantity.",
+    "category": "Change",
+    "subcategory": "CJPU",
+    "subReasoning": "Step 1: Determine the Situation Type. The amount of money Hugo has increases from 5 euros to 17 euros, indicating a 'Join' situation.\n\nStep 2: Identify the Quantities in the Model. The structure is Start + Change = Result. The 'Start' amount is 5 euros. The 'Change' is the money his dad gave him, which is unknown. The 'Result' is 17 euros. So, the model is 5 + unknown = 17.\n\nStep 3: Identify the Unknown and Its Role. For Join problems, Start and Change are 'Parts', and Result is the 'Whole'. Since the 'Change' amount is the unknown, and 'Change' is a 'Part' in a Join problem, this problem is a 'Part Unknown'. Therefore, it is a Change–Join, Part Unknown (CJPU) problem.",
+    "tokenUsage": {
+      "prompt": 417,
+      "completion": 220,
+      "total": 637
+    },
+    "modelAnswers": {
+      "start": 5,
+      "change": null,
+      "end": 17
+    },
+    "answer": 12,
+    "reasoning": "This is a 'Join' problem because Hugo's dad gave him more money, increasing his total. The Start amount is Hugo's initial savings (5 euros). The End amount is what he has now (17 euros). The Change is the unknown amount his dad gave him. Using the formula Start + Change = End, we have 5 + Change = 17. To find the Change, we subtract 5 from 17: 17 - 5 = 12. So, his dad gave him 12 euros.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How much money did Hugo have at the very beginning of the story?",
+        "boxTarget": "start",
+        "context": "This is how much money Hugo had when the story about his savings first started. It's the money he had before anything else happened!"
+      },
+      {
+        "text": "How much more money did Hugo get from his dad?",
+        "boxTarget": "change",
+        "context": "This is the part of Hugo's money that changed! His dad gave him some money, which made his total go up. We need to find out how much that 'some' was."
+      },
+      {
+        "text": "How much money does Hugo have now, at the end of the story?",
+        "boxTarget": "end",
+        "context": "This is how much money Hugo has in total after his dad gave him more. It's the final amount of money he has right now!"
+      }
+    ],
+    "groundTruthCategory": "Change",
+    "groundTruthSubcategory": "CJPU",
+    "groundTruthAnswer": 12,
+    "groundTruthModelAnswers": {
+      "start": 5,
+      "change": null,
+      "end": 17
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "Juss had 9 stickers. A friend gave him some more stickers. Now he has 14 stickers. How many stickers did the friend give him?",
+    "output": "Juss's sticker collection changes over time. He begins with 9 stickers, an action (a friend giving him more) occurs, and his total becomes 14 stickers. This progression from an initial state to a final state due to an event is characteristic of a Change problem.",
+    "category": "Change",
+    "subcategory": "CJPU",
+    "subReasoning": "Step 1: The quantity of stickers is increasing (Juss had 9, then got more, and now has 14), so it is a Join problem. \nStep 2: The model is Start + Change = Result. \n- Start: Juss had 9 stickers. \n- Change: A friend gave him 'some more' stickers (this is unknown). \n- Result: Now he has 14 stickers. \nStep 3: For a Join problem (Start + Change = Result), the Start and Change are considered Parts, and the Result is the Whole. In this problem, the 'Change' amount is unknown. Since the Change is a Part in a Join problem, the problem is classified as a Change-Join, Part Unknown.",
+    "tokenUsage": {
+      "prompt": 410,
+      "completion": 200,
+      "total": 610
+    },
+    "modelAnswers": {
+      "start": 9,
+      "change": null,
+      "end": 14
+    },
+    "answer": 5,
+    "reasoning": "The problem describes an increase in stickers, so it's a 'Join' problem. Juss started with 9 stickers (Start). He ended up with 14 stickers (End). The number of stickers his friend gave him is the unknown Change. So, 9 + Change = 14. To find the Change, subtract the Start from the End: 14 - 9 = 5.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many stickers did Juss have to begin with?",
+        "boxTarget": "start",
+        "context": "This is how many stickers Juss had when the story first started. Imagine you counted them right at the very beginning of the story!"
+      },
+      {
+        "text": "How many more stickers did his friend give him?",
+        "boxTarget": "change",
+        "context": "This is how many stickers were added or given to Juss during the story. It's the part we need to figure out!"
+      },
+      {
+        "text": "How many stickers did Juss have in the end?",
+        "boxTarget": "end",
+        "context": "This is the total number of stickers Juss had after everything happened in the story. It's how many he had all together at the end!"
+      }
+    ],
+    "groundTruthCategory": "Change",
+    "groundTruthSubcategory": "CJPU",
+    "groundTruthAnswer": 5,
+    "groundTruthModelAnswers": {
+      "start": 9,
+      "change": null,
+      "end": 14
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "The snowman first got 1 carrot nose and 3 stone buttons. Later, a few more stone buttons were added. Now the snowman has 6 'noses and buttons' altogether. How many stone buttons were added later?",
+    "output": "The total number of 'noses and buttons' on the snowman changes over time. It starts with an initial set of decorations (1 nose + 3 buttons = 4 items). Then, 'a few more stone buttons were added,' causing the total to increase to 6. This describes a transformation of the total quantity due to an addition, making it a Change problem.",
+    "category": "Change",
+    "subcategory": "CJPU",
+    "subReasoning": "Step 1: The total number of 'noses and buttons' increases from an initial state to a final state (1 + 3 = 4 initially, then more are added to reach 6). This indicates an increase, so it is a Join problem. \n\nStep 2: The model for a Join problem is Start + Change = Result. \n- Start: The snowman initially had 1 carrot nose and 3 stone buttons, making a total of 1 + 3 = 4 'noses and buttons'. \n- Change: 'a few more stone buttons were added'. This is the unknown quantity. \n- Result: 'Now the snowman has 6 'noses and buttons' altogether'. \nSo the equation is 4 + unknown = 6. \n\nStep 3: For a Join problem, Start and Change are Parts, and Result is the Whole. The unknown is the 'Change' amount, which is a Part in this model. Therefore, it is a Change-Join, Part Unknown problem.",
+    "tokenUsage": {
+      "prompt": 423,
+      "completion": 217,
+      "total": 640
+    },
+    "modelAnswers": {
+      "start": 4,
+      "change": null,
+      "end": 6
+    },
+    "answer": 2,
+    "reasoning": "The problem describes an increase in the number of buttons on the snowman. \n1. First, identify the Start amount: One carrot nose and three stone buttons make 1 + 3 = 4 'noses and buttons'.\n2. Next, identify the End amount: The snowman now has 6 'noses and buttons' altogether.\n3. The Change amount is unknown. This is what we need to find.\n4. Use the formula: Start + Change = End. So, 4 + Change = 6.\n5. To find the Change, subtract the Start from the End: 6 - 4 = 2.\nTherefore, 2 stone buttons were added later.",
+    "storyGrammarPrompts": [
+      {
+        "text": "What did the snowman have at the very beginning of the story?",
+        "boxTarget": "start",
+        "context": "This is about what the snowman had right away, before anything changed. Count up all the noses and buttons the snowman had to start with!"
+      },
+      {
+        "text": "Did the snowman get more noses and buttons, or did some go away?",
+        "boxTarget": "change",
+        "context": "Think about what happened in the middle of the story. Did more buttons get added, or did some disappear? This box is for how the number of things changed."
+      },
+      {
+        "text": "How many noses and buttons does the snowman have now, at the very end?",
+        "boxTarget": "end",
+        "context": "This is the total number of noses and buttons the snowman has after everything happened. It's the final count!"
+      }
+    ],
+    "groundTruthCategory": "Change",
+    "groundTruthSubcategory": "CJPU",
+    "groundTruthAnswer": 2,
+    "groundTruthModelAnswers": {
+      "start": 4,
+      "change": null,
+      "end": 6
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "There were 3 chocolate cookies on the cookie plate, and later some jam cookies were added. Now there are 10 cookies on the plate. How many jam cookies were added?",
+    "output": "The number of cookies on the plate changes. It begins with 3 chocolate cookies, then 'some jam cookies were added,' which is an action causing the total quantity to increase to 10. This dynamic transformation of the quantity over time signifies a Change problem.",
+    "category": "Change",
+    "subcategory": "CJPU",
+    "subReasoning": "The problem describes an initial quantity of chocolate cookies to which 'some jam cookies were added', resulting in a larger total quantity. This indicates an increase in the quantity over time, classifying it as a Join problem. The equation structure is Start + Change = Result. Here, 'There were 3 chocolate cookies' is the Start (3). 'some jam cookies were added' is the Change, which is the unknown quantity. 'Now there are 10 cookies' is the Result (10). In a Join problem, the Start and Change are considered Parts, and the Result is the Whole. Since the Change is the unknown quantity (the number of jam cookies added), and Change is a Part in a Join scenario, the problem is classified as a Join, Part Unknown.",
+    "tokenUsage": {
+      "prompt": 415,
+      "completion": 246,
+      "total": 661
+    },
+    "modelAnswers": {
+      "start": 3,
+      "change": null,
+      "end": 10
+    },
+    "answer": 7,
+    "reasoning": "The problem states that there were 3 chocolate cookies to start, and later some jam cookies were added, resulting in 10 cookies. This is a 'Join' scenario (increase). We know the Start (3) and the End (10), but the Change (jam cookies added) is unknown. The equation is 3 + Change = 10. To find the Change, we subtract the Start from the End: 10 - 3 = 7.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many cookies were on the plate at the very beginning of the story?",
+        "boxTarget": "start",
+        "context": "This is where we put the number of cookies we started with, before anything new happened. It's like checking how many toys you have on your rug before you add any more!"
+      },
+      {
+        "text": "How many jam cookies were added to the plate?",
+        "boxTarget": "change",
+        "context": "This is what we need to figure out! It's how many cookies were put ONTO the plate. We don't know this number yet, and that's okay! We'll find it together."
+      },
+      {
+        "text": "How many cookies are there on the plate now, after all the jam cookies were added?",
+        "boxTarget": "end",
+        "context": "This is the total number of cookies on the plate at the very end of the story. If you counted all the cookies right now, what would that number be?"
+      }
+    ],
+    "groundTruthCategory": "Change",
+    "groundTruthSubcategory": "CJPU",
+    "groundTruthAnswer": 7,
+    "groundTruthModelAnswers": {
+      "start": 3,
+      "change": null,
+      "end": 10
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "First, 5 heart-shaped decorations were glued to the Valentine's Day card. Later, some star decorations were added. Now the card has 13 decorations in total. How many stars were added later?",
+    "output": "The total number of decorations on the card changes. It starts with 5 heart-shaped decorations. Subsequently, 'some star decorations were added,' which is an event that alters the quantity, resulting in 13 decorations. This progression illustrates a Change problem.",
+    "category": "Change",
+    "subcategory": "CJPU",
+    "subReasoning": "Step 1: Determine the Situation Type. The problem describes adding more decorations, which increases the total number of decorations. Therefore, it is a Join problem.\n\nStep 2: Identify the Quantities in the Model. The structure is Start + Change = Result. The Start is '5 heart-shaped decorations'. The Change is 'some star decorations were added', which is the unknown quantity. The Result is '13 decorations in total'. So the equation is 5 + unknown = 13.\n\nStep 3: Identify the Unknown and Its Role. For a Join problem, Start and Change are the 'Parts', and Result is the 'Whole'. In this problem, the 'Change' amount (the number of stars added) is unknown. Since the unknown is one of the 'Parts' (specifically, the Change part), it falls under the 'Part Unknown' category for a Join problem.",
+    "tokenUsage": {
+      "prompt": 422,
+      "completion": 213,
+      "total": 635
+    },
+    "modelAnswers": {
+      "start": 5,
+      "change": null,
+      "end": 13
+    },
+    "answer": 8,
+    "reasoning": "The problem describes adding decorations, which is an increase. The starting number of decorations is 5. The total number of decorations at the end is 13. We need to find the number of stars added, which is the change. So, 5 + Change = 13. To find the change, we subtract the start from the end: 13 - 5 = 8.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many heart decorations did they start with?",
+        "boxTarget": "start",
+        "context": "This is what we began with! Think about how many decorations were on the card right at the very beginning of the story. Those were the heart decorations."
+      },
+      {
+        "text": "How many star decorations were added?",
+        "boxTarget": "change",
+        "context": "This is how many more decorations were put on the card! We know some stars were added, but we're not sure how many. This is the mystery we need to solve!"
+      },
+      {
+        "text": "How many decorations are on the card in all now?",
+        "boxTarget": "end",
+        "context": "This is the total number of decorations on the card when everything was finished! It's how many there are now after all the heart and star decorations were put on."
+      }
+    ],
+    "groundTruthCategory": "Change",
+    "groundTruthSubcategory": "CJPU",
+    "groundTruthAnswer": 8,
+    "groundTruthModelAnswers": {
+      "start": 5,
+      "change": null,
+      "end": 13
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "At first, 3 hedgehogs were seen in the forest. Later, a few squirrels were also spotted. A total of 9 animals were seen in the forest. How many squirrels were seen later?",
+    "output": "The total number of animals seen in the forest changes over time. It begins with '3 hedgehogs,' then 'a few squirrels were also spotted,' which is an additional event that increases the total count to 9. This reflects a quantity increasing due to subsequent actions, fitting the Change category.",
+    "category": "Change",
+    "subcategory": "CJPU",
+    "subReasoning": "The problem describes an initial quantity of hedgehogs and then states that more squirrels were added, leading to a larger total number of animals. This indicates an increase in quantity, making it a Join situation. In the model 'Start + Change = Result', the 'Start' is 3 hedgehogs, the 'Change' is the 'few squirrels' which is the unknown quantity, and the 'Result' is the 'total of 9 animals'. Since the 'Change' amount is unknown in a Join situation, and 'Start' and 'Change' are considered 'Parts' in a Join problem, the problem is a Change–Join, Part Unknown type.",
+    "tokenUsage": {
+      "prompt": 418,
+      "completion": 235,
+      "total": 653
+    },
+    "modelAnswers": {
+      "start": 3,
+      "change": null,
+      "end": 9
+    },
+    "answer": 6,
+    "reasoning": "The problem describes an increase in the number of animals seen. We start with 3 hedgehogs. A 'few squirrels' were added, which represents the change. The total of 9 animals is the end quantity. Therefore, Start (3) + Change (?) = End (9). To find the change, we calculate 9 - 3 = 6. So, 6 squirrels were seen later.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many animals were in the forest at the very beginning?",
+        "boxTarget": "start",
+        "context": "This is how many animals we saw right when the story started! No new animals joined yet, and none left. Just the first animals we counted."
+      },
+      {
+        "text": "How many new animals came to join the others?",
+        "boxTarget": "change",
+        "context": "This is how many more animals showed up after the first ones. We don't know this one yet, but we'll figure it out! These are the animals that *changed* the number we saw."
+      },
+      {
+        "text": "How many animals were there altogether when we finished counting?",
+        "boxTarget": "end",
+        "context": "This is the total number of animals we saw in the forest when everything was all done. It's the big number that tells us how many animals were there at the very end of our story."
+      }
+    ],
+    "groundTruthCategory": "Change",
+    "groundTruthSubcategory": "CJPU",
+    "groundTruthAnswer": 6,
+    "groundTruthModelAnswers": {
+      "start": 3,
+      "change": null,
+      "end": 9
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "Mart built his castle with 12 Lego bricks. He had with 7 bricks in his box, then got some more from Tiit. How many bricks did Tiit give him?",
+    "output": "Mart's total number of Lego bricks for the castle changed. He started with 7 bricks in his box, received 'some more from Tiit,' which is an action that added to his initial quantity, resulting in him using 12 bricks for the castle. This transformation of a quantity due to gaining more items is a Change problem.",
+    "category": "Change",
+    "subcategory": "CJPU",
+    "subReasoning": "The problem describes a situation where Mart starts with 7 bricks and then adds 'some more' from Tiit, resulting in a total of 12 bricks. Since bricks are being added, this is a 'Join' problem. The known values are the 'Start' (7 bricks) and the 'Result' (12 bricks). The 'Change' amount (how many bricks Tiit gave him) is unknown. In a Join problem, the Start and Change are considered 'Parts', and the Result is the 'Whole'. Since one of the 'Parts' (the Change) is unknown, the problem is classified as a Change–Join, Part Unknown (CJPU).",
+    "tokenUsage": {
+      "prompt": 416,
+      "completion": 231,
+      "total": 647
+    },
+    "modelAnswers": {
+      "start": 7,
+      "change": null,
+      "end": 12
+    },
+    "answer": 5,
+    "reasoning": "The problem describes an increase in the number of Lego bricks. Mart started with 7 bricks. The 'End' state is when he built his castle with 12 bricks, meaning he had 12 bricks in total for the castle. The 'Change' is the additional bricks Tiit gave him. Therefore, 7 + Change = 12. To find the Change, subtract 7 from 12: 12 - 7 = 5. So, Tiit gave him 5 bricks.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many Lego bricks did Mart have to begin with?",
+        "boxTarget": "start",
+        "context": "At the very start of the story, before anything new happened, how many bricks did Mart already have in his box? This is how many he started with!"
+      },
+      {
+        "text": "How many more Lego bricks did Tiit give to Mart?",
+        "boxTarget": "change",
+        "context": "Mart got some more bricks from Tiit, right? We need to find out how many extra bricks Tiit gave him. This is the 'change' or the 'more' part of the story!"
+      },
+      {
+        "text": "How many Lego bricks did Mart have in total at the end?",
+        "boxTarget": "end",
+        "context": "After Mart had some bricks in his box AND got some more from Tiit, how many Lego bricks did he have altogether for his castle? This is the total number he ended up with!"
+      }
+    ],
+    "groundTruthCategory": "Change",
+    "groundTruthSubcategory": "CJPU",
+    "groundTruthAnswer": 5,
+    "groundTruthModelAnswers": {
+      "start": 7,
+      "change": null,
+      "end": 12
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "Mia watched 3 bunny cartoons in the morning. Later in the day, she watched some dinosaur cartoons. In total, Mia watched 9 cartoons. How many dinosaur cartoons did she watch later?",
+    "output": "The total number of cartoons Mia watched accumulated over time. She started with 3 bunny cartoons, and then 'watched some dinosaur cartoons' later, which is an action that added to her total, making it 9. This shows a quantity increasing due to an event, which is characteristic of a Change problem.",
+    "category": "Change",
+    "subcategory": "CJPU",
+    "subReasoning": "Step 1: The total number of cartoons Mia watched increased from the morning to the end of the day, as she added dinosaur cartoons to the bunny cartoons. Therefore, it is a Join problem. Step 2: The model is Start + Change = Result. The Start is 3 bunny cartoons. The Change is 'some' dinosaur cartoons, which is the unknown. The Result is 9 total cartoons. So, 3 + unknown = 9. Step 3: For a Join problem, Start and Change are Parts, and Result is the Whole. Since the 'Change' (dinosaur cartoons) is unknown, and it represents a Part, this problem is classified as a Change–Join, Part Unknown (CJPU) problem.",
+    "tokenUsage": {
+      "prompt": 416,
+      "completion": 209,
+      "total": 625
+    },
+    "modelAnswers": {
+      "start": 3,
+      "change": null,
+      "end": 9
+    },
+    "answer": 6,
+    "reasoning": "The problem describes an increase in the number of cartoons Mia watched. She started with 3 bunny cartoons. Later, she watched an unknown number of dinosaur cartoons, which is the 'change'. The total number of cartoons she watched is 9, which is the 'end'. To find the change, we subtract the start from the end: 9 - 3 = 6.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many cartoons did Mia watch at the very beginning of the story?",
+        "boxTarget": "start",
+        "context": "Think about when the story first starts. How many cartoons did Mia watch before anything else happened?"
+      },
+      {
+        "text": "How many dinosaur cartoons did Mia watch later?",
+        "boxTarget": "change",
+        "context": "This is what we need to figure out! The story tells us that Mia watched *some* dinosaur cartoons later, but it doesn't say exactly how many. So, what are we trying to find?"
+      },
+      {
+        "text": "What was the total number of cartoons Mia watched in all?",
+        "boxTarget": "end",
+        "context": "At the end of the day, after watching all her cartoons, what was the total number of cartoons Mia watched altogether?"
+      }
+    ],
+    "groundTruthCategory": "Change",
+    "groundTruthSubcategory": "CJPU",
+    "groundTruthAnswer": 6,
+    "groundTruthModelAnswers": {
+      "start": 3,
+      "change": null,
+      "end": 9
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "There were 8 friends sitting together at the lunch table. Later, a few more friends joined. Now 13 friends are sitting together. How many friends joined?",
+    "output": "The number of friends at the table changes. It starts with 8 friends, then 'a few more friends joined,' which is an event that increases the quantity, resulting in 13 friends. This is a clear example of a quantity transforming due to an action, placing it in the Change category.",
+    "category": "Change",
+    "subcategory": "CJPU",
+    "subReasoning": "Step 1: Determine the Situation Type. The number of friends increased from 8 to 13, indicating an increase. Therefore, it is a Join problem.\n\nStep 2: Identify the Quantities in the Model. The structure is Start + Change = Result.\n- Start: \"There were 8 friends sitting together at the lunch table.\" So, Start = 8.\n- Change: \"a few more friends joined.\" This amount is unknown, so Change = unknown.\n- Result: \"Now 13 friends are sitting together.\" So, Result = 13.\nThe model is 8 + unknown = 13.\n\nStep 3: Identify the Unknown and Its Role. For Join problems, Start and Change are the Parts, and the Result is the Whole. In this problem, the 'Change' quantity is unknown. Since Change is a Part in a Join problem, this problem is a Change-Join, Part Unknown (CJPU) type.",
+    "tokenUsage": {
+      "prompt": 412,
+      "completion": 196,
+      "total": 608
+    },
+    "modelAnswers": {
+      "start": 8,
+      "change": null,
+      "end": 13
+    },
+    "answer": 5,
+    "reasoning": "The problem describes an increase in the number of friends. The starting number of friends is 8. The ending number of friends is 13. The change (how many friends joined) is unknown. To find the change, we subtract the start from the end: 13 - 8 = 5.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many friends were sitting together at the beginning of the story?",
+        "boxTarget": "start",
+        "context": "This is how many friends you started with, right at the very first part of our story before anything else happened."
+      },
+      {
+        "text": "How many friends joined later?",
+        "boxTarget": "change",
+        "context": "This is how many friends came to sit with the others! We want to find out how many 'more' friends showed up."
+      },
+      {
+        "text": "How many friends are sitting together now, at the end of the story?",
+        "boxTarget": "end",
+        "context": "This is the total number of friends all together when the story finishes. It's how many friends there are now."
+      }
+    ],
+    "groundTruthCategory": "Change",
+    "groundTruthSubcategory": "CJPU",
+    "groundTruthAnswer": 5,
+    "groundTruthModelAnswers": {
+      "start": 8,
+      "change": null,
+      "end": 13
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "5 tables were brought to the school cafeteria. Now there are 15 tables in the cafeteria. How many tables were there before?",
+    "output": "The problem describes a situation where 5 tables were brought in, causing a change in the total number of tables over time. The story has a before (initial tables), a change event (5 tables brought in), and an after (now there are 15). This fits the 'Change' category because a quantity increases as a result of an action occurring.",
+    "category": "Change",
+    "subcategory": "CJPU",
+    "subReasoning": "The situation describes an increase: tables were brought (added), so this is a Join problem. The Start is the number of tables before any were brought (unknown), the Change is the 5 tables that were added, and the Result is 15 tables (the total after the addition). In the Join model, Start and Change are parts, while Result is the whole. Here, the unknown is the Start (a part), so this is a Change–Join, Part Unknown problem.",
+    "tokenUsage": {
+      "prompt": 392,
+      "completion": 197,
+      "total": 589
+    },
+    "modelAnswers": {
+      "start": null,
+      "change": 5,
+      "end": 15
+    },
+    "answer": 10,
+    "reasoning": "Start + 5 = 15 → 15 - 5 = 10, so there were 10 tables before.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many tables were in the cafeteria before any new tables were brought in?",
+        "boxTarget": "start",
+        "context": "This question helps us think about how many tables were already there in the cafeteria at the beginning, before anyone brought more in. We’re looking for the starting number of tables."
+      },
+      {
+        "text": "How many tables were brought to the cafeteria?",
+        "boxTarget": "change",
+        "context": "This question is about the new tables that were added to the cafeteria. Let’s think about how many more tables came in after the beginning."
+      },
+      {
+        "text": "How many tables are in the cafeteria now?",
+        "boxTarget": "end",
+        "context": "This question helps us find out how many tables there are altogether now, after the new tables were brought in. We want to know the total number at the end."
+      }
+    ],
+    "groundTruthCategory": "Change",
+    "groundTruthSubcategory": "CJPU",
+    "groundTruthAnswer": 10,
+    "groundTruthModelAnswers": {
+      "start": null,
+      "change": 5,
+      "end": 15
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "Hugo had 5 euros saved to buy his favorite computer game. His dad gave him some more money. Now Hugo has 17 euros. How much money did his dad give him?",
+    "output": "The problem begins with Hugo's initial amount of money, then describes that his dad gave him more (an action causing an increase), and finally tells us his new amount. This before-change-after structure and the focus on an increase due to an action fits the 'Change' category.",
+    "category": "Change",
+    "subcategory": "CJPU",
+    "subReasoning": "The situation describes Hugo starting with 5 euros, then receiving some additional money from his dad, resulting in a total of 17 euros. The quantity is increasing over time, so this is a Join problem. Using the Start + Change = Result model: Start (5 euros), Change (unknown, the amount the dad gave), Result (17 euros). The unknown is the Change, which is considered a Part in the Join model. Therefore, this problem is a Change–Join, Part Unknown type.",
+    "tokenUsage": {
+      "prompt": 403,
+      "completion": 195,
+      "total": 598
+    },
+    "modelAnswers": {
+      "start": 5,
+      "change": null,
+      "end": 17
+    },
+    "answer": 12,
+    "reasoning": "Hugo started with 5 euros. After his dad gave him some more, he has 17 euros. 5 + ? = 17 → 17 - 5 = 12, so his dad gave him 12 euros.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How much money did Hugo have saved at the beginning, before his dad gave him any more?",
+        "boxTarget": "start",
+        "context": "This question helps us remember what Hugo started with, before anything changed. We're looking for how much money he already had saved up."
+      },
+      {
+        "text": "How much money did Hugo's dad give him?",
+        "boxTarget": "change",
+        "context": "This question is about the new money that Hugo got from his dad. We want to find out how much more money was added to Hugo's savings."
+      },
+      {
+        "text": "How much money does Hugo have now, after his dad gave him more?",
+        "boxTarget": "end",
+        "context": "This question helps us see where Hugo ended up, after getting money from his dad. We're looking for the total amount Hugo has now."
+      }
+    ],
+    "groundTruthCategory": "Change",
+    "groundTruthSubcategory": "CJPU",
+    "groundTruthAnswer": 12,
+    "groundTruthModelAnswers": {
+      "start": 5,
+      "change": null,
+      "end": 17
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "Juss had 9 stickers. A friend gave him some more stickers. Now he has 14 stickers. How many stickers did the friend give him?",
+    "output": "This problem shows an explicit change: Juss starts with 9 stickers, receives more stickers from a friend, and ends up with 14. The friend's action causes the number of stickers to increase, making this a classic 'Change' situation.",
+    "category": "Change",
+    "subcategory": "CJPU",
+    "subReasoning": "The situation describes an increase in quantity: Juss starts with 9 stickers, then receives more from a friend (an addition), resulting in a final total of 14 stickers. This is a Join problem (increase). The quantities in the model are: Start = 9, Change = unknown (the number of stickers the friend gave), Result = 14. In Join problems, Start and Change are Parts, and Result is the Whole. Since the unknown is the Change (a Part), this is classified as Change–Join, Part Unknown (CJPU).",
+    "tokenUsage": {
+      "prompt": 397,
+      "completion": 196,
+      "total": 593
+    },
+    "modelAnswers": {
+      "start": 9,
+      "change": null,
+      "end": 14
+    },
+    "answer": 5,
+    "reasoning": "Juss started with 9 stickers, and after receiving more from a friend, he had 14 stickers. 9 + ? = 14, so 14 - 9 = 5. The friend gave him 5 stickers.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many stickers did Juss have at the beginning, before his friend gave him more?",
+        "boxTarget": "start",
+        "context": "This question helps us find out what Juss started with, so we know how many stickers he had at first, even before anything changed."
+      },
+      {
+        "text": "How many stickers did Juss’s friend give him?",
+        "boxTarget": "change",
+        "context": "This question helps us think about what was added to Juss’s stickers. We're looking for how many stickers his friend brought to him."
+      },
+      {
+        "text": "How many stickers does Juss have altogether after his friend gave him more?",
+        "boxTarget": "end",
+        "context": "This question helps us find out what Juss has now, after his friend gave him more stickers. We're looking for the total at the end."
+      }
+    ],
+    "groundTruthCategory": "Change",
+    "groundTruthSubcategory": "CJPU",
+    "groundTruthAnswer": 5,
+    "groundTruthModelAnswers": {
+      "start": 9,
+      "change": null,
+      "end": 14
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "The snowman first got 1 carrot nose and 3 stone buttons. Later, a few more stone buttons were added. Now the snowman has 6 'noses and buttons' altogether. How many stone buttons were added later?",
+    "output": "There is an initial set of items (1 nose and 3 buttons), followed by an action (more buttons are added), and a final tally. The phrase 'later' and the act of adding more items signifies an increase over time, matching the 'Change' category.",
+    "category": "Change",
+    "subcategory": "CJPU",
+    "subReasoning": "The problem describes an initial amount (1 carrot nose and 3 stone buttons), then more stone buttons are added (increase over time), and finally, there is a total amount (6 noses and buttons together). The situation is increasing, so it's a Change–Join scenario. The unknown is how many stone buttons were added later, which is the 'change' quantity, making it a Part Unknown situation. In the model: Start (1+3=4), Change (unknown), Result (6); the unknown is a part (added buttons).",
+    "tokenUsage": {
+      "prompt": 413,
+      "completion": 224,
+      "total": 637
+    },
+    "modelAnswers": {
+      "start": 4,
+      "change": null,
+      "end": 6
+    },
+    "answer": 2,
+    "reasoning": "Start with 1 carrot nose + 3 stone buttons = 4 items. After adding some more stone buttons, now there are 6 items in total. 4 + ? = 6, so 6 - 4 = 2. Therefore, 2 stone buttons were added later.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many noses and buttons did the snowman have at the very beginning, before any more buttons were added?",
+        "boxTarget": "start",
+        "context": "This question helps us remember what the snowman started with, right at the start of the story. Let's think about what was already on the snowman before anything else happened."
+      },
+      {
+        "text": "How many stone buttons were added to the snowman later on?",
+        "boxTarget": "change",
+        "context": "Here, we're thinking about what was put onto the snowman after the beginning. Try to find out how many more stone buttons were added later in the story."
+      },
+      {
+        "text": "How many noses and buttons does the snowman have now, all together at the end?",
+        "boxTarget": "end",
+        "context": "This question asks about how many noses and buttons there are on the snowman in total after everything has been added. We're looking for the total number at the end of the story."
+      }
+    ],
+    "groundTruthCategory": "Change",
+    "groundTruthSubcategory": "CJPU",
+    "groundTruthAnswer": 2,
+    "groundTruthModelAnswers": {
+      "start": 4,
+      "change": null,
+      "end": 6
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "There were 3 chocolate cookies on the cookie plate, and later some jam cookies were added. Now there are 10 cookies on the plate. How many jam cookies were added?",
+    "output": "The problem details a starting quantity (chocolate cookies), an event where jam cookies are added, and asks for the newly added quantity given the new total. The focus on 'added' and the time progression aligns with 'Change.'",
+    "category": "Change",
+    "subcategory": "CJPU",
+    "subReasoning": "The situation describes an increase in the quantity of cookies (some cookies are added to the original amount), so it is a Join problem. The Start is 3 chocolate cookies, the Change is the unknown number of jam cookies added, and the Result is now 10 cookies on the plate. Using the structure Start + Change = Result, we have 3 + unknown = 10. Since the unknown is the Change, which is a Part in the Join model, this is a Change–Join, Part Unknown problem.",
+    "tokenUsage": {
+      "prompt": 401,
+      "completion": 196,
+      "total": 597
+    },
+    "modelAnswers": {
+      "start": 3,
+      "change": null,
+      "end": 10
+    },
+    "answer": 7,
+    "reasoning": "3 + ? = 10 → 10 - 3 = 7, so the change (number of jam cookies added) is 7.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many chocolate cookies were on the plate at the very beginning?",
+        "boxTarget": "start",
+        "context": "Let's think about what the plate looked like at first, before anything changed. We're finding out how many cookies started on the plate."
+      },
+      {
+        "text": "How many jam cookies were added to the plate later?",
+        "boxTarget": "change",
+        "context": "This is about what happened to the plate next. We want to figure out how many new cookies were put on the plate after the beginning."
+      },
+      {
+        "text": "How many cookies are on the plate now, after the jam cookies were added?",
+        "boxTarget": "end",
+        "context": "Now let’s look at what the plate looks like at the end, after everything has happened. We're finding out the total number of cookies that are on the plate now."
+      }
+    ],
+    "groundTruthCategory": "Change",
+    "groundTruthSubcategory": "CJPU",
+    "groundTruthAnswer": 7,
+    "groundTruthModelAnswers": {
+      "start": 3,
+      "change": null,
+      "end": 10
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "First, 5 heart-shaped decorations were glued to the Valentine's Day card. Later, some star decorations were added. Now the card has 13 decorations in total. How many stars were added later?",
+    "output": "The sequence—first hearts, then (later) stars—shows a process where the number of decorations grows over time through specific actions (gluing first hearts, then stars). This sequence of actions causing the transformation marks it as a 'Change' problem.",
+    "category": "Change",
+    "subcategory": "CJPU",
+    "subReasoning": "The situation describes decorations being added, so the quantity is increasing, making it a Join problem. The known quantities are that the Start amount is 5 (hearts), the Change is unknown (some stars), and the Result is 13 (total decorations). Using the structure Start + Change = Result, 'Change' is the unknown, which in a Join situation is classified as a 'Part Unknown.' Therefore, this problem is classified as CJPU.",
+    "tokenUsage": {
+      "prompt": 406,
+      "completion": 185,
+      "total": 591
+    },
+    "modelAnswers": {
+      "start": 5,
+      "change": null,
+      "end": 13
+    },
+    "answer": 8,
+    "reasoning": "5 + ? = 13 → 13 - 5 = 8, so 8 stars were added later.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many decorations did the card have at the very beginning, before any stars were added?",
+        "boxTarget": "start",
+        "context": "This question is about the number of heart-shaped decorations that were on the card first, before anything else was glued on."
+      },
+      {
+        "text": "How many star decorations were added to the card later?",
+        "boxTarget": "change",
+        "context": "This question wants you to think about the new decorations that showed up after the hearts—just the star decorations added afterwards."
+      },
+      {
+        "text": "How many decorations are on the card now, after all the hearts and stars were glued on?",
+        "boxTarget": "end",
+        "context": "This question is asking you about the total number of decorations on the card now, after everything was added."
+      }
+    ],
+    "groundTruthCategory": "Change",
+    "groundTruthSubcategory": "CJPU",
+    "groundTruthAnswer": 8,
+    "groundTruthModelAnswers": {
+      "start": 5,
+      "change": null,
+      "end": 13
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "At first, 3 hedgehogs were seen in the forest. Later, a few squirrels were also spotted. A total of 9 animals were seen in the forest. How many squirrels were seen later?",
+    "output": "The wording emphasizes sequence: first hedgehogs, then (later) squirrels, and a culminating total. This represents a change over time, as additional animals (squirrels) are observed, which matches the 'Change' type.",
+    "category": "Change",
+    "subcategory": "CJPU",
+    "subReasoning": "The quantity increases over time, as animals are being added—this is a Join problem. Identifying the quantities: Start is 3 hedgehogs, Change is the unknown number of squirrels, and Result is 9 animals in total. In the Join structure, Start and Change are parts, Result is the whole. The unknown is the Change (the number of squirrels), which is a part. Therefore, this is a Change–Join, Part Unknown problem.",
+    "tokenUsage": {
+      "prompt": 408,
+      "completion": 171,
+      "total": 579
+    },
+    "modelAnswers": {
+      "start": 3,
+      "change": null,
+      "end": 9
+    },
+    "answer": 6,
+    "reasoning": "3 + ? = 9 → 9 - 3 = 6, so the change (number of squirrels) is 6.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many hedgehogs were seen in the forest at the beginning?",
+        "boxTarget": "start",
+        "context": "This question helps us think about what happened first in the story—who was seen right at the start."
+      },
+      {
+        "text": "How many squirrels were seen in the forest later?",
+        "boxTarget": "change",
+        "context": "This question helps us figure out what changed or was added after the beginning—how many new animals were spotted?"
+      },
+      {
+        "text": "How many animals were seen in the forest altogether at the end?",
+        "boxTarget": "end",
+        "context": "This question helps us think about the total number of animals everyone saw after both hedgehogs and squirrels were spotted."
+      }
+    ],
+    "groundTruthCategory": "Change",
+    "groundTruthSubcategory": "CJPU",
+    "groundTruthAnswer": 6,
+    "groundTruthModelAnswers": {
+      "start": 3,
+      "change": null,
+      "end": 9
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "Mart built his castle with 12 Lego bricks. He had with 7 bricks in his box, then got some more from Tiit. How many bricks did Tiit give him?",
+    "output": "Mart started with 7 bricks and then received more from Tiit in order to reach a total of 12 used bricks. The problem describes an initial state, an action (receiving bricks), and a new total, which is a 'Change' situation.",
+    "category": "Change",
+    "subcategory": "CJPU",
+    "subReasoning": "The problem describes Mart starting with 7 Lego bricks, then receiving some more from Tiit (an increase in the number of bricks), and ending up with 12 Lego bricks in total. Therefore, it is a Join situation because the quantity increased. In the Start ± Change = Result model: Start = 7 (bricks Mart had initially), Change = unknown (bricks received from Tiit), Result = 12 (total bricks after receiving more). The unknown is the Change, which in the Join model is a Part. Therefore, this is a Change-Join, Part Unknown (CJPU) problem.",
+    "tokenUsage": {
+      "prompt": 403,
+      "completion": 204,
+      "total": 607
+    },
+    "modelAnswers": {
+      "start": 7,
+      "change": null,
+      "end": 12
+    },
+    "answer": 5,
+    "reasoning": "He started with 7 bricks and ended up with 12 after receiving more from Tiit. 7 + ? = 12 → 12 - 7 = 5, so Tiit gave him 5 bricks.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many Lego bricks did Mart have in his box at the very beginning, before he got any more?",
+        "boxTarget": "start",
+        "context": "This question helps us think about what Mart started with, before anything changed. We're looking for how many bricks Mart had from the start."
+      },
+      {
+        "text": "How many Lego bricks did Tiit give to Mart to add to the box?",
+        "boxTarget": "change",
+        "context": "This question asks us to find out how many new bricks Tiit gave to Mart. It's about what was added to the bricks Mart already had."
+      },
+      {
+        "text": "How many Lego bricks did Mart end up with after Tiit gave him more?",
+        "boxTarget": "end",
+        "context": "This question helps us find out the total number of Lego bricks Mart had at the very end, after getting more bricks from Tiit."
+      }
+    ],
+    "groundTruthCategory": "Change",
+    "groundTruthSubcategory": "CJPU",
+    "groundTruthAnswer": 5,
+    "groundTruthModelAnswers": {
+      "start": 7,
+      "change": null,
+      "end": 12
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "Mia watched 3 bunny cartoons in the morning. Later in the day, she watched some dinosaur cartoons. In total, Mia watched 9 cartoons. How many dinosaur cartoons did she watch later?",
+    "output": "The structure here is sequential: cartoons watched in the morning, more watched later, and total watched in the end. The 'later' indicates a change over time, where Mia accumulates more items through action, so this is a 'Change' problem.",
+    "category": "Change",
+    "subcategory": "CJPU",
+    "subReasoning": "This problem describes an increase in the total number of cartoons Mia watched, so it is a 'Join' situation. The starting amount is 3 bunny cartoons, the change is the unknown number of dinosaur cartoons watched later, and the result is the total of 9 cartoons. According to the Join model: Start + Change = Result. Here, the 'Change' (number of dinosaur cartoons) is unknown. Since in the Join structure, Start and Change are considered 'Parts' and Result is the 'Whole', and the unknown is a 'Part', the problem is classified as Change–Join, Part Unknown.",
+    "tokenUsage": {
+      "prompt": 405,
+      "completion": 163,
+      "total": 568
+    },
+    "modelAnswers": {
+      "start": 3,
+      "change": null,
+      "end": 9
+    },
+    "answer": 6,
+    "reasoning": "Mia started with 3 cartoons in the morning, then watched more (unknown number) later for a total of 9. Using 3 + ? = 9 → 9 - 3 = 6, so the change (dinosaur cartoons) is 6.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many bunny cartoons did Mia watch in the morning?",
+        "boxTarget": "start",
+        "context": "This question helps us think about the number of cartoons Mia started with at the beginning of her day."
+      },
+      {
+        "text": "How many dinosaur cartoons did Mia watch later in the day?",
+        "boxTarget": "change",
+        "context": "This question asks about the extra cartoons Mia watched after the morning, which helps us find out how her total changed."
+      },
+      {
+        "text": "How many cartoons did Mia watch altogether?",
+        "boxTarget": "end",
+        "context": "This question reminds us to look at the total number of cartoons Mia watched by the end of the day."
+      }
+    ],
+    "groundTruthCategory": "Change",
+    "groundTruthSubcategory": "CJPU",
+    "groundTruthAnswer": 6,
+    "groundTruthModelAnswers": {
+      "start": 3,
+      "change": null,
+      "end": 9
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "There were 8 friends sitting together at the lunch table. Later, a few more friends joined. Now 13 friends are sitting together. How many friends joined?",
+    "output": "The storyline depicts a group of friends initially, with more joining at a later time, resulting in a greater total. The 'joined' action explicitly signals a transformation from one amount to another, fitting the 'Change' category.",
+    "category": "Change",
+    "subcategory": "CJPU",
+    "subReasoning": "The problem describes a situation where the number of friends at the table increases over time, indicating a Join situation. The Start (initial amount) is 8 friends. The Change (the number of friends who joined) is unknown. The Result (total after joining) is 13 friends. In the Join structure, Start and Change are the Parts and Result is the Whole. Here, the unknown is a Part (the number of friends who joined), so the problem is classified as Change–Join, Part Unknown.",
+    "tokenUsage": {
+      "prompt": 398,
+      "completion": 171,
+      "total": 569
+    },
+    "modelAnswers": {
+      "start": 8,
+      "change": null,
+      "end": 13
+    },
+    "answer": 5,
+    "reasoning": "8 + ? = 13 → 13 - 8 = 5, so the change (number of friends who joined) is 5.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many friends were sitting at the lunch table at the beginning?",
+        "boxTarget": "start",
+        "context": "This question helps you think about what was happening at the very start of the story—before anything changed."
+      },
+      {
+        "text": "How many friends joined the lunch table later?",
+        "boxTarget": "change",
+        "context": "This question is about what changed in the story—how many more friends came to join the group."
+      },
+      {
+        "text": "How many friends were sitting together at the lunch table at the end?",
+        "boxTarget": "end",
+        "context": "This question helps you find out what things were like after everyone had joined—how many friends were there all together in the end."
+      }
+    ],
+    "groundTruthCategory": "Change",
+    "groundTruthSubcategory": "CJPU",
+    "groundTruthAnswer": 5,
+    "groundTruthModelAnswers": {
+      "start": 8,
+      "change": null,
+      "end": 13
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  }
+]

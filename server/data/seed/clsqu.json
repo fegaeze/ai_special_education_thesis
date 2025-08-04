@@ -1,0 +1,1390 @@
+[
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "Grandma has 18 sheep. She has 12 less goats than sheep. How many goats does she have?",
+    "output": "This problem is contrasting two different quantities - the number of sheep versus the number of goats. The problem states that goats are 12 less than sheep, which is establishing a comparison relationship between these two distinct quantities. There is no change happening over time, and we're not combining quantities into a total. The focus is on finding the difference between sheep and goats to determine how many goats there are.",
+    "category": "Compare",
+    "subcategory": "CLSQU",
+    "subReasoning": "This problem states that Grandma has 18 sheep and 12 less goats than sheep. The comparison direction is 'less than' which indicates a Compare-Less problem. Using the Compare Model where Bigger = Smaller + Difference, I can identify: Bigger (sheep) = 18, Difference = 12, and Smaller (goats) = unknown. Since we know the larger quantity (18 sheep) and the difference (12 less), but need to find the smaller quantity (goats), this is a Compare-Less, Smaller Quantity Unknown problem.",
+    "tokenUsage": {
+      "prompt": 451,
+      "completion": 232,
+      "total": 683
+    },
+    "modelAnswers": {
+      "bigger": 18,
+      "smaller": null,
+      "difference": 12
+    },
+    "answer": 6,
+    "reasoning": "The sheep (18) is the bigger amount, and goats is 12 less, so Smaller = Bigger - Difference = 18 - 12 = 6 goats.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many sheep does Grandma have?",
+        "boxTarget": "bigger",
+        "context": "This question helps us find the number we already know from the story. We're looking for how many sheep Grandma starts with - this will be our biggest number in this problem."
+      },
+      {
+        "text": "How many less goats does Grandma have compared to sheep?",
+        "boxTarget": "difference",
+        "context": "This question helps us find how much smaller one group is than the other. We're looking for the number that tells us the difference between the sheep and goats."
+      },
+      {
+        "text": "How many goats does Grandma have?",
+        "boxTarget": "smaller",
+        "context": "This question helps us find what we're trying to figure out. We know there are fewer goats than sheep, so the goats will be our smaller number that we need to solve for."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLSQU",
+    "groundTruthAnswer": 6,
+    "groundTruthModelAnswers": {
+      "bigger": 18,
+      "smaller": null,
+      "difference": 12
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "Annika has 10 russulas in her basket. There are 6 fewer boletes in the basket. How many boletes are in the basket?",
+    "output": "This problem is comparing two different types of mushrooms in the basket - russulas and boletes. The phrase 'there are 6 fewer boletes' establishes a comparison relationship between these two quantities. We're finding the difference to determine how many boletes there are based on the number of russulas. No transformation or change is occurring, and we're not combining the mushrooms into a total.",
+    "category": "Compare",
+    "subcategory": "CLSQU",
+    "subReasoning": "This problem establishes that Annika has 10 russulas, and then states there are 6 fewer boletes in the basket, asking how many boletes are in the basket. The comparison direction focuses on 'fewer,' which indicates a Compare-Less structure. Using the Compare Model formula Bigger = Smaller + Difference, I can identify: Bigger = 10 russulas, Difference = 6 fewer, and Smaller = unknown number of boletes. Since we know the larger quantity (russulas) and the difference (6 fewer), but need to find the smaller quantity (boletes), this is a Compare-Less, Smaller Quantity Unknown problem.",
+    "tokenUsage": {
+      "prompt": 457,
+      "completion": 244,
+      "total": 701
+    },
+    "modelAnswers": {
+      "bigger": 10,
+      "smaller": null,
+      "difference": 6
+    },
+    "answer": 4,
+    "reasoning": "Since there are 6 fewer boletes than russulas, we have: 10 = Smaller + 6, so Smaller = 10 - 6 = 4 boletes.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many russulas does Annika have in her basket?",
+        "boxTarget": "bigger",
+        "context": "This question helps us find the bigger number in our problem. We need to look for how many russulas Annika started with - this will be the larger amount we're comparing everything else to."
+      },
+      {
+        "text": "How many fewer boletes are there compared to russulas?",
+        "boxTarget": "difference",
+        "context": "This question helps us find how much difference there is between the two types of mushrooms. We need to look for the words that tell us how many less or fewer boletes there are."
+      },
+      {
+        "text": "How many boletes are in the basket?",
+        "boxTarget": "smaller",
+        "context": "This question helps us figure out what we're trying to find - the smaller number. This is what the problem is asking us to solve for, and it will be less than the number of russulas."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLSQU",
+    "groundTruthAnswer": 4,
+    "groundTruthModelAnswers": {
+      "bigger": 10,
+      "smaller": null,
+      "difference": 6
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "Mom bought 12 pastries. She bought 10 fewer cream cakes than pastries. How many cream cakes did Mom buy?",
+    "output": "This problem is contrasting two different types of baked goods - pastries and cream cakes. The statement '10 fewer cream cakes than pastries' creates a comparison relationship between these two quantities. We need to find the difference to determine how many cream cakes Mom bought. There's no change happening over time, and we're not grouping quantities together for a total.",
+    "category": "Compare",
+    "subcategory": "CLSQU",
+    "subReasoning": "This problem states that Mom bought 12 pastries and 10 fewer cream cakes than pastries. The comparison direction is 'fewer than' which indicates a Compare-Less problem. Using the compare model where Bigger = Smaller + Difference, we have: Pastries (12) = Cream cakes (unknown) + 10. The pastries are the bigger quantity at 12, the difference is 10 fewer, and the cream cakes are the smaller quantity which is unknown. Since we're looking for the smaller quantity (cream cakes), this is a Compare-Less, Smaller Quantity Unknown problem.",
+    "tokenUsage": {
+      "prompt": 453,
+      "completion": 218,
+      "total": 671
+    },
+    "modelAnswers": {
+      "bigger": 12,
+      "smaller": null,
+      "difference": 10
+    },
+    "answer": 2,
+    "reasoning": "Since cream cakes are 10 fewer than pastries, pastries are the bigger amount (12) and cream cakes are the smaller amount. Using Bigger = Smaller + Difference: 12 = Smaller + 10, so Smaller = 12 - 10 = 2 cream cakes.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many pastries did Mom buy in total?",
+        "boxTarget": "bigger",
+        "context": "This question helps us find the bigger number in our story. We're looking for the total number of pastries Mom bought at the beginning."
+      },
+      {
+        "text": "How many fewer cream cakes did Mom buy compared to pastries?",
+        "boxTarget": "difference",
+        "context": "This question helps us find how much less one thing is than another. We're looking for the number that tells us how many fewer cream cakes there are."
+      },
+      {
+        "text": "How many cream cakes did Mom buy?",
+        "boxTarget": "smaller",
+        "context": "This question helps us find the smaller number in our story. We're looking for the number of cream cakes, which is less than the total number of pastries."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLSQU",
+    "groundTruthAnswer": 2,
+    "groundTruthModelAnswers": {
+      "bigger": 12,
+      "smaller": null,
+      "difference": 10
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "Kati has 20 cents. Rando has 2 cents less. How much does Rando have?",
+    "output": "This problem is comparing the amounts of money that two different people have. The phrase 'Rando has 2 cents less' establishes a comparison relationship between Kati's money and Rando's money. We're finding the difference between their amounts to determine how much Rando has. No change or transformation is occurring, and we're not combining their money together.",
+    "category": "Compare",
+    "subcategory": "CLSQU",
+    "subReasoning": "This problem states that Rando has 2 cents less than Kati, making it a Compare-Less problem since the focus is on 'less than'. Using the compare model where Bigger = Smaller + Difference, I can identify: Bigger (Kati) = 20 cents, Difference = 2 cents, and Smaller (Rando) = unknown. Since we know the larger quantity (20 cents) and the difference (2 cents less), but need to find the smaller quantity (how much Rando has), this is a Compare-Less, Smaller Quantity Unknown problem.",
+    "tokenUsage": {
+      "prompt": 450,
+      "completion": 246,
+      "total": 696
+    },
+    "modelAnswers": {
+      "bigger": 20,
+      "smaller": null,
+      "difference": 2
+    },
+    "answer": 18,
+    "reasoning": "Since Bigger = Smaller + Difference, we have 20 = Smaller + 2. Therefore, Smaller = 20 - 2 = 18. Rando has 18 cents.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How much money does Kati have?",
+        "boxTarget": "bigger",
+        "context": "This question helps us find the starting amount that we know for sure. We need to look in the story for how much money Kati has to begin with."
+      },
+      {
+        "text": "How much less money does Rando have compared to Kati?",
+        "boxTarget": "difference",
+        "context": "This question helps us find how much smaller Rando's amount is. We need to look for words like 'less' or 'fewer' that tell us the difference between what Kati and Rando have."
+      },
+      {
+        "text": "How much money does Rando have?",
+        "boxTarget": "smaller",
+        "context": "This question helps us find what we're looking for in the problem. This is the amount we need to figure out by using what we know about Kati's money and how much less Rando has."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLSQU",
+    "groundTruthAnswer": 18,
+    "groundTruthModelAnswers": {
+      "bigger": 20,
+      "smaller": null,
+      "difference": 2
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "The pencil case costs 10 euros. The markers are 2 euros cheaper. How much are the markers?",
+    "output": "This problem is contrasting the prices of two different items - a pencil case and markers. The statement 'the markers are 2 euros cheaper' creates a comparison relationship between these two prices. We need to find the difference to determine the cost of the markers. There's no change happening over time, and we're not combining costs into a total.",
+    "category": "Compare",
+    "subcategory": "CLSQU",
+    "subReasoning": "This problem is comparing two quantities where the markers are described as being 'cheaper' than the pencil case, which indicates a 'less than' relationship, making this a Compare-Less problem. The pencil case costs 10 euros (this is the bigger/larger quantity), the markers are 2 euros cheaper (this gives us the difference of 2 euros), and we need to find how much the markers cost (this is the smaller quantity that is unknown). Using the Compare Model: Bigger = Smaller + Difference, we have 10 = Unknown + 2, where the smaller quantity (cost of markers) is what we're solving for.",
+    "tokenUsage": {
+      "prompt": 448,
+      "completion": 223,
+      "total": 671
+    },
+    "modelAnswers": {
+      "bigger": 10,
+      "smaller": null,
+      "difference": 2
+    },
+    "answer": 8,
+    "reasoning": "Smaller = Bigger - Difference = 10 - 2 = 8, so the markers cost 8 euros.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How much does the pencil case cost?",
+        "boxTarget": "bigger",
+        "context": "This question helps us find the bigger amount in our story. We need to look for the price that costs more money - that's our pencil case!"
+      },
+      {
+        "text": "How much cheaper are the markers than the pencil case?",
+        "boxTarget": "difference",
+        "context": "This question helps us find how much less the markers cost compared to the pencil case. Look for words like 'cheaper' or 'less' to find this difference amount."
+      },
+      {
+        "text": "How much do the markers cost?",
+        "boxTarget": "smaller",
+        "context": "This question helps us find the smaller amount in our story. This is what we're trying to figure out - the cost of the markers that costs less money than the pencil case."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLSQU",
+    "groundTruthAnswer": 8,
+    "groundTruthModelAnswers": {
+      "bigger": 10,
+      "smaller": null,
+      "difference": 2
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "Kersti’s blue pencil is 14 cm long. The green one is 4 cm shorter. How long is the green pencil?",
+    "output": "No match found",
+    "category": "Unknown",
+    "tokenUsage": {
+      "prompt": 938,
+      "completion": 1370,
+      "total": 2308
+    },
+    "modelAnswers": null,
+    "answer": null,
+    "reasoning": null,
+    "storyGrammarPrompts": null,
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLSQU",
+    "groundTruthAnswer": 10,
+    "groundTruthModelAnswers": {
+      "bigger": 14,
+      "smaller": null,
+      "difference": 4
+    },
+    "isModelMappingCorrect": false,
+    "isAnswerCorrect": false
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "One side of the street has 11 houses. The other side has 2 fewer houses. How many houses are on the other side?",
+    "output": "This problem is contrasting the number of houses on two different sides of a street. The statement 'the other side has 2 fewer houses' creates a comparison relationship between the two sides. We need to find the difference to determine how many houses are on the other side. There's no change happening over time, and we're not combining the houses from both sides into a total.",
+    "category": "Compare",
+    "subcategory": "CLSQU",
+    "subReasoning": "This problem compares two sides of a street where one side has fewer houses than the other. The phrase '2 fewer houses' indicates this is a Compare-Less problem since it focuses on having less than the reference quantity. Using the compare model: Bigger = Smaller + Difference, I can identify that the bigger quantity is 11 houses (one side), the difference is 2 houses (how many fewer), and the smaller quantity is unknown (the other side with fewer houses). Since we're looking for the smaller quantity ('How many houses are on the other side?'), this is a Compare-Less, Smaller Quantity Unknown problem.",
+    "tokenUsage": {
+      "prompt": 453,
+      "completion": 225,
+      "total": 678
+    },
+    "modelAnswers": {
+      "bigger": 11,
+      "smaller": null,
+      "difference": 2
+    },
+    "answer": 9,
+    "reasoning": "Since the other side has 2 fewer houses than the side with 11 houses, we calculate: Smaller = Bigger - Difference = 11 - 2 = 9. So the other side has 9 houses.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many houses are on one side of the street?",
+        "boxTarget": "bigger",
+        "context": "This question helps us find the starting number of houses we know about. We're looking for the side that has more houses, which the problem tells us directly."
+      },
+      {
+        "text": "How many fewer houses does the other side have?",
+        "boxTarget": "difference",
+        "context": "This question helps us find how much less the other side has compared to the first side. We're looking for the number that tells us the difference between the two sides."
+      },
+      {
+        "text": "How many houses are on the other side of the street?",
+        "boxTarget": "smaller",
+        "context": "This question helps us find what we're solving for - the number of houses on the side that has fewer houses. This is what we need to figure out using the other information."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLSQU",
+    "groundTruthAnswer": 9,
+    "groundTruthModelAnswers": {
+      "bigger": 11,
+      "smaller": null,
+      "difference": 2
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "Some kids played dodgeball. There were 13 boys. There were 7 less girls than boys. How many girls were playing dodgeball?",
+    "output": "This problem is comparing the number of boys versus the number of girls playing dodgeball. The phrase 'there were 7 less girls than boys' establishes a comparison relationship between these two groups. We're finding the difference to determine how many girls were playing. No change is occurring over time, and we're not combining the boys and girls into a total count.",
+    "category": "Compare",
+    "subcategory": "CLSQU",
+    "subReasoning": "The problem states 'There were 7 less girls than boys,' which indicates a Compare-Less relationship since it's focusing on how the girls are fewer than the boys. Using the compare model: Bigger = Smaller + Difference, I can identify that Boys (13) = Bigger quantity, Girls = Smaller quantity (unknown), and Difference = 7. The problem is asking 'How many girls were playing dodgeball?' which means we need to find the smaller quantity. Since the comparison direction is 'less than' and the smaller quantity is unknown, this is a Compare-Less, Smaller Quantity Unknown problem.",
+    "tokenUsage": {
+      "prompt": 456,
+      "completion": 225,
+      "total": 681
+    },
+    "modelAnswers": {
+      "bigger": 13,
+      "smaller": null,
+      "difference": 7
+    },
+    "answer": 6,
+    "reasoning": "Since there were 7 less girls than boys, girls is the smaller amount. Using Bigger = Smaller + Difference: 13 = Smaller + 7, so Smaller = 13 - 7 = 6. There were 6 girls playing dodgeball.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many boys were playing dodgeball?",
+        "boxTarget": "bigger",
+        "context": "This question helps us find the bigger number in our problem. The story tells us exactly how many boys were playing, so we can look back and find this number easily."
+      },
+      {
+        "text": "How many fewer girls were there than boys?",
+        "boxTarget": "difference",
+        "context": "This question helps us find the difference between the boys and girls. The story tells us that there were some number less girls than boys - we need to find that 'less' number."
+      },
+      {
+        "text": "How many girls were playing dodgeball?",
+        "boxTarget": "smaller",
+        "context": "This question helps us find the smaller number, which is what the problem is asking us to figure out. We'll use the other two numbers we found to solve for this one."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLSQU",
+    "groundTruthAnswer": 6,
+    "groundTruthModelAnswers": {
+      "bigger": 13,
+      "smaller": null,
+      "difference": 7
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "Oliver collected 13 horse chestnuts. Tom collected 7 less horse chestnuts than Oliver. How many horse chestnuts did Tom collect?",
+    "output": "This problem is contrasting the number of horse chestnuts collected by two different people - Oliver and Tom. The statement 'Tom collected 7 less horse chestnuts than Oliver' creates a comparison relationship between their collections. We need to find the difference to determine how many Tom collected. There's no change happening over time, and we're not combining their collections into a total.",
+    "category": "Compare",
+    "subcategory": "CLSQU",
+    "subReasoning": "This problem compares Tom's collection to Oliver's collection using the phrase '7 less horse chestnuts than Oliver,' which indicates a Compare-Less structure. Using the compare model Bigger = Smaller + Difference, I can identify: Bigger (Oliver) = 13 horse chestnuts, Difference = 7 horse chestnuts, and Smaller (Tom) = unknown. Since Tom collected fewer chestnuts than Oliver, this is comparing in the 'less than' direction, making it a Compare-Less problem. The unknown quantity is Tom's amount, which represents the smaller quantity in the comparison.",
+    "tokenUsage": {
+      "prompt": 456,
+      "completion": 217,
+      "total": 673
+    },
+    "modelAnswers": {
+      "bigger": 13,
+      "smaller": null,
+      "difference": 7
+    },
+    "answer": 6,
+    "reasoning": "Oliver collected 13 horse chestnuts (bigger amount). Tom collected 7 less than Oliver, so the difference is 7. Using Bigger = Smaller + Difference: 13 = Smaller + 7, so Smaller = 13 - 7 = 6. Tom collected 6 horse chestnuts.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many horse chestnuts did Oliver collect?",
+        "boxTarget": "bigger",
+        "context": "This question helps us find the larger amount in our story. We need to look for the number that tells us exactly how many horse chestnuts Oliver found."
+      },
+      {
+        "text": "How many fewer horse chestnuts did Tom collect compared to Oliver?",
+        "boxTarget": "difference",
+        "context": "This question helps us find how much less Tom collected. We're looking for the number that shows the gap between what Oliver collected and what Tom collected."
+      },
+      {
+        "text": "How many horse chestnuts did Tom collect?",
+        "boxTarget": "smaller",
+        "context": "This question helps us find the smaller amount in our story. This is what we're trying to figure out - Tom's collection of horse chestnuts."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLSQU",
+    "groundTruthAnswer": 6,
+    "groundTruthModelAnswers": {
+      "bigger": 13,
+      "smaller": null,
+      "difference": 7
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "There were 15 people sitting in one row at the cinema. In the other row, there were 7 fewer people. How many people were sitting in the other row?",
+    "output": "This problem is comparing the number of people in two different rows at the cinema. The phrase 'in the other row, there were 7 fewer people' establishes a comparison relationship between the two rows. We're finding the difference to determine how many people were in the other row. No transformation is occurring, and we're not combining the people from both rows into a total count.",
+    "category": "Compare",
+    "subcategory": "CLSQU",
+    "subReasoning": "This problem involves comparing two quantities where one row has fewer people than the other. The problem states that the other row has '7 fewer people' than the first row, which indicates a Compare-Less situation since we're focusing on having fewer. Using the Compare Model where Bigger = Smaller + Difference, we can identify: Bigger = 15 people (first row), Difference = 7 people (fewer), and Smaller = unknown (the other row). Since we know the larger quantity (15) and the difference (7), but need to find the smaller quantity (how many people in the other row), this is a Compare-Less, Smaller Quantity Unknown problem.",
+    "tokenUsage": {
+      "prompt": 460,
+      "completion": 243,
+      "total": 703
+    },
+    "modelAnswers": {
+      "bigger": 15,
+      "smaller": null,
+      "difference": 7
+    },
+    "answer": 8,
+    "reasoning": "Using Bigger = Smaller + Difference, we have 15 = Smaller + 7. Therefore, Smaller = 15 - 7 = 8 people in the other row.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many people were sitting in the first row?",
+        "boxTarget": "bigger",
+        "context": "This question helps us find the starting number - how many people we begin with in the first row. Look for the number that tells us about the first row of people at the cinema."
+      },
+      {
+        "text": "How many fewer people were in the other row?",
+        "boxTarget": "difference",
+        "context": "This question helps us find how much less there is between the two rows. The word 'fewer' tells us we need to find the difference - how many less people are in the second row compared to the first row."
+      },
+      {
+        "text": "How many people were sitting in the other row?",
+        "boxTarget": "smaller",
+        "context": "This question asks us to find the answer - the number of people in the second row. This is what we're trying to figure out, and it will be smaller than the number in the first row."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLSQU",
+    "groundTruthAnswer": 8,
+    "groundTruthModelAnswers": {
+      "bigger": 15,
+      "smaller": null,
+      "difference": 7
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "Grandma has 18 sheep. She has 12 less goats than sheep. How many goats does she have?",
+    "output": "This problem describes two distinct quantities (sheep and goats) and then states a relationship where one quantity is a certain amount 'less than' the other. The goal is to find the value of one quantity by comparing it to the other, which is a classic comparison scenario focused on finding a difference, not a change over time or combining parts.",
+    "category": "Compare",
+    "subcategory": "CLSQU",
+    "subReasoning": "The problem states that Grandma has '12 less goats than sheep'. This directly indicates a 'Compare-Less' problem. Using the COMPS model, Bigger = Smaller + Difference. We know the Bigger quantity (sheep = 18). We know the Difference (12 less). The Smaller quantity (goats) is unknown. Therefore, it is a Compare-Less problem where the Smaller Quantity is Unknown.",
+    "tokenUsage": {
+      "prompt": 403,
+      "completion": 226,
+      "total": 629
+    },
+    "modelAnswers": {
+      "bigger": 18,
+      "smaller": null,
+      "difference": 12
+    },
+    "answer": 6,
+    "reasoning": "The problem states that Grandma has 18 sheep. This is the 'bigger' quantity. She has 12 less goats than sheep, which means the 'difference' between sheep and goats is 12. We are looking for the number of 'goats', which is the 'smaller' quantity. Using the formula: Smaller = Bigger - Difference. So, Smaller = 18 - 12 = 6. Therefore, she has 6 goats.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many sheep does Grandma have?",
+        "boxTarget": "bigger",
+        "context": "To figure out this part, we need to know how many sheep Grandma has. Look at the story to find this number. It's the number that tells us about *all* of Grandma's sheep."
+      },
+      {
+        "text": "How many fewer goats does Grandma have than sheep?",
+        "boxTarget": "difference",
+        "context": "This helps us understand how many *fewer* goats Grandma has compared to her sheep. It's the part of the story that talks about 'less' or 'fewer'."
+      },
+      {
+        "text": "How many goats does Grandma have?",
+        "boxTarget": "smaller",
+        "context": "This is what we want to find out! The story asks how many goats Grandma has. It's the missing piece of information we need to solve the problem!"
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLSQU",
+    "groundTruthAnswer": 6,
+    "groundTruthModelAnswers": {
+      "bigger": 18,
+      "smaller": null,
+      "difference": 12
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "Annika has 10 russulas in her basket. There are 6 fewer boletes in the basket. How many boletes are in the basket?",
+    "output": "The problem presents two types of mushrooms (russulas and boletes) and establishes a comparative relationship between their quantities ('6 fewer boletes than russulas'). It asks to determine the quantity of boletes by contrasting it with the quantity of russulas. There is no action that changes the number of mushrooms over time, nor is it asking to combine them into a total.",
+    "category": "Compare",
+    "subcategory": "CLSQU",
+    "subReasoning": "The problem states 'There are 6 fewer boletes in the basket' which indicates a 'Compare-Less' scenario. Using the COMPS framework where Bigger = Smaller + Difference: Annika has 10 russulas, which is the 'Bigger' quantity because there are fewer boletes. The 'Difference' is 6 (fewer). The 'Smaller' quantity, which is the number of boletes, is unknown. Therefore, it is a Compare-Less problem where the Smaller Quantity is Unknown.",
+    "tokenUsage": {
+      "prompt": 410,
+      "completion": 226,
+      "total": 636
+    },
+    "modelAnswers": {
+      "bigger": 10,
+      "smaller": null,
+      "difference": 6
+    },
+    "answer": 4,
+    "reasoning": "We are given the 'bigger' quantity (russulas) and the 'difference' (6 fewer boletes). We need to find the 'smaller' quantity (boletes). Using the formula Bigger = Smaller + Difference, we can rearrange it to Smaller = Bigger - Difference. So, Smaller = 10 - 6 = 4. Therefore, there are 4 boletes in the basket.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many russulas does Annika have?",
+        "boxTarget": "bigger",
+        "context": "This question asks you to find the number that Annika has for the first yummy mushroom she collected, the russulas. Look closely at the problem to find this number!"
+      },
+      {
+        "text": "How many boletes are there?",
+        "boxTarget": "smaller",
+        "context": "This question asks you to figure out how many boletes Annika has. The problem gives us a clue, but it doesn't tell us this number directly. This is what we need to find out!"
+      },
+      {
+        "text": "How many fewer boletes are there than russulas?",
+        "boxTarget": "difference",
+        "context": "This question asks about the difference, or how many less, boletes there are compared to the russulas. The problem tells us this number right away! It's like comparing the two groups of mushrooms."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLSQU",
+    "groundTruthAnswer": 4,
+    "groundTruthModelAnswers": {
+      "bigger": 10,
+      "smaller": null,
+      "difference": 6
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "Mom bought 12 pastries. She bought 10 fewer cream cakes than pastries. How many cream cakes did Mom buy?",
+    "output": "This problem involves two distinct categories of items purchased (pastries and cream cakes). It states a relationship where the number of cream cakes is 'fewer than' the number of pastries. The objective is to find the quantity of cream cakes by comparing it to the known quantity of pastries, fitting the criteria for a Compare problem.",
+    "category": "Compare",
+    "subcategory": "CLSQU",
+    "subReasoning": "The problem states that Mom bought '10 fewer cream cakes than pastries', indicating a 'compare-less' situation. The larger quantity (pastries) is given as 12. The difference (10 fewer) is also given. The unknown is the number of cream cakes, which is the smaller quantity in this comparison. Therefore, it is a Compare-Less, Smaller Quantity Unknown problem.",
+    "tokenUsage": {
+      "prompt": 405,
+      "completion": 234,
+      "total": 639
+    },
+    "modelAnswers": {
+      "bigger": 12,
+      "smaller": null,
+      "difference": 10
+    },
+    "answer": 2,
+    "reasoning": "The problem states Mom bought 12 pastries, which is the 'Bigger' quantity. She bought 10 fewer cream cakes than pastries, meaning the 'Difference' is 10. We are looking for the number of cream cakes, which is the 'Smaller' quantity. Using the formula 'Smaller = Bigger - Difference', we get 12 - 10 = 2. So, Mom bought 2 cream cakes.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many pastries did Mom buy in all?",
+        "boxTarget": "bigger",
+        "context": "Here, we're thinking about the larger amount. The problem tells us how many pastries Mom bought, and that number is the bigger one in our story."
+      },
+      {
+        "text": "Are we looking for how many cream cakes Mom bought?",
+        "boxTarget": "smaller",
+        "context": "Now we need to figure out what we're trying to find! The problem asks us a question, and the answer to that question will be the smaller part of our story, like how many cream cakes Mom bought."
+      },
+      {
+        "text": "What is the difference between the number of pastries and cream cakes?",
+        "boxTarget": "difference",
+        "context": "This is where we find out how much more or how much less of one thing there is compared to another. The story tells us how many fewer cream cakes there were than pastries."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLSQU",
+    "groundTruthAnswer": 2,
+    "groundTruthModelAnswers": {
+      "bigger": 12,
+      "smaller": null,
+      "difference": 10
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "Kati has 20 cents. Rando has 2 cents less. How much does Rando have?",
+    "output": "The problem establishes a relationship between the amounts of money Kati and Rando have. Rando's amount is defined in terms of being 'less' than Kati's. This directly asks for a quantity based on a comparison, not a transformation or combination.",
+    "category": "Compare",
+    "subcategory": "CLSQU",
+    "subReasoning": "The problem states 'Rando has 2 cents less' than Kati, indicating a Compare-Less problem. We are given Kati's amount (20 cents), which is the 'Bigger' quantity. We are also given the 'Difference' (2 cents less). The problem asks 'How much does Rando have?', and since Rando has less, Rando's amount is the 'Smaller' quantity. Therefore, the 'Smaller Quantity' is unknown.",
+    "tokenUsage": {
+      "prompt": 402,
+      "completion": 175,
+      "total": 577
+    },
+    "modelAnswers": {
+      "bigger": 20,
+      "smaller": null,
+      "difference": 2
+    },
+    "answer": 18,
+    "reasoning": "In this problem, Kati's amount (20 cents) is the 'Bigger' amount. Rando has 'less', so Rando's amount is the 'Smaller' amount. The difference is 2 cents. Using the formula Bigger = Smaller + Difference, we can rearrange it to solve for Smaller: Smaller = Bigger - Difference. So, Smaller = 20 - 2 = 18. Therefore, Rando has 18 cents.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How much money does Kati have?",
+        "boxTarget": "bigger",
+        "context": "We need to find out how much money Kati has. This is the bigger amount in our story."
+      },
+      {
+        "text": "How much less money does Rando have than Kati?",
+        "boxTarget": "difference",
+        "context": "Let's figure out how much less money Rando has compared to Kati. This is the difference between their amounts."
+      },
+      {
+        "text": "How much money does Rando have?",
+        "boxTarget": "smaller",
+        "context": "We need to find out how much money Rando has. This is the smaller amount in our story."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLSQU",
+    "groundTruthAnswer": 18,
+    "groundTruthModelAnswers": {
+      "bigger": 20,
+      "smaller": null,
+      "difference": 2
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "The pencil case costs 10 euros. The markers are 2 euros cheaper. How much are the markers?",
+    "output": "This problem compares the cost of two items: a pencil case and markers. It explicitly states that the markers are 'cheaper' by a certain amount, indicating a comparative relationship to find the unknown cost. There is no change over time or combining of values.",
+    "category": "Compare",
+    "subcategory": "CLSQU",
+    "subReasoning": "The problem states, 'The markers are 2 euros cheaper.' This directly indicates a 'less than' comparison, making it a Compare–Less problem. We are given the cost of the pencil case (the larger quantity) as 10 euros and the difference (2 euros cheaper). The unknown is the cost of the markers, which is the smaller quantity. Therefore, it is a Compare–Less, Smaller Quantity Unknown problem.",
+    "tokenUsage": {
+      "prompt": 401,
+      "completion": 186,
+      "total": 587
+    },
+    "modelAnswers": {
+      "bigger": 10,
+      "smaller": null,
+      "difference": 2
+    },
+    "answer": 8,
+    "reasoning": "We are given that the pencil case is 10 euros (bigger amount) and the markers are 2 euros cheaper (difference). We need to find the cost of the markers (smaller amount). Using the formula Smaller = Bigger - Difference, we get 10 - 2 = 8. So, the markers cost 8 euros.",
+    "storyGrammarPrompts": [
+      {
+        "text": "What is the cost of the pencil case?",
+        "boxTarget": "bigger",
+        "context": "We need to find the number that tells us how much the pencil case costs. Look for that number in the story!"
+      },
+      {
+        "text": "How much cheaper are the markers than the pencil case?",
+        "boxTarget": "difference",
+        "context": "The story tells us that the markers are 'cheaper' by a certain amount. We need to find that number."
+      },
+      {
+        "text": "What is the cost of the markers?",
+        "boxTarget": "smaller",
+        "context": "This is what we want to figure out! The story asks us to find the cost of the markers."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLSQU",
+    "groundTruthAnswer": 8,
+    "groundTruthModelAnswers": {
+      "bigger": 10,
+      "smaller": null,
+      "difference": 2
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "Kersti’s blue pencil is 14 cm long. The green one is 4 cm shorter. How long is the green pencil?",
+    "output": "The problem provides the length of one pencil and describes the length of a second pencil in relation to the first ('4 cm shorter'). This is a direct comparison between the lengths of two distinct objects to determine an unknown quantity based on that comparison.",
+    "category": "Compare",
+    "subcategory": "CLSQU",
+    "subReasoning": "The problem states that the green pencil is '4 cm shorter' than the blue pencil, indicating a 'Compare–Less' relationship. We are given the length of the blue pencil (the larger quantity, 14 cm) and the difference (4 cm). We need to find the length of the green pencil, which is the smaller quantity. Therefore, it is a Compare–Less, Smaller Quantity Unknown problem.",
+    "tokenUsage": {
+      "prompt": 409,
+      "completion": 222,
+      "total": 631
+    },
+    "modelAnswers": {
+      "bigger": 14,
+      "smaller": null,
+      "difference": 4
+    },
+    "answer": 10,
+    "reasoning": "The blue pencil is the longer one (Bigger) at 14 cm. The green pencil is shorter (Smaller) and the difference in length is 4 cm. Using the formula Bigger = Smaller + Difference, we can rearrange to find Smaller = Bigger - Difference. So, Smaller = 14 cm - 4 cm = 10 cm. The green pencil is 10 cm long.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How long is Kersti’s blue pencil?",
+        "boxTarget": "bigger",
+        "context": "This question asks you to find the length of Kersti’s blue pencil. Look carefully at the story to see how long it is."
+      },
+      {
+        "text": "What are we trying to find out about the green pencil?",
+        "boxTarget": "smaller",
+        "context": "This question asks you to think about what the story wants us to figure out. We need to find out something specific about the green pencil."
+      },
+      {
+        "text": "How much shorter is the green pencil compared to the blue one?",
+        "boxTarget": "difference",
+        "context": "This question asks you to look for the part of the story that tells us if one pencil is longer or shorter than the other, and by how much. It's about finding the difference in their lengths."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLSQU",
+    "groundTruthAnswer": 10,
+    "groundTruthModelAnswers": {
+      "bigger": 14,
+      "smaller": null,
+      "difference": 4
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "One side of the street has 11 houses. The other side has 2 fewer houses. How many houses are on the other side?",
+    "output": "This problem contrasts the number of houses on two different sides of a street. It establishes a 'fewer than' relationship between the two quantities. The task is to calculate the number of houses on the second side by comparing it to the first side, classifying it as a Compare problem.",
+    "category": "Compare",
+    "subcategory": "CLSQU",
+    "subReasoning": "The problem states that 'The other side has 2 fewer houses' which directly indicates a comparison using 'fewer', thus classifying it as a Compare-Less problem. We are given the quantity for one side (11 houses) and the difference (2 fewer). We are asked to find the quantity of houses on the 'other side', which is the smaller quantity in this comparison (the side with fewer houses). Therefore, the unknown is the Smaller Quantity.",
+    "tokenUsage": {
+      "prompt": 407,
+      "completion": 270,
+      "total": 677
+    },
+    "modelAnswers": {
+      "bigger": 11,
+      "smaller": null,
+      "difference": 2
+    },
+    "answer": 9,
+    "reasoning": "This is a 'Compare, Difference Unknown' problem where 'Bigger = Smaller + Difference'. We know the bigger amount (11 houses) and the difference (2 fewer). To find the smaller amount, we rearrange the formula to 'Smaller = Bigger - Difference'. So, Smaller = 11 - 2 = 9. Therefore, there are 9 houses on the other side.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many houses are on the side of the street that has 'more' houses?",
+        "boxTarget": "bigger",
+        "context": "Think about the problem. Which side of the street has more houses? The problem tells us that one side has 11 houses, and the other side has 2 FEWER. So, 11 must be the 'bigger' number of houses. How many is that?"
+      },
+      {
+        "text": "How many houses are on the side of the street that has 'fewer' houses?",
+        "boxTarget": "smaller",
+        "context": "The problem asks us to find out how many houses are on the other side, which has fewer houses. This is the number we need to figure out!"
+      },
+      {
+        "text": "What is the difference in the number of houses between the two sides of the street?",
+        "boxTarget": "difference",
+        "context": "The problem tells us how much 'fewer' houses there are on one side. This 'fewer' tells us the difference between the number of houses on both sides. How much less is it?"
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLSQU",
+    "groundTruthAnswer": 9,
+    "groundTruthModelAnswers": {
+      "bigger": 11,
+      "smaller": null,
+      "difference": 2
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "Some kids played dodgeball. There were 13 boys. There were 7 less girls than boys. How many girls were playing dodgeball?",
+    "output": "The problem presents two distinct groups of children (boys and girls) and describes the number of girls in terms of being 'less than' the number of boys. This is a comparison between two quantities, where one is derived from the other through a difference.",
+    "category": "Compare",
+    "subcategory": "CLSQU",
+    "subReasoning": "The problem states that there were '7 less girls than boys', indicating a comparison focusing on 'less'. Therefore, it is a Compare–Less problem. Using the model 'Bigger = Smaller + Difference', we have: Boys (Bigger) = Girls (Smaller) + Difference. We are given the number of boys (13) and the difference (7). The question asks 'How many girls were playing dodgeball?', which is the Smaller quantity. Thus, it is a Compare–Less, Smaller Quantity Unknown problem.",
+    "tokenUsage": {
+      "prompt": 408,
+      "completion": 233,
+      "total": 641
+    },
+    "modelAnswers": {
+      "bigger": 13,
+      "smaller": null,
+      "difference": 7
+    },
+    "answer": 6,
+    "reasoning": "The problem states there were 13 boys. It also states there were 7 less girls than boys. This means the number of boys is the 'Bigger' quantity and the number of girls is the 'Smaller' quantity. The difference is 7. Using the formula Smaller = Bigger - Difference, we get Smaller = 13 - 7 = 6. So, there were 6 girls playing dodgeball.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many more kids are in the 'bigger' group?",
+        "boxTarget": "bigger",
+        "context": "We need to find out which group has more kids. Think about the boys and girls playing dodgeball. Which number is larger? That's our 'bigger' group!"
+      },
+      {
+        "text": "How many fewer kids are in the 'smaller' group?",
+        "boxTarget": "smaller",
+        "context": "Now let's think about the other group. If one group is bigger, the other one must be smaller! How many kids are in that group?"
+      },
+      {
+        "text": "What is the difference between the number of boys and girls?",
+        "boxTarget": "difference",
+        "context": "This tells us how much difference there is between the boys and the girls. Is it a big change or a small change? How many fewer girls are there than boys? That's our 'difference'!"
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLSQU",
+    "groundTruthAnswer": 6,
+    "groundTruthModelAnswers": {
+      "bigger": 13,
+      "smaller": null,
+      "difference": 7
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "Oliver collected 13 horse chestnuts. Tom collected 7 less horse chestnuts than Oliver. How many horse chestnuts did Tom collect?",
+    "output": "This problem involves two individuals, Oliver and Tom, and the quantities of horse chestnuts they collected. Tom's quantity is explicitly stated as '7 less than' Oliver's, making it a comparative situation to find Tom's amount.",
+    "category": "Compare",
+    "subcategory": "CLSQU",
+    "subReasoning": "The problem states, 'Tom collected 7 less horse chestnuts than Oliver,' which immediately indicates a 'Compare-Less' problem. Using the formula 'Bigger = Smaller + Difference', we identify the knowns and unknowns. Oliver collected 13 horse chestnuts, which is the 'Bigger' quantity. The 'Difference' is 7. The unknown is the number of horse chestnuts Tom collected, which represents the 'Smaller' quantity. Therefore, the problem asks for the Smaller Quantity, making it a CLSQU problem.",
+    "tokenUsage": {
+      "prompt": 404,
+      "completion": 219,
+      "total": 623
+    },
+    "modelAnswers": {
+      "bigger": 13,
+      "smaller": null,
+      "difference": 7
+    },
+    "answer": 6,
+    "reasoning": "In this problem, Oliver collected more chestnuts, so Oliver's amount (13) is the 'Bigger' quantity. Tom collected '7 less' than Oliver, which means 7 is the 'Difference'. We are looking for Tom's amount, which is the 'Smaller' quantity. Using the formula 'Bigger = Smaller + Difference', we can rearrange it to 'Smaller = Bigger - Difference'. So, Smaller = 13 - 7 = 6. Therefore, Tom collected 6 horse chestnuts.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many horse chestnuts did Oliver collect?",
+        "boxTarget": "bigger",
+        "context": "Think about Oliver. The story tells us exactly how many horse chestnuts he found. That's the biggest number we know in the story so far!"
+      },
+      {
+        "text": "How many fewer horse chestnuts did Tom collect compared to Oliver?",
+        "boxTarget": "difference",
+        "context": "The story tells us something special about Tom. It says he collected '7 less' than Oliver. This 'less' tells us the difference between Oliver's and Tom's chestnuts."
+      },
+      {
+        "text": "How many horse chestnuts did Tom collect?",
+        "boxTarget": "smaller",
+        "context": "This is what we want to find out! The story asks us to figure out how many horse chestnuts Tom ended up with. This is going to be the smaller number."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLSQU",
+    "groundTruthAnswer": 6,
+    "groundTruthModelAnswers": {
+      "bigger": 13,
+      "smaller": null,
+      "difference": 7
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "There were 15 people sitting in one row at the cinema. In the other row, there were 7 fewer people. How many people were sitting in the other row?",
+    "output": "The problem presents the number of people in two different rows at a cinema. The number of people in the second row is described in relation to the first row as '7 fewer'. This is a direct comparison between the quantities in the two rows to find an unknown quantity, hence it is a Compare problem.",
+    "category": "Compare",
+    "subcategory": "CLSQU",
+    "subReasoning": "The problem states, 'In the other row, there were 7 fewer people.' This immediately signifies a 'Compare-Less' problem because the comparison explicitly uses 'fewer'. The known quantities are the 'Bigger' group (15 people in one row) and the 'Difference' (7 fewer people). The unknown quantity is the 'Smaller' group (number of people in the other row). According to the COMPS framework, when the 'Smaller Quantity' is unknown in a 'Compare-Less' problem, it is classified as CLSQU.",
+    "tokenUsage": {
+      "prompt": 414,
+      "completion": 248,
+      "total": 662
+    },
+    "modelAnswers": {
+      "bigger": 15,
+      "smaller": null,
+      "difference": 7
+    },
+    "answer": 8,
+    "reasoning": "This is a 'Compare, Difference Unknown' problem where 'Bigger = Smaller + Difference' is rearranged to 'Smaller = Bigger - Difference'. Given Bigger = 15 and Difference = 7, Smaller = 15 - 7 = 8. So, there were 8 people in the other row.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many people were sitting in the *first* row we hear about?",
+        "boxTarget": "bigger",
+        "context": "This question asks us to find the number that tells us how many people were in the first row the problem talks about. This is usually the larger number or the starting number in our story."
+      },
+      {
+        "text": "What are we trying to find out about the *other* row?",
+        "boxTarget": "smaller",
+        "context": "This question asks us what we are looking for! We want to know how many people were in that second row, the one we need to figure out."
+      },
+      {
+        "text": "How much *less* or *fewer* were in the other row compared to the first row?",
+        "boxTarget": "difference",
+        "context": "This question asks about the difference between the two rows. It tells us how many fewer people were in the second row than in the first one. It's like finding the gap between two numbers!"
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLSQU",
+    "groundTruthAnswer": 8,
+    "groundTruthModelAnswers": {
+      "bigger": 15,
+      "smaller": null,
+      "difference": 7
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "Grandma has 18 sheep. She has 12 less goats than sheep. How many goats does she have?",
+    "output": "This problem is contrasting the number of goats to the number of sheep using the phrase '12 less goats than sheep.' There is no change over time or grouping of quantities, just a comparison to determine how many fewer goats there are.",
+    "category": "Compare",
+    "subcategory": "CLSQU",
+    "subReasoning": "The problem compares the number of goats to the number of sheep, stating that Grandma has 12 less goats than sheep. This is a 'Compare–Less' situation, as goats are being compared to sheep with a 'less than' relationship. The number of sheep (18) is the larger quantity, the difference (12) is explicitly stated, and the unknown is the number of goats (smaller quantity). Therefore, this problem is a Compare–Less, Smaller Quantity Unknown problem.",
+    "tokenUsage": {
+      "prompt": 391,
+      "completion": 198,
+      "total": 589
+    },
+    "modelAnswers": {
+      "bigger": 18,
+      "smaller": null,
+      "difference": 12
+    },
+    "answer": 6,
+    "reasoning": "Smaller = 18 - 12 = 6, so Grandma has 6 goats.",
+    "storyGrammarPrompts": [
+      {
+        "text": "Who has the bigger group of animals, and how many are there?",
+        "boxTarget": "bigger",
+        "context": "This question helps you find out which animal Grandma has more of and tells you the number in the bigger group. We're looking for the animal group that has the most members in the story."
+      },
+      {
+        "text": "Who has the smaller group of animals, and how many are there?",
+        "boxTarget": "smaller",
+        "context": "This question is about finding the animal group that Grandma has fewer of. You'll be figuring out who has the smaller amount."
+      },
+      {
+        "text": "How many more sheep does Grandma have than goats?",
+        "boxTarget": "difference",
+        "context": "This question helps you see the difference between the two groups—the number that tells us how many more of one animal Grandma has compared to the other."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLSQU",
+    "groundTruthAnswer": 6,
+    "groundTruthModelAnswers": {
+      "bigger": 18,
+      "smaller": null,
+      "difference": 12
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "Annika has 10 russulas in her basket. There are 6 fewer boletes in the basket. How many boletes are in the basket?",
+    "output": "The problem focuses on the difference between the number of russulas and boletes using the phrase '6 fewer boletes.' It directly contrasts the two quantities to find the difference, without any indication of a combination or a change process.",
+    "category": "Compare",
+    "subcategory": "CLSQU",
+    "subReasoning": "The problem states that there are 6 fewer boletes than russulas. Here, russulas (10) is the larger quantity, boletes is the smaller quantity, and the difference is 6. The question asks 'How many boletes are in the basket?', making the smaller quantity unknown. The comparison is made in terms of 'fewer', indicating a Compare–Less problem with the smaller quantity unknown.",
+    "tokenUsage": {
+      "prompt": 399,
+      "completion": 205,
+      "total": 604
+    },
+    "modelAnswers": {
+      "bigger": 10,
+      "smaller": null,
+      "difference": 6
+    },
+    "answer": 4,
+    "reasoning": "Smaller = 10 - 6 = 4, so there are 4 boletes in the basket.",
+    "storyGrammarPrompts": [
+      {
+        "text": "Which kind of mushroom does Annika have more of in her basket?",
+        "boxTarget": "bigger",
+        "context": "Let's think about which mushrooms Annika has the most of. We want to find the group that has the bigger amount. This helps us figure out where to start!"
+      },
+      {
+        "text": "Which kind of mushroom does Annika have fewer of in her basket?",
+        "boxTarget": "smaller",
+        "context": "Now, let's look for the group with the smaller amount. This is the type that Annika has less of. We'll use this in our answer soon!"
+      },
+      {
+        "text": "How many fewer boletes are there than russulas in Annika’s basket?",
+        "boxTarget": "difference",
+        "context": "Let’s figure out the missing part: the difference. This tells us how much less the smaller group has compared to the bigger group."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLSQU",
+    "groundTruthAnswer": 4,
+    "groundTruthModelAnswers": {
+      "bigger": 10,
+      "smaller": null,
+      "difference": 6
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "Mom bought 12 pastries. She bought 10 fewer cream cakes than pastries. How many cream cakes did Mom buy?",
+    "output": "This problem is comparing the number of cream cakes to the number of pastries, using the phrase '10 fewer.' There is no combining of different items or actions causing a change over time; only a contrast between the two amounts.",
+    "category": "Compare",
+    "subcategory": "CLSQU",
+    "subReasoning": "The problem states that Mom bought 10 fewer cream cakes than pastries. This sets up a 'Compare–Less' situation because the cream cakes are being compared as the group with less. We know the bigger amount (pastries: 12), we know the difference (10 fewer), and we want to find the smaller quantity (cream cakes). This means the smaller quantity is unknown.",
+    "tokenUsage": {
+      "prompt": 392,
+      "completion": 185,
+      "total": 577
+    },
+    "modelAnswers": {
+      "bigger": 12,
+      "smaller": null,
+      "difference": 10
+    },
+    "answer": 2,
+    "reasoning": "Smaller = 12 - 10 = 2, so Mom bought 2 cream cakes.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many pastries did Mom buy altogether?",
+        "boxTarget": "bigger",
+        "context": "This question helps you find the total number of pastries Mom bought in the story. Think about what the story says Mom bought first."
+      },
+      {
+        "text": "How many cream cakes did Mom buy?",
+        "boxTarget": "smaller",
+        "context": "This question asks about the number of cream cakes Mom bought. Let’s see if we can figure out how many cream cakes there were."
+      },
+      {
+        "text": "How many fewer cream cakes did Mom buy than pastries?",
+        "boxTarget": "difference",
+        "context": "This question wants you to think about how many less cream cakes Mom bought compared to pastries. Look for the part of the story that tells us about the difference between the two."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLSQU",
+    "groundTruthAnswer": 2,
+    "groundTruthModelAnswers": {
+      "bigger": 12,
+      "smaller": null,
+      "difference": 10
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "Kati has 20 cents. Rando has 2 cents less. How much does Rando have?",
+    "output": "The problem sets up a comparison by stating that Rando has '2 cents less' than Kati. This is a direct comparison between two amounts, not a grouping or a change event.",
+    "category": "Compare",
+    "subcategory": "CLSQU",
+    "subReasoning": "The problem states that Rando has 2 cents less than Kati, who has 20 cents. This is a Compare–Less problem because it describes Rando's amount as being less than Kati's. The unknown is the smaller quantity (Rando's amount), since Kati's (larger quantity) and the difference (2 cents less) are both given.",
+    "tokenUsage": {
+      "prompt": 389,
+      "completion": 189,
+      "total": 578
+    },
+    "modelAnswers": {
+      "bigger": 20,
+      "smaller": null,
+      "difference": 2
+    },
+    "answer": 18,
+    "reasoning": "Smaller = 20 - 2 = 18, so Rando has 18 cents.",
+    "storyGrammarPrompts": [
+      {
+        "text": "Who has more cents, Kati or Rando?",
+        "boxTarget": "bigger",
+        "context": "This question helps you figure out which person has the bigger amount of cents. Think about which kid has the most!"
+      },
+      {
+        "text": "How many fewer cents does Rando have than Kati?",
+        "boxTarget": "difference",
+        "context": "This question is about the difference between how much Kati has and how much Rando has. Try to find out how much less Rando has than Kati."
+      },
+      {
+        "text": "How many cents does Rando have?",
+        "boxTarget": "smaller",
+        "context": "This question is asking you to work out the amount that Rando has. Use what you know about Kati and the difference to help you figure it out!"
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLSQU",
+    "groundTruthAnswer": 18,
+    "groundTruthModelAnswers": {
+      "bigger": 20,
+      "smaller": null,
+      "difference": 2
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "The pencil case costs 10 euros. The markers are 2 euros cheaper. How much are the markers?",
+    "output": "Here the cost of the markers is compared to the cost of the pencil case using the phrase '2 euros cheaper.' This is a contrast between two values to find a difference, not a sum or a change over time.",
+    "category": "Compare",
+    "subcategory": "CLSQU",
+    "subReasoning": "The problem compares the prices of the pencil case and the markers, specifically stating that the markers are 2 euros cheaper ('cheaper' indicates a 'less than' or Compare–Less comparison). The price of the pencil case (larger quantity) is known (10 euros), and the difference (2 euros) is known. The unknown is the price of the markers (smaller quantity). Therefore, this is a Compare–Less, Smaller Quantity Unknown (CLSQU) problem.",
+    "tokenUsage": {
+      "prompt": 389,
+      "completion": 193,
+      "total": 582
+    },
+    "modelAnswers": {
+      "bigger": 10,
+      "smaller": null,
+      "difference": 2
+    },
+    "answer": 8,
+    "reasoning": "Smaller = 10 - 2 = 8, so the markers cost 8 euros.",
+    "storyGrammarPrompts": [
+      {
+        "text": "Which one costs more—the pencil case or the markers?",
+        "boxTarget": "bigger",
+        "context": "This question helps you find out which item has the bigger price in the story. Let's think about which thing has more money, so we know what we're starting with."
+      },
+      {
+        "text": "What do we know about how much less the markers cost?",
+        "boxTarget": "difference",
+        "context": "This question helps you remember the difference in price between the markers and the pencil case. We're looking for how much cheaper the markers are compared to the pencil case."
+      },
+      {
+        "text": "How much do the markers cost?",
+        "boxTarget": "smaller",
+        "context": "This question asks for the price of the markers. We're finding the answer about how much you would pay for the markers if you bought them."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLSQU",
+    "groundTruthAnswer": 8,
+    "groundTruthModelAnswers": {
+      "bigger": 10,
+      "smaller": null,
+      "difference": 2
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "Kersti’s blue pencil is 14 cm long. The green one is 4 cm shorter. How long is the green pencil?",
+    "output": "The problem contrasts the length of two pencils by saying the green pencil is '4 cm shorter.' This phrase asks for the comparative difference, not a combination or transformation.",
+    "category": "Compare",
+    "subcategory": "CLSQU",
+    "subReasoning": "The problem states that the green pencil is 4 cm shorter than the blue pencil, which means it is comparing the green pencil to the blue (the larger quantity) using a 'less than' comparison. The question asks for the length of the green pencil, which is the smaller quantity. According to the COMPS model: Bigger (blue pencil) = Smaller (green pencil) + Difference (4 cm). The unknown is the smaller quantity (green pencil). Therefore, this is a Compare–Less, Smaller Quantity Unknown problem.",
+    "tokenUsage": {
+      "prompt": 395,
+      "completion": 177,
+      "total": 572
+    },
+    "modelAnswers": {
+      "bigger": 14,
+      "smaller": null,
+      "difference": 4
+    },
+    "answer": 10,
+    "reasoning": "Smaller = 14 - 4 = 10, so the green pencil is 10 cm long.",
+    "storyGrammarPrompts": [
+      {
+        "text": "Which pencil is longer in the story?",
+        "boxTarget": "bigger",
+        "context": "This question helps us find out which pencil is the biggest or the longest. We'll use this to start building our answer together!"
+      },
+      {
+        "text": "How much shorter is the green pencil than the blue pencil?",
+        "boxTarget": "difference",
+        "context": "Let’s think about how much smaller or less the green pencil is compared to the blue one. This helps us understand what we’re taking away."
+      },
+      {
+        "text": "How long is the green pencil?",
+        "boxTarget": "smaller",
+        "context": "Now we're going to figure out how long the green pencil is. This is the part we are trying to find in the story."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLSQU",
+    "groundTruthAnswer": 10,
+    "groundTruthModelAnswers": {
+      "bigger": 14,
+      "smaller": null,
+      "difference": 4
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "One side of the street has 11 houses. The other side has 2 fewer houses. How many houses are on the other side?",
+    "output": "The phrase '2 fewer houses' shows a direct comparison between the houses on two sides of the street. There is no changing quantity or summing of independent quantities.",
+    "category": "Compare",
+    "subcategory": "CLSQU",
+    "subReasoning": "The problem states that one side has 11 houses, and the other side has 2 fewer houses. The comparison is based on 'fewer' (less than), so this is a Compare–Less problem. We are given the number of houses on one side (the larger quantity, 11) and the difference (2 fewer), and we are asked to find the number on the other side (the smaller quantity unknown). Therefore, the correct subcategory is Compare–Less, Smaller Quantity Unknown.",
+    "tokenUsage": {
+      "prompt": 396,
+      "completion": 182,
+      "total": 578
+    },
+    "modelAnswers": {
+      "bigger": 11,
+      "smaller": null,
+      "difference": 2
+    },
+    "answer": 9,
+    "reasoning": "Smaller = 11 - 2 = 9, so the other side has 9 houses.",
+    "storyGrammarPrompts": [
+      {
+        "text": "Which side of the street has more houses?",
+        "boxTarget": "bigger",
+        "context": "This question helps you think about which group is the largest in the story. Let's find out which side has the most houses!"
+      },
+      {
+        "text": "How many fewer houses are on the other side of the street?",
+        "boxTarget": "difference",
+        "context": "This helps you notice the difference between the two sides. We want to see how much less one side has compared to the other."
+      },
+      {
+        "text": "How many houses are on the side of the street with fewer houses?",
+        "boxTarget": "smaller",
+        "context": "This question helps you figure out how many houses are on the side with less. We're searching for the smaller number of houses."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLSQU",
+    "groundTruthAnswer": 9,
+    "groundTruthModelAnswers": {
+      "bigger": 11,
+      "smaller": null,
+      "difference": 2
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "Some kids played dodgeball. There were 13 boys. There were 7 less girls than boys. How many girls were playing dodgeball?",
+    "output": "This problem explicitly sets up a comparison between the number of boys and girls, stating '7 less girls than boys.' The answer is derived by contrasting these amounts.",
+    "category": "Compare",
+    "subcategory": "CLSQU",
+    "subReasoning": "The problem states there were 13 boys and there were 7 less girls than boys. The comparison is about the number of girls being less than the number of boys, which makes this a Compare–Less problem. Using the Compare Model (Bigger = Smaller + Difference), boys (13) is the bigger quantity, and girls is the smaller quantity. The difference (7) is provided, and the unknown is the number of girls (smaller quantity). Therefore, this is a Compare–Less, Smaller Quantity Unknown problem.",
+    "tokenUsage": {
+      "prompt": 397,
+      "completion": 190,
+      "total": 587
+    },
+    "modelAnswers": {
+      "bigger": 13,
+      "smaller": null,
+      "difference": 7
+    },
+    "answer": 6,
+    "reasoning": "Smaller = 13 - 7 = 6, so there were 6 girls playing dodgeball.",
+    "storyGrammarPrompts": [
+      {
+        "text": "Who had the bigger group: the boys or the girls?",
+        "boxTarget": "bigger",
+        "context": "This question helps us notice which group had more kids playing dodgeball. It makes it easier to figure out who had a bigger number in the story."
+      },
+      {
+        "text": "Who had the smaller group: the boys or the girls?",
+        "boxTarget": "smaller",
+        "context": "This helps us find out which group had fewer kids. Knowing who had less can help us solve the problem gently and step by step."
+      },
+      {
+        "text": "How many more boys played dodgeball than girls?",
+        "boxTarget": "difference",
+        "context": "This question is asking us to think about the difference between the groups. It helps us see how much bigger one group is compared to the other."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLSQU",
+    "groundTruthAnswer": 6,
+    "groundTruthModelAnswers": {
+      "bigger": 13,
+      "smaller": null,
+      "difference": 7
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "Oliver collected 13 horse chestnuts. Tom collected 7 less horse chestnuts than Oliver. How many horse chestnuts did Tom collect?",
+    "output": "Using '7 less horse chestnuts than Oliver' makes this a looking-for-the-difference comparison between Oliver's and Tom's collections.",
+    "category": "Compare",
+    "subcategory": "CLSQU",
+    "subReasoning": "The problem states that Tom collected '7 less horse chestnuts than Oliver.' This is a Compare–Less problem, as it compares Tom's amount to Oliver's, with Tom having less. According to the equation model (Bigger = Smaller + Difference), Oliver's quantity (13) is the 'Bigger' number, and Tom's quantity is the 'Smaller' number. The difference (7) is given. The unknown in this problem is the smaller quantity, i.e., how many horse chestnuts Tom collected.",
+    "tokenUsage": {
+      "prompt": 396,
+      "completion": 217,
+      "total": 613
+    },
+    "modelAnswers": {
+      "bigger": 13,
+      "smaller": null,
+      "difference": 7
+    },
+    "answer": 6,
+    "reasoning": "Smaller = 13 - 7 = 6, so Tom collected 6 horse chestnuts.",
+    "storyGrammarPrompts": [
+      {
+        "text": "Who collected more horse chestnuts, Oliver or Tom? How many did that person have?",
+        "boxTarget": "bigger",
+        "context": "This question helps us find out who had the largest amount of horse chestnuts, and just how many they had. We're looking for the person who picked the most!"
+      },
+      {
+        "text": "Who collected fewer horse chestnuts? How many did that person have?",
+        "boxTarget": "smaller",
+        "context": "This question helps us think about how many horse chestnuts the other person collected—the one with the smaller amount. We're trying to find out their total."
+      },
+      {
+        "text": "What is the difference in the number of horse chestnuts collected between the two boys?",
+        "boxTarget": "difference",
+        "context": "This question helps us figure out how many more horse chestnuts one person has compared to the other. We’re finding out how much more or less one has than the other."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLSQU",
+    "groundTruthAnswer": 6,
+    "groundTruthModelAnswers": {
+      "bigger": 13,
+      "smaller": null,
+      "difference": 7
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "There were 15 people sitting in one row at the cinema. In the other row, there were 7 fewer people. How many people were sitting in the other row?",
+    "output": "This problem contrasts the number of people in two rows by stating one row has '7 fewer people.' There is no change event or summing of totals; it focuses on the comparative difference.",
+    "category": "Compare",
+    "subcategory": "CLSQU",
+    "subReasoning": "The problem compares the number of people in two rows: one row has 15 people, and the other row has 7 fewer people. This is a compare–less problem because it uses 'fewer' to indicate the comparison. The question asks for the number of people in the other row, which is the smaller quantity. Therefore, the smaller quantity is unknown.",
+    "tokenUsage": {
+      "prompt": 402,
+      "completion": 200,
+      "total": 602
+    },
+    "modelAnswers": {
+      "bigger": 15,
+      "smaller": null,
+      "difference": 7
+    },
+    "answer": 8,
+    "reasoning": "Smaller = 15 - 7 = 8, so there were 8 people sitting in the other row.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many people were sitting in the row with more people?",
+        "boxTarget": "bigger",
+        "context": "This question is asking you to find the row that had the most people sitting in it. Let's think about which row had more people and how many people were there."
+      },
+      {
+        "text": "How many fewer people were sitting in the other row compared to the first row?",
+        "boxTarget": "difference",
+        "context": "This question helps us think about how many people less were sitting in the second row than in the first row. We're looking for how much smaller the second group is."
+      },
+      {
+        "text": "How many people were sitting in the other row?",
+        "boxTarget": "smaller",
+        "context": "This question is asking about the row with fewer people. We're trying to figure out exactly how many people were in this smaller group."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLSQU",
+    "groundTruthAnswer": 8,
+    "groundTruthModelAnswers": {
+      "bigger": 15,
+      "smaller": null,
+      "difference": 7
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  }
+]

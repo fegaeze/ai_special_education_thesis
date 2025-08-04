@@ -35,7 +35,7 @@ Use these keywords to decide direction:
 - Combine = merging known groups or categories (e.g., red + blue)
 
 Respond ONLY with this format:
-Answer: <COMPS Variant Code>`
+Answer: <COMPS Variant Code>`,
   ],
   [
     "human",
@@ -52,8 +52,8 @@ Step-by-step:
 3. What quantity is missing (part, whole, difference)?
 
 Respond only with:
-Answer: <COMPS Variant Code>`
-  ]
+Answer: <COMPS Variant Code>`,
+  ],
 ]);
 
 const chain = prompt.pipe(model);
@@ -69,7 +69,9 @@ export async function runEvaluation(testSet) {
     const match = predicted === expected;
     if (match) correct++;
     console.log(`Problem ${i + 1}: ${problem}`);
-    console.log(`Expected: ${expected} | Predicted: ${predicted} | ${match ? "✅" : "❌"}`);
+    console.log(
+      `Expected: ${expected} | Predicted: ${predicted} | ${match ? "✅" : "❌"}`,
+    );
 
     // If variant is CJPU, pass to handler
     // if (predicted === "CJPU") {
@@ -82,6 +84,5 @@ export async function runEvaluation(testSet) {
 
   console.log(`Total Correct: ${correct} / ${testSet.length}\n`);
 }
-
 
 // NOTE: Use OpenRouter

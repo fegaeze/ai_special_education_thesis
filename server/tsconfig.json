@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "es2018",
+    "module": "commonjs",
+    "rootDir": ".",
+    "allowJs": true,
+    "outDir": "dist",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true
+  },
+  "include": ["routes", "server.ts", "config/prisma.ts", "middleware/auth.ts"],
+  "exclude": ["node_modules", "client", "old"]
+}

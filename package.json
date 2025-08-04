@@ -1,35 +1,35 @@
 {
-  "name": "ai_special_education_thesis",
+  "name": "ai-special-education-thesis",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "AI-powered special education thesis project with Express backend and Next.js frontend",
+  "private": true,
   "scripts": {
-    "dev": "nodemon server.js",
-    "start": "node server.js",
-    "prisma:generate": "prisma generate",
-    "prisma:migrate": "prisma migrate dev",
-    "prisma:studio": "prisma studio",
-    "lint": "eslint .",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm run dev",
+    "build": "npm run build:server && npm run build:client",
+    "build:server": "cd server && npm run build",
+    "build:client": "cd client && npm run build",
+    "start": "cd server && npm start",
+    "install:all": "npm install && cd server && npm install && cd ../client && npm install",
+    "prisma:generate": "cd server && npm run prisma:generate",
+    "prisma:migrate": "cd server && npm run prisma:migrate",
+    "prisma:studio": "cd server && npm run prisma:studio",
+    "seed:problems": "cd server && npm run seed:problems",
+    "lint": "npm run lint:server && npm run lint:client",
+    "lint:server": "cd server && npm run lint",
+    "lint:client": "cd client && npm run lint",
     "format": "prettier --write ."
   },
-  "keywords": [],
+  "keywords": ["ai", "education", "special-education", "thesis", "express", "nextjs"],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "@hookform/resolvers": "^5.1.1",
-    "@prisma/client": "^6.11.1",
-    "@shadcn/ui": "^0.0.4",
-    "bcrypt": "^6.0.0",
-    "cors": "^2.8.5",
-    "express": "^5.1.0",
-    "jsonwebtoken": "^9.0.2",
-    "pg": "^8.16.3",
-    "prisma": "^6.11.1",
-    "react-hook-form": "^7.60.0",
-    "react-router-dom": "^7.6.3",
-    "zod": "^4.0.5"
-  },
   "devDependencies": {
-    "@types/react-router-dom": "^5.3.3"
-  }
-}
+    "concurrently": "^8.2.2",
+    "prettier": "^3.6.2"
+  },
+  "workspaces": [
+    "server",
+    "client"
+  ]
+} 

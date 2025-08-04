@@ -1,4 +1,3 @@
-
 export const classificationStructure = `
 You are an AI expert in Conceptual Model-Based Problem Solving (COMPS), a cognitive framework designed to help students—especially those with learning disabilities in mathematics (LDM)—solve arithmetic word problems (WPs) by focusing on conceptual understanding rather than surface-level cues.
 
@@ -53,7 +52,7 @@ Your task is to analyze a word problem and classify it into one of the following
 - Classify it into one of the **12 categories** above.
 - ONLY return the classification as a single string (e.g., "Change-Join: Part Unknown").
 - Do NOT include explanations, reasoning, or extra text.
-`
+`;
 export const changeJoinPartUnknownStructure = `
 # Word Problem Breakdown into Structured Format
 
@@ -153,7 +152,7 @@ Your task is to receive a word problem, which has already been classified, and b
     \"explanation\": \"We subtract the pictures Rosa has already drawn from the total pictures she wants to draw: 15 - 6 = 9 more pictures.\"
   }}
 }}
-`
+`;
 export const changeJoinWholeUnknownStructure = `
 # Word Problem Breakdown into Structured Format
 
@@ -253,7 +252,7 @@ Your task is to receive a word problem, which has already been classified, and b
     \"explanation\": \"We add the pages Ashley read on Saturday and Sunday: 27 + 23 = 50 pages over the weekend.\"
   }}
 }}
-`
+`;
 export const changeSeparatePartUnknownStructure = `
 # Word Problem Breakdown into Structured Format
 
@@ -363,7 +362,7 @@ Your task is to receive a word problem, which has already been classified, and b
     \"explanation\": \"To find how many candies were left, we subtract the candies given away from the total. 296 - 105 - 86 = 105 candies left.\"
   }}
 }}
-`
+`;
 export const changeSeparateWholeUnknownStructure = `
 # Word Problem Breakdown into Structured Format
 
@@ -471,7 +470,7 @@ Your task is to receive a word problem, which has already been classified, and b
     \"explanation\": \"We add the books that were checked out (8) to the books that are still on the shelf (5): 8 + 5 = 13 books.\"
   }}
 }}
-`
+`;
 export const combinePartUnknownStructure = `
 # Word Problem Breakdown into Structured Format
 
@@ -571,7 +570,7 @@ Your task is to receive a word problem, which has already been classified, and b
     \"explanation\": \"We subtract the angelfish from the total number of tropical fish: 9 - 2 = 7.\"
   }}
 }}
-`
+`;
 export const combineWholeUnknownStructure = `
 # Word Problem Breakdown into Structured Format
 
@@ -671,7 +670,7 @@ Your task is to receive a word problem, which has already been classified, and b
     \"explanation\": \"We add up the litter: (45 + 48) + 67 = 160 pieces.\"
   }}
 }}
-`
+`;
 export const compareLessDifferenceUnknownStructure = `
 # Word Problem Breakdown into Structured Format
 
@@ -781,7 +780,7 @@ Your task is to receive a word problem, which has already been classified, and b
     \"explanation\": \"Add the camping rain amounts (3 + 6 + 5 = 14) and subtract from the house rain (26 - 14 = 12 mm).\"
   }}
 }}
-`
+`;
 export const compareLessLargerQuantityUnknownStructure = `
 # Word Problem Breakdown into Structured Format
 
@@ -881,7 +880,7 @@ Your task is to receive a word problem, which has already been classified, and b
     \"explanation\": \"Add 3 to Julia's 10 apples: 10 + 3 = 13.\"
   }}
 }}
-`
+`;
 export const compareLessSmallerQuantityUnknownStructure = `
 # Word Problem Breakdown into Structured Format
 
@@ -981,7 +980,7 @@ Your task is to receive a word problem, which has already been classified, and b
     \"explanation\": \"Subtract 3 from 10: 10 - 3 = 7.\"
   }}
 }}
-`
+`;
 export const compareMoreDifferenceUnknownStructure = `
 # Word Problem Breakdown into Structured Format
 
@@ -1081,7 +1080,7 @@ Your task is to receive a word problem, which has already been classified, and b
     \"explanation\": \"Subtract 3 from 8: 8 - 3 = 5.\"
   }}
 }}
-`
+`;
 export const compareMoreLargerQuantityUnknownStructure = `
 # Word Problem Breakdown into Structured Format
 
@@ -1181,7 +1180,7 @@ Your task is to receive a word problem, which has already been classified, and b
     \"explanation\": \"Add 4 (toad) and 3 (additional): 4 + 3 = 7.\"
   }}
 }}
-`
+`;
 export const compareMoreSmallerQuantityUnknownStructure = `
 # Word Problem Breakdown into Structured Format
 
@@ -1281,4 +1280,4 @@ Your task is to receive a word problem, which has already been classified, and b
     \"explanation\": \"Subtract 5 from 12: 12 - 5 = 7.\"
   }}
 }}
-`
+`;

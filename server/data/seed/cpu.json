@@ -1,0 +1,1412 @@
+[
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "Grandma had 10 chickens and some geese. Altogether she had 14 domestic birds. How many geese did Grandma have?",
+    "output": "This problem describes two distinct groups of birds (chickens and geese) that are combined to make a total number of domestic birds. There is no transformation or change over time - we're simply finding how many geese when we know the total and one part. The chickens and geese are independent quantities that together form the whole.",
+    "category": "Combine",
+    "subcategory": "CPU",
+    "subReasoning": "This problem follows the combine model structure where two groups are joined together. Part 1 is the chickens (10), Part 2 is the geese (unknown - 'some geese'), and the Whole is the total domestic birds (14). The problem asks 'How many geese did Grandma have?' which means we are looking for Part 2. Since one of the parts (the geese) is unknown while the whole and the other part are known, this is a Part Unknown problem.",
+    "tokenUsage": {
+      "prompt": 460,
+      "completion": 223,
+      "total": 683
+    },
+    "modelAnswers": {
+      "part1": 10,
+      "part2": null,
+      "whole": 14
+    },
+    "answer": 4,
+    "reasoning": "10 + ? = 14, so ? = 14 - 10 = 4. Grandma had 4 geese.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many chickens did Grandma have?",
+        "boxTarget": "part1",
+        "context": "This question helps us find one group of birds that Grandma has. We're looking for the number of chickens, which is one part of all her birds."
+      },
+      {
+        "text": "How many birds did Grandma have altogether?",
+        "boxTarget": "whole",
+        "context": "This question asks us to find the total number of all the birds - both chickens and geese together. This is the big group that includes everything."
+      },
+      {
+        "text": "How many geese did Grandma have?",
+        "boxTarget": "part2",
+        "context": "This question helps us find the other group of birds that Grandma has. We're looking for the number of geese, which is the part we need to figure out."
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CPU",
+    "groundTruthAnswer": 4,
+    "groundTruthModelAnswers": {
+      "part1": 10,
+      "part2": null,
+      "whole": 14
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "Kaie and Kristi had 18 felt-tip pens in total. Kaie had 12 felt-tip pens. How many did Kristi have?",
+    "output": "This problem involves two people who each have a distinct quantity of pens, and together they have a total. There is no change or transformation happening - we're finding one part when we know the total and the other part. The pens belonging to each person are separate quantities that combine to form the total.",
+    "category": "Combine",
+    "subcategory": "CPU",
+    "subReasoning": "In this problem, I need to identify the parts and whole in the combine model. The problem states that Kaie and Kristi had 18 felt-tip pens in total, which represents the whole. Kaie had 12 felt-tip pens, which is one part. The question asks how many Kristi had, which is the other part that is unknown. Using the structure Part 1 + Part 2 = Whole: Kaie's pens (12) + Kristi's pens (unknown) = Total pens (18). Since one of the parts (Kristi's pens) is unknown, this is a Part Unknown problem.",
+    "tokenUsage": {
+      "prompt": 466,
+      "completion": 244,
+      "total": 710
+    },
+    "modelAnswers": {
+      "part1": 12,
+      "part2": null,
+      "whole": 18
+    },
+    "answer": 6,
+    "reasoning": "Kaie had 12 pens and together they had 18 pens total. To find how many Kristi had: 18 - 12 = 6. So Kristi had 6 felt-tip pens.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many felt-tip pens did Kaie have?",
+        "boxTarget": "part1",
+        "context": "This question helps us find one part of our story. We're looking for the number of pens that belong to Kaie. The story tells us this information directly!"
+      },
+      {
+        "text": "How many felt-tip pens did Kaie and Kristi have altogether?",
+        "boxTarget": "whole",
+        "context": "This question asks us to find the total number of pens when we put both friends' pens together. We're looking for the big number that includes everyone's pens."
+      },
+      {
+        "text": "How many felt-tip pens did Kristi have?",
+        "boxTarget": "part2",
+        "context": "This question helps us find the other part of our story. We're looking for the number of pens that belong to Kristi. This is what we need to figure out!"
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CPU",
+    "groundTruthAnswer": 6,
+    "groundTruthModelAnswers": {
+      "part1": 12,
+      "part2": null,
+      "whole": 18
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "There are 16 students in the third grade. Eleven of the students go to the sports club. The rest go to the art club. How many students attend the art club?",
+    "output": "This problem describes a total group of students that is divided into two distinct subgroups - those in sports club and those in art club. There is no change over time or transformation. We're finding one part of the whole when we know the total and the other part. The two clubs represent separate, independent parts that together make up the complete group.",
+    "category": "Combine",
+    "subcategory": "CPU",
+    "subReasoning": "This problem involves combining two groups of students to form the total third grade class. The structure is: students in sports club + students in art club = total students in third grade. From the problem, Part 1 (sports club) = 11 students, Part 2 (art club) = unknown, and Whole (total third grade students) = 16 students. Since we know the whole (16) and one part (11), but need to find the other part (art club students), this is a Part Unknown situation.",
+    "tokenUsage": {
+      "prompt": 464,
+      "completion": 224,
+      "total": 688
+    },
+    "modelAnswers": {
+      "part1": 11,
+      "part2": null,
+      "whole": 16
+    },
+    "answer": 5,
+    "reasoning": "There are 16 total students. 11 go to sports club and the rest go to art club. Since 11 + ? = 16, we calculate 16 - 11 = 5 students attend the art club.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many students are in the third grade altogether?",
+        "boxTarget": "whole",
+        "context": "This question helps you find the total number of students we're talking about in the story. It's like counting everyone in the class before they split up into different clubs."
+      },
+      {
+        "text": "How many students go to the sports club?",
+        "boxTarget": "part1",
+        "context": "This question asks you to find one group of students - the ones who chose to join the sports club. The story tells us this number directly."
+      },
+      {
+        "text": "How many students go to the art club?",
+        "boxTarget": "part2",
+        "context": "This question asks about the other group of students - the ones who go to the art club. This is what we need to figure out by using what we already know about the total and the sports club."
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CPU",
+    "groundTruthAnswer": 5,
+    "groundTruthModelAnswers": {
+      "part1": 11,
+      "part2": null,
+      "whole": 16
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "Mom cooked 12 jars of jam. Lingonberry jam is in five of the jars. The rest are apple jam. How many jars of apple jam did Mom cook?",
+    "output": "This problem involves a total quantity of jam jars that consists of two distinct types - lingonberry and apple jam. There is no change or transformation occurring. We're finding one part (apple jam) when we know the total and the other part (lingonberry jam). The two types of jam are independent parts that together form the complete set of jars.",
+    "category": "Combine",
+    "subcategory": "CPU",
+    "subReasoning": "Looking at the problem structure, I can identify the quantities in the combine model. Part 1 is the lingonberry jam with 5 jars (known). Part 2 is the apple jam with an unknown number of jars (unknown). The whole is the total jars of jam Mom cooked, which is 12 jars (known). Using the structure Part 1 + Part 2 = Whole, we have: 5 jars (lingonberry) + ? jars (apple) = 12 jars (total). Since one of the parts (apple jam) is unknown while the whole is known, this is a Part Unknown problem.",
+    "tokenUsage": {
+      "prompt": 467,
+      "completion": 220,
+      "total": 687
+    },
+    "modelAnswers": {
+      "part1": 5,
+      "part2": null,
+      "whole": 12
+    },
+    "answer": 7,
+    "reasoning": "Mom cooked 12 jars total. 5 jars are lingonberry jam. To find the apple jam: 12 - 5 = 7 jars of apple jam.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many jars of jam did Mom cook altogether?",
+        "boxTarget": "whole",
+        "context": "This question helps us find the total number of jars Mom made. Look for the big number that tells us about all the jars together."
+      },
+      {
+        "text": "How many jars have lingonberry jam in them?",
+        "boxTarget": "part1",
+        "context": "This question asks about one type of jam that Mom made. We need to find how many jars are filled with lingonberry jam specifically."
+      },
+      {
+        "text": "How many jars have apple jam in them?",
+        "boxTarget": "part2",
+        "context": "This question asks about the other type of jam Mom made. We need to figure out how many jars are filled with apple jam - this is what we're trying to find!"
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CPU",
+    "groundTruthAnswer": 7,
+    "groundTruthModelAnswers": {
+      "part1": 5,
+      "part2": null,
+      "whole": 12
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "There are 15 students in the school drama club. Nine of them are girls. How many boys are in the drama club?",
+    "output": "This problem describes a total group of students that is composed of two distinct subgroups - girls and boys. There is no change or transformation happening over time. We're finding one part (boys) when we know the total and the other part (girls). The girls and boys are separate, independent quantities that together make up the complete drama club membership.",
+    "category": "Combine",
+    "subcategory": "CPU",
+    "subReasoning": "This problem involves combining two parts to make a whole. The whole is 15 students in the drama club total. Part 1 is 9 girls. Part 2 is the unknown number of boys. The structure is: 9 girls + ? boys = 15 total students. Since we know the whole (15 students) and one part (9 girls), but we need to find the other part (number of boys), this is a Part Unknown problem.",
+    "tokenUsage": {
+      "prompt": 453,
+      "completion": 206,
+      "total": 659
+    },
+    "modelAnswers": {
+      "part1": 9,
+      "part2": null,
+      "whole": 15
+    },
+    "answer": 6,
+    "reasoning": "There are 15 total students and 9 are girls, so 15 - 9 = 6 boys are in the drama club.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many students are in the drama club altogether?",
+        "boxTarget": "whole",
+        "context": "This question helps you find the total number of students. Look for the number that tells you about all the students together in the drama club."
+      },
+      {
+        "text": "How many girls are in the drama club?",
+        "boxTarget": "part1",
+        "context": "This question asks you to find one group of students. Look in the story for the number that tells you specifically about the girls."
+      },
+      {
+        "text": "How many boys are in the drama club?",
+        "boxTarget": "part2",
+        "context": "This question asks you to find the other group of students. This is what the problem is asking you to figure out - the number of boys in the club."
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CPU",
+    "groundTruthAnswer": 6,
+    "groundTruthModelAnswers": {
+      "part1": 9,
+      "part2": null,
+      "whole": 15
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "Dad has 20 tools. Eight of them are hammers. How many other tools does Dad have?",
+    "output": "This problem involves a total collection of tools that consists of two distinct categories - hammers and other tools. There is no change or transformation occurring. We're finding one part (other tools) when we know the total and one specific part (hammers). The hammers and other tools are independent quantities that together form Dad's complete tool collection.",
+    "category": "Combine",
+    "subcategory": "CPU",
+    "subReasoning": "This problem involves combining two parts to make a whole. The whole is 20 tools (all of Dad's tools). Part 1 is 8 hammers. Part 2 is the other tools, which is what we need to find. Using the structure Part 1 + Part 2 = Whole, we have: 8 hammers + other tools = 20 tools. Since Part 2 (the other tools) is unknown, this is a Part Unknown problem.",
+    "tokenUsage": {
+      "prompt": 448,
+      "completion": 210,
+      "total": 658
+    },
+    "modelAnswers": {
+      "part1": 8,
+      "part2": null,
+      "whole": 20
+    },
+    "answer": 12,
+    "reasoning": "Dad has 20 tools total, and 8 of them are hammers. To find how many other tools he has: 20 - 8 = 12. So Dad has 12 other tools.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many tools does Dad have in total?",
+        "boxTarget": "whole",
+        "context": "This question helps us find the biggest number in our story - the total amount of tools Dad has altogether. Look for this number in the problem!"
+      },
+      {
+        "text": "How many of Dad's tools are hammers?",
+        "boxTarget": "part1",
+        "context": "This question asks about one group of Dad's tools - just the hammers. We need to find out how many hammers there are out of all his tools."
+      },
+      {
+        "text": "How many tools are NOT hammers?",
+        "boxTarget": "part2",
+        "context": "This question asks about the other group of tools - all the tools that are different from hammers. This is what we need to figure out!"
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CPU",
+    "groundTruthAnswer": 12,
+    "groundTruthModelAnswers": {
+      "part1": 8,
+      "part2": null,
+      "whole": 20
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "There were 30 pies served at the party. Eighteen of them were meat pies. How many pies were of another type?",
+    "output": "This problem describes a total quantity of pies that is made up of two distinct types - meat pies and other types. There is no change or transformation happening. We're finding one part (other types) when we know the total and one specific part (meat pies). The different types of pies are independent quantities that together form the complete set of pies served.",
+    "category": "Combine",
+    "subcategory": "CPU",
+    "subReasoning": "In this problem, I need to identify the quantities using the Combine Model structure: Part 1 + Part 2 = Whole. The whole is 30 pies (total pies served at the party). Part 1 is 18 meat pies. Part 2 is the unknown quantity - pies of another type. Since we know the whole (30) and one part (18), but need to find the other part (pies of another type), this is a Part Unknown situation.",
+    "tokenUsage": {
+      "prompt": 456,
+      "completion": 234,
+      "total": 690
+    },
+    "modelAnswers": {
+      "part1": 18,
+      "part2": null,
+      "whole": 30
+    },
+    "answer": 12,
+    "reasoning": "The whole is 30 pies total. Part 1 is 18 meat pies. To find Part 2 (other types): 30 - 18 = 12 pies of another type.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many pies were there in total at the party?",
+        "boxTarget": "whole",
+        "context": "This question helps us find the big number - the total amount of all the pies that were at the party. Look back at the beginning of the story to find this number."
+      },
+      {
+        "text": "How many meat pies were there?",
+        "boxTarget": "part1",
+        "context": "This question asks us to find one type of pie that we know about. The story tells us exactly how many pies were meat pies, so we can find this number by reading carefully."
+      },
+      {
+        "text": "How many pies were of another type?",
+        "boxTarget": "part2",
+        "context": "This question asks us to find the other group of pies - the ones that weren't meat pies. This is what we need to figure out by using the numbers we already know."
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CPU",
+    "groundTruthAnswer": 12,
+    "groundTruthModelAnswers": {
+      "part1": 18,
+      "part2": null,
+      "whole": 30
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "There are 25 books on the shelf. Seventeen of them are children's books. How many other books are there on the shelf?",
+    "output": "This problem involves a total collection of books that consists of two distinct categories - children's books and other books. There is no change or transformation occurring over time. We're finding one part (other books) when we know the total and one specific part (children's books). The different types of books are independent quantities that together make up the complete collection on the shelf.",
+    "category": "Combine",
+    "subcategory": "CPU",
+    "subReasoning": "This problem involves combining two parts to make a whole. The whole is 25 books total on the shelf. Part 1 is 17 children's books. Part 2 is the unknown number of other books. Using the structure Part 1 + Part 2 = Whole, we have: 17 children's books + unknown other books = 25 total books. Since one of the parts (the other books) is unknown, this is a Part Unknown situation.",
+    "tokenUsage": {
+      "prompt": 455,
+      "completion": 212,
+      "total": 667
+    },
+    "modelAnswers": {
+      "part1": 17,
+      "part2": null,
+      "whole": 25
+    },
+    "answer": 8,
+    "reasoning": "We know there are 25 total books and 17 are children's books. To find the other books: 25 - 17 = 8, so there are 8 other books on the shelf.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many books are on the shelf in total?",
+        "boxTarget": "whole",
+        "context": "This question helps you find the big number - the total amount of all the books together on the shelf. Look for this number in the story!"
+      },
+      {
+        "text": "How many children's books are there?",
+        "boxTarget": "part1",
+        "context": "This question asks about one group of books - just the children's books. This is one part of all the books on the shelf."
+      },
+      {
+        "text": "How many other books are there?",
+        "boxTarget": "part2",
+        "context": "This question asks about the second group of books - the ones that are NOT children's books. This is the other part of all the books, and it's what we need to figure out!"
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CPU",
+    "groundTruthAnswer": 8,
+    "groundTruthModelAnswers": {
+      "part1": 17,
+      "part2": null,
+      "whole": 25
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "The cook prepared 40 sandwiches. Some were cheese sandwiches, and 26 were ham sandwiches. How many cheese sandwiches did the cook prepare?",
+    "output": "This problem describes a total quantity of sandwiches that is composed of two distinct types - cheese and ham sandwiches. There is no change or transformation happening. We're finding one part (cheese sandwiches) when we know the total and the other part (ham sandwiches). The two types of sandwiches are independent quantities that together form the complete set of prepared sandwiches.",
+    "category": "Combine",
+    "subcategory": "CPU",
+    "subReasoning": "In this problem, I need to identify the quantities in the combine model. The cook prepared a total of 40 sandwiches, which represents the whole. This whole is made up of two parts: cheese sandwiches and ham sandwiches. I know that there were 26 ham sandwiches (Part 2), and the total is 40 sandwiches (Whole). The question asks how many cheese sandwiches were prepared, which means the number of cheese sandwiches (Part 1) is unknown. Using the structure Part 1 + Part 2 = Whole, I have: cheese sandwiches (unknown) + 26 ham sandwiches = 40 total sandwiches. Since one of the parts is unknown, this is a Part Unknown problem.",
+    "tokenUsage": {
+      "prompt": 464,
+      "completion": 219,
+      "total": 683
+    },
+    "modelAnswers": {
+      "part1": null,
+      "part2": 26,
+      "whole": 40
+    },
+    "answer": 14,
+    "reasoning": "The whole is 40 sandwiches, and 26 are ham sandwiches. To find the cheese sandwiches: 40 - 26 = 14 cheese sandwiches.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many sandwiches did the cook prepare in total?",
+        "boxTarget": "whole",
+        "context": "This question helps us find the big number - the total amount of all the sandwiches the cook made. Look for this number in the story!"
+      },
+      {
+        "text": "How many ham sandwiches did the cook prepare?",
+        "boxTarget": "part2",
+        "context": "This question asks us to find one of the groups of sandwiches. We're looking for the number that tells us about just the ham sandwiches."
+      },
+      {
+        "text": "How many cheese sandwiches did the cook prepare?",
+        "boxTarget": "part1",
+        "context": "This question asks us about the other group of sandwiches. This is the mystery number we need to figure out - the cheese sandwiches!"
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CPU",
+    "groundTruthAnswer": 14,
+    "groundTruthModelAnswers": {
+      "part1": null,
+      "part2": 26,
+      "whole": 40
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "There were 19 animals in the zoo. Seven of them were monkeys. How many animals were of other kinds?",
+    "output": "This problem involves a total collection of animals that consists of two distinct categories - monkeys and other kinds of animals. There is no change or transformation occurring. We're finding one part (other animals) when we know the total and one specific part (monkeys). The monkeys and other animals are independent quantities that together make up the complete animal population in the zoo.",
+    "category": "Combine",
+    "subcategory": "CPU",
+    "subReasoning": "In this problem, I need to identify the quantities in the combine model. The structure is Part 1 + Part 2 = Whole. From the problem: Part 1 is 7 monkeys (known), Part 2 is the animals of other kinds (unknown - this is what we're asked to find), and the Whole is 19 total animals (known). Since one of the Parts (animals of other kinds) is unknown, this is a Part Unknown problem.",
+    "tokenUsage": {
+      "prompt": 451,
+      "completion": 209,
+      "total": 660
+    },
+    "modelAnswers": {
+      "part1": 7,
+      "part2": null,
+      "whole": 19
+    },
+    "answer": 12,
+    "reasoning": "There were 19 total animals and 7 were monkeys, so 19 - 7 = 12 animals were of other kinds.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many animals were in the zoo altogether?",
+        "boxTarget": "whole",
+        "context": "This question helps us find the total number of animals that were at the zoo. Look for the number that tells us about all the animals together."
+      },
+      {
+        "text": "How many of the animals were monkeys?",
+        "boxTarget": "part1",
+        "context": "This question asks us to find one group of animals - just the monkeys. We need to look for the number that tells us specifically about the monkeys."
+      },
+      {
+        "text": "How many animals were not monkeys?",
+        "boxTarget": "part2",
+        "context": "This question asks us to figure out how many animals were different kinds - not monkeys. This is what we need to solve for in our problem."
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CPU",
+    "groundTruthAnswer": 12,
+    "groundTruthModelAnswers": {
+      "part1": 7,
+      "part2": null,
+      "whole": 19
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "Grandma had 10 chickens and some geese. Altogether she had 14 domestic birds. How many geese did Grandma have?",
+    "output": "This problem describes two distinct quantities (chickens and geese) that are grouped together to form a total number of domestic birds. There is no indication of a quantity changing over time due to an action, nor is there a comparison between two given quantities. Instead, it asks to find one part of a known total when the other part is given.",
+    "category": "Combine",
+    "subcategory": "CPU",
+    "subReasoning": "Following Step 2, we identify the quantities: Part 1 (chickens) is 10, the Whole (domestic birds) is 14, and Part 2 (geese) is unknown. According to Step 3, if one of the Parts is unknown, it is a Part Unknown problem, which classifies it as a CPU (Combine, Part Unknown).",
+    "tokenUsage": {
+      "prompt": 410,
+      "completion": 186,
+      "total": 596
+    },
+    "modelAnswers": {
+      "part1": 10,
+      "part2": null,
+      "whole": 14
+    },
+    "answer": 4,
+    "reasoning": "This is a Combine problem where we know Part 1 (chickens) and the Whole (total birds), and we need to find Part 2 (geese). The equation is Part 1 + Part 2 = Whole. So, 10 + Part 2 = 14. To find Part 2, we subtract Part 1 from the Whole: 14 - 10 = 4. Therefore, Grandma had 4 geese.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many chickens did Grandma have?",
+        "boxTarget": "part1",
+        "context": "Our story tells us right away about one kind of bird Grandma had. Can you find how many chickens she had to begin with?"
+      },
+      {
+        "text": "How many birds did Grandma have in total?",
+        "boxTarget": "whole",
+        "context": "The problem tells us how many birds Grandma had when she counted them all together. Can you find that number?"
+      },
+      {
+        "text": "How many geese did Grandma have?",
+        "boxTarget": "part2",
+        "context": "This is what we need to figure out! The story wants to know about the geese. This is the missing piece we're looking for!"
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CPU",
+    "groundTruthAnswer": 4,
+    "groundTruthModelAnswers": {
+      "part1": 10,
+      "part2": null,
+      "whole": 14
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "Kaie and Kristi had 18 felt-tip pens in total. Kaie had 12 felt-tip pens. How many did Kristi have?",
+    "output": "This problem presents a total number of felt-tip pens shared between two individuals, Kaie and Kristi. It gives the quantity one person has and asks to find the quantity the other person has to complete the total. This fits the Combine structure because two distinct parts (Kaie's pens and Kristi's pens) make up a whole, without any transformation or change occurring.",
+    "category": "Combine",
+    "subcategory": "CPU",
+    "subReasoning": "The problem states that Kaie and Kristi had 18 felt-tip pens in total, which represents the 'Whole' amount. It also states that Kaie had 12 felt-tip pens, which is 'Part 1'. The question asks how many pens Kristi had, which is 'Part 2' and is the unknown. Since one of the 'Parts' is unknown, this problem falls under the 'Part Unknown' category.",
+    "tokenUsage": {
+      "prompt": 416,
+      "completion": 223,
+      "total": 639
+    },
+    "modelAnswers": {
+      "part1": 12,
+      "part2": null,
+      "whole": 18
+    },
+    "answer": 6,
+    "reasoning": "This is a Combine problem where we are given the whole (total pens) and one part (Kaie's pens), and need to find the other part (Kristi's pens). The equation is Part 1 + Part 2 = Whole, which means 12 + ? = 18. To find the missing part, we subtract the known part from the whole: 18 - 12 = 6. So, Kristi had 6 felt-tip pens.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many felt-tip pens did Kaie and Kristi have together?",
+        "boxTarget": "whole",
+        "context": "This question asks about all the felt-tip pens Kaie and Kristi have when you put them all together. It's like asking for the total number in their collection."
+      },
+      {
+        "text": "How many felt-tip pens did Kaie have?",
+        "boxTarget": "part1",
+        "context": "This question wants to know just how many felt-tip pens one of the friends, Kaie, had. It's only about her share of the pens."
+      },
+      {
+        "text": "How many felt-tip pens did Kristi have?",
+        "boxTarget": "part2",
+        "context": "This question asks about the part of the felt-tip pens that belong to the other friend, Kristi. We need to find out her share!"
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CPU",
+    "groundTruthAnswer": 6,
+    "groundTruthModelAnswers": {
+      "part1": 12,
+      "part2": null,
+      "whole": 18
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "There are 16 students in the third grade. Eleven of the students go to the sports club. The rest go to the art club. How many students attend the art club?",
+    "output": "This problem describes a total group of students (16) that is divided into two distinct subgroups: those who go to the sports club and those who go to the art club. It provides one part (sports club students) and asks to find the other part (art club students) to complete the whole. This is a classic Combine problem as it deals with parts making up a total, rather than a quantity changing or two quantities being compared.",
+    "category": "Combine",
+    "subcategory": "CPU",
+    "subReasoning": "First, I identify the quantities in the combine model: Part 1 + Part 2 = Whole. From the problem, '16 students in the third grade' represents the Whole (the total group). 'Eleven of the students go to the sports club' represents Part 1. 'The rest go to the art club' represents Part 2, which is the unknown quantity. Since one of the Parts (the number of students attending the art club) is unknown, the problem is classified as Combine, Part Unknown (CPU).",
+    "tokenUsage": {
+      "prompt": 421,
+      "completion": 265,
+      "total": 686
+    },
+    "modelAnswers": {
+      "part1": 11,
+      "part2": null,
+      "whole": 16
+    },
+    "answer": 5,
+    "reasoning": "The total number of students is 16 (whole). 11 students go to the sports club (part 1). To find out how many students go to the art club (part 2), we subtract the number of students at the sports club from the total: 16 - 11 = 5.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many students are there in the third grade altogether?",
+        "boxTarget": "whole",
+        "context": "This question asks about the total number of students we are talking about in the story. It's like asking about everyone in the group before they split up. Can you find the number that tells us about all the students starting together?"
+      },
+      {
+        "text": "How many students go to the sports club?",
+        "boxTarget": "part1",
+        "context": "This question is asking about one part of the students. Some students went to the sports club. How many of them went there? Look for the number that tells us about the students in the sports club."
+      },
+      {
+        "text": "How many students go to the art club?",
+        "boxTarget": "part2",
+        "context": "This question is asking about the other part of the students. The rest of the students went to the art club. This is what we need to figure out! The story doesn't tell us this number directly, but it's the missing piece we're trying to find."
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CPU",
+    "groundTruthAnswer": 5,
+    "groundTruthModelAnswers": {
+      "part1": 11,
+      "part2": null,
+      "whole": 16
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "Mom cooked 12 jars of jam. Lingonberry jam is in five of the jars. The rest are apple jam. How many jars of apple jam did Mom cook?",
+    "output": "This problem involves a total number of jam jars (12) that are categorized into two types: lingonberry jam and apple jam. One part (lingonberry jam) is known, and the problem asks for the other part (apple jam) to complete the total. This fits the Combine category because it's about partitioning a whole into distinct parts, not about a quantity changing or comparing two different values.",
+    "category": "Combine",
+    "subcategory": "CPU",
+    "subReasoning": "The problem states that Mom cooked a total of 12 jars of jam. This represents the 'Whole' amount. It then specifies that 5 jars contain lingonberry jam, which is a 'Part 1'. The question asks for the number of jars of apple jam, which is the 'Part 2'. Since one of the 'Parts' is unknown, the problem is classified as a Part Unknown type in the Combine model.",
+    "tokenUsage": {
+      "prompt": 419,
+      "completion": 199,
+      "total": 618
+    },
+    "modelAnswers": {
+      "part1": 5,
+      "part2": null,
+      "whole": 12
+    },
+    "answer": 7,
+    "reasoning": "The whole is 12 jars of jam. Part 1 is 5 jars of lingonberry jam. To find Part 2 (apple jam), you subtract Part 1 from the Whole: 12 - 5 = 7. So, Mom cooked 7 jars of apple jam.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many jars of jam did Mom cook in all?",
+        "boxTarget": "whole",
+        "context": "This helps us find the grand total of all the jam jars Mom made. Think about all the jars together!"
+      },
+      {
+        "text": "How many jars of lingonberry jam were there?",
+        "boxTarget": "part1",
+        "context": "This question asks about one of the types of jam. It's like asking about one part of the whole group of jars."
+      },
+      {
+        "text": "How many jars of apple jam were there?",
+        "boxTarget": "part2",
+        "context": "This question asks about the other type of jam. It's the other part that makes up all the jars Mom cooked. This is what we need to figure out!"
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CPU",
+    "groundTruthAnswer": 7,
+    "groundTruthModelAnswers": {
+      "part1": 5,
+      "part2": null,
+      "whole": 12
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "There are 15 students in the school drama club. Nine of them are girls. How many boys are in the drama club?",
+    "output": "This problem presents a total number of students in a drama club (15) and divides this total into two groups: girls and boys. It provides the number of girls and asks for the number of boys, which is the remaining part of the total. This is a Combine problem as it deals with parts forming a whole, without any transformation or direct comparison between two distinct given quantities.",
+    "category": "Combine",
+    "subcategory": "CPU",
+    "subReasoning": "Following Step 2, we identify the quantities in the Combine Model. Part 1 is '9 girls', Part 2 is 'boys (unknown)', and the Whole is '15 students'. This can be represented as 9 girls + X boys = 15 total students. In Step 3, we determine that one of the Parts (the number of boys) is unknown. Therefore, this problem falls into the Part Unknown category, making it a CPU.",
+    "tokenUsage": {
+      "prompt": 410,
+      "completion": 194,
+      "total": 604
+    },
+    "modelAnswers": {
+      "part1": 9,
+      "part2": null,
+      "whole": 15
+    },
+    "answer": 6,
+    "reasoning": "The total number of students (whole) is 15. The number of girls (part1) is 9. To find the number of boys (part2), we subtract the girls from the total: 15 - 9 = 6. So, there are 6 boys in the drama club.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many students are there in the drama club altogether?",
+        "boxTarget": "whole",
+        "context": "This is the total number of students in the club when you count all of them together. It's everyone in the drama club!"
+      },
+      {
+        "text": "How many of the students in the drama club are girls?",
+        "boxTarget": "part1",
+        "context": "This is one group of students in the drama club that we already know about. They are the girls!"
+      },
+      {
+        "text": "How many boys are in the drama club?",
+        "boxTarget": "part2",
+        "context": "This is the other group of students in the drama club. We need to figure out how many boys there are!"
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CPU",
+    "groundTruthAnswer": 6,
+    "groundTruthModelAnswers": {
+      "part1": 9,
+      "part2": null,
+      "whole": 15
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "Dad has 20 tools. Eight of them are hammers. How many other tools does Dad have?",
+    "output": "This problem gives a total number of tools (20) and identifies a specific subset (8 hammers). It asks to find the quantity of the 'other tools' that make up the remainder of the total. This is a Combine problem because it's about a whole (total tools) being composed of two distinct parts (hammers and other tools), without any process of change or direct comparison between two given amounts.",
+    "category": "Combine",
+    "subcategory": "CPU",
+    "subReasoning": "The problem states that Dad has a total of 20 tools, which represents the 'Whole'. It then specifies that 8 of these tools are 'hammers', which is 'Part 1'. The question asks 'How many other tools does Dad have?', which seeks to find the quantity of 'Part 2'. Since one of the parts is unknown while the whole and the other part are known, this fits the characteristics of a Combine, Part Unknown problem.",
+    "tokenUsage": {
+      "prompt": 405,
+      "completion": 221,
+      "total": 626
+    },
+    "modelAnswers": {
+      "part1": 8,
+      "part2": null,
+      "whole": 20
+    },
+    "answer": 12,
+    "reasoning": "This is a Combine problem where the Whole is known and one Part is known. We need to find the missing Part. The total number of tools (Whole) is 20. The number of hammers (Part 1) is 8. To find the number of other tools (Part 2), we subtract Part 1 from the Whole: 20 - 8 = 12. Therefore, Dad has 12 other tools.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many tools does Dad have in all?",
+        "boxTarget": "whole",
+        "context": "We need to find out the total number of tools Dad has. This is the 'whole' amount we're working with!"
+      },
+      {
+        "text": "How many of Dad's tools are hammers?",
+        "boxTarget": "part1",
+        "context": "The problem tells us about a specific kind of tool: hammers! Let's see how many of them there are. This is one 'part' of Dad's tools."
+      },
+      {
+        "text": "How many other tools does Dad have?",
+        "boxTarget": "part2",
+        "context": "We know how many tools Dad has in total, and we know how many are hammers. Now we need to figure out how many of his tools are *not* hammers. This is the 'other part' of his tools!"
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CPU",
+    "groundTruthAnswer": 12,
+    "groundTruthModelAnswers": {
+      "part1": 8,
+      "part2": null,
+      "whole": 20
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "There were 30 pies served at the party. Eighteen of them were meat pies. How many pies were of another type?",
+    "output": "This problem lists a total number of pies (30) and specifies a subset of those pies (18 meat pies). It then asks for the number of pies that are of a 'another type' to complete the total. This fits the Combine category because it involves partitioning a whole into two distinct parts, rather than describing a change in quantity or a comparison between two given quantities.",
+    "category": "Combine",
+    "subcategory": "CPU",
+    "subReasoning": "Following Step 2, we identify the quantities: Part 1 (meat pies) + Part 2 (pies of another type) = Whole (total pies). From the problem, the Whole is 30 pies, and Part 1 is 18 meat pies. The unknown is 'How many pies were of another type?', which represents Part 2. According to Step 3, if one of the Parts is unknown, it is a Part Unknown scenario.",
+    "tokenUsage": {
+      "prompt": 411,
+      "completion": 214,
+      "total": 625
+    },
+    "modelAnswers": {
+      "part1": 18,
+      "part2": null,
+      "whole": 30
+    },
+    "answer": 12,
+    "reasoning": "The total number of pies (whole) is 30. The number of meat pies (part1) is 18. To find the number of pies of another type (part2), we subtract part1 from the whole: 30 - 18 = 12. So, there were 12 pies of another type.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many pies were there in all at the party?",
+        "boxTarget": "whole",
+        "context": "This question asks about all the pies together, the total number of pies that were at the party. It's like asking how many pies were on the table before anyone took a bite!"
+      },
+      {
+        "text": "How many of the pies were meat pies?",
+        "boxTarget": "part1",
+        "context": "This question asks about one special group of pies, the ones that were meat pies. It's like finding a small pile of just the meat pies."
+      },
+      {
+        "text": "How many pies were of another type?",
+        "boxTarget": "part2",
+        "context": "This question asks about the other pies, the ones that were NOT meat pies. It's like finding the other pile of pies that were left over."
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CPU",
+    "groundTruthAnswer": 12,
+    "groundTruthModelAnswers": {
+      "part1": 18,
+      "part2": null,
+      "whole": 30
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "There are 25 books on the shelf. Seventeen of them are children's books. How many other books are there on the shelf?",
+    "output": "This problem describes a total collection of books (25) and identifies a specific category within that collection (17 children's books). It then asks for the number of 'other books' that comprise the rest of the total. This is a Combine problem as it involves finding a missing part when the total and one part are known, consistent with the idea of distinct quantities adding up to a whole.",
+    "category": "Combine",
+    "subcategory": "CPU",
+    "subReasoning": "First, I identify the quantities in the combine model. 'There are 25 books on the shelf' represents the Whole. 'Seventeen of them are children's books' represents Part 1. The question 'How many other books are there on the shelf?' is asking for the unknown Part 2. Since one of the Parts (Part 2) is unknown, this problem falls into the 'Part Unknown' category. Therefore, it is a CPU problem.",
+    "tokenUsage": {
+      "prompt": 413,
+      "completion": 201,
+      "total": 614
+    },
+    "modelAnswers": {
+      "part1": 17,
+      "part2": null,
+      "whole": 25
+    },
+    "answer": 8,
+    "reasoning": "The total number of books is 25 (Whole). The number of children's books is 17 (Part 1). To find the number of other books (Part 2), we subtract Part 1 from the Whole: 25 - 17 = 8. So, there are 8 other books on the shelf.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many books are there in all on the shelf?",
+        "boxTarget": "whole",
+        "context": "This is asking about the total number of books that are on the shelf. It's all of the books put together."
+      },
+      {
+        "text": "How many of the books are children's books?",
+        "boxTarget": "part1",
+        "context": "This is asking about one group of the books. It's the number of books that are specifically for kids."
+      },
+      {
+        "text": "What are we trying to find out?",
+        "boxTarget": "part2",
+        "context": "This is asking about the other group of books on the shelf. We know some are children's books, so what kind are the 'other books'?"
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CPU",
+    "groundTruthAnswer": 8,
+    "groundTruthModelAnswers": {
+      "part1": 17,
+      "part2": null,
+      "whole": 25
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "The cook prepared 40 sandwiches. Some were cheese sandwiches, and 26 were ham sandwiches. How many cheese sandwiches did the cook prepare?",
+    "output": "This problem presents a total number of sandwiches (40) composed of two types: cheese and ham. It provides the quantity of ham sandwiches and asks for the quantity of cheese sandwiches, which is the remaining part to reach the known total. This falls under the Combine category because it deals with partitioning a whole into distinct parts, without any dynamic change or explicit comparison.",
+    "category": "Combine",
+    "subcategory": "CPU",
+    "subReasoning": "The problem states that the cook prepared a total of 40 sandwiches. It also states that 26 of these were ham sandwiches. The total amount (40 sandwiches) represents the Whole. The 26 ham sandwiches represent one Part. The unknown quantity is the number of cheese sandwiches, which represents the other Part. Since one of the Parts is unknown, this problem falls under the 'Part Unknown' category within the Combine model.",
+    "tokenUsage": {
+      "prompt": 415,
+      "completion": 243,
+      "total": 658
+    },
+    "modelAnswers": {
+      "part1": null,
+      "part2": 26,
+      "whole": 40
+    },
+    "answer": 14,
+    "reasoning": "The whole (total sandwiches) is 40. Part 2 (ham sandwiches) is 26. To find Part 1 (cheese sandwiches), we subtract Part 2 from the Whole: 40 - 26 = 14. So, there were 14 cheese sandwiches.",
+    "storyGrammarPrompts": [
+      {
+        "text": "What type of sandwich did the cook prepare some of?",
+        "boxTarget": "part1",
+        "context": "This question asks us to look closely at the problem and see what kind of sandwich is mentioned, but we don't know exactly how many there are yet. It's one part of the delicious sandwiches the cook made!"
+      },
+      {
+        "text": "What type of sandwich did the cook prepare 26 of?",
+        "boxTarget": "part2",
+        "context": "This question helps us find the other part of the sandwiches the cook prepared. This time, we know exactly how many there are! What kind of sandwich was it?"
+      },
+      {
+        "text": "How many sandwiches did the cook prepare in all?",
+        "boxTarget": "whole",
+        "context": "This question asks for the total number of all the sandwiches the cook made. It's the big group that includes both the cheese and the ham sandwiches together. We want to know the whole amount!"
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CPU",
+    "groundTruthAnswer": 14,
+    "groundTruthModelAnswers": {
+      "part1": null,
+      "part2": 26,
+      "whole": 40
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "There were 19 animals in the zoo. Seven of them were monkeys. How many animals were of other kinds?",
+    "output": "This problem states a total number of animals (19) in the zoo and specifies the quantity of one type of animal (7 monkeys). It asks for the number of animals that are 'of other kinds,' which represents the remaining part of the total. This aligns with the Combine concept because it involves a whole being made up of two distinct parts, and the task is to find one of those parts given the total and the other part.",
+    "category": "Combine",
+    "subcategory": "CPU",
+    "subReasoning": "Following Step 2, we identify the quantities: Part 1 (monkeys) = 7, Whole (total animals) = 19. Part 2 (animals of other kinds) is the unknown quantity. Following Step 3, since one of the Parts is unknown, the problem is classified as Combine, Part Unknown (CPU).",
+    "tokenUsage": {
+      "prompt": 408,
+      "completion": 185,
+      "total": 593
+    },
+    "modelAnswers": {
+      "part1": 7,
+      "part2": null,
+      "whole": 19
+    },
+    "answer": 12,
+    "reasoning": "The whole is 19 animals, and one part is 7 monkeys. To find the other part (animals of other kinds), we subtract the known part from the whole: 19 - 7 = 12. So, there were 12 animals of other kinds.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many animals were there in the zoo at the very beginning?",
+        "boxTarget": "whole",
+        "context": "This is the total number of animals we are talking about in the story. It's the whole group!"
+      },
+      {
+        "text": "How many of those animals were monkeys?",
+        "boxTarget": "part1",
+        "context": "This is one part of all the animals. It tells us about *just* the monkeys."
+      },
+      {
+        "text": "How many animals were NOT monkeys, but were other kinds of animals?",
+        "boxTarget": "part2",
+        "context": "This is the other part of the animals. It's what we need to find out to finish our story!"
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CPU",
+    "groundTruthAnswer": 12,
+    "groundTruthModelAnswers": {
+      "part1": 7,
+      "part2": null,
+      "whole": 19
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "Grandma had 10 chickens and some geese. Altogether she had 14 domestic birds. How many geese did Grandma have?",
+    "output": "This problem describes two distinct groups (chickens and geese) being combined to form a total (domestic birds). There is no action of gaining or losing birds over time, but simply finding the missing part that composes the total. Therefore, it fits the Combine category.",
+    "category": "Combine",
+    "subcategory": "CPU",
+    "subReasoning": "In the problem, 10 chickens (Part 1) and some geese (Part 2) combine for a total of 14 domestic birds (Whole). Part 1 (10 chickens) is known, the Whole (14 birds) is known, but Part 2 (the number of geese) is unknown. Since one of the Parts is the unknown quantity, this is classified as Combine, Part Unknown (CPU).",
+    "tokenUsage": {
+      "prompt": 399,
+      "completion": 182,
+      "total": 581
+    },
+    "modelAnswers": {
+      "part1": 10,
+      "part2": null,
+      "whole": 14
+    },
+    "answer": 4,
+    "reasoning": "10 + 4 = 14, so Grandma had 4 geese.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many chickens did Grandma have?",
+        "boxTarget": "part1",
+        "context": "This question is asking about the number of chickens that Grandma already had. Think about what the story told us about her chickens."
+      },
+      {
+        "text": "How many geese did Grandma have?",
+        "boxTarget": "part2",
+        "context": "This question asks how many geese were living with Grandma. We have to figure this out by looking at the other clues in the story."
+      },
+      {
+        "text": "How many domestic birds did Grandma have altogether?",
+        "boxTarget": "whole",
+        "context": "This question is about the total number of birds Grandma had, including both chickens and geese. Try to remember what the story said about how many birds she had in all."
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CPU",
+    "groundTruthAnswer": 4,
+    "groundTruthModelAnswers": {
+      "part1": 10,
+      "part2": null,
+      "whole": 14
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "Kaie and Kristi had 18 felt-tip pens in total. Kaie had 12 felt-tip pens. How many did Kristi have?",
+    "output": "Here, the problem groups together the numbers of pens owned by Kaie and Kristi into a total. There is no transfer or change, simply combining the two distinct sets to form a whole. Thus, this is a Combine problem.",
+    "category": "Combine",
+    "subcategory": "CPU",
+    "subReasoning": "In this problem, the total number of felt-tip pens (the whole) is given as 18. Kaie's number of pens (part 1) is given as 12. The number of pens Kristi has (part 2) is unknown and needs to be found. Since one of the parts is unknown, this is a Combine, Part Unknown (CPU) problem.",
+    "tokenUsage": {
+      "prompt": 401,
+      "completion": 195,
+      "total": 596
+    },
+    "modelAnswers": {
+      "part1": 12,
+      "part2": null,
+      "whole": 18
+    },
+    "answer": 6,
+    "reasoning": "12 + 6 = 18, so Kristi had 6 felt-tip pens.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many felt-tip pens did Kaie have?",
+        "boxTarget": "part1",
+        "context": "This question is asking just about Kaie. We want to find out the number of felt-tip pens that belong to Kaie all by herself."
+      },
+      {
+        "text": "How many felt-tip pens did Kristi have?",
+        "boxTarget": "part2",
+        "context": "This one focuses on Kristi. We're trying to figure out how many felt-tip pens Kristi had on her own, not counting Kaie's pens."
+      },
+      {
+        "text": "How many felt-tip pens did Kaie and Kristi have together in total?",
+        "boxTarget": "whole",
+        "context": "This question is about the total amount. We want the number of felt-tip pens when we put both Kaie’s and Kristi’s pens together."
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CPU",
+    "groundTruthAnswer": 6,
+    "groundTruthModelAnswers": {
+      "part1": 12,
+      "part2": null,
+      "whole": 18
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "There are 16 students in the third grade. Eleven of the students go to the sports club. The rest go to the art club. How many students attend the art club?",
+    "output": "This problem splits the total number of students into two distinct non-overlapping groups (sports club and art club). The groups are parts of a whole, and the task is to find out one of the parts, not to reflect any change over time. Therefore, it's a Combine problem.",
+    "category": "Combine",
+    "subcategory": "CPU",
+    "subReasoning": "In this problem, the total number of students in third grade (16) is given, as well as the number of students who go to the sports club (11). The unknown is the number of students who go to the art club. In terms of the Combine model: Part 1 (sports club) + Part 2 (art club) = Whole (total students). Here, Part 2 is unknown, while Part 1 and the Whole are known. Thus, this is a Combine, Part Unknown (CPU) problem.",
+    "tokenUsage": {
+      "prompt": 406,
+      "completion": 188,
+      "total": 594
+    },
+    "modelAnswers": {
+      "part1": 11,
+      "part2": null,
+      "whole": 16
+    },
+    "answer": 5,
+    "reasoning": "16 - 11 = 5, so 5 students go to the art club.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many students go to the sports club?",
+        "boxTarget": "part1",
+        "context": "This question helps us find out how many students chose to join the sports club. We look back at the story and see what's told about the sports club students."
+      },
+      {
+        "text": "How many students go to the art club?",
+        "boxTarget": "part2",
+        "context": "This question helps us figure out how many students picked the art club. We're looking for the group that is left after the sports club students joined."
+      },
+      {
+        "text": "How many students are in the third grade altogether?",
+        "boxTarget": "whole",
+        "context": "This question is asking about the total number of students in third grade, before they joined any clubs. We're thinking about everyone together at the start."
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CPU",
+    "groundTruthAnswer": 5,
+    "groundTruthModelAnswers": {
+      "part1": 11,
+      "part2": null,
+      "whole": 16
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "Mom cooked 12 jars of jam. Lingonberry jam is in five of the jars. The rest are apple jam. How many jars of apple jam did Mom cook?",
+    "output": "This problem is about partitioning a set of jars (a total) into two separate groups (lingonberry and apple jam). There is no process of gaining or losing jars, just finding how many belong to each group. This makes it Combine.",
+    "category": "Combine",
+    "subcategory": "CPU",
+    "subReasoning": "In this problem, the total number of jars (Whole) is 12. The number of jars with lingonberry jam (Part 1) is 5. The number of jars with apple jam (Part 2) is unknown and is what the problem is asking for. The structure matches Part 1 (5) + Part 2 (unknown apple jam jars) = Whole (12). Since one of the parts is unknown, this is a Combine, Part Unknown problem.",
+    "tokenUsage": {
+      "prompt": 406,
+      "completion": 195,
+      "total": 601
+    },
+    "modelAnswers": {
+      "part1": 5,
+      "part2": null,
+      "whole": 12
+    },
+    "answer": 7,
+    "reasoning": "There are 12 jars in total and 5 are lingonberry. 12 - 5 = 7, so Mom cooked 7 jars of apple jam.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many jars have lingonberry jam?",
+        "boxTarget": "part1",
+        "context": "This question is about finding out how many of the jars Mom filled with lingonberry jam. We are looking for the number of jars with this kind of jam."
+      },
+      {
+        "text": "How many jars have apple jam?",
+        "boxTarget": "part2",
+        "context": "This question is asking about the jars that have apple jam inside. These are all the jars that are not lingonberry, but still part of Mom's cooking."
+      },
+      {
+        "text": "How many jars of jam did Mom cook in total?",
+        "boxTarget": "whole",
+        "context": "This question helps us remember the total number of jars that Mom made. We want to know how many jars there are altogether, with any kind of jam inside."
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CPU",
+    "groundTruthAnswer": 7,
+    "groundTruthModelAnswers": {
+      "part1": 5,
+      "part2": null,
+      "whole": 12
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "There are 15 students in the school drama club. Nine of them are girls. How many boys are in the drama club?",
+    "output": "The total number of drama club members is given, as is the number of girls. The problem asks for the number of boys, simply dividing the total into two distinct groups, with no indication of change. This is typical of a Combine problem.",
+    "category": "Combine",
+    "subcategory": "CPU",
+    "subReasoning": "In this problem, the total number of students in the drama club is given as 15 (the whole), and the number of girls is given as 9 (Part 1). The number of boys (Part 2) is unknown and needs to be found. Thus, the scenario fits the Combine model as Part 1 (girls) + Part 2 (boys) = Whole (total students), with one of the Parts unknown.",
+    "tokenUsage": {
+      "prompt": 396,
+      "completion": 186,
+      "total": 582
+    },
+    "modelAnswers": {
+      "part1": 9,
+      "part2": null,
+      "whole": 15
+    },
+    "answer": 6,
+    "reasoning": "There are 15 students in total and 9 are girls. 15 - 9 = 6, so there are 6 boys in the drama club.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many girls are in the drama club?",
+        "boxTarget": "part1",
+        "context": "This question helps us find out how many of the students are girls. Let's look back at the problem to see what it tells us about the girls in the club."
+      },
+      {
+        "text": "How many boys are in the drama club?",
+        "boxTarget": "part2",
+        "context": "Now we're finding out the number of boys in the club. We're looking for how many students are boys, not girls."
+      },
+      {
+        "text": "How many students are in the drama club in all?",
+        "boxTarget": "whole",
+        "context": "This question is about everyone in the drama club, both girls and boys together. Let's find out the total number of students who are in the club."
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CPU",
+    "groundTruthAnswer": 6,
+    "groundTruthModelAnswers": {
+      "part1": 9,
+      "part2": null,
+      "whole": 15
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "Dad has 20 tools. Eight of them are hammers. How many other tools does Dad have?",
+    "output": "This problem gives the total number of tools and the number of hammers, seeking the remaining tools as a distinct group. There’s no mention of gaining or losing tools, merely separating the total into types. Hence, it is a Combine situation.",
+    "category": "Combine",
+    "subcategory": "CPU",
+    "subReasoning": "In this problem, 'Dad has 20 tools' gives the total combined amount, which serves as the Whole. 'Eight of them are hammers' gives us Part 1. The question 'How many other tools does Dad have?' asks for the amount of tools that are not hammers, which represents Part 2. The unknown in the combine model (Part 1 + Part 2 = Whole) is one of the parts, making this a Part Unknown situation.",
+    "tokenUsage": {
+      "prompt": 392,
+      "completion": 196,
+      "total": 588
+    },
+    "modelAnswers": {
+      "part1": 8,
+      "part2": null,
+      "whole": 20
+    },
+    "answer": 12,
+    "reasoning": "8 hammers plus the other tools equals 20 tools. 20 minus 8 is 12, so Dad has 12 other tools.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many of Dad's tools are hammers?",
+        "boxTarget": "part1",
+        "context": "Let's think about the special kind of tools Dad has. This question is just asking how many of Dad's tools are hammers, just like in the story."
+      },
+      {
+        "text": "How many of Dad's tools are not hammers?",
+        "boxTarget": "part2",
+        "context": "Now, let's think about the rest of Dad's tools. This part is asking how many tools Dad has that are other kinds, not hammers."
+      },
+      {
+        "text": "How many tools does Dad have altogether?",
+        "boxTarget": "whole",
+        "context": "This part is about the total number of tools Dad has when you put all the hammers and other tools together. It's asking for the big number of every tool he owns."
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CPU",
+    "groundTruthAnswer": 12,
+    "groundTruthModelAnswers": {
+      "part1": 8,
+      "part2": null,
+      "whole": 20
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "There were 30 pies served at the party. Eighteen of them were meat pies. How many pies were of another type?",
+    "output": "This problem involves splitting the total number of pies served into groups by type, without any temporal change or transfer. The structure is about partitioning parts of a whole, so it falls under Combine.",
+    "category": "Combine",
+    "subcategory": "CPU",
+    "subReasoning": "In this problem, the total number of pies served at the party is given as 30, and the number of meat pies is given as 18. The unknown quantity is the number of pies of another type. Structurally, this fits the Combine model: (number of meat pies) + (number of other pies) = (total number of pies). Here, one of the parts is unknown (other pies), while the whole and the other part are known. According to the framework, this is a Combine, Part Unknown (CPU) problem.",
+    "tokenUsage": {
+      "prompt": 397,
+      "completion": 204,
+      "total": 601
+    },
+    "modelAnswers": {
+      "part1": 18,
+      "part2": null,
+      "whole": 30
+    },
+    "answer": 12,
+    "reasoning": "18 meat pies plus another type of pies equals 30 total pies. 30 - 18 = 12, so there were 12 pies of another type.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many of the pies at the party were meat pies?",
+        "boxTarget": "part1",
+        "context": "This question helps you remember and find out how many pies were meat pies at the party. Let's look back at the story and see what it tells us!"
+      },
+      {
+        "text": "How many pies at the party were not meat pies, but some other kind?",
+        "boxTarget": "part2",
+        "context": "This question is asking about the other pies at the party that were different from meat pies. We're trying to figure out how many of those there were."
+      },
+      {
+        "text": "How many pies were served at the party altogether?",
+        "boxTarget": "whole",
+        "context": "This question helps you think about the total number of pies at the party, including both the meat pies and the other kinds. Let's find the big number for all the pies!"
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CPU",
+    "groundTruthAnswer": 12,
+    "groundTruthModelAnswers": {
+      "part1": 18,
+      "part2": null,
+      "whole": 30
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "There are 25 books on the shelf. Seventeen of them are children's books. How many other books are there on the shelf?",
+    "output": "Here, the total number of books is partitioned into children's books and other books. The task is to find the count of books in one group, again with no transformation or change, just grouping and totaling. This is a Combine problem.",
+    "category": "Combine",
+    "subcategory": "CPU",
+    "subReasoning": "In this problem, the total number of books on the shelf (Whole) is given as 25. The number of children's books (Part 1) is given as 17. The number of other books (Part 2) is unknown and is being asked for. Using the combine model: Part 1 (children's books) + Part 2 (other books) = Whole (total books). Since one Part is unknown, this is a CPU (Combine, Part Unknown) problem.",
+    "tokenUsage": {
+      "prompt": 397,
+      "completion": 196,
+      "total": 593
+    },
+    "modelAnswers": {
+      "part1": 17,
+      "part2": null,
+      "whole": 25
+    },
+    "answer": 8,
+    "reasoning": "17 children's books plus 8 other books make a total of 25 books. 25 - 17 = 8, so there are 8 other books.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many of the books are children's books?",
+        "boxTarget": "part1",
+        "context": "This question is asking you to find out how many of all the books are the ones meant just for kids. Think about the special group of children's books on the shelf."
+      },
+      {
+        "text": "How many books on the shelf are NOT children's books?",
+        "boxTarget": "part2",
+        "context": "This question is helping you look for the other types of books that are not for children. These are the books you need to figure out to solve the problem."
+      },
+      {
+        "text": "How many books are there on the shelf altogether?",
+        "boxTarget": "whole",
+        "context": "Here, we're thinking about all the books on the shelf—every single one, no matter what kind. This is the total number you start with."
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CPU",
+    "groundTruthAnswer": 8,
+    "groundTruthModelAnswers": {
+      "part1": 17,
+      "part2": null,
+      "whole": 25
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "The cook prepared 40 sandwiches. Some were cheese sandwiches, and 26 were ham sandwiches. How many cheese sandwiches did the cook prepare?",
+    "output": "This problem involves a fixed total of sandwiches, with two types (cheese and ham) as distinct groups. The problem is to find the amount in one group based on the total and the other group, with no change or transfer involved, which is Combine.",
+    "category": "Combine",
+    "subcategory": "CPU",
+    "subReasoning": "In this problem, the total number of sandwiches is given as 40 (the Whole). One part, the number of ham sandwiches, is given as 26 (Part 2). The number of cheese sandwiches prepared (Part 1) is unknown and is what we are asked to find. Since one of the parts is unknown, this fits the Combine, Part Unknown (CPU) category.",
+    "tokenUsage": {
+      "prompt": 398,
+      "completion": 180,
+      "total": 578
+    },
+    "modelAnswers": {
+      "part1": null,
+      "part2": 26,
+      "whole": 40
+    },
+    "answer": 14,
+    "reasoning": "26 ham sandwiches plus 14 cheese sandwiches equals 40 sandwiches in total. 40 - 26 = 14.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many cheese sandwiches did the cook prepare?",
+        "boxTarget": "part1",
+        "context": "This question is asking about the number of cheese sandwiches the cook made. We are trying to figure out how many of these sandwiches there are."
+      },
+      {
+        "text": "How many ham sandwiches did the cook prepare?",
+        "boxTarget": "part2",
+        "context": "This question is about the ham sandwiches. We want to know how many of the sandwiches were ham, just like the story tells us."
+      },
+      {
+        "text": "How many sandwiches did the cook make altogether?",
+        "boxTarget": "whole",
+        "context": "This question is asking about the total number of sandwiches made by the cook. We're talking about all the sandwiches together—cheese and ham."
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CPU",
+    "groundTruthAnswer": 14,
+    "groundTruthModelAnswers": {
+      "part1": null,
+      "part2": 26,
+      "whole": 40
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "There were 19 animals in the zoo. Seven of them were monkeys. How many animals were of other kinds?",
+    "output": "This problem involves partitioning the total number of zoo animals into two groups: monkeys and other kinds. The story is about the composition of a set, so it is classified as Combine.",
+    "category": "Combine",
+    "subcategory": "CPU",
+    "subReasoning": "In this problem, the total number of animals in the zoo (the whole) is given as 19. One part, the number of monkeys, is given as 7. The unknown quantity is how many animals were of other kinds (the other part). Using the Combine model: Part 1 (monkeys) + Part 2 (other kinds) = Whole (all animals). Since one of the parts is unknown, this is classified as Combine, Part Unknown.",
+    "tokenUsage": {
+      "prompt": 393,
+      "completion": 182,
+      "total": 575
+    },
+    "modelAnswers": {
+      "part1": 7,
+      "part2": null,
+      "whole": 19
+    },
+    "answer": 12,
+    "reasoning": "7 monkeys plus 12 other animals make 19 animals in total. 19 - 7 = 12.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many monkeys were at the zoo?",
+        "boxTarget": "part1",
+        "context": "This question is asking you to remember the number of monkeys that were at the zoo. Let's see if you can find this part of the story!"
+      },
+      {
+        "text": "How many animals at the zoo were not monkeys?",
+        "boxTarget": "part2",
+        "context": "This question wants you to think about all the animals that were not monkeys. These are the animals of other kinds that we need to figure out."
+      },
+      {
+        "text": "How many animals were at the zoo altogether?",
+        "boxTarget": "whole",
+        "context": "This question is about the total number of animals in the zoo. Let's remember how many animals there were from the beginning of the story."
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CPU",
+    "groundTruthAnswer": 12,
+    "groundTruthModelAnswers": {
+      "part1": 7,
+      "part2": null,
+      "whole": 19
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  }
+]

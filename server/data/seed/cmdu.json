@@ -1,0 +1,1412 @@
+[
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "There are 13 boxes of colored pencils and 7 boxes of crayons on the shelf. How many more boxes of pencils are there?",
+    "output": "This problem contrasts two distinct quantities (boxes of colored pencils vs boxes of crayons) to find the difference between them. The question 'How many more boxes of pencils are there?' is asking for a comparison of the two amounts, not describing any change over time or combining quantities into a total.",
+    "category": "Compare",
+    "subcategory": "CMDU",
+    "subReasoning": "This problem is asking 'How many more boxes of pencils are there?' which indicates a comparison focusing on the difference between two quantities. We have 13 boxes of colored pencils (the larger quantity) and 7 boxes of crayons (the smaller quantity). The problem is asking for the difference between these two amounts. Since the question asks 'how many more,' this is a Compare-More problem because we're finding how much more the larger quantity has compared to the smaller quantity. Using the Compare Model: Bigger = Smaller + Difference, we have 13 = 7 + Difference, where the Difference is unknown.",
+    "tokenUsage": {
+      "prompt": 455,
+      "completion": 227,
+      "total": 682
+    },
+    "modelAnswers": {
+      "bigger": 13,
+      "smaller": 7,
+      "difference": null
+    },
+    "answer": 6,
+    "reasoning": "Difference = Bigger - Smaller = 13 - 7 = 6, so there are 6 more boxes of pencils than crayons.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many boxes of colored pencils are there?",
+        "boxTarget": "bigger",
+        "context": "This question helps us find the larger group in our story. We're looking for the number that tells us how many boxes of colored pencils are on the shelf."
+      },
+      {
+        "text": "How many boxes of crayons are there?",
+        "boxTarget": "smaller",
+        "context": "This question helps us find the smaller group in our story. We're looking for the number that tells us how many boxes of crayons are on the shelf."
+      },
+      {
+        "text": "How many more boxes of pencils are there than crayons?",
+        "boxTarget": "difference",
+        "context": "This question asks us to find how much bigger one group is than the other. It's asking us to compare the two groups and see how many extra boxes of pencils there are."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CMDU",
+    "groundTruthAnswer": 6,
+    "groundTruthModelAnswers": {
+      "bigger": 13,
+      "smaller": 7,
+      "difference": null
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "Liisi has 10 pens, Andrea has 6 pens. How many more pens does Liisi have?",
+    "output": "This problem compares two people's quantities of pens to determine the difference between what Liisi has versus what Andrea has. The phrase 'How many more pens does Liisi have?' clearly indicates a comparison to find how much greater one quantity is than another.",
+    "category": "Compare",
+    "subcategory": "CMDU",
+    "subReasoning": "This problem is asking 'How many more pens does Liisi have?' which indicates a comparison focusing on the additional amount that Liisi has compared to Andrea. The comparison direction is 'more than' since we're looking for how many more pens Liisi has. Using the Compare Model formula Bigger = Smaller + Difference, we have: Liisi's pens (10) = Andrea's pens (6) + Difference (?). Here, the Bigger quantity is 10 pens (Liisi), the Smaller quantity is 6 pens (Andrea), and the Difference is unknown (what we're solving for). Since we're looking for how many more (the difference) and the comparison is in the 'more than' direction, this is a Compare-More, Difference Unknown problem.",
+    "tokenUsage": {
+      "prompt": 451,
+      "completion": 220,
+      "total": 671
+    },
+    "modelAnswers": {
+      "bigger": 10,
+      "smaller": 6,
+      "difference": null
+    },
+    "answer": 4,
+    "reasoning": "Difference = Bigger - Smaller = 10 - 6 = 4, so Liisi has 4 more pens than Andrea.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many pens does Liisi have?",
+        "boxTarget": "bigger",
+        "context": "This question helps us find the larger number in our story. We need to look for how many pens Liisi has because she has more pens than Andrea."
+      },
+      {
+        "text": "How many pens does Andrea have?",
+        "boxTarget": "smaller",
+        "context": "This question helps us find the smaller number in our story. We need to look for how many pens Andrea has because she has fewer pens than Liisi."
+      },
+      {
+        "text": "How many more pens does Liisi have than Andrea?",
+        "boxTarget": "difference",
+        "context": "This question asks us to find the difference between the two amounts. This is what we need to figure out by comparing how many pens each person has."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CMDU",
+    "groundTruthAnswer": 4,
+    "groundTruthModelAnswers": {
+      "bigger": 10,
+      "smaller": 6,
+      "difference": null
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "Emil has 9 books, Heiki has 6 books. How many more books does Emil have?",
+    "output": "This problem contrasts Emil's number of books with Heiki's number of books to find the difference. The question 'How many more books does Emil have?' is asking for a comparison between the two quantities, not describing any transformation or combining of amounts.",
+    "category": "Compare",
+    "subcategory": "CMDU",
+    "subReasoning": "This problem is asking 'How many more books does Emil have?' which indicates a comparison focusing on the additional amount that Emil has compared to Heiki. The problem is asking for the difference between Emil's 9 books and Heiki's 6 books, with Emil having the larger quantity. Since the problem asks 'how many more' Emil has, it's asking for the difference where Emil is the reference point having more than Heiki. Using the Compare Model: Bigger = 9 (Emil's books), Smaller = 6 (Heiki's books), Difference = unknown. The comparison direction is 'more than' since we're asking how many more Emil has, making this a Compare-More problem where the Difference is Unknown.",
+    "tokenUsage": {
+      "prompt": 446,
+      "completion": 232,
+      "total": 678
+    },
+    "modelAnswers": {
+      "bigger": 9,
+      "smaller": 6,
+      "difference": null
+    },
+    "answer": 3,
+    "reasoning": "Difference = Bigger - Smaller = 9 - 6 = 3, so Emil has 3 more books than Heiki.",
+    "storyGrammarPrompts": [
+      {
+        "text": "Who has more books in this story?",
+        "boxTarget": "bigger",
+        "context": "This question helps you find who has the larger amount. Look at both Emil and Heiki - which one has more books? The person with more books will give us our bigger number."
+      },
+      {
+        "text": "Who has fewer books in this story?",
+        "boxTarget": "smaller",
+        "context": "This question helps you find who has the smaller amount. Look at both Emil and Heiki - which one has fewer books? The person with fewer books will give us our smaller number."
+      },
+      {
+        "text": "What is the story asking you to find out?",
+        "boxTarget": "difference",
+        "context": "This question helps you understand what the problem is asking for. The story wants to know 'how many more' books one person has than the other. This is what we need to figure out!"
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CMDU",
+    "groundTruthAnswer": 3,
+    "groundTruthModelAnswers": {
+      "bigger": 9,
+      "smaller": 6,
+      "difference": null
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "Liisi has 9 dolls and 5 teddy bears. How many more dolls does she have?",
+    "output": "This problem compares two different types of toys that Liisi owns to find the difference between the quantities. The question 'How many more dolls does she have?' is asking to contrast the number of dolls against the number of teddy bears to determine which quantity is greater and by how much.",
+    "category": "Compare",
+    "subcategory": "CMDU",
+    "subReasoning": "This problem is asking 'How many more dolls does she have?' which indicates a comparison focusing on the difference between two quantities. The problem states Liisi has 9 dolls and 5 teddy bears, and we need to find how many more dolls she has compared to teddy bears. Since the question asks 'how many more,' this is asking for the difference between the larger quantity (9 dolls) and the smaller quantity (5 teddy bears). Using the compare model: Bigger = Smaller + Difference, where 9 = 5 + Difference. The larger quantity (9 dolls) and smaller quantity (5 teddy bears) are known, but the difference is unknown. Since we're comparing from the perspective of finding how many more of the larger quantity exists, this is a Compare-More problem with the Difference Unknown.",
+    "tokenUsage": {
+      "prompt": 448,
+      "completion": 223,
+      "total": 671
+    },
+    "modelAnswers": {
+      "bigger": 9,
+      "smaller": 5,
+      "difference": null
+    },
+    "answer": 4,
+    "reasoning": "Difference = Bigger - Smaller = 9 - 5 = 4, so Liisi has 4 more dolls than teddy bears.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many dolls does Liisi have?",
+        "boxTarget": "bigger",
+        "context": "This question helps us find the larger number in our story. We're looking for how many dolls Liisi has because that's the bigger group we're comparing."
+      },
+      {
+        "text": "How many teddy bears does Liisi have?",
+        "boxTarget": "smaller",
+        "context": "This question helps us find the smaller number in our story. We need to know how many teddy bears Liisi has so we can compare it to her dolls."
+      },
+      {
+        "text": "How many more dolls than teddy bears does Liisi have?",
+        "boxTarget": "difference",
+        "context": "This is what the problem is asking us to find out! We want to discover how much bigger one group is than the other group."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CMDU",
+    "groundTruthAnswer": 4,
+    "groundTruthModelAnswers": {
+      "bigger": 9,
+      "smaller": 5,
+      "difference": null
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "Mart has 12 blue blocks and 8 red blocks. How many more blue blocks does he have?",
+    "output": "This problem contrasts two different colored blocks that Mart owns to find the difference between the quantities. The question 'How many more blue blocks does he have?' is asking for a comparison between the blue blocks and red blocks to determine how much greater one quantity is than the other.",
+    "category": "Compare",
+    "subcategory": "CMDU",
+    "subReasoning": "This problem is asking 'how many more blue blocks does he have?' which indicates a comparison focusing on the excess or difference. Since we're looking for how many MORE blue blocks Mart has compared to red blocks, this is a Compare-More problem. Using the Compare Model: Bigger = Smaller + Difference, we can identify that blue blocks (12) is the bigger quantity, red blocks (8) is the smaller quantity, and we need to find the difference (how many more). Since the difference is what we're solving for, this is a Compare-More, Difference Unknown problem.",
+    "tokenUsage": {
+      "prompt": 446,
+      "completion": 230,
+      "total": 676
+    },
+    "modelAnswers": {
+      "bigger": 12,
+      "smaller": 8,
+      "difference": null
+    },
+    "answer": 4,
+    "reasoning": "Difference = Bigger - Smaller = 12 - 8 = 4, so Mart has 4 more blue blocks than red blocks.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many blue blocks does Mart have?",
+        "boxTarget": "bigger",
+        "context": "This question helps us find the larger group in our story. We're looking for the number that tells us about Mart's blue blocks, which is the bigger amount we're comparing."
+      },
+      {
+        "text": "How many red blocks does Mart have?",
+        "boxTarget": "smaller",
+        "context": "This question helps us find the smaller group in our story. We're looking for the number that tells us about Mart's red blocks, which is the smaller amount we're comparing."
+      },
+      {
+        "text": "How many more blue blocks than red blocks does Mart have?",
+        "boxTarget": "difference",
+        "context": "This question asks us to find the difference between the two groups. It's asking how much bigger one group is than the other - this is what we need to figure out!"
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CMDU",
+    "groundTruthAnswer": 4,
+    "groundTruthModelAnswers": {
+      "bigger": 12,
+      "smaller": 8,
+      "difference": null
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "Ats has 14 drawings, Merilyn has 9 drawings. How many more drawings does Ats have?",
+    "output": "This problem compares the number of drawings between two people to find the difference. The question 'How many more drawings does Ats have?' is clearly asking for a comparison to determine how much greater Ats's quantity is compared to Merilyn's quantity.",
+    "category": "Compare",
+    "subcategory": "CMDU",
+    "subReasoning": "This problem is asking 'How many more drawings does Ats have?' which indicates a comparison focusing on the difference between two quantities. Since we're looking for 'how many more,' this is a Compare-More problem. Using the Compare Model formula Bigger = Smaller + Difference, we can identify: Bigger = 14 (Ats's drawings), Smaller = 9 (Merilyn's drawings), and Difference = unknown (how many more). The problem gives us both quantities and asks for the difference between them, making this a Compare-More, Difference Unknown problem.",
+    "tokenUsage": {
+      "prompt": 451,
+      "completion": 224,
+      "total": 675
+    },
+    "modelAnswers": {
+      "bigger": 14,
+      "smaller": 9,
+      "difference": null
+    },
+    "answer": 5,
+    "reasoning": "Difference = 14 - 9 = 5, so Ats has 5 more drawings than Merilyn.",
+    "storyGrammarPrompts": [
+      {
+        "text": "Who has more drawings in this story?",
+        "boxTarget": "bigger",
+        "context": "This question helps you find who has the larger amount. Look at the numbers in the story and see which person has more drawings to put in the 'bigger' box."
+      },
+      {
+        "text": "Who has fewer drawings in this story?",
+        "boxTarget": "smaller",
+        "context": "This question helps you find who has the smaller amount. Look at the numbers in the story and see which person has fewer drawings to put in the 'smaller' box."
+      },
+      {
+        "text": "What is the story asking you to find out?",
+        "boxTarget": "difference",
+        "context": "This question helps you understand what the problem wants you to figure out. The story is asking 'how many more' which means you need to find the difference between the two amounts."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CMDU",
+    "groundTruthAnswer": 5,
+    "groundTruthModelAnswers": {
+      "bigger": 14,
+      "smaller": 9,
+      "difference": null
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "The box has 11 chocolate cookies and 6 jam cookies. How many more chocolate cookies are in the box?",
+    "output": "This problem contrasts two different types of cookies in the same box to find the difference between the quantities. The question 'How many more chocolate cookies are in the box?' is asking to compare the number of chocolate cookies against the number of jam cookies to determine which type is more numerous and by how much.",
+    "category": "Compare",
+    "subcategory": "CMDU",
+    "subReasoning": "This problem is asking 'how many more chocolate cookies are in the box?' which indicates a comparison where we want to find the difference between two quantities. We have 11 chocolate cookies (the larger quantity) and 6 jam cookies (the smaller quantity). The problem is asking for the difference between these two amounts - specifically how many more chocolate cookies there are compared to jam cookies. Since the question focuses on 'how many more,' this is a Compare-More problem. Using the formula Bigger = Smaller + Difference, we have: 11 (chocolate cookies) = 6 (jam cookies) + Difference. The larger quantity (11) and smaller quantity (6) are both known, but the difference is what we need to find, making this a Compare-More, Difference Unknown problem.",
+    "tokenUsage": {
+      "prompt": 447,
+      "completion": 210,
+      "total": 657
+    },
+    "modelAnswers": {
+      "bigger": 11,
+      "smaller": 6,
+      "difference": null
+    },
+    "answer": 5,
+    "reasoning": "Difference = 11 - 6 = 5, so there are 5 more chocolate cookies than jam cookies.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many chocolate cookies are in the box?",
+        "boxTarget": "bigger",
+        "context": "This question helps us find the larger group of cookies. We're looking for the number that tells us how many chocolate cookies there are."
+      },
+      {
+        "text": "How many jam cookies are in the box?",
+        "boxTarget": "smaller",
+        "context": "This question helps us find the smaller group of cookies. We're looking for the number that tells us how many jam cookies there are."
+      },
+      {
+        "text": "How many more chocolate cookies are there than jam cookies?",
+        "boxTarget": "difference",
+        "context": "This question asks us to compare the two groups of cookies. We want to find out how much bigger one group is than the other - this is what we're trying to figure out!"
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CMDU",
+    "groundTruthAnswer": 5,
+    "groundTruthModelAnswers": {
+      "bigger": 11,
+      "smaller": 6,
+      "difference": null
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "Sandra collected 15 stickers, Kristel collected 12 stickers. How many more stickers does Sandra have?",
+    "output": "This problem compares the number of stickers collected by two different people to find the difference between their collections. The question 'How many more stickers does Sandra have?' is asking for a comparison to determine how much greater Sandra's collection is compared to Kristel's collection.",
+    "category": "Compare",
+    "subcategory": "CMDU",
+    "subReasoning": "This problem compares two quantities and asks 'how many more stickers does Sandra have?' which is asking for the difference between the two amounts. Since Sandra has 15 stickers and Kristel has 12 stickers, we know both quantities being compared. Using the compare model: Bigger = Smaller + Difference, we have 15 = 12 + Difference, where the difference is unknown. The question 'how many more' indicates this is a Compare-More problem because we're finding how much more Sandra has compared to Kristel, making this a Compare-More, Difference Unknown problem.",
+    "tokenUsage": {
+      "prompt": 449,
+      "completion": 227,
+      "total": 676
+    },
+    "modelAnswers": {
+      "bigger": 15,
+      "smaller": 12,
+      "difference": null
+    },
+    "answer": 3,
+    "reasoning": "Using Bigger = Smaller + Difference, we have 15 = 12 + Difference. Therefore, Difference = 15 - 12 = 3. Sandra has 3 more stickers than Kristel.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many stickers does Sandra have?",
+        "boxTarget": "bigger",
+        "context": "This question helps us find the larger number in our story. We need to look for how many stickers Sandra collected because we're comparing her stickers to Kristel's stickers."
+      },
+      {
+        "text": "How many stickers does Kristel have?",
+        "boxTarget": "smaller",
+        "context": "This question helps us find the smaller number in our story. We need to know how many stickers Kristel collected so we can compare it to Sandra's amount."
+      },
+      {
+        "text": "How many more stickers does Sandra have than Kristel?",
+        "boxTarget": "difference",
+        "context": "This question asks us to find out how much bigger Sandra's collection is compared to Kristel's. This is what we need to figure out by solving the problem."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CMDU",
+    "groundTruthAnswer": 3,
+    "groundTruthModelAnswers": {
+      "bigger": 15,
+      "smaller": 12,
+      "difference": null
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "Mikk read 18 pages, his brother read 13 pages. How many more pages did Mikk read?",
+    "output": "This problem contrasts the reading achievements of two people to find the difference in pages read. The question 'How many more pages did Mikk read?' is asking for a comparison between Mikk's reading and his brother's reading to determine how much more Mikk accomplished.",
+    "category": "Compare",
+    "subcategory": "CMDU",
+    "subReasoning": "This problem is asking 'How many more pages did Mikk read?' which indicates a comparison direction focused on 'more than.' Using the Compare Model where Bigger = Smaller + Difference, I can identify: Mikk read 18 pages (the bigger quantity), his brother read 13 pages (the smaller quantity), and we need to find how many more pages Mikk read (the difference). Since we know both quantities (18 and 13) but need to find the difference between them, this is a Compare-More problem with the Difference Unknown.",
+    "tokenUsage": {
+      "prompt": 449,
+      "completion": 229,
+      "total": 678
+    },
+    "modelAnswers": {
+      "bigger": 18,
+      "smaller": 13,
+      "difference": null
+    },
+    "answer": 5,
+    "reasoning": "Difference = Bigger - Smaller = 18 - 13 = 5, so Mikk read 5 more pages than his brother.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many pages did Mikk read?",
+        "boxTarget": "bigger",
+        "context": "This question helps us find the larger number in our story. We're looking for how many pages Mikk read, which will be the bigger amount we're comparing."
+      },
+      {
+        "text": "How many pages did his brother read?",
+        "boxTarget": "smaller",
+        "context": "This question helps us find the smaller number in our story. We need to know how many pages Mikk's brother read so we can compare it to Mikk's amount."
+      },
+      {
+        "text": "How many more pages did Mikk read than his brother?",
+        "boxTarget": "difference",
+        "context": "This question asks us to find how much bigger one amount is than the other. We want to know the difference between the number of pages Mikk read and the pages his brother read."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CMDU",
+    "groundTruthAnswer": 5,
+    "groundTruthModelAnswers": {
+      "bigger": 18,
+      "smaller": 13,
+      "difference": null
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "The teacher put 17 pictures on the wall. Last week there were 10 pictures on the wall. How many more pictures are on the wall now?",
+    "output": "Although this problem mentions two different time periods, the question 'How many more pictures are on the wall now?' is asking for a comparison between the current state and the previous state to find the difference. The focus is on contrasting the two quantities (now vs. last week) rather than describing the process of change or transformation that occurred.",
+    "category": "Compare",
+    "subcategory": "CMDU",
+    "subReasoning": "This problem is asking 'How many more pictures are on the wall now?' which indicates a Compare-More structure since we're looking for how many MORE. Using the Compare Model where Bigger = Smaller + Difference, I can identify: Bigger = 17 pictures (now), Smaller = 10 pictures (last week), and Difference = unknown (how many more). Since we know both quantities (17 and 10) and need to find the difference between them, this is a Compare-More problem with the Difference Unknown.",
+    "tokenUsage": {
+      "prompt": 455,
+      "completion": 226,
+      "total": 681
+    },
+    "modelAnswers": {
+      "bigger": 17,
+      "smaller": 10,
+      "difference": null
+    },
+    "answer": 7,
+    "reasoning": "Difference = Bigger - Smaller = 17 - 10 = 7, so there are 7 more pictures on the wall now.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many pictures are on the wall now?",
+        "boxTarget": "bigger",
+        "context": "This question helps us find the total number of pictures the teacher has put up. We're looking for how many pictures we can see on the wall right now, after the teacher added more."
+      },
+      {
+        "text": "How many pictures were on the wall last week?",
+        "boxTarget": "smaller",
+        "context": "This question helps us find how many pictures were there before. We need to look back in time to see what the wall looked like last week, before any new pictures were added."
+      },
+      {
+        "text": "How many more pictures did the teacher add?",
+        "boxTarget": "difference",
+        "context": "This question asks us to find out how many extra pictures the teacher put up. We want to know the difference between what was there before and what's there now."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CMDU",
+    "groundTruthAnswer": 7,
+    "groundTruthModelAnswers": {
+      "bigger": 17,
+      "smaller": 10,
+      "difference": null
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "There are 13 boxes of colored pencils and 7 boxes of crayons on the shelf. How many more boxes of pencils are there?",
+    "output": "This problem presents two distinct quantities (boxes of pencils and boxes of crayons) and asks for the difference between them using the phrase 'how many more'. There is no indication of a quantity changing over time or two quantities being combined to form a total.",
+    "category": "Compare",
+    "subcategory": "CMDU",
+    "subReasoning": "The problem asks 'How many more boxes of pencils are there?' which indicates a 'Compare-More' relationship because it's asking for the difference when one quantity is larger than the other. The two quantities are given (13 boxes of pencils and 7 boxes of crayons). Therefore, the unknown is the difference between these two quantities. Using the 'Bigger = Smaller + Difference' model: 13 (Bigger) = 7 (Smaller) + Difference (Unknown). This makes it a Difference Unknown type.",
+    "tokenUsage": {
+      "prompt": 406,
+      "completion": 209,
+      "total": 615
+    },
+    "modelAnswers": {
+      "bigger": 13,
+      "smaller": 7,
+      "difference": null
+    },
+    "answer": 6,
+    "reasoning": "We are looking for 'How many more', which is the difference. Using the formula Bigger = Smaller + Difference, we can rearrange it to Difference = Bigger - Smaller. So, Difference = 13 - 7 = 6. There are 6 more boxes of pencils.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many boxes of pencils are there?",
+        "boxTarget": "bigger",
+        "context": "Here we want to find out how many boxes of colored pencils are on the shelf. This is the larger number in our story."
+      },
+      {
+        "text": "How many boxes of crayons are there?",
+        "boxTarget": "smaller",
+        "context": "Now let's think about the boxes of crayons. How many are there? This is the smaller number in our story."
+      },
+      {
+        "text": "What are we trying to find out about the boxes of pencils and crayons?",
+        "boxTarget": "difference",
+        "context": "The story wants to know 'how many more' boxes of something there are. What do you think that means we are looking for? We want to find the space between the two numbers!"
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CMDU",
+    "groundTruthAnswer": 6,
+    "groundTruthModelAnswers": {
+      "bigger": 13,
+      "smaller": 7,
+      "difference": null
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "Liisi has 10 pens, Andrea has 6 pens. How many more pens does Liisi have?",
+    "output": "The problem gives two separate quantities (Liisi's pens and Andrea's pens) and asks to find the difference between them, indicated by 'how many more'. There is no transformation of a quantity or combining of parts.",
+    "category": "Compare",
+    "subcategory": "CMDU",
+    "subReasoning": "The problem asks 'How many more pens does Liisi have?', which directly implies a 'more' comparison, establishing it as a Compare-More problem. The known quantities are the pens Liisi has (10, which is the 'Bigger' quantity) and the pens Andrea has (6, which is the 'Smaller' quantity). The question is 'How many more?', which is asking for the 'Difference' between the two quantities. Therefore, the difference is unknown.",
+    "tokenUsage": {
+      "prompt": 401,
+      "completion": 201,
+      "total": 602
+    },
+    "modelAnswers": {
+      "bigger": 10,
+      "smaller": 6,
+      "difference": null
+    },
+    "answer": 4,
+    "reasoning": "We are looking for the 'difference' (how many more pens Liisi has). Using the formula Bigger = Smaller + Difference, we can rearrange it to Difference = Bigger - Smaller. So, Difference = 10 - 6 = 4. Liisi has 4 more pens.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many pens does Liisi have?",
+        "boxTarget": "bigger",
+        "context": "Here we want to find out how many pens Liisi has. Liisi has more pens, so her number is the 'bigger' one!"
+      },
+      {
+        "text": "How many pens does Andrea have?",
+        "boxTarget": "smaller",
+        "context": "Now we're looking for how many pens Andrea has. Andrea has fewer pens, so her number is the 'smaller' one."
+      },
+      {
+        "text": "How many more pens does Liisi have than Andrea?",
+        "boxTarget": "difference",
+        "context": "This question asks us to figure out the 'difference' in pens between Liisi and Andrea. It's like asking how many extra pens Liisi has compared to Andrea."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CMDU",
+    "groundTruthAnswer": 4,
+    "groundTruthModelAnswers": {
+      "bigger": 10,
+      "smaller": 6,
+      "difference": null
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "Emil has 9 books, Heiki has 6 books. How many more books does Emil have?",
+    "output": "This problem involves two distinct quantities (Emil's books and Heiki's books) and asks for the difference, using the phrase 'how many more'. It does not describe a change in quantity over time or the combining of different items.",
+    "category": "Compare",
+    "subcategory": "CMDU",
+    "subReasoning": "The problem asks 'How many more books does Emil have?', which indicates a comparison focusing on 'more than'. Therefore, it is a Compare-More problem. The known quantities are Emil's books (9) and Heiki's books (6). We can identify Emil's books as the 'Bigger' quantity and Heiki's books as the 'Smaller' quantity. The question is asking for the difference between these two quantities ('how many more'). Thus, the 'Difference' is unknown. Therefore, it is classified as a Compare-More, Difference Unknown problem.",
+    "tokenUsage": {
+      "prompt": 398,
+      "completion": 228,
+      "total": 626
+    },
+    "modelAnswers": {
+      "bigger": 9,
+      "smaller": 6,
+      "difference": null
+    },
+    "answer": 3,
+    "reasoning": "The problem asks 'How many more books does Emil have?', which means we are looking for the difference between Emil's books and Heiki's books. Using the formula Difference = Bigger - Smaller, we get Difference = 9 - 6 = 3. So Emil has 3 more books.",
+    "storyGrammarPrompts": [
+      {
+        "text": "Who has more books, Emil or Heiki?",
+        "boxTarget": "bigger",
+        "context": "This question asks you to think about who collected more books. Is it Emil with his books, or Heiki with his books?"
+      },
+      {
+        "text": "Who has fewer books, Emil or Heiki?",
+        "boxTarget": "smaller",
+        "context": "Now we need to figure out who has a smaller number of books. Is it Emil, or is it Heiki? Look closely at their numbers of books!"
+      },
+      {
+        "text": "What do we want to find out about Emil's books compared to Heiki's books?",
+        "boxTarget": "difference",
+        "context": "This question helps us think about what the story wants us to discover. Are we trying to find out how many books they have all together, or how much bigger one pile of books is than the other?"
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CMDU",
+    "groundTruthAnswer": 3,
+    "groundTruthModelAnswers": {
+      "bigger": 9,
+      "smaller": 6,
+      "difference": null
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "Liisi has 9 dolls and 5 teddy bears. How many more dolls does she have?",
+    "output": "The problem provides two separate quantities (dolls and teddy bears) that are not combined for a total, nor is one quantity changing. The question 'how many more' directly asks for a comparison between the two given amounts.",
+    "category": "Compare",
+    "subcategory": "CMDU",
+    "subReasoning": "The problem asks 'How many more dolls does she have?', which indicates a 'Compare-More' direction. We are given the quantity of dolls (9) and teddy bears (5). The 'Bigger' quantity is dolls, and the 'Smaller' quantity is teddy bears. The question is asking for the difference between these two quantities ('how many more'). Therefore, the difference is unknown.",
+    "tokenUsage": {
+      "prompt": 397,
+      "completion": 219,
+      "total": 616
+    },
+    "modelAnswers": {
+      "bigger": 9,
+      "smaller": 5,
+      "difference": null
+    },
+    "answer": 4,
+    "reasoning": "The problem asks 'How many more dolls does she have?', which means we need to find the difference between the number of dolls and teddy bears. Using the formula Difference = Bigger - Smaller, we get Difference = 9 - 5 = 4. So, Liisi has 4 more dolls.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many dolls does Liisi have?",
+        "boxTarget": "bigger",
+        "context": "Here, we want to know the number of dolls Liisi has. This is the larger number in our story. Can you find it in the problem?"
+      },
+      {
+        "text": "How many teddy bears does Liisi have?",
+        "boxTarget": "smaller",
+        "context": "Now, let's think about the teddy bears. How many teddy bears does Liisi have? This is the smaller number we are comparing."
+      },
+      {
+        "text": "What are we trying to find out about the dolls and teddy bears?",
+        "boxTarget": "difference",
+        "context": "The problem asks, 'How many more dolls does she have?' This means we are trying to find the difference between the dolls and the teddy bears. We want to know how much bigger one group is than the other."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CMDU",
+    "groundTruthAnswer": 4,
+    "groundTruthModelAnswers": {
+      "bigger": 9,
+      "smaller": 5,
+      "difference": null
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "Mart has 12 blue blocks and 8 red blocks. How many more blue blocks does he have?",
+    "output": "This problem presents two distinct sets of items (blue blocks and red blocks) and asks for the difference between their quantities using the phrase 'how many more'. It does not involve a change in a quantity over time or the combining of items into a total.",
+    "category": "Compare",
+    "subcategory": "CMDU",
+    "subReasoning": "The problem asks 'How many more blue blocks does he have?', which indicates a comparison focusing on 'more than'. This classifies it as a Compare-More problem. We know the quantity of the 'Bigger' (blue blocks = 12) and the 'Smaller' (red blocks = 8). The question asks for 'how many more', which is the 'Difference' between the two quantities. Therefore, the unknown is the Difference.",
+    "tokenUsage": {
+      "prompt": 400,
+      "completion": 214,
+      "total": 614
+    },
+    "modelAnswers": {
+      "bigger": 12,
+      "smaller": 8,
+      "difference": null
+    },
+    "answer": 4,
+    "reasoning": "Difference = Bigger - Smaller. So, Difference = 12 - 8 = 4. Mart has 4 more blue blocks.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many blue blocks does Mart have?",
+        "boxTarget": "bigger",
+        "context": "We need to find out how many blue blocks Mart started with. Look at the problem carefully to find the number of blue blocks."
+      },
+      {
+        "text": "How many red blocks does Mart have?",
+        "boxTarget": "smaller",
+        "context": "Let's find the number of red blocks Mart has. The story tells us this number right away!"
+      },
+      {
+        "text": "How many more blue blocks than red blocks does Mart have?",
+        "boxTarget": "difference",
+        "context": "This is what the problem is asking us to find! It's the number that tells us how much bigger one group is than the other. Do you see the question mark in our math problem? That's what we need to figure out!"
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CMDU",
+    "groundTruthAnswer": 4,
+    "groundTruthModelAnswers": {
+      "bigger": 12,
+      "smaller": 8,
+      "difference": null
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "Ats has 14 drawings, Merilyn has 9 drawings. How many more drawings does Ats have?",
+    "output": "The problem provides two quantities associated with different individuals (Ats's drawings and Merilyn's drawings) and asks to find the difference between these two quantities using the phrase 'how many more'. There is no indication of a quantity changing or items being combined.",
+    "category": "Compare",
+    "subcategory": "CMDU",
+    "subReasoning": "The problem asks 'How many more drawings does Ats have?', which indicates a 'Compare-More' relationship because it's asking for the difference when one quantity is larger than the other. The known quantities are 14 (Ats's drawings, the larger quantity) and 9 (Merilyn's drawings, the smaller quantity). The unknown is the 'how many more', which represents the difference between the two quantities. Therefore, it is a Compare-More, Difference Unknown problem.",
+    "tokenUsage": {
+      "prompt": 400,
+      "completion": 209,
+      "total": 609
+    },
+    "modelAnswers": {
+      "bigger": 14,
+      "smaller": 9,
+      "difference": null
+    },
+    "answer": 5,
+    "reasoning": "Ats has 14 drawings (Bigger), Merilyn has 9 drawings (Smaller). We are looking for the difference. Difference = Bigger - Smaller = 14 - 9 = 5.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many drawings does Ats have?",
+        "boxTarget": "bigger",
+        "context": "We need to find the number that shows how many drawings Ats has in the story. This is the bigger number because Ats has more drawings."
+      },
+      {
+        "text": "How many drawings does Merilyn have?",
+        "boxTarget": "smaller",
+        "context": "Now we need to find the number that shows how many drawings Merilyn has. This is the smaller number because Merilyn has fewer drawings."
+      },
+      {
+        "text": "What are we trying to find out in this story?",
+        "boxTarget": "difference",
+        "context": "The story is asking us to find out how many *more* drawings Ats has than Merilyn. This is the difference between their drawings. It's like asking how much bigger one group is than the other!"
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CMDU",
+    "groundTruthAnswer": 5,
+    "groundTruthModelAnswers": {
+      "bigger": 14,
+      "smaller": 9,
+      "difference": null
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "The box has 11 chocolate cookies and 6 jam cookies. How many more chocolate cookies are in the box?",
+    "output": "This problem describes two distinct types of cookies within a box and asks to find the difference in their quantities, indicated by 'how many more'. It does not involve a change over time or combining different quantities into a total.",
+    "category": "Compare",
+    "subcategory": "CMDU",
+    "subReasoning": "The problem asks 'How many more chocolate cookies are in the box?' which indicates a 'Compare–More' situation focusing on the quantity by which one group exceeds another. The problem provides the quantities of both the larger group (11 chocolate cookies) and the smaller group (6 jam cookies), and the unknown is the difference between these two quantities. Therefore, it is a Compare–More, Difference Unknown problem.",
+    "tokenUsage": {
+      "prompt": 402,
+      "completion": 196,
+      "total": 598
+    },
+    "modelAnswers": {
+      "bigger": 11,
+      "smaller": 6,
+      "difference": null
+    },
+    "answer": 5,
+    "reasoning": "We are looking for the difference between the larger quantity (chocolate cookies) and the smaller quantity (jam cookies). Using the formula Difference = Bigger - Smaller, we get Difference = 11 - 6 = 5. Therefore, there are 5 more chocolate cookies.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many chocolate cookies are there?",
+        "boxTarget": "bigger",
+        "context": "We need to find out the number that is a lot! Look closely at the problem to see how many chocolate cookies are in the box."
+      },
+      {
+        "text": "How many jam cookies are there?",
+        "boxTarget": "smaller",
+        "context": "Now we need to find the smaller number. How many jam cookies did you see in the box?"
+      },
+      {
+        "text": "How many more chocolate cookies are there?",
+        "boxTarget": "difference",
+        "context": "This is what the problem wants us to find! It's asking about the difference between the two types of cookies. We need to figure out how many extra chocolate cookies there are compared to the jam cookies."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CMDU",
+    "groundTruthAnswer": 5,
+    "groundTruthModelAnswers": {
+      "bigger": 11,
+      "smaller": 6,
+      "difference": null
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "Sandra collected 15 stickers, Kristel collected 12 stickers. How many more stickers does Sandra have?",
+    "output": "The problem presents two distinct quantities of stickers collected by two different people and asks to find the difference between these quantities using the phrase 'how many more'. It does not describe a transformation of a quantity or the grouping of parts.",
+    "category": "Compare",
+    "subcategory": "CMDU",
+    "subReasoning": "The problem asks 'How many more stickers does Sandra have?', which directly implies a 'Compare-More' relationship because it's asking about the excess of one quantity over another. We are given the quantity for Sandra (15) and Kristel (12). In the model 'Bigger = Smaller + Difference', Sandra's stickers (15) represent the 'Bigger' quantity, Kristel's stickers (12) represent the 'Smaller' quantity, and the question is asking for the 'Difference'. Therefore, the unknown is the difference.",
+    "tokenUsage": {
+      "prompt": 402,
+      "completion": 183,
+      "total": 585
+    },
+    "modelAnswers": {
+      "bigger": 15,
+      "smaller": 12,
+      "difference": null
+    },
+    "answer": 3,
+    "reasoning": "This is a Compare problem where we are looking for the Difference. The formula is Bigger = Smaller + Difference. We have Bigger = 15 and Smaller = 12. So, 15 = 12 + Difference. Subtracting 12 from both sides gives Difference = 15 - 12 = 3. Therefore, Sandra has 3 more stickers than Kristel.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many stickers does Sandra have?",
+        "boxTarget": "bigger",
+        "context": "We need to find out how many stickers Sandra has. Look carefully in the story to see that number!"
+      },
+      {
+        "text": "How many stickers does Kristel have?",
+        "boxTarget": "smaller",
+        "context": "Now let's find out how many stickers Kristel has. The story tells us that number too!"
+      },
+      {
+        "text": "How many more stickers does Sandra have than Kristel?",
+        "boxTarget": "difference",
+        "context": "The story wants to know how many MORE stickers Sandra has. We're looking for the difference between Sandra's stickers and Kristel's stickers."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CMDU",
+    "groundTruthAnswer": 3,
+    "groundTruthModelAnswers": {
+      "bigger": 15,
+      "smaller": 12,
+      "difference": null
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "Mikk read 18 pages, his brother read 13 pages. How many more pages did Mikk read?",
+    "output": "This problem provides two distinct quantities of pages read by two different individuals and asks to find the difference between them, using the phrase 'how many more'. There is no change in a quantity or combining of items described.",
+    "category": "Compare",
+    "subcategory": "CMDU",
+    "subReasoning": "The problem asks 'How many more pages did Mikk read?', indicating a comparison focusing on the difference between two quantities. This makes it a Compare-More problem as it investigates 'how many more'.  \n\nUsing the model 'Bigger = Smaller + Difference':\n- Bigger (Mikk's pages) = 18\n- Smaller (Brother's pages) = 13\n- Difference (How many more Mikk read) = Unknown\n\nSince the 'Difference' is unknown and the comparison focuses on 'more', it is classified as a Compare-More, Difference Unknown problem.",
+    "tokenUsage": {
+      "prompt": 404,
+      "completion": 210,
+      "total": 614
+    },
+    "modelAnswers": {
+      "bigger": 18,
+      "smaller": 13,
+      "difference": null
+    },
+    "answer": 5,
+    "reasoning": "This is a Compare - Difference Unknown problem. Mikk's pages are the Bigger amount (18) and his brother's pages are the Smaller amount (13). We are looking for the Difference. Using the formula Difference = Bigger - Smaller, we get Difference = 18 - 13 = 5. So, Mikk read 5 more pages.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many pages did Mikk read?",
+        "boxTarget": "bigger",
+        "context": "We need to find out how many pages Mikk read. Look at the problem and tell me the number that tells us about Mikk's pages. This number is bigger than the pages his brother read."
+      },
+      {
+        "text": "How many pages did Mikk's brother read?",
+        "boxTarget": "smaller",
+        "context": "Now, let's look for the number of pages Mikk's brother read. This number is smaller than the pages Mikk read."
+      },
+      {
+        "text": "What are we trying to find out?",
+        "boxTarget": "difference",
+        "context": "The problem wants to know how many *more* pages Mikk read than his brother. This is the 'difference' between their pages."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CMDU",
+    "groundTruthAnswer": 5,
+    "groundTruthModelAnswers": {
+      "bigger": 18,
+      "smaller": 13,
+      "difference": null
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "The teacher put 17 pictures on the wall. Last week there were 10 pictures on the wall. How many more pictures are on the wall now?",
+    "output": "While there's a temporal aspect (last week vs. now), the core question is about the difference between two static quantities (10 pictures last week and 17 pictures now). It does not describe a continuous change or an event causing a specific gain or loss; rather, it asks for the difference between two distinct states. Therefore, it is a Compare problem.",
+    "category": "Compare",
+    "subcategory": "CMDU",
+    "subReasoning": "The problem asks 'How many more pictures are on the wall now?', which explicitly indicates a comparison focusing on 'more'. This immediately classifies it as a Compare-More problem. The known quantities are the 'Bigger' amount (17 pictures now) and the 'Smaller' amount (10 pictures last week). The question directly asks for the 'Difference' between these two quantities. Therefore, the unknown is the Difference.",
+    "tokenUsage": {
+      "prompt": 412,
+      "completion": 229,
+      "total": 641
+    },
+    "modelAnswers": {
+      "bigger": 17,
+      "smaller": 10,
+      "difference": null
+    },
+    "answer": 7,
+    "reasoning": "We are looking for the difference between the current number of pictures and the previous number of pictures. Using the formula Bigger = Smaller + Difference, we have 17 = 10 + Difference. To find the Difference, we subtract 10 from 17: 17 - 10 = 7. So, there are 7 more pictures on the wall now.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many pictures are on the wall *now*?",
+        "boxTarget": "bigger",
+        "context": "This is the number of pictures the teacher has on the wall altogether, after putting up some more. It's the total number of pictures right now!"
+      },
+      {
+        "text": "How many pictures were on the wall *last week*?",
+        "boxTarget": "smaller",
+        "context": "This is how many pictures were already on the wall before the teacher added any new ones. It's the number of pictures that were there first!"
+      },
+      {
+        "text": "How many *more* pictures are on the wall now?",
+        "boxTarget": "difference",
+        "context": "This is what we need to figure out! It's asking about the extra pictures the teacher put up, compared to how many were there before. It's the 'difference' between the two groups of pictures!"
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CMDU",
+    "groundTruthAnswer": 7,
+    "groundTruthModelAnswers": {
+      "bigger": 17,
+      "smaller": 10,
+      "difference": null
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "There are 13 boxes of colored pencils and 7 boxes of crayons on the shelf. How many more boxes of pencils are there?",
+    "output": "This problem asks to contrast two quantities (boxes of pencils and boxes of crayons) to determine how many more one there is than the other. No combining of groups or changes over time; it's simply comparing the two amounts.",
+    "category": "Compare",
+    "subcategory": "CMDU",
+    "subReasoning": "The problem asks 'How many more boxes of pencils are there?' This is a compare problem focusing on 'more than', so it is Compare–More. The numbers given are 13 (pencils) and 7 (crayons), and the question is asking for the difference between these two amounts. The larger quantity (pencils) and smaller quantity (crayons) are both given, but the difference is unknown.",
+    "tokenUsage": {
+      "prompt": 394,
+      "completion": 187,
+      "total": 581
+    },
+    "modelAnswers": {
+      "bigger": 13,
+      "smaller": 7,
+      "difference": null
+    },
+    "answer": 6,
+    "reasoning": "Difference = 13 - 7 = 6, so there are 6 more boxes of colored pencils than boxes of crayons.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many boxes of colored pencils are on the shelf?",
+        "boxTarget": "bigger",
+        "context": "Let's think about the group that is bigger in the story. We're looking for how many boxes there are of colored pencils, since that's the bigger group."
+      },
+      {
+        "text": "How many boxes of crayons are on the shelf?",
+        "boxTarget": "smaller",
+        "context": "Now let's look at the smaller group in the story. This question is asking about how many boxes there are of crayons."
+      },
+      {
+        "text": "How many more boxes of pencils are there than boxes of crayons?",
+        "boxTarget": "difference",
+        "context": "This question is about the difference between the two groups—how many extra boxes of pencils there are when you compare them to the boxes of crayons."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CMDU",
+    "groundTruthAnswer": 6,
+    "groundTruthModelAnswers": {
+      "bigger": 13,
+      "smaller": 7,
+      "difference": null
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "Liisi has 10 pens, Andrea has 6 pens. How many more pens does Liisi have?",
+    "output": "The focus is on comparing the number of pens between Liisi and Andrea to find the difference, not on combining or changing the amounts. The quantities are contrasted.",
+    "category": "Compare",
+    "subcategory": "CMDU",
+    "subReasoning": "The problem asks, 'How many more pens does Liisi have?' This is a comparison between Liisi's amount (10 pens) and Andrea's amount (6 pens), focusing on how many more Liisi has. The question is seeking the difference between the larger quantity (Liisi's pens) and the smaller quantity (Andrea's pens). This is a 'Compare–More' problem because it uses 'how many more'. The unknown in this case is the difference between the two amounts.",
+    "tokenUsage": {
+      "prompt": 390,
+      "completion": 179,
+      "total": 569
+    },
+    "modelAnswers": {
+      "bigger": 10,
+      "smaller": 6,
+      "difference": null
+    },
+    "answer": 4,
+    "reasoning": "Difference = 10 - 6 = 4, so Liisi has 4 more pens than Andrea.",
+    "storyGrammarPrompts": [
+      {
+        "text": "Who has the bigger number of pens?",
+        "boxTarget": "bigger",
+        "context": "This question helps you find out which person in the story has more pens. Let's think about which friend has the larger collection."
+      },
+      {
+        "text": "Who has the smaller number of pens?",
+        "boxTarget": "smaller",
+        "context": "Now, let's figure out which friend has fewer pens. This helps us compare the two numbers in the story."
+      },
+      {
+        "text": "How many more pens does the person with more pens have than the other?",
+        "boxTarget": "difference",
+        "context": "This question asks us to discover the difference between how many pens each friend has. It helps us see how much bigger one group is compared to the other."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CMDU",
+    "groundTruthAnswer": 4,
+    "groundTruthModelAnswers": {
+      "bigger": 10,
+      "smaller": 6,
+      "difference": null
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "Emil has 9 books, Heiki has 6 books. How many more books does Emil have?",
+    "output": "This problem contrasts the numbers of books Emil and Heiki have in order to find the difference between the two. There is neither a change nor a combining of groups.",
+    "category": "Compare",
+    "subcategory": "CMDU",
+    "subReasoning": "The problem compares Emil and Heiki's number of books, asking 'how many more books does Emil have.' This is a Compare–More problem because it uses 'more than' to compare Emil (the bigger quantity) to Heiki (the smaller quantity). The unknown in the problem is the difference between their amounts, which is being asked for directly ('how many more'). Therefore, this is a Compare–More, Difference Unknown problem.",
+    "tokenUsage": {
+      "prompt": 390,
+      "completion": 170,
+      "total": 560
+    },
+    "modelAnswers": {
+      "bigger": 9,
+      "smaller": 6,
+      "difference": null
+    },
+    "answer": 3,
+    "reasoning": "Difference = 9 - 6 = 3, so Emil has 3 more books than Heiki.",
+    "storyGrammarPrompts": [
+      {
+        "text": "Who has more books, Emil or Heiki?",
+        "boxTarget": "bigger",
+        "context": "Let's figure out which friend has the most books. We want to see who has the bigger amount so we can compare."
+      },
+      {
+        "text": "How many books does the other friend have?",
+        "boxTarget": "smaller",
+        "context": "Now let's see how many books the friend with the smaller collection has. That way, we know both amounts."
+      },
+      {
+        "text": "How many more books does Emil have than Heiki?",
+        "boxTarget": "difference",
+        "context": "This question helps us find out the difference between their books. We're looking for how much more Emil has than Heiki."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CMDU",
+    "groundTruthAnswer": 3,
+    "groundTruthModelAnswers": {
+      "bigger": 9,
+      "smaller": 6,
+      "difference": null
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "Liisi has 9 dolls and 5 teddy bears. How many more dolls does she have?",
+    "output": "Two different counts (dolls and teddy bears) that belong to Liisi are being contrasted to find how many more dolls she has than teddy bears. There's no combining or change involved.",
+    "category": "Compare",
+    "subcategory": "CMDU",
+    "subReasoning": "The problem asks 'How many more dolls does she have?', which is a comparison focusing on how much greater the number of dolls is compared to teddy bears. According to the COMPS framework, this is a 'Compare–More' problem since it is asking about 'more than'. The unknown is the difference between the number of dolls (9) and teddy bears (5), so the Difference is unknown.",
+    "tokenUsage": {
+      "prompt": 388,
+      "completion": 196,
+      "total": 584
+    },
+    "modelAnswers": {
+      "bigger": 9,
+      "smaller": 5,
+      "difference": null
+    },
+    "answer": 4,
+    "reasoning": "Difference = 9 - 5 = 4, so Liisi has 4 more dolls than teddy bears.",
+    "storyGrammarPrompts": [
+      {
+        "text": "Who has the bigger amount: dolls or teddy bears? How many does Liisi have of that?",
+        "boxTarget": "bigger",
+        "context": "This question helps us find out which group has more things, and asks you to say how many are in that bigger group."
+      },
+      {
+        "text": "Who has the smaller amount: dolls or teddy bears? How many does Liisi have of that?",
+        "boxTarget": "smaller",
+        "context": "Now, let's look for the smaller group and count how many are in it. This helps us compare them."
+      },
+      {
+        "text": "How many more dolls does Liisi have than teddy bears?",
+        "boxTarget": "difference",
+        "context": "This question is about figuring out the extra amount—the difference—between the two groups, so we know how many more dolls she has."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CMDU",
+    "groundTruthAnswer": 4,
+    "groundTruthModelAnswers": {
+      "bigger": 9,
+      "smaller": 5,
+      "difference": null
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "Mart has 12 blue blocks and 8 red blocks. How many more blue blocks does he have?",
+    "output": "This problem compares Mart's blue blocks and red blocks to determine how many more blue blocks he has. The focus is entirely on the difference, not on adding groups or tracking changes.",
+    "category": "Compare",
+    "subcategory": "CMDU",
+    "subReasoning": "The problem is asking 'how many more' blue blocks Mart has compared to red blocks. This indicates a Compare–More type problem because it is comparing in the 'more than' direction. Using the Compare Model, we have: Bigger (blue blocks, 12), Smaller (red blocks, 8), and Difference (unknown, the question asks for this: 'how many more blue blocks'). The unknown is the Difference. Therefore, this is a Compare–More, Difference Unknown (CMDU) problem.",
+    "tokenUsage": {
+      "prompt": 389,
+      "completion": 179,
+      "total": 568
+    },
+    "modelAnswers": {
+      "bigger": 12,
+      "smaller": 8,
+      "difference": null
+    },
+    "answer": 4,
+    "reasoning": "Difference = 12 - 8 = 4, so Mart has 4 more blue blocks than red blocks.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many blue blocks does Mart have?",
+        "boxTarget": "bigger",
+        "context": "This question helps you find out the number of blue blocks Mart has. Look for how many blue blocks are in Mart’s collection."
+      },
+      {
+        "text": "How many red blocks does Mart have?",
+        "boxTarget": "smaller",
+        "context": "This question asks you to check how many red blocks Mart owns. Let’s see what the story says about his red blocks."
+      },
+      {
+        "text": "How many more blue blocks does Mart have than red blocks?",
+        "boxTarget": "difference",
+        "context": "This question helps you figure out how many extra blue blocks Mart has compared to red blocks. It’s the number of blue blocks beyond the red ones."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CMDU",
+    "groundTruthAnswer": 4,
+    "groundTruthModelAnswers": {
+      "bigger": 12,
+      "smaller": 8,
+      "difference": null
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "Ats has 14 drawings, Merilyn has 9 drawings. How many more drawings does Ats have?",
+    "output": "The problem presents two quantities (Ats's and Merilyn's drawings) and asks for the difference. It doesn't involve change or combining groups; it's a comparison.",
+    "category": "Compare",
+    "subcategory": "CMDU",
+    "subReasoning": "The problem asks 'How many more drawings does Ats have?' which is a comparison asking for the difference between Ats's (14) and Merilyn's (9) drawings. The comparison is focused on 'more than,' so it is a Compare–More problem. The unknown is the difference between the two quantities, making it Difference Unknown.",
+    "tokenUsage": {
+      "prompt": 389,
+      "completion": 190,
+      "total": 579
+    },
+    "modelAnswers": {
+      "bigger": 14,
+      "smaller": 9,
+      "difference": null
+    },
+    "answer": 5,
+    "reasoning": "Difference = 14 - 9 = 5, so Ats has 5 more drawings than Merilyn.",
+    "storyGrammarPrompts": [
+      {
+        "text": "Who has more drawings, and how many drawings do they have?",
+        "boxTarget": "bigger",
+        "context": "Let's look for the person with the biggest number of drawings in the story and remember how many they have."
+      },
+      {
+        "text": "Who has fewer drawings, and how many drawings do they have?",
+        "boxTarget": "smaller",
+        "context": "Now let's see which person has the smaller number of drawings, and think about how many drawings are with them."
+      },
+      {
+        "text": "How many more drawings does the person with more have than the person with fewer?",
+        "boxTarget": "difference",
+        "context": "This question helps us find out the extra amount—the difference—between the number of drawings each person has. We want to see how much more one has compared to the other."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CMDU",
+    "groundTruthAnswer": 5,
+    "groundTruthModelAnswers": {
+      "bigger": 14,
+      "smaller": 9,
+      "difference": null
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "The box has 11 chocolate cookies and 6 jam cookies. How many more chocolate cookies are in the box?",
+    "output": "Two quantities (chocolate and jam cookies in the same box) are being compared to find the difference between them. There's no combining or change in number.",
+    "category": "Compare",
+    "subcategory": "CMDU",
+    "subReasoning": "The problem is asking 'how many more chocolate cookies' compared to jam cookies, which is a 'how many more' (Compare–More) question. We are given the number of chocolate cookies (11, the bigger quantity) and the number of jam cookies (6, the smaller quantity). The question asks for the difference between these two quantities, making the difference the unknown.",
+    "tokenUsage": {
+      "prompt": 390,
+      "completion": 192,
+      "total": 582
+    },
+    "modelAnswers": {
+      "bigger": 11,
+      "smaller": 6,
+      "difference": null
+    },
+    "answer": 5,
+    "reasoning": "Difference = 11 - 6 = 5, so there are 5 more chocolate cookies than jam cookies.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many chocolate cookies are in the box?",
+        "boxTarget": "bigger",
+        "context": "This question helps us find the bigger group by asking about the total number of chocolate cookies in the box. We want to see how many chocolate cookies there are altogether."
+      },
+      {
+        "text": "How many jam cookies are in the box?",
+        "boxTarget": "smaller",
+        "context": "Now we're looking for the smaller group. This question asks us to find out how many jam cookies are in the box."
+      },
+      {
+        "text": "How many more chocolate cookies are there than jam cookies?",
+        "boxTarget": "difference",
+        "context": "This question is asking us to compare the two groups. We want to know how many more chocolate cookies there are than jam cookies, so we can see the difference between the two."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CMDU",
+    "groundTruthAnswer": 5,
+    "groundTruthModelAnswers": {
+      "bigger": 11,
+      "smaller": 6,
+      "difference": null
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "Sandra collected 15 stickers, Kristel collected 12 stickers. How many more stickers does Sandra have?",
+    "output": "The focus is on the difference between the quantities Sandra and Kristel each collected. There's no combination or change, only a comparison.",
+    "category": "Compare",
+    "subcategory": "CMDU",
+    "subReasoning": "The problem is comparing Sandra's and Kristel's sticker counts and asks, 'How many more stickers does Sandra have?' This uses the phrase 'how many more', which means it's a Compare–More problem. According to the COMPS framework, the larger quantity is Sandra's 15 stickers, the smaller quantity is Kristel's 12 stickers, and the problem is asking for the difference between them. Since the difference is unknown, this is classified as Compare–More, Difference Unknown.",
+    "tokenUsage": {
+      "prompt": 389,
+      "completion": 198,
+      "total": 587
+    },
+    "modelAnswers": {
+      "bigger": 15,
+      "smaller": 12,
+      "difference": null
+    },
+    "answer": 3,
+    "reasoning": "Difference = 15 - 12 = 3, so Sandra has 3 more stickers than Kristel.",
+    "storyGrammarPrompts": [
+      {
+        "text": "Who has the bigger number of stickers?",
+        "boxTarget": "bigger",
+        "context": "Let’s think about which friend collected more stickers. We want to find out who has the most so we can put their number in the 'bigger' box."
+      },
+      {
+        "text": "Who has the smaller number of stickers?",
+        "boxTarget": "smaller",
+        "context": "Now, let’s look for the friend who collected fewer stickers. This is the smaller group, and we’ll write that number in the 'smaller' box."
+      },
+      {
+        "text": "How many more stickers does the friend with more stickers have than the other?",
+        "boxTarget": "difference",
+        "context": "Here, we’re figuring out the difference between the two friends. This tells us how many extra stickers the friend with more stickers has compared to the other."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CMDU",
+    "groundTruthAnswer": 3,
+    "groundTruthModelAnswers": {
+      "bigger": 15,
+      "smaller": 12,
+      "difference": null
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "Mikk read 18 pages, his brother read 13 pages. How many more pages did Mikk read?",
+    "output": "The problem compares the number of pages Mikk and his brother read, seeking the difference. No combining of groups or transformation occurs.",
+    "category": "Compare",
+    "subcategory": "CMDU",
+    "subReasoning": "The problem is asking how many more pages Mikk read than his brother, which indicates a Compare–More context. The two quantities compared are the pages read by Mikk (18, the larger quantity) and his brother (13, the smaller quantity). The question asks for 'how many more,' so the unknown is the difference. Therefore, this is a Compare–More, Difference Unknown problem.",
+    "tokenUsage": {
+      "prompt": 390,
+      "completion": 183,
+      "total": 573
+    },
+    "modelAnswers": {
+      "bigger": 18,
+      "smaller": 13,
+      "difference": null
+    },
+    "answer": 5,
+    "reasoning": "Difference = 18 - 13 = 5, so Mikk read 5 more pages than his brother.",
+    "storyGrammarPrompts": [
+      {
+        "text": "Who read more pages, Mikk or his brother?",
+        "boxTarget": "bigger",
+        "context": "This question helps us find out which person read the most pages in the story. Let's think about who that is!"
+      },
+      {
+        "text": "Who read fewer pages, Mikk or his brother?",
+        "boxTarget": "smaller",
+        "context": "Now, we're looking for the person who read less. Thinking about this helps us see who has the smaller amount in the problem."
+      },
+      {
+        "text": "How many more pages did the one who read more finish than the other?",
+        "boxTarget": "difference",
+        "context": "This question helps us figure out the difference between the two amounts—that is, how many extra pages one person read compared to the other."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CMDU",
+    "groundTruthAnswer": 5,
+    "groundTruthModelAnswers": {
+      "bigger": 18,
+      "smaller": 13,
+      "difference": null
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "The teacher put 17 pictures on the wall. Last week there were 10 pictures on the wall. How many more pictures are on the wall now?",
+    "output": "This problem describes a transformation over time: last week there were 10 pictures, now 17, indicating the number of pictures increased through the teacher's action. It follows a before-and-after structure, with a quantity changing due to an event.",
+    "category": "Change",
+    "subcategory": "CJPU",
+    "subReasoning": "The situation describes the teacher increasing the number of pictures on the wall from last week to now, so it is a 'Join' (increase) situation. The structure is: Start (10 pictures last week) + Change (unknown number of pictures added) = Result (17 pictures now). The unknown in the problem is 'how many more pictures are on the wall now?', which refers to the number of pictures added (Change). In a Join problem, if Start or Change is unknown, it is a Part Unknown (CJPU).",
+    "tokenUsage": {
+      "prompt": 396,
+      "completion": 211,
+      "total": 607
+    },
+    "modelAnswers": {
+      "start": 10,
+      "change": null,
+      "end": 17
+    },
+    "answer": 7,
+    "reasoning": "10 + ? = 17 → 17 - 10 = 7, so 7 more pictures are on the wall now.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many pictures were on the wall last week, before any new ones were added?",
+        "boxTarget": "start",
+        "context": "This question helps us find out what the wall started with, before anything changed. We're trying to remember how many pictures there were in the beginning."
+      },
+      {
+        "text": "How many more pictures were put on the wall to get from last week to now?",
+        "boxTarget": "change",
+        "context": "This question is asking us to think about what was added or changed. We're looking for how many extra pictures were put up to make the total bigger."
+      },
+      {
+        "text": "How many pictures are on the wall now, after the new ones were added?",
+        "boxTarget": "end",
+        "context": "This question helps us see what the wall looks like now, after all the new pictures have been put up. We're finding out the total number on the wall right now."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CMDU",
+    "groundTruthAnswer": 7,
+    "groundTruthModelAnswers": {
+      "bigger": 17,
+      "smaller": 10,
+      "difference": null
+    },
+    "isModelMappingCorrect": false,
+    "isAnswerCorrect": true
+  }
+]

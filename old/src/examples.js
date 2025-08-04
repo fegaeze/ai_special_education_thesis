@@ -1,4 +1,3 @@
-
 export const examples = `
 📌 CJPU (Change-Join, Part Unknown)
 "Mia walked 3 miles before lunch. She walked more in the evening. In total, she walked 8 miles. How many miles did she walk in the evening?"

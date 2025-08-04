@@ -1,0 +1,1412 @@
+[
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "There are 4 girls and 7 boys in the class. How many students are in the class altogether?",
+    "output": "This problem describes two distinct groups (girls and boys) that are being grouped together to find the total number of students. There is no transformation or change over time - the girls and boys simply exist as separate quantities that need to be combined into one total.",
+    "category": "Combine",
+    "subcategory": "CWU",
+    "subReasoning": "In this problem, I need to identify the quantities using the Combine Model structure: Part 1 + Part 2 = Whole. Part 1 is 4 girls (known), Part 2 is 7 boys (known), and the Whole is the total number of students in the class (unknown). The problem is asking 'How many students are in the class altogether?' which means we need to find the total combined amount. Since the Whole is unknown and we have both parts, this is a Whole Unknown problem.",
+    "tokenUsage": {
+      "prompt": 452,
+      "completion": 201,
+      "total": 653
+    },
+    "modelAnswers": {
+      "part1": 4,
+      "part2": 7,
+      "whole": null
+    },
+    "answer": 11,
+    "reasoning": "4 + 7 = 11, so there are 11 students in the class altogether.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many girls are in the class?",
+        "boxTarget": "part1",
+        "context": "This question helps us find one group of students in our class. We're looking for the number that tells us how many girls there are."
+      },
+      {
+        "text": "How many boys are in the class?",
+        "boxTarget": "part2",
+        "context": "This question helps us find the other group of students in our class. We're looking for the number that tells us how many boys there are."
+      },
+      {
+        "text": "How many students are in the class altogether?",
+        "boxTarget": "whole",
+        "context": "This question asks us to find the total number of students when we put both groups together - all the girls and all the boys combined."
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CWU",
+    "groundTruthAnswer": 11,
+    "groundTruthModelAnswers": {
+      "part1": 4,
+      "part2": 7,
+      "whole": null
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "Kristel picked 6 boletus mushrooms and 7 russulas. How many mushrooms did Kristel pick in total?",
+    "output": "This problem involves combining two distinct types of mushrooms that Kristel picked. Even though picking suggests an action, the focus is on grouping together the two different types of mushrooms to find the total amount collected, not on a quantity changing over time.",
+    "category": "Combine",
+    "subcategory": "CWU",
+    "subReasoning": "In this problem, I need to identify the quantities using the Combine model structure: Part 1 + Part 2 = Whole. Part 1 is 6 boletus mushrooms (known), Part 2 is 7 russulas (known), and the Whole is the total number of mushrooms Kristel picked (unknown). The question asks 'How many mushrooms did Kristel pick in total?' which is asking for the combined total of the two known parts. Since the Whole is unknown and we need to find the total by combining the two known parts, this is a Whole Unknown problem.",
+    "tokenUsage": {
+      "prompt": 458,
+      "completion": 227,
+      "total": 685
+    },
+    "modelAnswers": {
+      "part1": 6,
+      "part2": 7,
+      "whole": null
+    },
+    "answer": 13,
+    "reasoning": "6 + 7 = 13, so Kristel picked 13 mushrooms in total.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many boletus mushrooms did Kristel pick?",
+        "boxTarget": "part1",
+        "context": "This question helps you find the first group of mushrooms that Kristel collected. Look back at the story to see how many boletus mushrooms she found."
+      },
+      {
+        "text": "How many russulas did Kristel pick?",
+        "boxTarget": "part2",
+        "context": "This question helps you find the second group of mushrooms that Kristel collected. Check the story again to see how many russulas she gathered."
+      },
+      {
+        "text": "How many mushrooms did Kristel pick altogether?",
+        "boxTarget": "whole",
+        "context": "This question asks you to find the total number of mushrooms when you put both groups together. You'll need to add the boletus mushrooms and the russulas to find this answer."
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CWU",
+    "groundTruthAnswer": 13,
+    "groundTruthModelAnswers": {
+      "part1": 6,
+      "part2": 7,
+      "whole": null
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "The freight train consisted of 8 container cars and 10 tank cars. How many cars were on the train?",
+    "output": "This problem describes two distinct types of train cars that make up the total composition of the train. The container cars and tank cars are separate quantities being grouped together to find the total number of cars, with no change or transformation occurring.",
+    "category": "Combine",
+    "subcategory": "CWU",
+    "subReasoning": "This problem presents two parts that need to be combined to find a total. Part 1 is 8 container cars, Part 2 is 10 tank cars, and the Whole is the total number of cars on the train. The problem gives us both parts (8 and 10) and asks for the whole (total cars). Since we know both parts but the whole is unknown, this is a Combine, Whole Unknown problem.",
+    "tokenUsage": {
+      "prompt": 453,
+      "completion": 209,
+      "total": 662
+    },
+    "modelAnswers": {
+      "part1": 8,
+      "part2": 10,
+      "whole": null
+    },
+    "answer": 18,
+    "reasoning": "8 + 10 = 18, so there were 18 cars on the train total.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many container cars were on the freight train?",
+        "boxTarget": "part1",
+        "context": "This question helps us find the first group of cars. Look back at the story to see how many container cars the train had."
+      },
+      {
+        "text": "How many tank cars were on the freight train?",
+        "boxTarget": "part2",
+        "context": "This question helps us find the second group of cars. Look back at the story to see how many tank cars were part of the train."
+      },
+      {
+        "text": "How many cars were on the train altogether?",
+        "boxTarget": "whole",
+        "context": "This question asks for the total number of cars when we put both groups together. This is what we need to figure out by adding the container cars and tank cars."
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CWU",
+    "groundTruthAnswer": 18,
+    "groundTruthModelAnswers": {
+      "part1": 8,
+      "part2": 10,
+      "whole": null
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "There were 11 boys and 7 girls swimming in the pool. How many children were in the pool?",
+    "output": "This problem involves combining two distinct groups (boys and girls) to find the total number of children in the pool. There is no change happening over time - it's simply grouping separate quantities together to find a total.",
+    "category": "Combine",
+    "subcategory": "CWU",
+    "subReasoning": "This problem involves combining two separate groups to find a total. Part 1 is 11 boys, Part 2 is 7 girls, and the Whole is the total number of children in the pool. The problem gives us both parts (11 boys and 7 girls) and asks for the whole (total children). Since the whole is unknown and we need to combine the two known parts to find it, this is a Combine, Whole Unknown problem.",
+    "tokenUsage": {
+      "prompt": 452,
+      "completion": 203,
+      "total": 655
+    },
+    "modelAnswers": {
+      "part1": 11,
+      "part2": 7,
+      "whole": null
+    },
+    "answer": 18,
+    "reasoning": "11 + 7 = 18, so there were 18 children in the pool total.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many boys were swimming in the pool?",
+        "boxTarget": "part1",
+        "context": "This question asks you to find one group of children in the story. Look for the number that tells you about the boys who were swimming."
+      },
+      {
+        "text": "How many girls were swimming in the pool?",
+        "boxTarget": "part2",
+        "context": "This question asks you to find the other group of children in the story. Look for the number that tells you about the girls who were swimming."
+      },
+      {
+        "text": "How many children were in the pool altogether?",
+        "boxTarget": "whole",
+        "context": "This question asks you to find the total number of children. You'll need to put the boys and girls together to find this answer."
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CWU",
+    "groundTruthAnswer": 18,
+    "groundTruthModelAnswers": {
+      "part1": 11,
+      "part2": 7,
+      "whole": null
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "There are 5 mugs on the upper shelf. There are just as many mugs on the lower shelf. How many mugs are there in total?",
+    "output": "This problem describes mugs located on two different shelves that need to be grouped together to find the total number of mugs. The mugs on each shelf are distinct quantities (5 on upper, 5 on lower) that are being combined, with no transformation or change occurring.",
+    "category": "Combine",
+    "subcategory": "CWU",
+    "subReasoning": "Looking at this problem, I need to identify the quantities in the combine model. There are 5 mugs on the upper shelf, and there are just as many mugs on the lower shelf, which means there are also 5 mugs on the lower shelf. The problem asks for the total number of mugs. Using the structure Part 1 + Part 2 = Whole: Part 1 is 5 mugs (upper shelf), Part 2 is 5 mugs (lower shelf), and the Whole is the total number of mugs, which is unknown. Since the Whole is what we're solving for, this is a Whole Unknown problem.",
+    "tokenUsage": {
+      "prompt": 461,
+      "completion": 242,
+      "total": 703
+    },
+    "modelAnswers": {
+      "part1": 5,
+      "part2": 5,
+      "whole": null
+    },
+    "answer": 10,
+    "reasoning": "There are 5 mugs on the upper shelf and just as many (5) mugs on the lower shelf. 5 + 5 = 10, so there are 10 mugs in total.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many mugs are on the upper shelf?",
+        "boxTarget": "part1",
+        "context": "This question helps us find our first group of mugs. We need to look in the story to see how many mugs are sitting on the top shelf."
+      },
+      {
+        "text": "How many mugs are on the lower shelf?",
+        "boxTarget": "part2",
+        "context": "This question helps us find our second group of mugs. The story tells us there are 'just as many' mugs on the bottom shelf, which means the same number as the top shelf."
+      },
+      {
+        "text": "How many mugs are there altogether on both shelves?",
+        "boxTarget": "whole",
+        "context": "This question asks us to put both groups of mugs together. We need to add the mugs from the upper shelf and the mugs from the lower shelf to find out how many mugs there are in total."
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CWU",
+    "groundTruthAnswer": 10,
+    "groundTruthModelAnswers": {
+      "part1": 5,
+      "part2": 5,
+      "whole": null
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "There are 9 jars of strawberry jam on one shelf. On the other shelf, there are 6 jars of apple jam. How many jars of jam are there altogether?",
+    "output": "This problem involves combining two distinct types of jam jars located on different shelves. The strawberry jam jars and apple jam jars are separate quantities being grouped together to find the total number of jam jars, with no change or transformation involved.",
+    "category": "Combine",
+    "subcategory": "CWU",
+    "subReasoning": "This problem describes two separate quantities that need to be combined: 9 jars of strawberry jam and 6 jars of apple jam. Using the combine model structure Part 1 + Part 2 = Whole, I can identify: Part 1 = 9 jars of strawberry jam (known), Part 2 = 6 jars of apple jam (known), and Whole = total jars of jam altogether (unknown). The question asks 'How many jars of jam are there altogether?' which is asking for the total or whole amount. Since the whole is unknown and both parts are given, this is a Combine, Whole Unknown problem.",
+    "tokenUsage": {
+      "prompt": 469,
+      "completion": 221,
+      "total": 690
+    },
+    "modelAnswers": {
+      "part1": 9,
+      "part2": 6,
+      "whole": null
+    },
+    "answer": 15,
+    "reasoning": "9 + 6 = 15, so there are 15 jars of jam altogether.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many jars of strawberry jam are on the first shelf?",
+        "boxTarget": "part1",
+        "context": "This question helps you find the first group of jars in the story. Look for the number that tells you about the strawberry jam jars."
+      },
+      {
+        "text": "How many jars of apple jam are on the other shelf?",
+        "boxTarget": "part2",
+        "context": "This question helps you find the second group of jars in the story. Look for the number that tells you about the apple jam jars."
+      },
+      {
+        "text": "How many jars of jam are there altogether?",
+        "boxTarget": "whole",
+        "context": "This question asks you to find the total number of jam jars when you put both groups together. This is what the problem is asking you to figure out."
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CWU",
+    "groundTruthAnswer": 15,
+    "groundTruthModelAnswers": {
+      "part1": 9,
+      "part2": 6,
+      "whole": null
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "Mom had 10 days of winter vacation and 18 days of summer vacation. How many days did Mom vacation in total during the year?",
+    "output": "This problem describes two distinct vacation periods that occurred at different times. Even though these vacations happened at separate times, the focus is on combining the two separate amounts of vacation days to find the total, not on any quantity changing or being transformed.",
+    "category": "Combine",
+    "subcategory": "CWU",
+    "subReasoning": "Looking at this problem, I need to identify the quantities in the combine model. Part 1 is 10 days of winter vacation (known), Part 2 is 18 days of summer vacation (known), and the Whole is the total days of vacation during the year (unknown). The problem is asking for the total combined amount when both parts are given, which means the Whole is unknown. Since the Whole is what we're trying to find, this is a Whole Unknown problem.",
+    "tokenUsage": {
+      "prompt": 458,
+      "completion": 214,
+      "total": 672
+    },
+    "modelAnswers": {
+      "part1": 10,
+      "part2": 18,
+      "whole": null
+    },
+    "answer": 28,
+    "reasoning": "10 + 18 = 28, so Mom had 28 total vacation days during the year.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many days of winter vacation did Mom have?",
+        "boxTarget": "part1",
+        "context": "This question asks you to find the first piece of information in the story. Look for the number that tells you about Mom's winter vacation days."
+      },
+      {
+        "text": "How many days of summer vacation did Mom have?",
+        "boxTarget": "part2",
+        "context": "This question asks you to find the second piece of information in the story. Look for the number that tells you about Mom's summer vacation days."
+      },
+      {
+        "text": "How many total vacation days did Mom have during the whole year?",
+        "boxTarget": "whole",
+        "context": "This question asks you to find what the problem is asking for - the total number of vacation days when you put the winter days and summer days together."
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CWU",
+    "groundTruthAnswer": 28,
+    "groundTruthModelAnswers": {
+      "part1": 10,
+      "part2": 18,
+      "whole": null
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "There are 28 asters and 6 chrysanthemums blooming in the flowerbed. How many flowers are blooming in the flowerbed?",
+    "output": "This problem involves combining two distinct types of flowers that are blooming in the same flowerbed. The asters and chrysanthemums are separate quantities being grouped together to find the total number of blooming flowers, with no change or transformation occurring.",
+    "category": "Combine",
+    "subcategory": "CWU",
+    "subReasoning": "This problem involves combining two separate groups of flowers to find a total. Part 1 is 28 asters (known), Part 2 is 6 chrysanthemums (known), and the Whole is the total number of flowers blooming in the flowerbed (unknown). Since we know both parts and need to find the whole combined amount, this is a Combine, Whole Unknown problem.",
+    "tokenUsage": {
+      "prompt": 463,
+      "completion": 251,
+      "total": 714
+    },
+    "modelAnswers": {
+      "part1": 28,
+      "part2": 6,
+      "whole": null
+    },
+    "answer": 34,
+    "reasoning": "28 + 6 = 34, so there are 34 flowers blooming in the flowerbed.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many asters are blooming in the flowerbed?",
+        "boxTarget": "part1",
+        "context": "This question helps you find the first group of flowers. Look back at the story to see how many asters there are - that's one type of flower growing in the flowerbed."
+      },
+      {
+        "text": "How many chrysanthemums are blooming in the flowerbed?",
+        "boxTarget": "part2",
+        "context": "This question helps you find the second group of flowers. Check the story again to see how many chrysanthemums there are - that's the other type of flower growing in the flowerbed."
+      },
+      {
+        "text": "How many flowers are blooming in the flowerbed altogether?",
+        "boxTarget": "whole",
+        "context": "This question asks for the total number of flowers when you put both groups together. You'll need to combine the asters and chrysanthemums to find out how many flowers there are in all."
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CWU",
+    "groundTruthAnswer": 34,
+    "groundTruthModelAnswers": {
+      "part1": 28,
+      "part2": 6,
+      "whole": null
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "There are 12 blue and 9 green plates in the cupboard. How many plates are there in total?",
+    "output": "This problem describes two distinct groups of plates (blue and green) that need to be grouped together to find the total number of plates in the cupboard. There is no change happening - it's simply combining separate quantities to find a total.",
+    "category": "Combine",
+    "subcategory": "CWU",
+    "subReasoning": "This problem presents two known parts that need to be combined to find the total. Part 1 is 12 blue plates, Part 2 is 9 green plates, and the Whole (total number of plates) is unknown. The problem is asking 'How many plates are there in total?' which directly asks for the combined amount of the two given parts. Since the Whole is what we need to find, this is a Whole Unknown problem.",
+    "tokenUsage": {
+      "prompt": 453,
+      "completion": 220,
+      "total": 673
+    },
+    "modelAnswers": {
+      "part1": 12,
+      "part2": 9,
+      "whole": null
+    },
+    "answer": 21,
+    "reasoning": "12 + 9 = 21, so there are 21 plates in total.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many blue plates are in the cupboard?",
+        "boxTarget": "part1",
+        "context": "This question helps you find the first group of plates. Look back at the story to see how many blue plates there are. This will be one part of our answer."
+      },
+      {
+        "text": "How many green plates are in the cupboard?",
+        "boxTarget": "part2",
+        "context": "This question helps you find the second group of plates. Look back at the story to see how many green plates there are. This will be the other part of our answer."
+      },
+      {
+        "text": "How many plates are there altogether in the cupboard?",
+        "boxTarget": "whole",
+        "context": "This question asks for the total number of plates when you put both groups together. This is what the problem is asking you to find out!"
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CWU",
+    "groundTruthAnswer": 21,
+    "groundTruthModelAnswers": {
+      "part1": 12,
+      "part2": 9,
+      "whole": null
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "The library loaned out 15 fairy tale books and 11 poetry books. How many books were loaned out in total?",
+    "output": "This problem involves combining two distinct types of books that were loaned out. Even though loaning suggests an action, the focus is on grouping together the two different types of books to find the total number loaned, not on tracking a quantity that changes over time.",
+    "category": "Combine",
+    "subcategory": "CWU",
+    "subReasoning": "This problem involves combining two separate quantities to find a total. The library loaned out 15 fairy tale books (Part 1) and 11 poetry books (Part 2), and we need to find how many books were loaned out in total (Whole). Using the combine model structure Part 1 + Part 2 = Whole, we have: 15 + 11 = ? The question asks for the total number of books, which represents the Whole in this combination. Since the Whole is unknown and we know both parts, this is a Whole Unknown problem.",
+    "tokenUsage": {
+      "prompt": 456,
+      "completion": 205,
+      "total": 661
+    },
+    "modelAnswers": {
+      "part1": 15,
+      "part2": 11,
+      "whole": null
+    },
+    "answer": 26,
+    "reasoning": "15 + 11 = 26, so the total number of books loaned out is 26.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many fairy tale books did the library loan out?",
+        "boxTarget": "part1",
+        "context": "This question helps you find the first group of books. Look back at the story to see how many fairy tale books were given out to people."
+      },
+      {
+        "text": "How many poetry books did the library loan out?",
+        "boxTarget": "part2",
+        "context": "This question helps you find the second group of books. Look in the story for the number of poetry books that people borrowed."
+      },
+      {
+        "text": "How many books were loaned out altogether?",
+        "boxTarget": "whole",
+        "context": "This question asks for the total number of books. You'll need to put the fairy tale books and poetry books together to find this answer."
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CWU",
+    "groundTruthAnswer": 26,
+    "groundTruthModelAnswers": {
+      "part1": 15,
+      "part2": 11,
+      "whole": null
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "There are 4 girls and 7 boys in the class. How many students are in the class altogether?",
+    "output": "This problem describes two distinct groups (girls and boys) that are being grouped together to find a total. There is no indication of a quantity changing over time or a comparison being made between the groups. The parts are independent and are simply summed to find the total number of students.",
+    "category": "Combine",
+    "subcategory": "CWU",
+    "subReasoning": "Step 2: Identify the Quantities in the Combine Model. In this problem, '4 girls' is a known part, '7 boys' is another known part, and 'How many students are in the class altogether?' represents the unknown whole. So, Part 1 = 4, Part 2 = 7, and Whole = ?. Step 3: Determine the Type of Unknown. Since the 'Whole' is unknown, it fits the criteria for Combine, Whole Unknown (CWU).",
+    "tokenUsage": {
+      "prompt": 406,
+      "completion": 217,
+      "total": 623
+    },
+    "modelAnswers": {
+      "part1": 4,
+      "part2": 7,
+      "whole": null
+    },
+    "answer": 11,
+    "reasoning": "To find the total number of students, we combine the number of girls (4) and the number of boys (7). 4 + 7 = 11. Therefore, there are 11 students in the class altogether.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many girls are there?",
+        "boxTarget": "part1",
+        "context": "We need to find out how many girls are in the class. Look closely at the problem to see the number of girls. This will be the first small group."
+      },
+      {
+        "text": "How many boys are there?",
+        "boxTarget": "part2",
+        "context": "Now let's find out how many boys are in the class. The problem tells us this number. This will be the second small group."
+      },
+      {
+        "text": "How many students are in the class altogether?",
+        "boxTarget": "whole",
+        "context": "This is what we need to figure out! 'Altogether' means we want to find the total number of students when we put the girls and boys together. This will be our big group, the whole class!"
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CWU",
+    "groundTruthAnswer": 11,
+    "groundTruthModelAnswers": {
+      "part1": 4,
+      "part2": 7,
+      "whole": null
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "Kristel picked 6 boletus mushrooms and 7 russulas. How many mushrooms did Kristel pick in total?",
+    "output": "This problem presents two distinct types of mushrooms (boletus and russulas) that Kristel picked. The question asks for the total number of mushrooms, meaning these two separate quantities are being grouped together. There is no transformation or change in quantity, nor is there a comparison between the types of mushrooms.",
+    "category": "Combine",
+    "subcategory": "CWU",
+    "subReasoning": "The problem presents two distinct quantities that are being combined to find a total. We have '6 boletus mushrooms' as the first part and '7 russulas' as the second part. The question asks 'How many mushrooms did Kristel pick in total?', which directly requests the 'Whole' amount when these two parts are combined. Since the 'Whole' is the unknown quantity, this fits the definition of a Combine Whole Unknown problem.",
+    "tokenUsage": {
+      "prompt": 408,
+      "completion": 198,
+      "total": 606
+    },
+    "modelAnswers": {
+      "part1": 6,
+      "part2": 7,
+      "whole": null
+    },
+    "answer": 13,
+    "reasoning": "Since Kristel picked 6 boletus mushrooms and 7 russulas, to find the total number of mushrooms, we add the two parts: 6 + 7 = 13. So, Kristel picked 13 mushrooms in total.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many boletus mushrooms did Kristel pick?",
+        "boxTarget": "part1",
+        "context": "This is asking about the first group of mushrooms Kristel picked. Just look for the number of boletus mushrooms she found."
+      },
+      {
+        "text": "How many russula mushrooms did Kristel pick?",
+        "boxTarget": "part2",
+        "context": "Now we need to find the number of the other kind of mushrooms Kristel picked. Look for how many russula mushrooms she found!"
+      },
+      {
+        "text": "How many mushrooms did Kristel pick in total?",
+        "boxTarget": "whole",
+        "context": "This is asking for the total number of all the mushrooms Kristel picked. This is what we need to figure out together!"
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CWU",
+    "groundTruthAnswer": 13,
+    "groundTruthModelAnswers": {
+      "part1": 6,
+      "part2": 7,
+      "whole": null
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "The freight train consisted of 8 container cars and 10 tank cars. How many cars were on the train?",
+    "output": "This problem describes two different types of cars (container cars and tank cars) that together make up the train. To find the total number of cars, these two distinct quantities are combined. There is no action indicating a change in the number of cars over time, nor is there a comparison between the two types of cars.",
+    "category": "Combine",
+    "subcategory": "CWU",
+    "subReasoning": "In this problem, the number of container cars (8) is a known part, and the number of tank cars (10) is another known part. We are asked to find the total number of cars on the train, which represents the whole amount when these two parts are combined. Since both parts are known and the whole is unknown, according to the COMPS framework, this classifies as a Combine, Whole Unknown situation.",
+    "tokenUsage": {
+      "prompt": 409,
+      "completion": 253,
+      "total": 662
+    },
+    "modelAnswers": {
+      "part1": 8,
+      "part2": 10,
+      "whole": null
+    },
+    "answer": 18,
+    "reasoning": "To find the total number of cars, we combine the number of container cars (8) and the number of tank cars (10). 8 + 10 = 18, so there were 18 cars on the train.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many container cars were on the train?",
+        "boxTarget": "part1",
+        "context": "This question asks you to find out how many of those cool container cars, like the ones with big boxes, were on the train. Look closely at the problem to find that number!"
+      },
+      {
+        "text": "How many tank cars were on the train?",
+        "boxTarget": "part2",
+        "context": "Now, let's think about the other kind of car – the tank cars, which look like big barrels. This question wants to know how many of *those* cars were on the train. You can find that number right in the story!"
+      },
+      {
+        "text": "How many cars were on the train altogether?",
+        "boxTarget": "whole",
+        "context": "This question is asking for the total number of all the cars on the train. When you put the container cars and the tank cars together, what's the grand total? You’ll figure out how many cars there are in all!"
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CWU",
+    "groundTruthAnswer": 18,
+    "groundTruthModelAnswers": {
+      "part1": 8,
+      "part2": 10,
+      "whole": null
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "There were 11 boys and 7 girls swimming in the pool. How many children were in the pool?",
+    "output": "This problem identifies two distinct groups of children (boys and girls) who are present in the pool. The question asks for the total number of children, which requires grouping these two separate quantities. There is no change occurring to the number of children, nor is there a comparison between the boys and girls.",
+    "category": "Combine",
+    "subcategory": "CWU",
+    "subReasoning": "In this problem, we are given the number of boys (11) and the number of girls (7). Both of these are 'parts' of the total group of children. The question asks for the total number of children, which represents the 'whole' amount when the parts are combined. Since the sum or the 'whole' is what we need to find, it fits the definition of Combine, Whole Unknown.",
+    "tokenUsage": {
+      "prompt": 408,
+      "completion": 244,
+      "total": 652
+    },
+    "modelAnswers": {
+      "part1": 11,
+      "part2": 7,
+      "whole": null
+    },
+    "answer": 18,
+    "reasoning": "11 (boys) + 7 (girls) = 18. So, there were 18 children in the pool.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many boys were swimming in the pool?",
+        "boxTarget": "part1",
+        "context": "Here we're thinking about the group of boys.  Look at the story and find the number that tells us how many boys there were. That number will help us fill in this first part!"
+      },
+      {
+        "text": "How many girls were swimming in the pool?",
+        "boxTarget": "part2",
+        "context": "Now let's think about the girls. Can you find the number in the story that tells us exactly how many girls were there? That number will go in this second spot!"
+      },
+      {
+        "text": "How many children were swimming in the pool altogether?",
+        "boxTarget": "whole",
+        "context": "This is what we want to find out! We want to know the total number of all the children, both boys and girls, swimming together. This is the answer to our question. What do you think we need to do with our two parts to find the whole?"
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CWU",
+    "groundTruthAnswer": 18,
+    "groundTruthModelAnswers": {
+      "part1": 11,
+      "part2": 7,
+      "whole": null
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "There are 5 mugs on the upper shelf. There are just as many mugs on the lower shelf. How many mugs are there in total?",
+    "output": "This problem describes two distinct quantities of mugs (mugs on the upper shelf and mugs on the lower shelf). Although the quantity on the lower shelf is described relative to the upper shelf ('just as many'), the core action is still combining these two separate groups to find a total number of mugs. There is no change over time or comparison of differences.",
+    "category": "Combine",
+    "subcategory": "CWU",
+    "subReasoning": "The problem states that there are 5 mugs on the upper shelf, which we can identify as Part 1. It also states that there are 'just as many' mugs on the lower shelf, meaning there are 5 mugs, which we can identify as Part 2. The question asks 'How many mugs are there in total?', which means the Whole is unknown. Since the Whole is unknown, this falls under the 'Whole Unknown' type.",
+    "tokenUsage": {
+      "prompt": 413,
+      "completion": 244,
+      "total": 657
+    },
+    "modelAnswers": {
+      "part1": 5,
+      "part2": 5,
+      "whole": null
+    },
+    "answer": 10,
+    "reasoning": "We are combining two groups of mugs. Part 1 is 5 mugs (upper shelf) and Part 2 is 5 mugs (lower shelf). To find the total (Whole), we add the two parts: 5 + 5 = 10. So, there are 10 mugs in total.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many mugs are on the upper shelf?",
+        "boxTarget": "part1",
+        "context": "Let's think about the first group of mugs we hear about in the story. Look closely at the problem to find out how many mugs are on the upper shelf. That's our first 'part'!"
+      },
+      {
+        "text": "How many mugs are on the lower shelf?",
+        "boxTarget": "part2",
+        "context": "Now let's find out about the second group of mugs! The problem tells us something special about the mugs on the lower shelf. Read carefully to see how many there are. That will be our second 'part'!"
+      },
+      {
+        "text": "How many mugs are there in total?",
+        "boxTarget": "whole",
+        "context": "Great job finding the two 'parts'! Now, the story wants to know how many mugs there are altogether, when we put both groups together. This is the 'whole' amount of mugs!"
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CWU",
+    "groundTruthAnswer": 10,
+    "groundTruthModelAnswers": {
+      "part1": 5,
+      "part2": 5,
+      "whole": null
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "There are 9 jars of strawberry jam on one shelf. On the other shelf, there are 6 jars of apple jam. How many jars of jam are there altogether?",
+    "output": "This problem presents two distinct quantities of jam (strawberry jam and apple jam) located on different shelves. The question asks for the total number of jars 'altogether', indicating that these two separate quantities are to be grouped. There is no event leading to a change in the number of jars over time, nor is there a comparison of the quantities.",
+    "category": "Combine",
+    "subcategory": "CWU",
+    "subReasoning": "In this problem, 'Part 1' is 9 jars of strawberry jam, and 'Part 2' is 6 jars of apple jam. Both parts are known. The question asks 'How many jars of jam are there altogether?', which represents the 'Whole' amount. Since the 'Whole' is the unknown quantity, this problem falls into the 'Whole Unknown' category.",
+    "tokenUsage": {
+      "prompt": 419,
+      "completion": 221,
+      "total": 640
+    },
+    "modelAnswers": {
+      "part1": 9,
+      "part2": 6,
+      "whole": null
+    },
+    "answer": 15,
+    "reasoning": "To find the total number of jars, we combine the jars of strawberry jam (9) and the jars of apple jam (6). So, 9 + 6 = 15. There are 15 jars of jam altogether.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many jars of strawberry jam are on one shelf?",
+        "boxTarget": "part1",
+        "context": "Here, we're looking for the number of jars of strawberry jam. It's the first group of jars we hear about in our story."
+      },
+      {
+        "text": "How many jars of apple jam are on the other shelf?",
+        "boxTarget": "part2",
+        "context": "Now, let's find out how many jars of apple jam are on the other shelf. This is our second group of jars."
+      },
+      {
+        "text": "How many jars of jam are there altogether?",
+        "boxTarget": "whole",
+        "context": "This is what we want to find out! When we put the strawberry jam and the apple jam together, how many jars do we have in total? This is the 'whole' amount of jam jars."
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CWU",
+    "groundTruthAnswer": 15,
+    "groundTruthModelAnswers": {
+      "part1": 9,
+      "part2": 6,
+      "whole": null
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "Mom had 10 days of winter vacation and 18 days of summer vacation. How many days did Mom vacation in total during the year?",
+    "output": "This problem describes two distinct periods of vacation (winter and summer) that Mom had. The question asks for the total vacation days 'in total', which means combining these two separate quantities. Even though the vacations happened at different times, there is no transformation or change in a single quantity over time; rather, two independent quantities are being aggregated.",
+    "category": "Combine",
+    "subcategory": "CWU",
+    "subReasoning": "First, I identify the quantities in the 'Combine' model. Part 1 is the 10 days of winter vacation. Part 2 is the 18 days of summer vacation. The Whole is the total number of days Mom vacationed, which is unknown. Since the 'Whole' is the unknown quantity, this problem fits the Combine, Whole Unknown (CWU) type.",
+    "tokenUsage": {
+      "prompt": 416,
+      "completion": 213,
+      "total": 629
+    },
+    "modelAnswers": {
+      "part1": 10,
+      "part2": 18,
+      "whole": null
+    },
+    "answer": 28,
+    "reasoning": "This is a combine problem where we are given two parts (winter vacation and summer vacation) and need to find the whole (total vacation days). Part 1 is 10 days and Part 2 is 18 days. To find the whole, we add the parts together: 10 + 18 = 28. So, Mom vacationed a total of 28 days.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many days of winter vacation did Mom have?",
+        "boxTarget": "part1",
+        "context": "Here, we're looking for the first group of days Mom had off. Can you find the number of days she had for winter vacation in the story?"
+      },
+      {
+        "text": "How many days of summer vacation did Mom have?",
+        "boxTarget": "part2",
+        "context": "Now, let's find the second group of days. The story tells us Mom also had summer vacation. How many days was that?"
+      },
+      {
+        "text": "How many days did Mom vacation in total during the year?",
+        "boxTarget": "whole",
+        "context": "This is the most important part! We want to know all together how many days Mom got to vacation. This is what we need to figure out."
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CWU",
+    "groundTruthAnswer": 28,
+    "groundTruthModelAnswers": {
+      "part1": 10,
+      "part2": 18,
+      "whole": null
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "There are 28 asters and 6 chrysanthemums blooming in the flowerbed. How many flowers are blooming in the flowerbed?",
+    "output": "This problem describes two distinct types of flowers (asters and chrysanthemums) that are blooming in the flowerbed. To find the total number of flowers, these two separate quantities are grouped together. There is no action indicating a quantity changing over time, nor is there a comparison between the types of flowers.",
+    "category": "Combine",
+    "subcategory": "CWU",
+    "subReasoning": "The problem presents two distinct quantities, 28 asters and 6 chrysanthemums, which represent 'parts' of a larger group of flowers. The question asks for the 'total' number of flowers blooming, which implies combining these two parts to find the 'whole' amount. According to the Combine model (Part 1 + Part 2 = Whole), we have Part 1 = 28 (asters) and Part 2 = 6 (chrysanthemums). The unknown is the 'Whole' amount, the total number of flowers. Therefore, since the Whole is unknown, it falls under the CWU (Combine, Whole Unknown) category.",
+    "tokenUsage": {
+      "prompt": 414,
+      "completion": 222,
+      "total": 636
+    },
+    "modelAnswers": {
+      "part1": 28,
+      "part2": 6,
+      "whole": null
+    },
+    "answer": 34,
+    "reasoning": "28 (asters) + 6 (chrysanthemums) = 34 (total flowers). So, there are 34 flowers blooming in the flowerbed.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many asters are in the flowerbed?",
+        "boxTarget": "part1",
+        "context": "This question asks us to find the number of one kind of flower that is blooming. It's the first group of flowers we see in our story."
+      },
+      {
+        "text": "How many chrysanthemums are in the flowerbed?",
+        "boxTarget": "part2",
+        "context": "This question asks us to find the number of the other kind of pretty flower that is blooming. It's the second group of flowers in our story."
+      },
+      {
+        "text": "How many flowers are blooming in the flowerbed altogether?",
+        "boxTarget": "whole",
+        "context": "This question asks us to find the total number of all the flowers when we put them all together. It's like asking for the grand total of flowers in the entire flowerbed!"
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CWU",
+    "groundTruthAnswer": 34,
+    "groundTruthModelAnswers": {
+      "part1": 28,
+      "part2": 6,
+      "whole": null
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "There are 12 blue and 9 green plates in the cupboard. How many plates are there in total?",
+    "output": "This problem identifies two distinct groups of plates (blue plates and green plates) within the cupboard. The question asks for the total number of plates, which means these two separate quantities are being combined. There is no transformation or change happening to the plates over time, nor is there a desire to compare the numbers of blue versus green plates.",
+    "category": "Combine",
+    "subcategory": "CWU",
+    "subReasoning": "Following Step 2, the quantities in the combine model are identified: Part 1 is 12 blue plates, Part 2 is 9 green plates, and the Whole (total number of plates) is unknown. According to Step 3, if the Whole is unknown, the type is Combine, Whole Unknown (CWU).",
+    "tokenUsage": {
+      "prompt": 408,
+      "completion": 199,
+      "total": 607
+    },
+    "modelAnswers": {
+      "part1": 12,
+      "part2": 9,
+      "whole": null
+    },
+    "answer": 21,
+    "reasoning": "To find the total number of plates, I combined the blue plates (12) and the green plates (9). 12 + 9 = 21. Therefore, there are 21 plates in total.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many blue plates are there?",
+        "boxTarget": "part1",
+        "context": "Here, we're thinking about the first group of plates we see in the problem. How many blue ones did we find?"
+      },
+      {
+        "text": "How many green plates are there?",
+        "boxTarget": "part2",
+        "context": "Now, let's look for the second group of plates. How many green ones are there in the cupboard?"
+      },
+      {
+        "text": "How many plates are there in total?",
+        "boxTarget": "whole",
+        "context": "This is what you need to figure out! It's asking for all the plates together – the blue ones and the green ones. You'll put them all into one big group to find the answer."
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CWU",
+    "groundTruthAnswer": 21,
+    "groundTruthModelAnswers": {
+      "part1": 12,
+      "part2": 9,
+      "whole": null
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "The library loaned out 15 fairy tale books and 11 poetry books. How many books were loaned out in total?",
+    "output": "This problem describes two distinct categories of books (fairy tale and poetry) that were loaned out by the library. The question asks for the total number of books loaned out, indicating that these two separate quantities are to be grouped together. There is no change in a quantity over time, nor is there a comparison between the two types of books.",
+    "category": "Combine",
+    "subcategory": "CWU",
+    "subReasoning": "First, I identify the quantities in the combine model. Part 1 is '15 fairy tale books' and Part 2 is '11 poetry books'. The Whole is 'the total combined amount' which is what the question asks for. Since the 'Whole' is the unknown quantity, this problem is classified as a Combine, Whole Unknown (CWU) type.",
+    "tokenUsage": {
+      "prompt": 412,
+      "completion": 186,
+      "total": 598
+    },
+    "modelAnswers": {
+      "part1": 15,
+      "part2": 11,
+      "whole": null
+    },
+    "answer": 26,
+    "reasoning": "We are combining the number of fairy tale books (15) and poetry books (11) to find the total number of books loaned out. So, 15 + 11 = 26.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many fairy tale books did the library loan out?",
+        "boxTarget": "part1",
+        "context": "This is the first type of book the library loaned out. Can you find that number in the story?"
+      },
+      {
+        "text": "How many poetry books did the library loan out?",
+        "boxTarget": "part2",
+        "context": "This is the second type of book the library loaned out. The story tells us how many of these there were!"
+      },
+      {
+        "text": "What are we trying to find out in this story?",
+        "boxTarget": "whole",
+        "context": "The question asks us to figure out something about ALL the books together. What is that something?"
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CWU",
+    "groundTruthAnswer": 26,
+    "groundTruthModelAnswers": {
+      "part1": 15,
+      "part2": 11,
+      "whole": null
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "There are 4 girls and 7 boys in the class. How many students are in the class altogether?",
+    "output": "This problem presents two distinct groups (girls and boys) in the class and asks for the total. There is no mention of change, loss, or transfer—just combining two groups to find a total.",
+    "category": "Combine",
+    "subcategory": "CWU",
+    "subReasoning": "In this problem, '4 girls' and '7 boys' are the two known parts, and the question asks for the total number of students in the class, which is the whole. Since the whole is unknown and we are given both parts, this fits the Combine, Whole Unknown (CWU) structure.",
+    "tokenUsage": {
+      "prompt": 393,
+      "completion": 177,
+      "total": 570
+    },
+    "modelAnswers": {
+      "part1": 4,
+      "part2": 7,
+      "whole": null
+    },
+    "answer": 11,
+    "reasoning": "4 + 7 = 11, so there are 11 students in the class altogether.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many girls are in the class?",
+        "boxTarget": "part1",
+        "context": "This question asks you to look at the story and find out how many girls there are in the classroom. We want to know the number of girls first."
+      },
+      {
+        "text": "How many boys are in the class?",
+        "boxTarget": "part2",
+        "context": "Now, let's see how many boys are in the classroom. This will help us know about the other group of students."
+      },
+      {
+        "text": "How many students are in the class altogether?",
+        "boxTarget": "whole",
+        "context": "This question is asking you to find out the total, or how many students there are when we put both the girls and boys together."
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CWU",
+    "groundTruthAnswer": 11,
+    "groundTruthModelAnswers": {
+      "part1": 4,
+      "part2": 7,
+      "whole": null
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "Kristel picked 6 boletus mushrooms and 7 russulas. How many mushrooms did Kristel pick in total?",
+    "output": "Kristel picked two types of mushrooms. The problem asks for the total of these two distinct (but not changing) quantities. There is no transformation, just summing different kinds.",
+    "category": "Combine",
+    "subcategory": "CWU",
+    "subReasoning": "The quantities in the problem are: Part 1 (6 boletus mushrooms), Part 2 (7 russulas), and the Whole (total mushrooms picked) is unknown. Using the combine model, we have 6 + 7 = ?. Since the Whole is unknown, this matches the definition of 'Combine, Whole Unknown' (CWU).",
+    "tokenUsage": {
+      "prompt": 396,
+      "completion": 175,
+      "total": 571
+    },
+    "modelAnswers": {
+      "part1": 6,
+      "part2": 7,
+      "whole": null
+    },
+    "answer": 13,
+    "reasoning": "6 + 7 = 13, so Kristel picked 13 mushrooms in total.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many boletus mushrooms did Kristel pick?",
+        "boxTarget": "part1",
+        "context": "This question helps you find out how many boletus mushrooms Kristel found. Let's see what that number is in the story."
+      },
+      {
+        "text": "How many russulas did Kristel pick?",
+        "boxTarget": "part2",
+        "context": "Now let's look for the number of russulas Kristel picked, too. We'll need this number to find out the total."
+      },
+      {
+        "text": "How many mushrooms did Kristel pick in all?",
+        "boxTarget": "whole",
+        "context": "This question is asking us to add Kristel's boletus and russulas together to find the total number of mushrooms she picked."
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CWU",
+    "groundTruthAnswer": 13,
+    "groundTruthModelAnswers": {
+      "part1": 6,
+      "part2": 7,
+      "whole": null
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "The freight train consisted of 8 container cars and 10 tank cars. How many cars were on the train?",
+    "output": "This problem is about two types of train cars present at the same time. It asks for the total. No item is being moved in or out, so the context is combining distinct parts into a whole.",
+    "category": "Combine",
+    "subcategory": "CWU",
+    "subReasoning": "In the problem, the two known quantities are 8 container cars (Part 1) and 10 tank cars (Part 2). The unknown is the total number of cars on the train (Whole). Since the unknown is the whole in the equation Part 1 + Part 2 = Whole, this is classified as a Combine, Whole Unknown (CWU) problem.",
+    "tokenUsage": {
+      "prompt": 394,
+      "completion": 176,
+      "total": 570
+    },
+    "modelAnswers": {
+      "part1": 8,
+      "part2": 10,
+      "whole": null
+    },
+    "answer": 18,
+    "reasoning": "8 + 10 = 18, so there were 18 cars on the train.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many container cars were on the train?",
+        "boxTarget": "part1",
+        "context": "This question is looking for the number of container cars in the story. Think about how many of these special cars the train had."
+      },
+      {
+        "text": "How many tank cars were on the train?",
+        "boxTarget": "part2",
+        "context": "This question asks about the tank cars. Try to remember or check how many tank cars the train has in the problem."
+      },
+      {
+        "text": "How many cars were there on the train in all?",
+        "boxTarget": "whole",
+        "context": "This question is asking you to find the total number of cars on the train when you put both the container cars and tank cars together."
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CWU",
+    "groundTruthAnswer": 18,
+    "groundTruthModelAnswers": {
+      "part1": 8,
+      "part2": 10,
+      "whole": null
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "There were 11 boys and 7 girls swimming in the pool. How many children were in the pool?",
+    "output": "This problem presents two groups (boys and girls) that are independent and are to be summed together. It is not about change or comparison but about finding the total of both groups.",
+    "category": "Combine",
+    "subcategory": "CWU",
+    "subReasoning": "The problem presents two known parts: 11 boys and 7 girls. It then asks for the total number of children in the pool, which is the combined total. According to the Combine model, this is structured as Part 1 (boys) + Part 2 (girls) = Whole (total children). Here, the Whole is unknown, while both Parts are known. This matches the Whole Unknown type (CWU).",
+    "tokenUsage": {
+      "prompt": 393,
+      "completion": 189,
+      "total": 582
+    },
+    "modelAnswers": {
+      "part1": 11,
+      "part2": 7,
+      "whole": null
+    },
+    "answer": 18,
+    "reasoning": "11 + 7 = 18, so there were 18 children in the pool.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many boys are swimming in the pool?",
+        "boxTarget": "part1",
+        "context": "This question helps us find out one group of children in the pool—the boys. Let's look to see how many boys are in the pool, just like the story tells us."
+      },
+      {
+        "text": "How many girls are swimming in the pool?",
+        "boxTarget": "part2",
+        "context": "Now we're going to check how many girls are swimming. This helps us figure out the other group of children in the pool."
+      },
+      {
+        "text": "How many children are swimming in the pool all together?",
+        "boxTarget": "whole",
+        "context": "This question asks us to put both groups, the boys and girls, together. We want to know how many children are in the pool in total."
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CWU",
+    "groundTruthAnswer": 18,
+    "groundTruthModelAnswers": {
+      "part1": 11,
+      "part2": 7,
+      "whole": null
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "There are 5 mugs on the upper shelf. There are just as many mugs on the lower shelf. How many mugs are there in total?",
+    "output": "The problem describes two groups of mugs (upper and lower shelf) and asks for their sum. It is not about a change in number or comparing two quantities; it focuses on the total by combining two groups.",
+    "category": "Combine",
+    "subcategory": "CWU",
+    "subReasoning": "In this problem, we know the number of mugs on the upper shelf (5), and we are told that there are just as many on the lower shelf, which means the lower shelf also has 5 mugs. Both part quantities are known. The question asks for the total number of mugs in both places combined. This means the whole (total number of mugs) is unknown. According to the COMPS framework, when the whole is unknown, it is classified as Combine, Whole Unknown (CWU).",
+    "tokenUsage": {
+      "prompt": 400,
+      "completion": 169,
+      "total": 569
+    },
+    "modelAnswers": {
+      "part1": 5,
+      "part2": 5,
+      "whole": null
+    },
+    "answer": 10,
+    "reasoning": "There are 5 mugs on the upper shelf and 5 mugs on the lower shelf; adding them together, 5 + 5 = 10 mugs in total.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many mugs are on the upper shelf?",
+        "boxTarget": "part1",
+        "context": "This question helps us find out how many mugs are on the first shelf. We want to know the number of mugs that are placed up high."
+      },
+      {
+        "text": "How many mugs are on the lower shelf?",
+        "boxTarget": "part2",
+        "context": "Let's figure out how many mugs are sitting on the lower shelf, just like we did with the upper shelf."
+      },
+      {
+        "text": "How many mugs are there altogether on both shelves?",
+        "boxTarget": "whole",
+        "context": "Now, we're going to find out the total number of mugs when we look at both shelves together."
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CWU",
+    "groundTruthAnswer": 10,
+    "groundTruthModelAnswers": {
+      "part1": 5,
+      "part2": 5,
+      "whole": null
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "There are 9 jars of strawberry jam on one shelf. On the other shelf, there are 6 jars of apple jam. How many jars of jam are there altogether?",
+    "output": "This problem introduces two groups (jars of different jams on separate shelves) and asks for their total. There is no indication of movement or change, so it's a combine situation.",
+    "category": "Combine",
+    "subcategory": "CWU",
+    "subReasoning": "In this problem, 'Part 1' is the 9 jars of strawberry jam, and 'Part 2' is the 6 jars of apple jam. The problem asks, 'How many jars of jam are there altogether?', which means the total amount (the Whole) is unknown. Since the Whole is unknown, this follows the Combine model with the Whole Unknown.",
+    "tokenUsage": {
+      "prompt": 406,
+      "completion": 183,
+      "total": 589
+    },
+    "modelAnswers": {
+      "part1": 9,
+      "part2": 6,
+      "whole": null
+    },
+    "answer": 15,
+    "reasoning": "9 + 6 = 15, so there are 15 jars of jam altogether.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many jars of strawberry jam are on the first shelf?",
+        "boxTarget": "part1",
+        "context": "This question helps us find out the number of strawberry jam jars on the first shelf. Let's look carefully at how many are there!"
+      },
+      {
+        "text": "How many jars of apple jam are on the other shelf?",
+        "boxTarget": "part2",
+        "context": "This question asks us to see how many apple jam jars are on the other shelf. Try to picture them in your mind."
+      },
+      {
+        "text": "How many jars of jam are there on both shelves altogether?",
+        "boxTarget": "whole",
+        "context": "This question is about adding both groups together—the strawberry jam and the apple jam—to find out how many jars there are in all!"
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CWU",
+    "groundTruthAnswer": 15,
+    "groundTruthModelAnswers": {
+      "part1": 9,
+      "part2": 6,
+      "whole": null
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "Mom had 10 days of winter vacation and 18 days of summer vacation. How many days did Mom vacation in total during the year?",
+    "output": "Although the vacations happened in different seasons (times), the problem does not focus on change but simply asks for the total by grouping both vacation periods.",
+    "category": "Combine",
+    "subcategory": "CWU",
+    "subReasoning": "The problem gives us the number of days Mom spent on winter vacation (10 days) and the number of days on summer vacation (18 days). It then asks for the total number of days she vacationed during the year, which is the whole. Both parts are given and the whole is unknown.",
+    "tokenUsage": {
+      "prompt": 400,
+      "completion": 187,
+      "total": 587
+    },
+    "modelAnswers": {
+      "part1": 10,
+      "part2": 18,
+      "whole": null
+    },
+    "answer": 28,
+    "reasoning": "10 + 18 = 28, so Mom vacationed for 28 days in total during the year.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many days did Mom have for her winter vacation?",
+        "boxTarget": "part1",
+        "context": "This question is asking about the number of days Mom spent on winter vacation. Let’s look for the days she took off just for winter fun!"
+      },
+      {
+        "text": "How many days did Mom have for her summer vacation?",
+        "boxTarget": "part2",
+        "context": "This question is about how many days Mom vacationed in the summer. Let’s find out how many summer days Mom enjoyed her break."
+      },
+      {
+        "text": "How many days did Mom have vacation altogether during the year?",
+        "boxTarget": "whole",
+        "context": "This question is asking us to find out the total number of vacation days Mom had in the whole year, both winter and summer combined."
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CWU",
+    "groundTruthAnswer": 28,
+    "groundTruthModelAnswers": {
+      "part1": 10,
+      "part2": 18,
+      "whole": null
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "There are 28 asters and 6 chrysanthemums blooming in the flowerbed. How many flowers are blooming in the flowerbed?",
+    "output": "Two types of flowers (asters and chrysanthemums) are being counted for a total in the same situation. The problem does not suggest any transformation; it is about combining two quantities.",
+    "category": "Combine",
+    "subcategory": "CWU",
+    "subReasoning": "The problem presents two groups: 28 asters (Part 1) and 6 chrysanthemums (Part 2). It then asks for the total number of flowers blooming in the flowerbed, which represents the Whole. Both parts are known, but the whole is unknown and needs to be found. According to the COMPS framework, if the whole is unknown, the problem is classified as Combine, Whole Unknown (CWU).",
+    "tokenUsage": {
+      "prompt": 396,
+      "completion": 168,
+      "total": 564
+    },
+    "modelAnswers": {
+      "part1": 28,
+      "part2": 6,
+      "whole": null
+    },
+    "answer": 34,
+    "reasoning": "28 + 6 = 34, so there are 34 flowers blooming in the flowerbed.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many asters are blooming in the flowerbed?",
+        "boxTarget": "part1",
+        "context": "This question asks you to remember how many of the flowers are asters, just like in the story."
+      },
+      {
+        "text": "How many chrysanthemums are blooming in the flowerbed?",
+        "boxTarget": "part2",
+        "context": "This question is about the number of chrysanthemums blooming, so you can find out how many of these flowers are in the flowerbed."
+      },
+      {
+        "text": "How many flowers are blooming in the flowerbed in all?",
+        "boxTarget": "whole",
+        "context": "This question helps you figure out the total number of flowers by putting all the asters and chrysanthemums together."
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CWU",
+    "groundTruthAnswer": 34,
+    "groundTruthModelAnswers": {
+      "part1": 28,
+      "part2": 6,
+      "whole": null
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "There are 12 blue and 9 green plates in the cupboard. How many plates are there in total?",
+    "output": "This problem involves two groups (blue and green plates) and asks for the total number. There is no transformation or comparison—simply combining separate parts.",
+    "category": "Combine",
+    "subcategory": "CWU",
+    "subReasoning": "According to the combine structure, Part 1 is the number of blue plates (12), Part 2 is the number of green plates (9), and the Whole is the total number of plates, which is unknown. Since the unknown is the Whole, this problem is classified as Combine, Whole Unknown (CWU).",
+    "tokenUsage": {
+      "prompt": 393,
+      "completion": 165,
+      "total": 558
+    },
+    "modelAnswers": {
+      "part1": 12,
+      "part2": 9,
+      "whole": null
+    },
+    "answer": 21,
+    "reasoning": "12 + 9 = 21, so there are 21 plates in total.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many blue plates are in the cupboard?",
+        "boxTarget": "part1",
+        "context": "This question helps us find out the number of blue plates we have. Let's look for just the blue plates in the story."
+      },
+      {
+        "text": "How many green plates are in the cupboard?",
+        "boxTarget": "part2",
+        "context": "This question asks about the number of green plates. We're thinking only about the green plates now."
+      },
+      {
+        "text": "How many plates are there in the cupboard altogether?",
+        "boxTarget": "whole",
+        "context": "This question wants us to find the total number of plates, by putting together the blue plates and the green plates."
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CWU",
+    "groundTruthAnswer": 21,
+    "groundTruthModelAnswers": {
+      "part1": 12,
+      "part2": 9,
+      "whole": null
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "The library loaned out 15 fairy tale books and 11 poetry books. How many books were loaned out in total?",
+    "output": "The problem asks for the total number of books loaned out, divided into fairy tale and poetry books. The two quantities are distinct, and nothing changes about them—it's about combining the parts.",
+    "category": "Combine",
+    "subcategory": "CWU",
+    "subReasoning": "In this problem, the two parts are the 15 fairy tale books and the 11 poetry books that were loaned out. The total number of books loaned out in all is the whole. The question is asking for the total, which means the whole is unknown. Therefore, this is a Combine, Whole Unknown (CWU) problem.",
+    "tokenUsage": {
+      "prompt": 397,
+      "completion": 177,
+      "total": 574
+    },
+    "modelAnswers": {
+      "part1": 15,
+      "part2": 11,
+      "whole": null
+    },
+    "answer": 26,
+    "reasoning": "15 + 11 = 26, so the total number of books loaned out is 26.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many fairy tale books did the library loan out?",
+        "boxTarget": "part1",
+        "context": "This question is asking you to remember just the number of fairy tale books that were loaned out, not any other kind of book."
+      },
+      {
+        "text": "How many poetry books did the library loan out?",
+        "boxTarget": "part2",
+        "context": "This question helps you find out only how many poetry books were loaned out by the library."
+      },
+      {
+        "text": "How many books did the library loan out in total?",
+        "boxTarget": "whole",
+        "context": "This question is asking you to put together both the fairy tale books and poetry books to find the total number of books the library loaned out."
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CWU",
+    "groundTruthAnswer": 26,
+    "groundTruthModelAnswers": {
+      "part1": 15,
+      "part2": 11,
+      "whole": null
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  }
+]
