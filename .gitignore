@@ -9,6 +9,9 @@ build/
 out/
 coverage/
 .nyc_output/
+*.tsbuildinfo
+tsconfig.tsbuildinfo
+.tsbuildinfo
 
 # Environment files
 .env
@@ -41,6 +44,29 @@ Thumbs.db
 .idea/
 *.swp
 
+# Package manager files
+.npmrc
+.yarnrc
+.yarnrc.yml
+.yarn-integrity
+
+# Cache directories
+.cache/
+.parcel-cache/
+.eslintcache
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Optional npm cache directory
+.npm
+
+# Optional REPL history
+.node_repl_history
+
 # Misc
 *.tgz
 *.gz
@@ -52,11 +78,9 @@ Thumbs.db
 *.bak
 *.tmp
 *.temp
-*.pid
 
-# Ignore test coverage
-coverage/
-.nyc_output/
+# Next.js
+next-env.d.ts
 
 # Ignore local data
 data/
