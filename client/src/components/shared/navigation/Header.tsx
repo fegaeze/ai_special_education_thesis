@@ -33,7 +33,7 @@ export default function Header({ hasError }: { hasError?: boolean }) {
             </Link>
 
             <nav
-              className="ml-30 flex items-center"
+              className="ml-24 flex items-center space-x-8"
               aria-label="Main navigation"
             >
               <NavLink href="/teacher-dashboard" exact>
@@ -46,7 +46,7 @@ export default function Header({ hasError }: { hasError?: boolean }) {
           <div className="flex items-center space-x-4 ml-auto">
             {!hasError && <ClassSwitcher />}
             <Button
-              className="text-white bg-destructive hover:bg-destructive/90 p-2 h-9 w-9 flex items-center justify-center"
+              className="text-white bg-red-600 hover:bg-red-700 p-2 h-9 w-9 flex items-center justify-center"
               onClick={handleLogout}
               aria-label="Logout"
               title="Logout"

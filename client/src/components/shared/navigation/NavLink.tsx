@@ -24,7 +24,7 @@ export function NavLink({
   return (
     <Link
       href={href}
-      className={`text-sm text-gray-700 ml-2 px-2 py-1 rounded transition-colors ${
+      className={`text-sm text-gray-700 px-2 py-1 rounded transition-colors ${
         isActive ? "text-primary font-semibold" : "hover:text-gray-700"
       } ${className}`}
       {...props}
