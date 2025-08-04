@@ -5,10 +5,11 @@
   "main": "dist/server.js",
   "scripts": {
     "dev": "nodemon --watch '*.ts' --watch 'routes/**/*.ts' --watch 'config/**/*.ts' --watch 'middleware/**/*.ts' --watch 'lib/**/*.ts' --exec ts-node server.ts",
-    "build": "prisma generate && tsc",
+    "build": "prisma generate && prisma migrate deploy && tsc",
     "start": "node dist/server.js",
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate dev",
+    "prisma:migrate:deploy": "prisma migrate deploy",
     "prisma:studio": "prisma studio",
     "seed:problems": "ts-node scripts/seed-problems.ts",
     "lint": "eslint .",
