@@ -42,10 +42,8 @@ export default function QuizResultsPage() {
   }
 
   return (
-    <QuizProtectedRoute quizCode={code}>
-      <Card className="min-h-150 p-8 mb-6 bg-white/95 backdrop-blur-sm border-0 shadow-2xl flex flex-col items-center">
-        <CongratulatoryPage onExitHome={handleExitToHome} />
-      </Card>
-    </QuizProtectedRoute>
+    <Card className="min-h-150 p-8 mb-6 bg-white/95 backdrop-blur-sm border-0 shadow-2xl flex flex-col items-center">
+      <CongratulatoryPage onExitHome={handleExitToHome} />
+    </Card>
   );
 }

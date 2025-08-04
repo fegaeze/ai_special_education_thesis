@@ -33,7 +33,7 @@ export default function Header({ hasError }: { hasError?: boolean }) {
             </Link>
 
             <nav
-              className="ml-24 flex items-center space-x-8"
+              className="ml-24 flex items-center space-x-4"
               aria-label="Main navigation"
             >
               <NavLink href="/teacher-dashboard" exact>
