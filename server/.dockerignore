@@ -6,4 +6,5 @@ README.md
 .env
 .env.*
 dist
-*.log 
+*.log
+.DS_Store 

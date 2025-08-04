@@ -15,8 +15,7 @@
     "seed:problems": "ts-node scripts/seed-problems.ts",
     "seed:problems:prod": "NODE_ENV=production ts-node scripts/seed-problems.ts",
     "lint": "eslint .",
-    "format": "prettier --write .",
-    "postinstall": "prisma generate"
+    "format": "prettier --write ."
   },
   "keywords": [],
   "author": "",
