@@ -44,6 +44,7 @@ export default function DashboardPage() {
 
   const handleQuizCreated = () => {
     setActiveTab("quizzes"); // Switch to quiz management tab
+    fetchQuizSessions(); // Refresh quiz sessions list
     refetchAnalytics(); // Refresh analytics after creating a quiz
   };
 
