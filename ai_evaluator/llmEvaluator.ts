@@ -249,11 +249,11 @@ async function callStoryGrammarGenerator(
 
 function normalize(str: string): string {
   return str
-    .replace(/[""]/g, '"') // convert curly double quotes
-    .replace(/['']/g, "'") // convert curly single quotes
-    .replace(/\u00A0/g, " ") // replace non-breaking space with regular space
+    .replace(/[\u201C\u201D]/g, '"') // U+201C/U+201D curly double quotes → straight
+    .replace(/[\u2018\u2019]/g, "'") // U+2018/U+2019 curly single quotes → straight
+    .replace(/\u00A0/g, " ") // non-breaking space → regular space
     .replace(/\s+/g, " ") // collapse multiple spaces
-    .trim(); // trim leading/trailing spaces
+    .trim();
 }
 
 // ─── STEP 1: Parse Supercategory JSON Output ───────────────────────────────────
@@ -283,6 +283,13 @@ function parseBatchLLMResponse(
       }
 
       if (!match) {
+        console.warn(`⚠️ No match found for problem: "${problem.slice(0, 80)}"`);
+        const normOrig = normalizedProblem.slice(0, 30);
+        const firstKey = ([...parsedMap.keys()][0] as string).slice(0, 30);
+        console.warn(`   normalizedProblem[0..30]: ${JSON.stringify(normOrig)}`);
+        console.warn(`   firstMapKey[0..30]:       ${JSON.stringify(firstKey)}`);
+        console.warn(`   normOrig hex: ${[...normOrig].map(c => c.charCodeAt(0).toString(16)).join(' ')}`);
+        console.warn(`   firstKey hex: ${[...firstKey].map(c => c.charCodeAt(0).toString(16)).join(' ')}`);
         return {
           modelName,
           problem,
@@ -291,13 +298,24 @@ function parseBatchLLMResponse(
         };
       }
 
+      const rawCategory =
+        match.category.trim().charAt(0).toUpperCase() +
+        match.category.slice(1).toLowerCase();
+      const validCategories = ["Change", "Combine", "Compare"];
+      const category = validCategories.includes(rawCategory)
+        ? rawCategory
+        : (() => {
+            console.warn(
+              `⚠️ Model returned invalid category "${rawCategory}" for problem: "${problem.slice(0, 60)}..." — defaulting to "Combine"`,
+            );
+            return "Combine";
+          })();
+
       return {
         modelName,
         problem,
         output: match.reasoning,
-        category:
-          match.category.trim().charAt(0).toUpperCase() +
-          match.category.slice(1).toLowerCase(),
+        category,
       };
     });
   } catch (err) {
@@ -375,14 +393,22 @@ async function callOpenRouterBatch(
         modelName,
       );
 
-      // Step 4: Story Grammar Generation
-      const storyGrammar = await callStoryGrammarGenerator(
-        res.problem,
-        subtype.subcategory,
-        modelAnswer.modelAnswers,
-        modelAnswer.answer,
-        modelName,
-      );
+      // Step 4: Story Grammar Generation (skip if subcategory is unknown)
+      const storyGrammar =
+        subtype.subcategory && subtype.subcategory !== "Unknown"
+          ? await callStoryGrammarGenerator(
+              res.problem,
+              subtype.subcategory,
+              modelAnswer.modelAnswers,
+              modelAnswer.answer,
+              modelName,
+            ).catch((err) => {
+              console.warn(
+                `⚠️ Story grammar generation failed for "${res.problem.slice(0, 60)}...": ${err instanceof Error ? err.message : String(err)}`,
+              );
+              return { storyGrammarPrompts: [] as { text: string; boxTarget: string; context?: string }[], tokenUsage: undefined };
+            })
+          : { storyGrammarPrompts: [] as { text: string; boxTarget: string; context?: string }[], tokenUsage: undefined };
 
       // Combine all results
       return {

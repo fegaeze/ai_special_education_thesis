@@ -1,0 +1,1694 @@
+[
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "The school’s junior choir contains 32 kids from Grade 1 and Grade 2. 17 children are from Grade 2. How many children are from Grade 1?",
+    "output": "This problem describes two distinct groups (Grade 1 and Grade 2 students) that are grouped together to form a total (32 kids in the choir). No transformation or change occurs over time - the parts simply exist together to make up the whole choir. We're finding one part when given the total and the other part.",
+    "category": "Combine",
+    "subcategory": "CPU",
+    "subReasoning": "This problem involves combining two parts to make a whole. The whole is the total number of kids in the junior choir (32 kids). Part 1 is the number of children from Grade 2 (17 children, which is known). Part 2 is the number of children from Grade 1, which is what we're asked to find (unknown). Since we know the whole (32) and one part (17), but need to find the other part (Grade 1 children), this is a Combine, Part Unknown problem.",
+    "tokenUsage": {
+      "prompt": 632,
+      "completion": 167,
+      "total": 799
+    },
+    "modelAnswers": {
+      "part1": null,
+      "part2": 17,
+      "whole": 32
+    },
+    "answer": 15,
+    "reasoning": "We know the junior choir has 32 kids total, and 17 of them are from Grade 2. To find how many are from Grade 1, we take away the Grade 2 children from the total: 32 - 17 = 15. So there are 15 children from Grade 1 in the junior choir.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many children are in the junior choir altogether?",
+        "boxTarget": "whole",
+        "context": "Look at the very beginning of the story to find this number."
+      },
+      {
+        "text": "How many children in the choir are from Grade 2?",
+        "boxTarget": "part2",
+        "context": "Find the sentence that tells you about the Grade 2 children."
+      },
+      {
+        "text": "How many children in the choir are from Grade 1?",
+        "boxTarget": "part1",
+        "context": "This is what we need to figure out using the other two numbers."
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CPU",
+    "groundTruthAnswer": 15,
+    "groundTruthModelAnswers": {
+      "part1": 15,
+      "part2": 17,
+      "whole": 32
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "Mart and Anu sold waffles at the school's Christmas market. Mart sold 34 waffles and Anu 33. How many waffles did they sell together?",
+    "output": "This problem involves combining two separate quantities (Mart's waffles and Anu's waffles) to find a total. Even though the selling happened over time, there is no change in state of any single quantity - we're simply grouping together two distinct amounts to find how many they sold altogether.",
+    "category": "Combine",
+    "subcategory": "CWU",
+    "subReasoning": "In this problem, I need to identify the quantities in the combine model. Part 1 is the number of waffles Mart sold, which is 34. Part 2 is the number of waffles Anu sold, which is 33. The Whole is the total number of waffles they sold together, which is what the problem is asking for. Since both parts are known (34 and 33) and the whole is unknown (that's what we need to find), this is a Whole Unknown problem.",
+    "tokenUsage": {
+      "prompt": 638,
+      "completion": 184,
+      "total": 822
+    },
+    "modelAnswers": {
+      "part1": 34,
+      "part2": 33,
+      "whole": null
+    },
+    "answer": 67,
+    "reasoning": "Mart sold 34 waffles and Anu sold 33 waffles at the Christmas market. To find out how many waffles they sold together, we add Mart's waffles and Anu's waffles: 34 + 33 = 67. So Mart and Anu sold 67 waffles together at the school's Christmas market.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many waffles did Mart sell at the Christmas market?",
+        "boxTarget": "part1",
+        "context": "Look in the story to find how many waffles Mart sold."
+      },
+      {
+        "text": "How many waffles did Anu sell at the Christmas market?",
+        "boxTarget": "part2",
+        "context": "Look in the story to find how many waffles Anu sold."
+      },
+      {
+        "text": "How many waffles did Mart and Anu sell together?",
+        "boxTarget": "whole",
+        "context": "This is what we need to figure out by adding their waffles together."
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CWU",
+    "groundTruthAnswer": 67,
+    "groundTruthModelAnswers": {
+      "part1": 34,
+      "part2": 33,
+      "whole": 67
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "The children were decorating the Christmas tree. Before lunch, they hung 23 decorations. After lunch, they hung 11 more decorations. How many decorations are on the Christmas tree?",
+    "output": "This problem describes a quantity (decorations on the tree) that increases over time due to an action (hanging more decorations). It follows a clear before-and-after structure with a transformation occurring - the tree starts with 23 decorations and becomes a different amount after more are added.",
+    "category": "Change",
+    "subcategory": "CJWU",
+    "subReasoning": "Step 1: The quantity is increasing over time - decorations are being added to the Christmas tree, so this is a Join problem. Step 2: Using the structure Start + Change = Result: Start = 23 decorations (hung before lunch), Change = 11 decorations (hung after lunch), Result = unknown (total decorations on the tree). Step 3: In a Join problem, Start and Change are Parts while Result is the Whole. Since the Result (total decorations) is what's unknown, and the Result represents the Whole in this model, this is a Whole Unknown problem.",
+    "tokenUsage": {
+      "prompt": 629,
+      "completion": 166,
+      "total": 795
+    },
+    "modelAnswers": {
+      "start": 23,
+      "change": 11,
+      "end": null
+    },
+    "answer": 34,
+    "reasoning": "The children hung 23 decorations before lunch, then they added 11 more decorations after lunch. To find out how many decorations are on the tree altogether, we add those two amounts together: 23 + 11 = 34. So there are 34 decorations on the Christmas tree.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many decorations did the children hang on the tree before lunch?",
+        "boxTarget": "start",
+        "context": "Look at the first part of the story to find this number."
+      },
+      {
+        "text": "How many more decorations did the children hang after lunch?",
+        "boxTarget": "change",
+        "context": "Find the number that tells us what happened after lunch."
+      },
+      {
+        "text": "How many decorations are on the Christmas tree altogether?",
+        "boxTarget": "end",
+        "context": "This is what we need to figure out by adding the two numbers together."
+      }
+    ],
+    "groundTruthCategory": "Change",
+    "groundTruthSubcategory": "CJWU",
+    "groundTruthAnswer": 34,
+    "groundTruthModelAnswers": {
+      "start": 23,
+      "change": 11,
+      "end": 34
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "Ekke was 156cm tall at the beginning of the year. Now he is 161 cm tall. How much has Ekke grown?",
+    "output": "This problem involves the same person (Ekke) at two different points in time, showing how his height changed over the course of the year. There is a clear transformation - his height increased from one measurement to another due to growing.",
+    "category": "Change",
+    "subcategory": "CJPU",
+    "subReasoning": "Step 1: The situation involves Ekke's height increasing from 156cm to 161cm, so this is a Join problem where the quantity increases over time. Step 2: Using the structure Start + Change = Result, I can identify: Start = 156cm (initial height), Change = unknown (how much he grew), Result = 161cm (final height). Step 3: Since this is a Join problem, the Start (156cm) and Change (unknown growth) are the Parts, while the Result (161cm) is the Whole. The unknown value is the Change, which represents a Part in this model. Therefore, this is a Change-Join, Part Unknown problem.",
+    "tokenUsage": {
+      "prompt": 618,
+      "completion": 175,
+      "total": 793
+    },
+    "modelAnswers": {
+      "start": 156,
+      "change": null,
+      "end": 161
+    },
+    "answer": 5,
+    "reasoning": "Ekke was 156 cm tall and now he is 161 cm tall, so he got taller during the year. To find out how much he grew, we need to see the difference between his new height and his old height. When we subtract 161 - 156 = 5, we can see that Ekke grew 5 centimeters this year.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How tall was Ekke at the beginning of the year?",
+        "boxTarget": "start",
+        "context": "Look at the first sentence to find Ekke's height when the year started."
+      },
+      {
+        "text": "How much did Ekke grow during the year?",
+        "boxTarget": "change",
+        "context": "This is what we need to figure out by comparing his starting height to his height now."
+      },
+      {
+        "text": "How tall is Ekke now?",
+        "boxTarget": "end",
+        "context": "Look in the story to find Ekke's current height."
+      }
+    ],
+    "groundTruthCategory": "Change",
+    "groundTruthSubcategory": "CJPU",
+    "groundTruthAnswer": 5,
+    "groundTruthModelAnswers": {
+      "start": 156,
+      "change": 5,
+      "end": 161
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "Kaido had 85 cents. He gave 21 cents to his friend Julia. How many cents does Kaido have now?",
+    "output": "This problem describes a quantity (Kaido's money) that decreases over time due to an action (giving money away). It involves a clear transformation where Kaido's amount of money changes from the original amount to a new amount after the giving action occurs.",
+    "category": "Change",
+    "subcategory": "CSPU",
+    "subReasoning": "First, I need to determine if this is a Join or Separate situation. Kaido starts with 85 cents and gives away 21 cents to his friend, so the quantity is decreasing over time. This makes it a Separate problem. Next, I'll identify the quantities using the Start ± Change = Result structure: Start = 85 cents (initial amount), Change = 21 cents (amount given away/removed), Result = unknown (how many cents Kaido has now). In a Separate problem, the Start represents the Whole, while the Change and Result represent the Parts. Since the Result is what's unknown, and the Result is a Part in the Separate model, this is a Part Unknown problem.",
+    "tokenUsage": {
+      "prompt": 615,
+      "completion": 164,
+      "total": 779
+    },
+    "modelAnswers": {
+      "start": 85,
+      "change": 21,
+      "end": null
+    },
+    "answer": 64,
+    "reasoning": "Kaido started with 85 cents and gave away 21 cents to Julia. When you give away money, you have less than before. To find out how much Kaido has left, we subtract: 85 - 21 = 64. So Kaido now has 64 cents.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many cents did Kaido have at the beginning?",
+        "boxTarget": "start",
+        "context": "Look at the very first sentence to find this number."
+      },
+      {
+        "text": "How many cents did Kaido give to Julia?",
+        "boxTarget": "change",
+        "context": "Find the part that tells you what Kaido gave away."
+      },
+      {
+        "text": "How many cents does Kaido have left now?",
+        "boxTarget": "end",
+        "context": "This is what we need to figure out by taking away the cents he gave."
+      }
+    ],
+    "groundTruthCategory": "Change",
+    "groundTruthSubcategory": "CSPU",
+    "groundTruthAnswer": 64,
+    "groundTruthModelAnswers": {
+      "start": 85,
+      "change": 21,
+      "end": 64
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "Boys used 32 snowballs for the snowball war. After the war ended, they still had 9 snowballs left. How many did they have prepared?",
+    "output": "This problem describes a situation where an original quantity was partly used, leaving a remainder. Even though the math looks like addition (used + left = total), the story involves something happening to the quantity over time - snowballs being consumed/used in the war. This represents a change in the boys' snowball supply.",
+    "category": "Change",
+    "subcategory": "CSWU",
+    "subReasoning": "First, I need to determine the situation type. The boys used 32 snowballs, which means the quantity is decreasing over time - they started with some amount and removed/used 32 snowballs. This makes it a Separate problem. Next, I identify the quantities using Start ± Change = Result. The Start is the unknown initial amount they prepared, the Change is 32 snowballs used (removed), and the Result is 9 snowballs left. So: unknown - 32 = 9. In a Separate problem, the Start represents the Whole (total snowballs prepared), while the Change (32 used) and Result (9 remaining) are Parts of that whole. Since the Start (which represents the Whole) is unknown, this is a Whole Unknown problem.",
+    "tokenUsage": {
+      "prompt": 623,
+      "completion": 183,
+      "total": 806
+    },
+    "modelAnswers": {
+      "start": null,
+      "change": 32,
+      "end": 9
+    },
+    "answer": 41,
+    "reasoning": "The boys used 32 snowballs during their war and still had 9 snowballs left over when it was done. To find out how many they made to begin with, we need to add the snowballs they used to the ones they had left. So 32 + 9 = 41. The boys prepared 41 snowballs for their snowball war.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many snowballs did the boys use during the snowball war?",
+        "boxTarget": "change",
+        "context": "Look in the story for how many snowballs they threw and used up."
+      },
+      {
+        "text": "How many snowballs were still left after the war ended?",
+        "boxTarget": "end",
+        "context": "Find the number that tells us what they had remaining when the fight was over."
+      },
+      {
+        "text": "How many snowballs did the boys have ready at the very beginning?",
+        "boxTarget": "start",
+        "context": "This is what we need to figure out - how many they made before the war started."
+      }
+    ],
+    "groundTruthCategory": "Change",
+    "groundTruthSubcategory": "CSWU",
+    "groundTruthAnswer": 41,
+    "groundTruthModelAnswers": {
+      "start": 41,
+      "change": 32,
+      "end": 9
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "Peppa weighs 33kg. George weighs 17kg. How much heavier is Peppa than George?",
+    "output": "This problem contrasts two separate, independent quantities (Peppa's weight and George's weight) at the same point in time to find the difference between them. It involves two distinct people being compared to determine how much more one weighs than the other.",
+    "category": "Compare",
+    "subcategory": "CMDU",
+    "subReasoning": "This problem is asking 'How much heavier is Peppa than George?' which is asking for the difference between two known quantities. Peppa weighs 33kg and George weighs 17kg, so we know both quantities. The comparison direction is 'heavier than' which indicates a 'more than' comparison - we're comparing Peppa (the larger quantity) to George (the smaller quantity) and asking how much more Peppa weighs. Using the Compare Model: Bigger = Smaller + Difference, we have 33kg = 17kg + Difference, where the Difference is unknown. Since this is a 'more than' comparison with the difference unknown, this is a Compare-More, Difference Unknown problem.",
+    "tokenUsage": {
+      "prompt": 615,
+      "completion": 154,
+      "total": 769
+    },
+    "modelAnswers": {
+      "bigger": 33,
+      "smaller": 17,
+      "difference": null
+    },
+    "answer": 16,
+    "reasoning": "Peppa weighs 33kg and George weighs 17kg. To find out how much heavier Peppa is, we take George's weight away from Peppa's weight: 33 - 17 = 16. So Peppa is 16kg heavier than George.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How much does Peppa weigh?",
+        "boxTarget": "bigger",
+        "context": "Look at the first sentence to find Peppa's weight."
+      },
+      {
+        "text": "How much does George weigh?",
+        "boxTarget": "smaller",
+        "context": "Look at the second sentence to find George's weight."
+      },
+      {
+        "text": "How much heavier is Peppa than George?",
+        "boxTarget": "difference",
+        "context": "This is what we need to figure out by comparing their weights."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CMDU",
+    "groundTruthAnswer": 16,
+    "groundTruthModelAnswers": {
+      "bigger": 33,
+      "smaller": 17,
+      "difference": 16
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "Lilli and Stitch were cutting pieces for a garland. Lilli cut 13 pieces. Stitch cut 4 more pieces than Lilli. How many pieces did Stitch cut?",
+    "output": "This problem involves comparing two separate quantities (pieces cut by Lilli vs. pieces cut by Stitch) where one is described in relation to the other. The focus is on the difference relationship between their amounts, making this a comparison problem.",
+    "category": "Compare",
+    "subcategory": "CMLQU",
+    "subReasoning": "This problem involves comparing two quantities where one is described as 'more than' the other. The problem states that 'Stitch cut 4 more pieces than Lilli.' This indicates a Compare-More structure since we're looking at how many more pieces Stitch cut compared to Lilli. Using the Compare Model: Bigger = Smaller + Difference, we have Lilli cut 13 pieces (smaller quantity), the difference is 4 pieces more, and we need to find how many pieces Stitch cut (larger quantity). Since we know the smaller quantity (13) and the difference (4), but need to find the larger quantity (Stitch's pieces), this is a Compare-More, Larger Quantity Unknown problem.",
+    "tokenUsage": {
+      "prompt": 636,
+      "completion": 171,
+      "total": 807
+    },
+    "modelAnswers": {
+      "bigger": null,
+      "smaller": 13,
+      "difference": 4
+    },
+    "answer": 17,
+    "reasoning": "Lilli cut 13 pieces for the garland. Stitch cut 4 more pieces than Lilli did, so we add those extra pieces to what Lilli cut: 13 + 4 = 17. This means Stitch cut 17 pieces for the garland.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many pieces did Lilli cut?",
+        "boxTarget": "smaller",
+        "context": "Look in the story for the number of pieces Lilli cut."
+      },
+      {
+        "text": "How many more pieces did Stitch cut than Lilli?",
+        "boxTarget": "difference",
+        "context": "Find the words that tell you how much extra Stitch cut."
+      },
+      {
+        "text": "How many pieces did Stitch cut in total?",
+        "boxTarget": "bigger",
+        "context": "This is what we need to figure out using the other two numbers."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CMLQU",
+    "groundTruthAnswer": 17,
+    "groundTruthModelAnswers": {
+      "bigger": 17,
+      "smaller": 13,
+      "difference": 4
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "A ticket to the ice skating rink costs 15 euros. It is 3 euros more expensive than the horse sledge ride. How much does the horse sledge ticket cost?",
+    "output": "This problem compares two different ticket prices at the same point in time, focusing on the difference between them. We're contrasting the cost of two separate, independent items to find how much one costs relative to the other.",
+    "category": "Compare",
+    "subcategory": "CMSQU",
+    "subReasoning": "The problem states that the ice skating rink ticket costs 15 euros and is 3 euros more expensive than the horse sledge ride. This establishes a comparison where the ice skating ticket is the larger quantity and the horse sledge ticket is the smaller quantity, with a difference of 3 euros. The comparison direction focuses on 'more expensive than', making this a Compare-More problem. Using the model: Bigger = Smaller + Difference, we have 15 = ? + 3, where the ice skating ticket (15 euros) is the bigger quantity, the difference is known (3 euros), and we need to find the smaller quantity (horse sledge ticket cost). Since we're looking for the smaller quantity in a compare-more context, this is CMSQU.",
+    "tokenUsage": {
+      "prompt": 628,
+      "completion": 167,
+      "total": 795
+    },
+    "modelAnswers": {
+      "bigger": 15,
+      "smaller": null,
+      "difference": 3
+    },
+    "answer": 12,
+    "reasoning": "We know the ice skating rink ticket costs 15 euros, and it costs 3 euros more than the horse sledge ride. This means the horse sledge ride costs 3 euros less than the ice skating ticket, so we subtract: 15 - 3 = 12. The horse sledge ticket costs 12 euros.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How much does the ice skating rink ticket cost?",
+        "boxTarget": "bigger",
+        "context": "Look at the first sentence to find this number."
+      },
+      {
+        "text": "How much more expensive is the ice skating ticket than the horse sledge ride?",
+        "boxTarget": "difference",
+        "context": "The story tells us how many euros more expensive one ticket is."
+      },
+      {
+        "text": "How much does the horse sledge ticket cost?",
+        "boxTarget": "smaller",
+        "context": "This is what we need to figure out from the story."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CMSQU",
+    "groundTruthAnswer": 12,
+    "groundTruthModelAnswers": {
+      "bigger": 15,
+      "smaller": 12,
+      "difference": 3
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "Two classes cleaned the school yard. One class collected 7 bags of garbage. The other class collected only 4 bags. How many fewer bags did the second class collect?",
+    "output": "This problem contrasts the performance of two separate, independent groups (two different classes) at the same point in time to find the difference between their collections. The question asks 'how many fewer,' which is a clear indicator of comparison.",
+    "category": "Compare",
+    "subcategory": "CLDU",
+    "subReasoning": "This problem is asking 'How many fewer bags did the second class collect?' which indicates a Compare-Less structure since it focuses on 'fewer than.' Using the Compare model where Bigger = Smaller + Difference, I can identify: Bigger = 7 bags (first class), Smaller = 4 bags (second class), and Difference = unknown (how many fewer). The problem is asking for the difference between the two quantities, specifically how many fewer the second class collected compared to the first class. Since we know both the larger quantity (7) and smaller quantity (4) but need to find the difference, this is a Compare-Less, Difference Unknown problem.",
+    "tokenUsage": {
+      "prompt": 625,
+      "completion": 161,
+      "total": 786
+    },
+    "modelAnswers": {
+      "bigger": 7,
+      "smaller": 4,
+      "difference": null
+    },
+    "answer": 3,
+    "reasoning": "The first class collected 7 bags and the second class collected 4 bags. To find out how many fewer bags the second class collected, we take away what the second class collected from what the first class collected: 7 - 4 = 3. So the second class collected 3 fewer bags than the first class.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many bags of garbage did the first class collect?",
+        "boxTarget": "bigger",
+        "context": "Look at the beginning of the story to find this number."
+      },
+      {
+        "text": "How many bags of garbage did the second class collect?",
+        "boxTarget": "smaller",
+        "context": "Find the number that tells us about the other class."
+      },
+      {
+        "text": "How many fewer bags did the second class collect than the first class?",
+        "boxTarget": "difference",
+        "context": "This is what the question is asking us to find out."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLDU",
+    "groundTruthAnswer": 3,
+    "groundTruthModelAnswers": {
+      "bigger": 7,
+      "smaller": 4,
+      "difference": 3
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "Stella decorated 17 gingerbread cookies in the cooking lesson. Ella decorated 3 fewer cookies than Stella. How many cookies did Ella decorate?",
+    "output": "This problem involves comparing the quantities of cookies decorated by two different people, where one person's amount is described in relation to the other's. The focus is on the difference relationship between their amounts, making this a comparison problem.",
+    "category": "Compare",
+    "subcategory": "CLSQU",
+    "subReasoning": "This problem states that Ella decorated 3 fewer cookies than Stella, which indicates a 'less than' comparison direction, making this a Compare-Less problem. Using the Compare Model where Bigger = Smaller + Difference, I can identify: Stella has 17 cookies (the bigger quantity), the difference is 3 cookies fewer, and Ella's amount (the smaller quantity) is unknown. Since we know both the larger quantity (17) and the difference (3), but need to find the smaller quantity (Ella's cookies), this is a Compare-Less, Smaller Quantity Unknown problem.",
+    "tokenUsage": {
+      "prompt": 626,
+      "completion": 180,
+      "total": 806
+    },
+    "modelAnswers": {
+      "bigger": 17,
+      "smaller": null,
+      "difference": 3
+    },
+    "answer": 14,
+    "reasoning": "Stella decorated 17 cookies, and Ella decorated 3 fewer than Stella. To find how many Ella decorated, we take away 3 from Stella's amount: 17 - 3 = 14. Ella decorated 14 cookies.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many gingerbread cookies did Stella decorate?",
+        "boxTarget": "bigger",
+        "context": "Look for the number that tells us about Stella's cookies in the first sentence."
+      },
+      {
+        "text": "How many fewer cookies did Ella decorate than Stella?",
+        "boxTarget": "difference",
+        "context": "Find the word 'fewer' in the story and look for the number that goes with it."
+      },
+      {
+        "text": "How many gingerbread cookies did Ella decorate?",
+        "boxTarget": "smaller",
+        "context": "This is what we need to figure out using the other two numbers."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLSQU",
+    "groundTruthAnswer": 14,
+    "groundTruthModelAnswers": {
+      "bigger": 17,
+      "smaller": 14,
+      "difference": 3
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Anthropic: Claude Sonnet 4",
+    "problem": "Hugo has read 14 books last year. This is 4 books fewer than Marko. How many books did Marko read?",
+    "output": "This problem compares the reading amounts of two separate, independent people (Hugo and Marko) during the same time period. Hugo's reading is described in relation to Marko's, focusing on the difference between their quantities.",
+    "category": "Compare",
+    "subcategory": "CLLQU",
+    "subReasoning": "The problem states that Hugo has read 14 books, which is 4 books fewer than Marko. This establishes a comparison where Hugo's quantity is less than Marko's quantity. The comparison direction is 'fewer than,' making this a Compare-Less problem. Using the Compare Model formula Bigger = Smaller + Difference, I can identify: Smaller = Hugo's books (14), Difference = 4 books, and Bigger = Marko's books (unknown). Since we need to find how many books Marko read, we are looking for the larger quantity, making this a Compare-Less, Larger Quantity Unknown problem.",
+    "tokenUsage": {
+      "prompt": 620,
+      "completion": 169,
+      "total": 789
+    },
+    "modelAnswers": {
+      "bigger": null,
+      "smaller": 14,
+      "difference": 4
+    },
+    "answer": 18,
+    "reasoning": "Hugo read 14 books, and this is 4 books fewer than what Marko read. This means Marko read more books than Hugo, so we need to add those 4 extra books to Hugo's amount: 14 + 4 = 18. Marko read 18 books last year.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many books did Hugo read last year?",
+        "boxTarget": "smaller",
+        "context": "Look at the first sentence to find how many books Hugo read."
+      },
+      {
+        "text": "How many fewer books did Hugo read than Marko?",
+        "boxTarget": "difference",
+        "context": "The story tells us Hugo read fewer books than Marko - find that number."
+      },
+      {
+        "text": "How many books did Marko read?",
+        "boxTarget": "bigger",
+        "context": "This is what we need to figure out - Marko read more books than Hugo."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLLQU",
+    "groundTruthAnswer": 18,
+    "groundTruthModelAnswers": {
+      "bigger": 18,
+      "smaller": 14,
+      "difference": 4
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "The school’s junior choir contains 32 kids from Grade 1 and Grade 2. 17 children are from Grade 2. How many children are from Grade 1?",
+    "output": "This problem describes a situation where two distinct groups (Grade 1 kids and Grade 2 kids) are combined to form a total (the junior choir). We are given the total and one part, and asked to find the other part. There is no change over time or comparison between two separate entities.",
+    "category": "Combine",
+    "subcategory": "CPU",
+    "subReasoning": "The problem presents a situation where a total group (the school's junior choir) is made up of two parts (kids from Grade 1 and Grade 2). The total number of kids in the choir is given as 32, and one of the parts (17 children from Grade 2) is also given. The question asks for the number of children in the other part (Grade 1). This fits the structure of Part 1 + Part 2 = Whole, where the Whole (32) and Part 2 (17) are known, and Part 1 (Grade 1 children) is unknown. Therefore, it is a Combine, Part Unknown problem.",
+    "tokenUsage": {
+      "prompt": 582,
+      "completion": 183,
+      "total": 765
+    },
+    "modelAnswers": {
+      "first group": null,
+      "second group": 17,
+      "total": 32
+    },
+    "answer": 15,
+    "reasoning": "We know there are 32 kids in the choir altogether, and we know 17 of them are in Grade 2. To find out how many are from Grade 1, we take away the Grade 2 kids from the total: 32 - 17 = 15. That means there are 15 children from Grade 1.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many children are from Grade 1?",
+        "boxTarget": "part1",
+        "context": "This is what we need to figure out! Look at the question at the very end to see what it's asking for."
+      },
+      {
+        "text": "How many children are in Grade 2?",
+        "boxTarget": "part2",
+        "context": "The story tells us something about the Grade 2 children. Can you find that number?"
+      },
+      {
+        "text": "How many kids are in the junior choir altogether?",
+        "boxTarget": "whole",
+        "context": "Look at the very first sentence. It tells us how many kids are in the choir in total."
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CPU",
+    "groundTruthAnswer": 15,
+    "groundTruthModelAnswers": {
+      "part1": 15,
+      "part2": 17,
+      "whole": 32
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "Mart and Anu sold waffles at the school's Christmas market. Mart sold 34 waffles and Anu 33. How many waffles did they sell together?",
+    "output": "This problem merges two distinct quantities (waffles Mart sold and waffles Anu sold) into a single total. The act of selling happened for each person, but the question asks to combine their independent sales total. There is no transformation of a single quantity or comparison.",
+    "category": "Combine",
+    "subcategory": "CWU",
+    "subReasoning": "The problem presents two distinct amounts (Mart sold 34 waffles, Anu sold 33 waffles) that are being combined to find a total. In the Combine Model (Part 1 + Part 2 = Whole), Mart's sales represent Part 1, Anu's sales represent Part 2, and the question asks for the total number of waffles sold by both of them, which is the Whole. Therefore, since the Whole is what needs to be determined, this fits the criterion for Combine, Whole Unknown.",
+    "tokenUsage": {
+      "prompt": 577,
+      "completion": 170,
+      "total": 747
+    },
+    "modelAnswers": {
+      "first group": 34,
+      "second group": 33,
+      "total": null
+    },
+    "answer": 67,
+    "reasoning": "Mart sold 34 waffles and Anu sold 33 waffles. To find out how many waffles they sold together, we just add Mart's waffles and Anu's waffles: 34 + 33 = 67. So, Mart and Anu sold 67 waffles together.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many waffles did Mart sell?",
+        "boxTarget": "part1",
+        "context": "Let's find out how many yummy waffles Mart sold first."
+      },
+      {
+        "text": "How many waffles did Anu sell?",
+        "boxTarget": "part2",
+        "context": "Now, let's see how many waffles Anu sold. The story tells us!"
+      },
+      {
+        "text": "How many waffles did Mart and Anu sell altogether?",
+        "boxTarget": "whole",
+        "context": "We want to know the total number of waffles they sold for the whole school market. What are we trying to find out?"
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CWU",
+    "groundTruthAnswer": 67,
+    "groundTruthModelAnswers": {
+      "part1": 34,
+      "part2": 33,
+      "whole": 67
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "The children were decorating the Christmas tree. Before lunch, they hung 23 decorations. After lunch, they hung 11 more decorations. How many decorations are on the Christmas tree?",
+    "output": "This problem describes a quantity (decorations on the tree) that increases over time due to an action (hanging more decorations). It has a clear 'before' (23 decorations) and 'after' (adding 11 more) structure, indicating a transformation of the quantity.",
+    "category": "Change",
+    "subcategory": "CJWU",
+    "subReasoning": "Step 1: The quantity of decorations is increasing over time (they hung more decorations), so this is a Join problem. Step 2: In the model 'Start ± Change = Result', the Start is 23 decorations (before lunch). The Change is 11 more decorations (after lunch). The Result is 'how many decorations are on the Christmas tree?' which is unknown. Step 3: For a Join problem, Start and Change are considered Parts, and the Result is the Whole. Since the Result (the total number of decorations) is unknown, this is a Whole Unknown scenario.",
+    "tokenUsage": {
+      "prompt": 575,
+      "completion": 175,
+      "total": 750
+    },
+    "modelAnswers": {
+      "start": 23,
+      "change": 11,
+      "end": null
+    },
+    "answer": 34,
+    "reasoning": "The children put 23 decorations on the Christmas tree before lunch, and then they added 11 more after lunch. To find out how many are on the tree altogether, we just need to put those two groups of decorations together: 23 + 11 = 34. So, there are 34 decorations on the Christmas tree.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many decorations did the children hang on the tree before lunch?",
+        "boxTarget": "start",
+        "context": "Let's look at the first part of our story. What happened first?"
+      },
+      {
+        "text": "How many more decorations did they hang after lunch?",
+        "boxTarget": "change",
+        "context": "Now, let's think about what happened next, after they had their lunch."
+      },
+      {
+        "text": "How many decorations are on the Christmas tree in total?",
+        "boxTarget": "end",
+        "context": "This is what we need to find out! What is the big question at the very end?"
+      }
+    ],
+    "groundTruthCategory": "Change",
+    "groundTruthSubcategory": "CJWU",
+    "groundTruthAnswer": 34,
+    "groundTruthModelAnswers": {
+      "start": 23,
+      "change": 11,
+      "end": 34
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "Ekke was 156cm tall at the beginning of the year. Now he is 161 cm tall. How much has Ekke grown?",
+    "output": "This problem involves a single person (Ekke) whose height changes over time. It compares Ekke's height at two different points in time ('beginning of the year' and 'now') to find the amount of change, which is a key characteristic of a Change problem.",
+    "category": "Change",
+    "subcategory": "CJPU",
+    "subReasoning": "The problem describes Ekke's height increasing over time, which indicates a 'Join' situation. We are given the starting height (156 cm) and the resulting height (161 cm). The unknown quantity is how much Ekke has grown, which represents the 'Change' amount in the Start + Change = Result model. In a Join problem, Start and Change are considered 'Parts' and the Result is the 'Whole'. Since the 'Change' (a part) is unknown, this classifies as a Change–Join, Part Unknown problem.",
+    "tokenUsage": {
+      "prompt": 571,
+      "completion": 164,
+      "total": 735
+    },
+    "modelAnswers": {
+      "start": 156,
+      "change": null,
+      "end": 161
+    },
+    "answer": 5,
+    "reasoning": "Ekke was 156cm tall when the year began, and now he is 161cm tall! To find out how much he grew, we can see the difference between his height now and his height before. If we take 156 away from 161, we get 161 - 156 = 5. So, Ekke has grown 5 centimeters.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How tall was Ekke at the start of the year?",
+        "boxTarget": "start",
+        "context": "Let's look at the very first number about Ekke's height."
+      },
+      {
+        "text": "How much taller is Ekke now?",
+        "boxTarget": "change",
+        "context": "We want to know how many centimeters Ekke has grown. This is what we need to find out!"
+      },
+      {
+        "text": "How tall is Ekke now?",
+        "boxTarget": "end",
+        "context": "Look at the story again. What is Ekke's height right now?"
+      }
+    ],
+    "groundTruthCategory": "Change",
+    "groundTruthSubcategory": "CJPU",
+    "groundTruthAnswer": 5,
+    "groundTruthModelAnswers": {
+      "start": 156,
+      "change": 5,
+      "end": 161
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "Kaido had 85 cents. He gave 21 cents to his friend Julia. How many cents does Kaido have now?",
+    "output": "This problem describes a quantity (Kaido's money) that decreases over time due to an action (giving away money). It clearly shows a transformation of his money from a starting amount to a new, smaller amount, fitting the 'before-and-after' structure of Change problems.",
+    "category": "Change",
+    "subcategory": "CSPU",
+    "subReasoning": "Step 1: Determine the Situation Type. Kaido had 85 cents and gave 21 cents away, which means the quantity of cents he possesses is decreasing. Therefore, it is a Separate problem.\n\nStep 2: Identify the Quantities in the Model. The structure for a Separate problem is Start - Change = Result. In this problem:\n- Start: Kaido had 85 cents initially.\n- Change: He gave away 21 cents.\n- Result: How many cents does Kaido have now? This is the unknown.\n\nStep 3: Identify the Unknown and Its Role. For Separate problems, Start is the Whole, and Change and Result are Parts. In this case, the Result is unknown. Since the Result is a Part in a Separate problem, it is a Part Unknown problem.",
+    "tokenUsage": {
+      "prompt": 565,
+      "completion": 161,
+      "total": 726
+    },
+    "modelAnswers": {
+      "start": 85,
+      "change": 21,
+      "end": null
+    },
+    "answer": 64,
+    "reasoning": "Kaido started with 85 cents in his pocket. Then, he was so kind and gave 21 cents to his friend Julia! To find out how many cents Kaido has left, we need to take away the 21 cents he gave away from the 85 cents he had. So, 85 - 21 = 64. Kaido now has 64 cents.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many cents did Kaido have at the very beginning?",
+        "boxTarget": "start",
+        "context": "Let's find the number of cents Kaido started with."
+      },
+      {
+        "text": "How many cents did Kaido give to his friend Julia?",
+        "boxTarget": "change",
+        "context": "Now, let's see how many cents Kaido gave away."
+      },
+      {
+        "text": "How many cents does Kaido have now, after giving some away?",
+        "boxTarget": "end",
+        "context": "Think about what the story is asking us to find out."
+      }
+    ],
+    "groundTruthCategory": "Change",
+    "groundTruthSubcategory": "CSPU",
+    "groundTruthAnswer": 64,
+    "groundTruthModelAnswers": {
+      "start": 85,
+      "change": 21,
+      "end": 64
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "Boys used 32 snowballs for the snowball war. After the war ended, they still had 9 snowballs left. How many did they have prepared?",
+    "output": "This problem describes a situation where an original quantity of snowballs was reduced by an action (using them), leaving a remainder. We are given the amount used and the amount left, and asked to find the starting amount, which is a common inverse operation for Change problems.",
+    "category": "Change",
+    "subcategory": "CSWU",
+    "subReasoning": "The problem describes a situation where an initial quantity of snowballs was reduced by some amount (used 32 snowballs), leaving a remaining amount (9 snowballs). This indicates a 'Separate' situation because the quantity decreased. We can represent this as Start - Change = Result. In this case, the 'Start' amount (how many they had prepared) is unknown. The 'Change' amount is 32 snowballs (those used). The 'Result' amount is 9 snowballs (those left). For 'Separate' problems, if the 'Start' value is unknown, it means the 'Whole' is unknown. Therefore, this is a Change-Separate, Whole Unknown problem.",
+    "tokenUsage": {
+      "prompt": 569,
+      "completion": 186,
+      "total": 755
+    },
+    "modelAnswers": {
+      "start": null,
+      "change": 32,
+      "end": 9
+    },
+    "answer": 41,
+    "reasoning": "We know the boys used up 32 snowballs during their snowball war, and they still had 9 snowballs remaining afterwards. If we put the snowballs they used together with the snowballs they had left, we will know how many they had made. So, 32 + 9 = 41. The boys had prepared 41 snowballs for the war.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many snowballs were used up in the snowball war?",
+        "boxTarget": "change",
+        "context": "Let's find out how many snowballs disappeared during all the fun!"
+      },
+      {
+        "text": "After the war, how many snowballs did they still have left?",
+        "boxTarget": "end",
+        "context": "Think about how many snowballs were still sitting there after all the snowball throwing stopped."
+      },
+      {
+        "text": "How many snowballs did they have at the very beginning, before anyone threw any?",
+        "boxTarget": "start",
+        "context": "We need to figure out how many snowballs they started with in their big pile before the war even began!"
+      }
+    ],
+    "groundTruthCategory": "Change",
+    "groundTruthSubcategory": "CSWU",
+    "groundTruthAnswer": 41,
+    "groundTruthModelAnswers": {
+      "start": 41,
+      "change": 32,
+      "end": 9
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "Peppa weighs 33kg. George weighs 17kg. How much heavier is Peppa than George?",
+    "output": "This problem involves two distinct individuals (Peppa and George) and their weights at the same point in time. The question asks for the difference between their weights, directly indicating a comparison between two separate quantities.",
+    "category": "Compare",
+    "subcategory": "CMDU",
+    "subReasoning": "The problem asks 'How much heavier is Peppa than George?', which indicates a comparison of 'more than'. Therefore, it is a Compare–More problem. We are given the larger quantity (Peppa's weight = 33kg) and the smaller quantity (George's weight = 17kg). The question asks 'how much heavier', which is asking for the difference between their weights. Following the formula Bigger = Smaller + Difference, we have 33 = 17 + Difference. The unknown quantity is the Difference.",
+    "tokenUsage": {
+      "prompt": 561,
+      "completion": 165,
+      "total": 726
+    },
+    "modelAnswers": {
+      "bigger": 33,
+      "smaller": 17,
+      "difference": null
+    },
+    "answer": 16,
+    "reasoning": "Peppa weighs 33kg and George weighs 17kg. To figure out how much Peppa weighs more than George, we subtract George's weight from Peppa's weight: 33 - 17 = 16. So, Peppa is 16kg heavier than George.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many kilograms does Peppa weigh?",
+        "boxTarget": "bigger",
+        "context": "Let's read the story together and find out Peppa's weight."
+      },
+      {
+        "text": "How many kilograms does George weigh?",
+        "boxTarget": "smaller",
+        "context": "And how about George? Let's find his weight in the story."
+      },
+      {
+        "text": "How many more kilograms does Peppa weigh than George?",
+        "boxTarget": "difference",
+        "context": "This is what we need to figure out! The story is asking us to find the difference."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CMDU",
+    "groundTruthAnswer": 16,
+    "groundTruthModelAnswers": {
+      "bigger": 33,
+      "smaller": 17,
+      "difference": 16
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "Lilli and Stitch were cutting pieces for a garland. Lilli cut 13 pieces. Stitch cut 4 more pieces than Lilli. How many pieces did Stitch cut?",
+    "output": "This problem compares the number of pieces cut by Lilli and Stitch. It states that Stitch cut '4 more pieces than Lilli', which is a relational statement between two separate quantities, making it a Compare problem. Although it involves finding a new total for Stitch, the core operation is based on a comparison.",
+    "category": "Compare",
+    "subcategory": "CMLQU",
+    "subReasoning": "The problem states that Stitch cut '4 more pieces than Lilli'. This indicates a comparison where one quantity is greater than another, specifically focusing on 'more than'. Therefore, it is a Compare-More type. In the equation Bigger = Smaller + Difference, Lilli's pieces (13) represent the Smaller quantity, and the '4 more pieces' represent the Difference. The question asks 'How many pieces did Stitch cut?', which is the Larger quantity. Thus, the Larger Quantity is Unknown.",
+    "tokenUsage": {
+      "prompt": 573,
+      "completion": 162,
+      "total": 735
+    },
+    "modelAnswers": {
+      "bigger": null,
+      "smaller": 13,
+      "difference": 4
+    },
+    "answer": 17,
+    "reasoning": "Lilli cut 13 pieces for the garland, and Stitch cut 4 more pieces than Lilli. To figure out how many pieces Stitch cut, we just add the pieces Lilli cut to the extra pieces Stitch made: 13 + 4 = 17. So, Stitch cut 17 pieces in total.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many pieces did Lilli cut?",
+        "boxTarget": "smaller",
+        "context": "Let's find the number of pieces Lilli cut first."
+      },
+      {
+        "text": "How many more pieces did Stitch cut than Lilli?",
+        "boxTarget": "difference",
+        "context": "Now, let's see how many extra pieces Stitch cut compared to Lilli."
+      },
+      {
+        "text": "How many pieces did Stitch cut in total?",
+        "boxTarget": "bigger",
+        "context": "We need to find out the total number of pieces Stitch cut. That's the bigger number!"
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CMLQU",
+    "groundTruthAnswer": 17,
+    "groundTruthModelAnswers": {
+      "bigger": 17,
+      "smaller": 13,
+      "difference": 4
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "A ticket to the ice skating rink costs 15 euros. It is 3 euros more expensive than the horse sledge ride. How much does the horse sledge ticket cost?",
+    "output": "This problem directly compares the cost of two different items (ice skating ticket and horse sledge ride). It states one item is '3 euros more expensive' than the other, which is a clear indicator of a comparison between two distinct prices.",
+    "category": "Compare",
+    "subcategory": "CMSQU",
+    "subReasoning": "The problem states that the ice skating ticket is '3 euros more expensive than the horse sledge ride'. This immediately signals a 'Compare-More' scenario. We are given the 'Bigger' quantity (ice skating ticket = 15 euros) and the 'Difference' (3 euros). Using the Compare Model: Bigger = Smaller + Difference, which is 15 = Smaller + 3. The unknown quantity is the 'Smaller' quantity, which is the cost of the horse sledge ticket. Therefore, it is a Compare-More, Smaller Quantity Unknown problem.",
+    "tokenUsage": {
+      "prompt": 571,
+      "completion": 182,
+      "total": 753
+    },
+    "modelAnswers": {
+      "bigger": 15,
+      "smaller": null,
+      "difference": 3
+    },
+    "answer": 12,
+    "reasoning": "We know the ice skating ticket is 15 euros, and that's 3 euros more than the horse sledge ride. So, to find out how much the horse sledge ride costs, we just take away those 3 extra euros from the ice skating ticket: 15 - 3 = 12. So, the horse sledge ticket costs 12 euros.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How much does a ticket to the ice skating rink cost?",
+        "boxTarget": "bigger",
+        "context": "Let's find the number for the ice skating ticket. Look carefully at the first sentence."
+      },
+      {
+        "text": "How many euros more expensive is the ice skating ticket than the horse sledge ride?",
+        "boxTarget": "difference",
+        "context": "Now, let's find the number that tells us how much difference there is between the two tickets."
+      },
+      {
+        "text": "How much does the horse sledge ticket cost?",
+        "boxTarget": "smaller",
+        "context": "This is what we need to figure out! What are we trying to find?"
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CMSQU",
+    "groundTruthAnswer": 12,
+    "groundTruthModelAnswers": {
+      "bigger": 15,
+      "smaller": 12,
+      "difference": 3
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "Two classes cleaned the school yard. One class collected 7 bags of garbage. The other class collected only 4 bags. How many fewer bags did the second class collect?",
+    "output": "This problem asks to find the difference between two distinct quantities (bags collected by one class and bags collected by the other class). The question 'How many fewer' is a direct indicator of a comparison problem.",
+    "category": "Compare",
+    "subcategory": "CLDU",
+    "subReasoning": "The problem asks 'How many fewer bags did the second class collect?', which directly indicates a comparison focusing on 'less'. Therefore, it is a Compare–Less problem. We are given the larger quantity (7 bags) and the smaller quantity (4 bags), and we need to find the difference between them (how many fewer). In the COMPS model (Bigger = Smaller + Difference), the unknown is the difference. Thus, it is a Compare–Less, Difference Unknown problem.",
+    "tokenUsage": {
+      "prompt": 569,
+      "completion": 168,
+      "total": 737
+    },
+    "modelAnswers": {
+      "bigger": 7,
+      "smaller": 4,
+      "difference": null
+    },
+    "answer": 3,
+    "reasoning": "Well, we know one class gathered 7 bags of garbage and the other class gathered 4 bags. To find out how many fewer bags the second class collected, we just take the smaller number of bags from the larger number of bags: 7 - 4 = 3. So, the second class collected 3 fewer bags of garbage.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many bags of garbage did the first class collect?",
+        "boxTarget": "bigger",
+        "context": "Look at the first class in our story. How many bags did they get?"
+      },
+      {
+        "text": "How many bags of garbage did the other class collect?",
+        "boxTarget": "smaller",
+        "context": "Now look at the second class. How many bags did they collect?"
+      },
+      {
+        "text": "How many fewer bags did the second class collect?",
+        "boxTarget": "difference",
+        "context": "We need to find out how many fewer bags the second class collected. What number are we trying to find?"
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLDU",
+    "groundTruthAnswer": 3,
+    "groundTruthModelAnswers": {
+      "bigger": 7,
+      "smaller": 4,
+      "difference": 3
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "Stella decorated 17 gingerbread cookies in the cooking lesson. Ella decorated 3 fewer cookies than Stella. How many cookies did Ella decorate?",
+    "output": "This problem compares the number of cookies decorated by two different people (Stella and Ella). The phrase '3 fewer cookies than Stella' establishes a direct comparison between their decorating efforts, leading to finding Ella's number based on this comparison.",
+    "category": "Compare",
+    "subcategory": "CLSQU",
+    "subReasoning": "The problem states that 'Ella decorated 3 fewer cookies than Stella,' which immediately indicates a 'Compare-Less' problem. The known quantities are Stella's cookies (17, which is the 'Bigger' quantity because Ella decorated fewer) and the difference (3 fewer). The question asks 'How many cookies did Ella decorate?', which is the 'Smaller' quantity. Therefore, it is a Compare-Less, Smaller Quantity Unknown problem.",
+    "tokenUsage": {
+      "prompt": 565,
+      "completion": 170,
+      "total": 735
+    },
+    "modelAnswers": {
+      "bigger": 17,
+      "smaller": null,
+      "difference": 3
+    },
+    "answer": 14,
+    "reasoning": "Stella decorated 17 gingerbread cookies, and Ella decorated 3 fewer than Stella. To find out how many cookies Ella decorated, we need to take away those 3 fewer cookies from Stella's amount: 17 - 3 = 14. So, Ella decorated 14 gingerbread cookies.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many cookies did Stella decorate?",
+        "boxTarget": "bigger",
+        "context": "Let's read the story carefully together. Listen for Stella's name!"
+      },
+      {
+        "text": "How many fewer cookies did Ella decorate than Stella?",
+        "boxTarget": "difference",
+        "context": "The story tells us something important about Ella's cookies. Let's find that clue!"
+      },
+      {
+        "text": "How many cookies did Ella decorate?",
+        "boxTarget": "smaller",
+        "context": "This is what we need to figure out in our story. It's the puzzle we get to solve!"
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLSQU",
+    "groundTruthAnswer": 14,
+    "groundTruthModelAnswers": {
+      "bigger": 17,
+      "smaller": 14,
+      "difference": 3
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "Google: Gemini 2.5 Flash",
+    "problem": "Hugo has read 14 books last year. This is 4 books fewer than Marko. How many books did Marko read?",
+    "output": "This problem compares the number of books read by Hugo and Marko. It states that Hugo's number is '4 books fewer than Marko's', which is a relative statement between two distinct quantities, making it a Compare problem. We are using the comparison to find an unknown quantity for Marko.",
+    "category": "Compare",
+    "subcategory": "CLLQU",
+    "subReasoning": "1. **Determine the Comparison Direction**: The problem states 'This is 4 books fewer than Marko', which indicates a 'Compare-Less' scenario. Thus, it's a CLx problem. 2. **Use the Compare Model**: The equation for comparison is Bigger = Smaller + Difference. In this problem:    - Hugo's books (14) are the Smaller quantity.    - Marko's books are the Bigger quantity.    - The Difference is 4 books fewer.  We have: Marko's books = Hugo's books + 4  3. **Identify the Unknown**: We are asked 'How many books did Marko read?', which is the Larger Quantity (Marko's books). Therefore, this is a LQU type.",
+    "tokenUsage": {
+      "prompt": 562,
+      "completion": 165,
+      "total": 727
+    },
+    "modelAnswers": {
+      "bigger": null,
+      "smaller": 14,
+      "difference": 4
+    },
+    "answer": 18,
+    "reasoning": "Hugo read 14 books, and we know that's 4 books less than Marko. So, to find out how many books Marko read, we need to add those 4 books back to Hugo's amount: 14 + 4 = 18. This means Marko read 18 books last year.",
+    "storyGrammarPrompts": [
+      {
+        "text": "Let's find Marko! How many books did Marko read?",
+        "boxTarget": "bigger",
+        "context": "We want to find out how many books Marko read."
+      },
+      {
+        "text": "Let's look at Hugo. How many books did Hugo read last year?",
+        "boxTarget": "smaller",
+        "context": "The problem tells us how many books Hugo read."
+      },
+      {
+        "text": "How many fewer books did Hugo read than Marko?",
+        "boxTarget": "difference",
+        "context": "The problem says Hugo read some books fewer than Marko. How many is that?"
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLLQU",
+    "groundTruthAnswer": 18,
+    "groundTruthModelAnswers": {
+      "bigger": 18,
+      "smaller": 14,
+      "difference": 4
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "The school’s junior choir contains 32 kids from Grade 1 and Grade 2. 17 children are from Grade 2. How many children are from Grade 1?",
+    "output": "This problem is grouping two distinct quantities: the number of children in Grade 1 and Grade 2 who together form the total choir. Nothing changes over time; it simply asks for the missing part given the whole and one part.",
+    "category": "Combine",
+    "subcategory": "CPU",
+    "subReasoning": "The problem gives the total number of children in the junior choir (32), which is the Whole. It also gives the number of children from Grade 2 (17), which is Part 2. The question asks for the number of children from Grade 1, which is Part 1. Using the Combine model: Part 1 (Grade 1) + Part 2 (Grade 2) = Whole (Total Choir). Since Part 1 is the unknown quantity, this is a Combine, Part Unknown (CPU) problem.",
+    "tokenUsage": {
+      "prompt": 567,
+      "completion": 160,
+      "total": 727
+    },
+    "modelAnswers": {
+      "part1": null,
+      "part2": 17,
+      "whole": 32
+    },
+    "answer": 15,
+    "reasoning": "We know that the whole choir has 32 kids, and 17 of those are from Grade 2. To find out how many are from Grade 1, we take away the 17 Grade 2 kids from the total: 32 - 17 = 15. So, there are 15 children from Grade 1 in the choir.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many children in the choir are from Grade 1?",
+        "boxTarget": "part1",
+        "context": "We want to know how many Grade 1 children are singing in the choir."
+      },
+      {
+        "text": "How many children in the choir are from Grade 2?",
+        "boxTarget": "part2",
+        "context": "Look at the story to find the number of Grade 2 children in the choir."
+      },
+      {
+        "text": "How many children are in the choir altogether from Grade 1 and Grade 2?",
+        "boxTarget": "whole",
+        "context": "Read the story to find how many children are in the choir in total."
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CPU",
+    "groundTruthAnswer": 15,
+    "groundTruthModelAnswers": {
+      "part1": 15,
+      "part2": 17,
+      "whole": 32
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "Mart and Anu sold waffles at the school's Christmas market. Mart sold 34 waffles and Anu 33. How many waffles did they sell together?",
+    "output": "This situation brings together two independent amounts (Mart's sales and Anu's sales) to form a total. There is no transformation or change, only grouping distinct parts.",
+    "category": "Combine",
+    "subcategory": "CWU",
+    "subReasoning": "The problem presents two separate quantities: Mart sold 34 waffles (Part 1), and Anu sold 33 waffles (Part 2). The question asks for the total number of waffles they sold together, which represents the Whole in the combine model. The two parts (34 and 33) are both known, and the unknown is the Whole (total sold). According to the COMPS framework, when the Whole is unknown, it should be classified as CWU (Combine, Whole Unknown).",
+    "tokenUsage": {
+      "prompt": 564,
+      "completion": 139,
+      "total": 703
+    },
+    "modelAnswers": {
+      "part1": 34,
+      "part2": 33,
+      "whole": null
+    },
+    "answer": 67,
+    "reasoning": "Mart sold 34 waffles and Anu sold 33 waffles at the Christmas market. If we add them together, 34 + 33 = 67. That means Mart and Anu sold 67 waffles altogether.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many waffles did Mart sell?",
+        "boxTarget": "part1",
+        "context": "Look at the story and find the number of waffles Mart sold."
+      },
+      {
+        "text": "How many waffles did Anu sell?",
+        "boxTarget": "part2",
+        "context": "Check the story to see how many waffles Anu sold."
+      },
+      {
+        "text": "How many waffles did Mart and Anu sell all together?",
+        "boxTarget": "whole",
+        "context": "Think about adding both numbers to find out how many waffles they sold in total."
+      }
+    ],
+    "groundTruthCategory": "Combine",
+    "groundTruthSubcategory": "CWU",
+    "groundTruthAnswer": 67,
+    "groundTruthModelAnswers": {
+      "part1": 34,
+      "part2": 33,
+      "whole": 67
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "The children were decorating the Christmas tree. Before lunch, they hung 23 decorations. After lunch, they hung 11 more decorations. How many decorations are on the Christmas tree?",
+    "output": "The decorations on the tree increased over time: first 23, then 11 more added after lunch. This describes a transformation, tracking the quantity as it changes with an event.",
+    "category": "Change",
+    "subcategory": "CJWU",
+    "subReasoning": "First, determine the situation type: the number of decorations is increasing as the children add more decorations to the tree, so this is a Join situation. Next, identify the quantities: the Start is 23 decorations hung before lunch, the Change is 11 more decorations hung after lunch, and the Result is the total number of decorations on the tree (which is unknown and what the question asks for). In the Join structure, Start and Change are parts and Result is the whole. Since the unknown is the total (the result/the whole), this problem fits the Join, Whole Unknown category.",
+    "tokenUsage": {
+      "prompt": 561,
+      "completion": 141,
+      "total": 702
+    },
+    "modelAnswers": {
+      "start": 23,
+      "change": 11,
+      "end": null
+    },
+    "answer": 34,
+    "reasoning": "The children hung 23 decorations on the Christmas tree before lunch, and then after lunch, they put up 11 more. To find out how many decorations are on the tree now, we add 23 and 11 together. 23 + 11 = 34. So, there are 34 decorations on the Christmas tree.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many decorations did the children put on the tree before lunch?",
+        "boxTarget": "start",
+        "context": "Look for the number of decorations put up before lunchtime."
+      },
+      {
+        "text": "How many more decorations did the children add after lunch?",
+        "boxTarget": "change",
+        "context": "Think about how many new decorations were hung after lunch."
+      },
+      {
+        "text": "How many decorations are on the Christmas tree now?",
+        "boxTarget": "end",
+        "context": "We want to find the total number of decorations on the tree at the end."
+      }
+    ],
+    "groundTruthCategory": "Change",
+    "groundTruthSubcategory": "CJWU",
+    "groundTruthAnswer": 34,
+    "groundTruthModelAnswers": {
+      "start": 23,
+      "change": 11,
+      "end": 34
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "Ekke was 156cm tall at the beginning of the year. Now he is 161 cm tall. How much has Ekke grown?",
+    "output": "This problem involves a single person measured at two different times, showing growth. It’s a before-and-after, describing change over time.",
+    "category": "Change",
+    "subcategory": "CJPU",
+    "subReasoning": "First, the situation describes Ekke's height increasing over time from 156 cm to 161 cm, so it is a 'Join' problem. The quantities involved are: Start = 156 cm (initial height), Change = unknown (amount Ekke grew), Result = 161 cm (current height). In a Join situation, Start and Change are considered Parts, and the Result is the Whole. Since the unknown is the amount grown, which is the 'Change' part, this makes it a Change–Join, Part Unknown (CJPU) problem.",
+    "tokenUsage": {
+      "prompt": 555,
+      "completion": 150,
+      "total": 705
+    },
+    "modelAnswers": {
+      "start": 156,
+      "change": null,
+      "end": 161
+    },
+    "answer": 5,
+    "reasoning": "Ekke was 156 cm tall at the beginning of the year, and now he is 161 cm tall. To find out how much he has grown, we subtract his old height from his new height: 161 - 156 = 5. So, Ekke has grown 5 centimeters.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How tall was Ekke at the beginning of the year?",
+        "boxTarget": "start",
+        "context": "Look for the height Ekke had at the very start, before he grew taller."
+      },
+      {
+        "text": "How much taller is Ekke now than he was at the beginning of the year?",
+        "boxTarget": "change",
+        "context": "Think about how much Ekke has grown by comparing his new height to his old height."
+      },
+      {
+        "text": "How tall is Ekke now?",
+        "boxTarget": "end",
+        "context": "Find the height Ekke has after he grew."
+      }
+    ],
+    "groundTruthCategory": "Change",
+    "groundTruthSubcategory": "CJPU",
+    "groundTruthAnswer": 5,
+    "groundTruthModelAnswers": {
+      "start": 156,
+      "change": 5,
+      "end": 161
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "Kaido had 85 cents. He gave 21 cents to his friend Julia. How many cents does Kaido have now?",
+    "output": "Kaido starts with a quantity and loses some due to giving it away, which describes a change (decrease) over time resulting from an action.",
+    "category": "Change",
+    "subcategory": "CSPU",
+    "subReasoning": "First, I determine if the quantity increases or decreases over time. Kaido starts with 85 cents and gives away (removes) 21 cents, so the amount is decreasing; this is a Separate situation. Next, I fill in the structure: Start (initial amount) = 85 cents, Change (amount given away) = 21 cents, Result (amount left) = unknown. In a Separate problem, Start is the Whole, and Change and Result are the Parts. Since the Result (a Part) is unknown, this is a Change–Separate, Part Unknown (CSPU) problem.",
+    "tokenUsage": {
+      "prompt": 552,
+      "completion": 155,
+      "total": 707
+    },
+    "modelAnswers": {
+      "start": 85,
+      "change": 21,
+      "end": null
+    },
+    "answer": 64,
+    "reasoning": "Kaido started with 85 cents. He gave 21 cents to Julia, so we need to see how much he has after giving some away. If we take 21 away from 85, we get 85 - 21 = 64. So Kaido has 64 cents now.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many cents did Kaido have at the start?",
+        "boxTarget": "start",
+        "context": "Look at the beginning of the story to see how many cents Kaido had before giving any away."
+      },
+      {
+        "text": "How many cents did Kaido give to Julia?",
+        "boxTarget": "change",
+        "context": "Check the story to find out the number of cents Kaido gave to his friend Julia."
+      },
+      {
+        "text": "How many cents does Kaido have now?",
+        "boxTarget": "end",
+        "context": "Think about what we are trying to find out after Kaido gave some cents to Julia."
+      }
+    ],
+    "groundTruthCategory": "Change",
+    "groundTruthSubcategory": "CSPU",
+    "groundTruthAnswer": 64,
+    "groundTruthModelAnswers": {
+      "start": 85,
+      "change": 21,
+      "end": 64
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "Boys used 32 snowballs for the snowball war. After the war ended, they still had 9 snowballs left. How many did they have prepared?",
+    "output": "The boys start with an unknown initial quantity, use some (which is a change), and are left with a certain number. The structure is before (total), change (used), after (left).",
+    "category": "Change",
+    "subcategory": "CSWU",
+    "subReasoning": "First, determine if the situation is Join (increase) or Separate (decrease). Here, boys used 32 snowballs (decrease), so this is a Separate (Change–Separate) situation. Set up the model: Start - Change = Result, where Start is the number of snowballs they originally had (unknown), Change is the 32 snowballs used, and Result is the 9 snowballs left. In the Separate model, Start is the Whole, and both Change and Result are Parts. The unknown value is the Start (Whole). Therefore, this problem is CSWU (Change–Separate, Whole Unknown).",
+    "tokenUsage": {
+      "prompt": 559,
+      "completion": 164,
+      "total": 723
+    },
+    "modelAnswers": {
+      "start": null,
+      "change": 32,
+      "end": 9
+    },
+    "answer": 41,
+    "reasoning": "The boys used 32 snowballs during their snowball war, and when it was all over, they still had 9 snowballs that they didn’t use. If we add together the ones they used and the ones they had left, we get 32 + 9 = 41. So, the boys had 41 snowballs made before the war began.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many snowballs did the boys have at the end of the snowball war?",
+        "boxTarget": "end",
+        "context": "Look at the part that tells us how many snowballs were left after the war was over."
+      },
+      {
+        "text": "How many snowballs did the boys use during the snowball war?",
+        "boxTarget": "change",
+        "context": "Find the number of snowballs they used up while playing."
+      },
+      {
+        "text": "How many snowballs did the boys make to get ready before the war started?",
+        "boxTarget": "start",
+        "context": "Think about how many snowballs they had right at the beginning, before anything happened."
+      }
+    ],
+    "groundTruthCategory": "Change",
+    "groundTruthSubcategory": "CSWU",
+    "groundTruthAnswer": 41,
+    "groundTruthModelAnswers": {
+      "start": 41,
+      "change": 32,
+      "end": 9
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "Peppa weighs 33kg. George weighs 17kg. How much heavier is Peppa than George?",
+    "output": "This contrasts two independent quantities (the weights of two people at the same time) to find the difference between them.",
+    "category": "Compare",
+    "subcategory": "CMDU",
+    "subReasoning": "The problem is asking how much heavier Peppa is than George, which is a comparison focusing on 'how much more.' According to the COMPS compare model, Peppa's weight is the larger quantity, George's weight is the smaller quantity, and the difference (how much heavier Peppa is) is unknown. Since the comparison is about 'more than' and the unknown is the difference, the correct classification is Compare–More, Difference Unknown.",
+    "tokenUsage": {
+      "prompt": 551,
+      "completion": 124,
+      "total": 675
+    },
+    "modelAnswers": {
+      "bigger": 33,
+      "smaller": 17,
+      "difference": null
+    },
+    "answer": 16,
+    "reasoning": "Peppa weighs 33 kilograms and George weighs 17 kilograms. To find out how much heavier Peppa is, we take away George's weight from Peppa's weight: 33 - 17 = 16. So Peppa is 16 kilograms heavier than George.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many kilograms does Peppa weigh?",
+        "boxTarget": "bigger",
+        "context": "Look at the story to see Peppa's weight."
+      },
+      {
+        "text": "How many kilograms does George weigh?",
+        "boxTarget": "smaller",
+        "context": "Find George's weight in the problem."
+      },
+      {
+        "text": "How much heavier is Peppa than George?",
+        "boxTarget": "difference",
+        "context": "Think about the question we are trying to solve."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CMDU",
+    "groundTruthAnswer": 16,
+    "groundTruthModelAnswers": {
+      "bigger": 33,
+      "smaller": 17,
+      "difference": 16
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "Lilli and Stitch were cutting pieces for a garland. Lilli cut 13 pieces. Stitch cut 4 more pieces than Lilli. How many pieces did Stitch cut?",
+    "output": "The problem contrasts the numbers of pieces cut by two people, with the focus on how Stitch’s amount compares to Lilli's (how many more Stitch cut), which fits the Compare category.",
+    "category": "Compare",
+    "subcategory": "CMLQU",
+    "subReasoning": "The problem states that Stitch cut 4 more pieces than Lilli. Lilli cut 13 pieces. The question asks how many pieces Stitch cut. The comparison uses 'more than', so it is Compare–More. We know the smaller quantity (Lilli: 13), and the difference (4 more). The unknown is the larger quantity (how many pieces Stitch cut). Therefore, this is Compare–More, Larger Quantity Unknown.",
+    "tokenUsage": {
+      "prompt": 565,
+      "completion": 144,
+      "total": 709
+    },
+    "modelAnswers": {
+      "bigger": null,
+      "smaller": 13,
+      "difference": 4
+    },
+    "answer": 17,
+    "reasoning": "Lilli cut 13 pieces and Stitch cut 4 more pieces than Lilli. To figure out how many pieces Stitch cut, we start with Lilli's 13 pieces and add 4 more: 13 + 4 = 17. So Stitch cut 17 pieces.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many pieces did Stitch cut for the garland?",
+        "boxTarget": "bigger",
+        "context": "We want to find out how many pieces Stitch made."
+      },
+      {
+        "text": "How many pieces did Lilli cut for the garland?",
+        "boxTarget": "smaller",
+        "context": "Look in the story for the number of pieces Lilli made."
+      },
+      {
+        "text": "How many more pieces did Stitch cut than Lilli?",
+        "boxTarget": "difference",
+        "context": "The problem tells us how many extra pieces Stitch cut compared to Lilli."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CMLQU",
+    "groundTruthAnswer": 17,
+    "groundTruthModelAnswers": {
+      "bigger": 17,
+      "smaller": 13,
+      "difference": 4
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "A ticket to the ice skating rink costs 15 euros. It is 3 euros more expensive than the horse sledge ride. How much does the horse sledge ticket cost?",
+    "output": "This compares the prices of two different items, focusing on the difference. The question is about the cost of the horse sledge when the ice skating ticket is known to be more expensive by a certain amount.",
+    "category": "Compare",
+    "subcategory": "CMSQU",
+    "subReasoning": "The problem states that the ice skating ticket costs 15 euros and that this is 3 euros more expensive than the horse sledge ride. The direction of the comparison is 'more than', so this is a Compare–More problem. The given quantity (15 euros, ice skating) is the larger quantity, the difference is 3 euros, and we are asked for the horse sledge ticket price, which is the smaller quantity. Therefore, the unknown is the smaller quantity in a Compare–More problem.",
+    "tokenUsage": {
+      "prompt": 564,
+      "completion": 166,
+      "total": 730
+    },
+    "modelAnswers": {
+      "bigger": 15,
+      "smaller": null,
+      "difference": 3
+    },
+    "answer": 12,
+    "reasoning": "The ice skating ticket costs 15 euros, and that is 3 euros more than the horse sledge ticket. So to find out how much the horse sledge ticket costs, we take away 3 euros from the ice skating ticket: 15 - 3 = 12. That means the horse sledge ticket costs 12 euros.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many euros does a ticket to the ice skating rink cost?",
+        "boxTarget": "bigger",
+        "context": "Look at the sentence that tells the price of the ice skating ticket."
+      },
+      {
+        "text": "How much does a ticket to the horse sledge ride cost?",
+        "boxTarget": "smaller",
+        "context": "We want to find out the price of the horse sledge ticket. This is what we are trying to figure out."
+      },
+      {
+        "text": "How many euros more does the ice skating ticket cost than the horse sledge ticket?",
+        "boxTarget": "difference",
+        "context": "Check the story for how much more expensive the ice skating ticket is."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CMSQU",
+    "groundTruthAnswer": 12,
+    "groundTruthModelAnswers": {
+      "bigger": 15,
+      "smaller": 12,
+      "difference": 3
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "Two classes cleaned the school yard. One class collected 7 bags of garbage. The other class collected only 4 bags. How many fewer bags did the second class collect?",
+    "output": "This problem contrasts two distinct groups (the classes) at the same time, asking about the difference in amounts; it is a direct comparison.",
+    "category": "Compare",
+    "subcategory": "CLDU",
+    "subReasoning": "The problem is asking 'How many fewer bags did the second class collect?' The comparison direction is 'fewer', which means it is a Compare–Less problem. According to the COMPS model, Bigger (the first class: 7 bags) = Smaller (the second class: 4 bags) + Difference. The unknown in the problem is the Difference (how many fewer bags). Therefore, this is a Compare–Less, Difference Unknown problem.",
+    "tokenUsage": {
+      "prompt": 564,
+      "completion": 143,
+      "total": 707
+    },
+    "modelAnswers": {
+      "bigger": 7,
+      "smaller": 4,
+      "difference": null
+    },
+    "answer": 3,
+    "reasoning": "One class collected 7 bags of garbage and the other class collected just 4 bags. To find out how many fewer bags the second class collected, we take away the 4 bags from the 7 bags: 7 - 4 = 3. So, the second class collected 3 fewer bags than the first class.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many bags of garbage did the class that collected more bags pick up?",
+        "boxTarget": "bigger",
+        "context": "Look for the class that picked up the most bags in the story."
+      },
+      {
+        "text": "How many bags of garbage did the other class collect?",
+        "boxTarget": "smaller",
+        "context": "Find the number of bags the second class picked up."
+      },
+      {
+        "text": "How many fewer bags did the second class collect?",
+        "boxTarget": "difference",
+        "context": "This is what the story wants us to figure out."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLDU",
+    "groundTruthAnswer": 3,
+    "groundTruthModelAnswers": {
+      "bigger": 7,
+      "smaller": 4,
+      "difference": 3
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "Stella decorated 17 gingerbread cookies in the cooking lesson. Ella decorated 3 fewer cookies than Stella. How many cookies did Ella decorate?",
+    "output": "The problem compares the numbers of cookies decorated by two people, with one being described in relation to the other (3 fewer), making it a Compare scenario.",
+    "category": "Compare",
+    "subcategory": "CLSQU",
+    "subReasoning": "The problem states that Ella decorated 3 fewer cookies than Stella. This is a 'less than' comparison, so the problem is Compare–Less. Using the compare model: Bigger (Stella) = Smaller (Ella) + Difference (3). Stella's number (17) is given, the difference (3) is given, and we are asked 'How many cookies did Ella decorate?', which is the smaller quantity. Therefore, this is a Compare–Less, Smaller Quantity Unknown problem.",
+    "tokenUsage": {
+      "prompt": 558,
+      "completion": 138,
+      "total": 696
+    },
+    "modelAnswers": {
+      "bigger": 17,
+      "smaller": null,
+      "difference": 3
+    },
+    "answer": 14,
+    "reasoning": "Stella decorated 17 gingerbread cookies. Ella decorated 3 fewer cookies than Stella. If we take 3 away from Stella's 17 cookies, that is 17 - 3 = 14. So Ella decorated 14 gingerbread cookies.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many cookies did Stella decorate?",
+        "boxTarget": "bigger",
+        "context": "Look at the story to see how many cookies Stella finished."
+      },
+      {
+        "text": "How many fewer cookies did Ella decorate than Stella?",
+        "boxTarget": "difference",
+        "context": "Read the story to find out how many less cookies Ella made compared to Stella."
+      },
+      {
+        "text": "How many cookies did Ella decorate?",
+        "boxTarget": "smaller",
+        "context": "Think about what we are trying to find out about Ella in this story."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLSQU",
+    "groundTruthAnswer": 14,
+    "groundTruthModelAnswers": {
+      "bigger": 17,
+      "smaller": 14,
+      "difference": 3
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  },
+  {
+    "modelName": "OpenAI: GPT-4.1",
+    "problem": "Hugo has read 14 books last year. This is 4 books fewer than Marko. How many books did Marko read?",
+    "output": "This problem asks about the difference between two people’s amounts (how many more books Marko read compared to Hugo), so it is a Compare problem.",
+    "category": "Compare",
+    "subcategory": "CLLQU",
+    "subReasoning": "The problem states that Hugo has read 14 books, and that this is 4 books fewer than Marko. This means Hugo's amount is being compared as less than Marko's. The comparison direction is 'Compare–Less' (because it says 'fewer than'). According to the compare model: Bigger (Marko's books) = Smaller (Hugo's books) + Difference (4). We know Hugo's books (14) and the difference (4), but we are asked for Marko's total (the larger quantity). Therefore, this is a Compare–Less, Larger Quantity Unknown problem.",
+    "tokenUsage": {
+      "prompt": 557,
+      "completion": 149,
+      "total": 706
+    },
+    "modelAnswers": {
+      "bigger": null,
+      "smaller": 14,
+      "difference": 4
+    },
+    "answer": 18,
+    "reasoning": "Hugo has read 14 books, and that’s 4 books less than Marko. To find out how many books Marko read, we add those 4 books to Hugo’s number: 14 + 4 = 18. So Marko read 18 books.",
+    "storyGrammarPrompts": [
+      {
+        "text": "How many books did Marko read?",
+        "boxTarget": "bigger",
+        "context": "We want to find out the number of books Marko read, because that's what the story is asking."
+      },
+      {
+        "text": "How many books did Hugo read last year?",
+        "boxTarget": "smaller",
+        "context": "Look in the story where it says how many books Hugo read."
+      },
+      {
+        "text": "How many more books did Marko read than Hugo?",
+        "boxTarget": "difference",
+        "context": "Check the story to see how many more books Marko read compared to Hugo."
+      }
+    ],
+    "groundTruthCategory": "Compare",
+    "groundTruthSubcategory": "CLLQU",
+    "groundTruthAnswer": 18,
+    "groundTruthModelAnswers": {
+      "bigger": 18,
+      "smaller": 14,
+      "difference": 4
+    },
+    "isModelMappingCorrect": true,
+    "isAnswerCorrect": true
+  }
+]

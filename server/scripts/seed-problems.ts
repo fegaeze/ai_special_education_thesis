@@ -1,5 +1,8 @@
-import { readFileSync, readdirSync, appendFileSync } from "fs";
+import { config } from "dotenv";
 import { join } from "path";
+config({ path: join(__dirname, "../.env") });
+
+import { readFileSync, readdirSync, appendFileSync } from "fs";
 import prisma from "../config/prisma";
 import { Category, AIModelName, Subcategory } from "@prisma/client";
 
@@ -215,16 +218,31 @@ function validateProblem(problem: JsonProblem): boolean {
 // -----------------------------
 // Seeder
 // -----------------------------
+async function clearAllProblems() {
+  console.log("🗑️  Clearing existing data (CASCADE)...");
+
+  // TRUNCATE CASCADE removes all rows and propagates to every dependent table
+  // in one shot, bypassing FK ordering issues.
+  await prisma.$executeRawUnsafe(`
+    TRUNCATE TABLE
+      "QuizResponse",
+      "QuizAttempt",
+      "QuizCode",
+      "QuizSession",
+      "ModelEvaluation",
+      "Problem",
+      "GroundTruth"
+    RESTART IDENTITY CASCADE
+  `);
+
+  console.log("✅ Clear complete.\n");
+}
+
 async function seedProblems() {
   console.log("🌱 Seeding started...");
-  
-  // Check if data already exists to prevent duplicate seeding
-  const existingProblems = await prisma.problem.count();
-  if (existingProblems > 0) {
-    console.log(`⚠️ Database already contains ${existingProblems} problems. Skipping seed to prevent duplicates.`);
-    return;
-  }
-  
+
+  await clearAllProblems();
+
   const seedDir = join(__dirname, "../data/seed");
   const files = readdirSync(seedDir).filter((f) => f.endsWith(".json"));
 

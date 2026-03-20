@@ -147,14 +147,19 @@ export function QuizProvider({ children }: QuizProviderProps) {
 
           if (response.ok) {
             const data = await response.json();
-            setSessionState((prev) => ({
-              ...prev,
-              currentQuizCode: parsed.currentQuizCode,
-              isQuizActive: true,
-              quizData: data,
-              currentProblemCounter: parsed.currentProblemCounter || 0,
-              isInitialized: true,
-            }));
+            setSessionState((prev) => {
+              // If the user already submitted a code manually while this
+              // background restore was running, don't overwrite their session.
+              if (prev.isQuizActive) return { ...prev, isInitialized: true };
+              return {
+                ...prev,
+                currentQuizCode: parsed.currentQuizCode,
+                isQuizActive: true,
+                quizData: data,
+                currentProblemCounter: parsed.currentProblemCounter || 0,
+                isInitialized: true,
+              };
+            });
           } else {
             // Quiz code is no longer valid, clear it
             localStorage.removeItem("quiz-progress");
@@ -289,6 +294,7 @@ export function QuizProvider({ children }: QuizProviderProps) {
           answers: [],
           currentProblemCounter: 0,
           error: null,
+          isInitialized: true,
         }));
 
         // Save progress to localStorage

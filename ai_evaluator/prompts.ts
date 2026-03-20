@@ -9,24 +9,34 @@ Describes a situation where a **quantity increases or decreases over time** due 
 It involves a **transformation** — a quantity starts at one amount and becomes a different amount.
 These problems typically follow a **before-and-after structure** or unfold across **multiple time points**.
 ### Common Indicators
-- Actions like: _gave_, _lost_, _got_, _added_, _received_, _left_, _joined_
+- Actions like: _gave_, _lost_, _got_, _added_, _received_, _left_, _joined_, _used_, _spent_, _threw_
 - Tense or language indicates **sequence** or **time passing**
+
+### ⚠️ Easy to confuse with Combine — watch for this pattern:
+Some Change problems describe an original amount that was partly used or removed, leaving a remainder. The math may look like addition (used + left = total), but if the story involves **something happening to a quantity over time** (items being consumed, spent, thrown, broken, given away), it is **Change — not Combine**.
+- Example: "She had some stickers. She gave away 5. She has 8 left. How many did she start with?" → **Change** (something happened — she gave them away)
+- Example: "There are 5 red pens and 8 blue pens. How many altogether?" → **Combine** (nothing happened — they just exist together)
 
 ## ➕ Combine
 Describes a situation where **two or more distinct quantities** are **grouped together into a total**.
 There is **no transformation** — nothing changes over time. The parts are simply added to find a total.
-Even if events happened at different times (e.g., two races), if there is no **change in state**, it's **Combine**.
+Even if events happened at different times (e.g., two races), if there is **no change in state of any single quantity**, it's **Combine**.
 ### Common Indicators
-- Parts are distinct but **independent**
-- No item is being gained/lost/transferred
+- Parts are distinct but **independent** — neither is created from or affected by the other
+- No item is being gained/lost/transferred/used/consumed
 - Words like: _in total_, _altogether_, _sum_
 
 ## ⚖️ Compare
-Describes a situation where **two quantities are contrasted** to find the **difference** between them  
-(or determine which is more, less, or how much more or less).
+Describes a situation where **two separate, independent quantities** are contrasted at the **same point in time** to find the **difference** between them.
 ### Common Indicators
 - Questions asking: _how many more..._, _how many fewer..._
 - Focus is on **difference**, **not change** or **combining**
+- Always involves **two distinct people, objects or groups** being compared to each other
+
+### ⚠️ Easy to confuse with Change — watch for this pattern:
+If the problem involves the **same person or object at two different points in time** (before and after something happened), it is **Change — not Compare**, even if the question asks "how much more/less/taller/heavier".
+- Example: "Tom was 120cm tall last year. Now he is 125cm. How much did he grow?" → **Change** (same person, two moments in time)
+- Example: "Tom is 125cm tall. Sara is 120cm tall. How much taller is Tom?" → **Compare** (two different people at the same time)
 
 ---
 
@@ -56,6 +66,11 @@ Return your answer in the following JSON array format:
   }}
 ]
 
+⚠️ CRITICAL RULES:
+- You MUST classify EVERY problem. Never skip or leave a problem unclassified.
+- The only valid values for "category" are exactly: **Change**, **Combine**, or **Compare**.
+- NEVER use "Unknown", "Other", "Unclear", or any value outside those three.
+- If you are unsure, make your best judgement and pick the most likely category.
 
 Here are the problems:
 ${problems.map((p) => `${p}`).join("\n")}
@@ -203,10 +218,15 @@ ${format.desc}
 Problem:
 ${problem}
 
+⚠️ CRITICAL RULES:
+- You MUST pick exactly ONE subcategory from this list: ${format.options}
+- NEVER output "Unknown", "Other", "Unclear", or anything outside that list.
+- If you are unsure, commit to your best judgement and pick the closest match.
+
 Respond strictly in the following JSON format with no extra commentary:
 {
   "reasoning": "<explanation of your reasoning in full sentences and connected thoughts>",
-  "subcategory": "${format.options}"
+  "subcategory": "<one of: ${format.options}>"
 }`;
 }
 
@@ -219,39 +239,40 @@ export function getModelAnswerPrompt(
     Change: {
       modelKeys: ["start", "change", "end"],
       desc: `
-You are solving a **Change** word problem using the COMPS model:  
-> Start ± Change = End
+You are solving a word problem where something changes over time — a quantity either grows or shrinks because of something that happens in the story.
 
----
+There are three numbers in the story:
+- How much there was **at the beginning** (start)
+- How much was **added or taken away** (change)
+- How much there is **at the end** (end)
 
-## 🔧 Step-by-Step Guide
-1. Determine if the problem describes an **increase** (Join) or **decrease** (Separate) in quantity.
-2. Identify the three model parts:
-   - **Start**: the amount before anything happened
-   - **Change**: the amount added or taken away
-   - **End**: the result after the change
+One of these three numbers is missing. Find it and explain how.
 
 ---
 
 ## ✅ Your Task
-1. Extract the values from the story.
-2. Assign each number to the correct model label: start, change, end.
-3. If a value is unknown, write null.
-4. Calculate the missing value, and assign it to answer.
-5. Explain your steps clearly.
+1. Read the story and identify all three numbers (start, change, end). Write null for the one that is missing.
+2. Calculate the missing number.
+3. Write a reasoning explanation IN THE VOICE OF A WARM TEACHER speaking directly to a child. The explanation must:
+   - Use the real names, objects and actions from the story (not abstract labels)
+   - Walk through the logic step by step in simple everyday language
+   - Show the arithmetic clearly (e.g. "85 - 21 = 64")
+   - End by stating the answer in a full sentence about the story
+   - Never use words like "start", "change", "end", "model", "equation", "variable", or any COMPS terminology
+   - Be 2–4 sentences long
 
-📦 Example Output:
+📦 Example (story: "There were 12 apples. Mia ate some. Now there are 7 left. How many did she eat?"):
 {{
   "modelAnswers": {{
     "start": 12,
     "change": null,
-    "end": 18
+    "end": 7
   }},
-  "answer": 6,
-  "reasoning": "12 + ? = 18 → 18 - 12 = 6, so the change is 6."
+  "answer": 5,
+  "reasoning": "We know Mia started with 12 apples, and now there are only 7 left. That means some apples were eaten. If we take 7 away from 12, we get 12 - 7 = 5. So Mia ate 5 apples."
 }}
 
-⚠️ IMPORTANT: All values in modelAnswers must be numbers or null. Do not include mathematical expressions like "2 + 2" - calculate the result and write "4" instead.
+⚠️ All values in modelAnswers must be numbers or null. Never write a math expression like "2 + 2" as a value — calculate it and write the result.
 
 Problem:
 "${problem}"
@@ -262,28 +283,29 @@ Only return the JSON object.
     Combine: {
       modelKeys: ["part1", "part2", "whole"],
       desc: `
-You are solving a **Combine** word problem using the COMPS model:  
-> Part 1 + Part 2 = Whole
+You are solving a word problem where two separate groups are brought together into one total.
 
----
+There are three numbers:
+- The **first group**
+- The **second group**
+- The **total** of both groups together
 
-## 🔧 Step-by-Step Guide
-
-1. Identify the three values:
-   - **Part 1**: the first part of the group
-   - **Part 2**: the second part of the group
-   - **Whole**: the total after combining
+One of these three numbers is missing. Find it and explain how.
 
 ---
 
 ## ✅ Your Task
-1. Assign values to part1, part2, and whole.
-2. Use "null" for the missing part.
-3. Calculate the answer.
-4. Explain your math clearly.
+1. Read the story and identify the two groups and the total. Write null for the one that is missing.
+2. Calculate the missing number.
+3. Write a reasoning explanation IN THE VOICE OF A WARM TEACHER speaking directly to a child. The explanation must:
+   - Use the real names, objects and actions from the story (not abstract labels)
+   - Walk through the logic step by step in simple everyday language
+   - Show the arithmetic clearly (e.g. "34 + 33 = 67")
+   - End by stating the answer in a full sentence about the story
+   - Never use words like "part", "whole", "model", "equation", "variable", or any COMPS terminology
+   - Be 2–4 sentences long
 
-📦 Example Output:
-
+📦 Example (story: "There are 4 red balls and 6 blue balls. How many balls are there altogether?"):
 {{
   "modelAnswers": {{
     "part1": 4,
@@ -291,10 +313,10 @@ You are solving a **Combine** word problem using the COMPS model:
     "whole": null
   }},
   "answer": 10,
-  "reasoning": "4 + 6 = 10, so the total is 10."
+  "reasoning": "We have two groups of balls — 4 red ones and 6 blue ones. To find out how many there are altogether, we add them together: 4 + 6 = 10. So there are 10 balls in total."
 }}
 
-⚠️ IMPORTANT: All values in modelAnswers must be numbers or null. Do not include mathematical expressions like "2 + 2" - calculate the result and write "4" instead.
+⚠️ All values in modelAnswers must be numbers or null. Never write a math expression like "2 + 2" as a value — calculate it and write the result.
 
 Problem:
 "${problem}"
@@ -305,39 +327,40 @@ Only return the JSON object.
     Compare: {
       modelKeys: ["bigger", "smaller", "difference"],
       desc: `
-You are solving a **Compare** word problem using the COMPS model:  
-> Bigger = Smaller + Difference
+You are solving a word problem where two amounts are compared to find how much more or less one is than the other.
 
----
+There are three numbers:
+- The **bigger amount**
+- The **smaller amount**
+- The **difference** between them (how much more or fewer)
 
-## 🔧 Step-by-Step Guide
-
-1. Identify the quantities:
-   - **Bigger**: the larger amount
-   - **Smaller**: the lesser amount
-   - **Difference**: how much more or fewer
+One of these three numbers is missing. Find it and explain how.
 
 ---
 
 ## ✅ Your Task
+1. Read the story and identify the bigger amount, the smaller amount, and the difference. Write null for the one that is missing.
+2. Calculate the missing number.
+3. Write a reasoning explanation IN THE VOICE OF A WARM TEACHER speaking directly to a child. The explanation must:
+   - Use the real names, objects and actions from the story (not abstract labels)
+   - Walk through the logic step by step in simple everyday language
+   - Show the arithmetic clearly (e.g. "33 - 17 = 16")
+   - End by stating the answer in a full sentence about the story
+   - Never use words like "bigger", "smaller", "difference", "model", "equation", "variable", or any COMPS terminology
+   - Be 2–4 sentences long
 
-1. Assign values to bigger, smaller, and difference.
-2. Use "null" for the unknown one.
-3. Solve for the answer and explain how.
-
-📦 Example Output:
-
+📦 Example (story: "The red box has 15 crayons. The blue box has 9 crayons. How many more crayons does the red box have?"):
 {{
   "modelAnswers": {{
-    "bigger": null,
-    "smaller": 4,
-    "difference": 2
+    "bigger": 15,
+    "smaller": 9,
+    "difference": null
   }},
   "answer": 6,
-  "reasoning": "Bigger = 4 + 2 = 6, so the bigger amount is 6."
+  "reasoning": "The red box has 15 crayons and the blue box has 9 crayons. To find out how many more the red box has, we take the blue box amount away from the red box amount: 15 - 9 = 6. So the red box has 6 more crayons than the blue box."
 }}
 
-⚠️ IMPORTANT: All values in modelAnswers must be numbers or null. Do not include mathematical expressions like "2 + 2" - calculate the result and write "4" instead.
+⚠️ All values in modelAnswers must be numbers or null. Never write a math expression like "2 + 2" as a value — calculate it and write the result.
 
 Problem:
 "${problem}"
@@ -397,18 +420,17 @@ export function getStoryGrammarPrompt(
   if (!modelInfo) throw new Error(`Unknown subtype: ${subtype}`);
 
   return `
-You are an expert elementary math teacher helping a student solve a word problem using the COMPS (Conceptual Model-Based Problem Solving) framework.
-
-The student is in Grades 1–4 and needs clear, supportive help understanding what to do at each step.
+You are a warm and patient primary school teacher helping a young child (Grades 1–4) work through a word problem step by step using the COMPS (Conceptual Model-Based Problem Solving) framework.
+Some of these children have learning difficulties, so your language must be very simple, concrete, and encouraging.
 
 ---
 
 📘 Problem:
 "${problem}"
 
-🔢 Subtype: ${subtype}  
-📐 Model Type: ${modelInfo.model}  
-📦 Equation Parts: ${modelInfo.boxes.join(", ")}  
+🔢 Subtype: ${subtype}
+📐 Model: ${modelInfo.model}
+📦 Equation Parts: ${modelInfo.boxes.join(", ")}
 📦 Model Answers: ${modelAnswers}
 📊 Final Answer: ${answer}
 
@@ -416,31 +438,32 @@ The student is in Grades 1–4 and needs clear, supportive help understanding wh
 
 🧠 Your Task
 
-Generate a list of ${modelInfo.boxes.length} questions — one for each model part — that will help the child fill in the model equation.
+Write ${modelInfo.boxes.length} questions — one for each part of the model equation — that guide the child to find each number in the story.
 
-For each part, generate:
+### Rules for every question:
 
-- **text**: a simple story grammar question in the student's language
-- **boxTarget**: the model box it refers to (e.g., "start", "whole")
-- **context**: a friendly explanation of what the story grammar question asks, using warm, simple language for young readers in grades 1–4.
+1. **The answer must always be a number.** Every question must be answerable with a specific number. Never ask a question whose answer is a name only, a description, or a yes/no. If you name a person or object to help orient the child, always end with a "how many / how much" clause so the answer is a number. For example: "Peppa weighs 33 kg and George weighs 17 kg — how much does Peppa weigh?" is good. "Who weighs more?" is not.
 
-🧒 Keep the tone warm and supportive, as if you're sitting next to the child.  
-Do **not** rephrase the problem. Do **not** give away the answer.
+2. **Use the real things from the story.** Instead of abstract labels like "what is the start value?", ask "How many decorations were on the tree before lunch?" Use the actual objects, people and actions from the problem.
+
+3. **Make the child think, not just copy.** For values that are given in the story, ask the child to find them. For the unknown value, ask what we are trying to figure out — framed as a natural question about the story.
+
+4. **Simple words only.** No "variable", "equation", "value", "unknown", "model", "part", "whole" as abstract terms. Write as if speaking warmly to a 7-year-old.
+
+5. **One idea per question. Short sentences.**
 
 ---
 
-✅ Output Format:
+✅ Output Format — return only this JSON array, no extra text:
 [
   {{
-    "text": "Story grammar question for the student",
-    "boxTarget": "start",
-    "context": "a friendly explanation of what the story grammar question asks, using warm, simple language for young readers in grades 1–4."
+    "text": "The question for the child — must be answerable with a number",
+    "boxTarget": "${modelInfo.boxes[0]}",
+    "context": "One short friendly sentence telling the child where to look or what to think about to find this number."
   }},
   ...
 ]
 
-Use clear and natural language. Do not use math words like “variable” or “term.” Use the actual items from the story where it helps.
-
-Now write the JSON array.
+Now write the JSON array for all ${modelInfo.boxes.length} parts.
 `;
 }

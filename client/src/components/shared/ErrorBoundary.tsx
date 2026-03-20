@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 import {
   type FallbackProps,
   ErrorBoundary as ReactErrorBoundary,
-  getErrorMessage,
 } from "react-error-boundary";
 
 import Header from "./navigation/Header";
@@ -39,7 +38,7 @@ function ErrorFallback({ error }: Readonly<Pick<FallbackProps, "error">>) {
             Oops! Something went wrong.
           </h2>
           <p className="text-gray-500 mb-6 text-center max-w-md text-sm md:text-base">
-            {getErrorMessage(error) || UI_MESSAGES.UNEXPECTED_ERROR}
+            {(error instanceof Error ? error.message : String(error)) || UI_MESSAGES.UNEXPECTED_ERROR}
           </p>
           <Button onClick={() => globalThis.window.location.reload()}>
             Refresh Page
