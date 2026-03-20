@@ -85,3 +85,7 @@ next-env.d.ts
 # Ignore local data
 data/
 **/data/
+# But always track seed files needed for deployment
+!server/data/
+!server/data/seed/
+!server/data/seed/**
