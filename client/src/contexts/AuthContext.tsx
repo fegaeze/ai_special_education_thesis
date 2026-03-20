@@ -80,17 +80,14 @@ export function AuthProvider({ children }: Readonly<{ children: React.ReactNode 
     const user = loadUser();
     if (!user) return;
 
-    fetch(API_ENDPOINTS.validate, {
-      credentials: "include",
-    })
-      .then((res) => {
-        if (!res.ok) {
+    apiFetch(API_ENDPOINTS.validate)
+      .then(({ status }) => {
+        if (status === 401 || status === 403) {
           clearUser();
+          setAuthToken(null);
           redirectToLogin("session_expired");
         }
-      })
-      .catch(() => {
-        // Network error — keep local state, don't log out
+        // Network errors (status 0) keep local state — don't log the user out
       });
   }, []);
 
