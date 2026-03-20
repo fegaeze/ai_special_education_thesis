@@ -12,8 +12,12 @@ if (!API_BASE_URL) {
 
 export const API_ENDPOINTS = {
   base: API_BASE_URL,
-  register: `${API_BASE_URL}/api/teachers/auth/register`,
-  login: `${API_BASE_URL}/api/teachers/auth/login`,
+  // Auth routes go through the Next.js proxy so cookies are set on this
+  // domain and Next.js middleware can read them (cross-domain cookies won't work).
+  register: `/api/auth/register`,
+  login: `/api/auth/login`,
+  logout: `/api/auth/logout`,
+  validate: `/api/auth/validate`,
   classes: `${API_BASE_URL}/api/classes`,
   problems: `${API_BASE_URL}/api/problems`,
   quiz: `${API_BASE_URL}/api/quiz`,

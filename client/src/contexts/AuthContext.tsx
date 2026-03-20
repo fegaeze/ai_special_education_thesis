@@ -79,7 +79,7 @@ export function AuthProvider({ children }: Readonly<{ children: React.ReactNode 
     const user = loadUser();
     if (!user) return;
 
-    fetch(`${API_ENDPOINTS.base}/api/teachers/auth/validate`, {
+    fetch(API_ENDPOINTS.validate, {
       credentials: "include",
     })
       .then((res) => {
@@ -169,7 +169,7 @@ export function AuthProvider({ children }: Readonly<{ children: React.ReactNode 
   // Awaiting the server call ensures the httpOnly cookie is cleared before the
   // new request triggered by window.location.replace (which middleware reads).
   const logoutAsync = useCallback(async () => {
-    await apiFetch(`${API_ENDPOINTS.base}/api/teachers/auth/logout`, {
+    await apiFetch(API_ENDPOINTS.logout, {
       method: "POST",
     }).catch(() => {});
     clearUser();
