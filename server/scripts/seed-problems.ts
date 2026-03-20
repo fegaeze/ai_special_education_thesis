@@ -231,7 +231,10 @@ async function clearAllProblems() {
       "QuizSession",
       "ModelEvaluation",
       "Problem",
-      "GroundTruth"
+      "GroundTruth",
+      "Student",
+      "Class",
+      "Teacher"
     RESTART IDENTITY CASCADE
   `);
 
