@@ -8,13 +8,37 @@ export interface ApiResponse<T> {
 
 // Fires when any request returns 401 so AuthContext can log the user out.
 export const unauthorizedEvent =
-  typeof window !== "undefined"
-    ? new EventTarget()
-    : null;
+  globalThis.window === undefined
+    ? null
+    : new EventTarget();
+
+// ---------------------------------------------------------------------------
+// Token store — module-level so apiFetch can always access it without needing
+// React context. AuthContext calls setAuthToken on login / restore / logout.
+// ---------------------------------------------------------------------------
+const TOKEN_KEY = "auth_token";
+let _token: string | null = null;
+
+export function setAuthToken(token: string | null) {
+  _token = token;
+  if (globalThis.window === undefined) return;
+  if (token) {
+    localStorage.setItem(TOKEN_KEY, token);
+  } else {
+    localStorage.removeItem(TOKEN_KEY);
+  }
+}
+
+export function loadAuthToken(): string | null {
+  if (globalThis.window === undefined) return null;
+  _token = localStorage.getItem(TOKEN_KEY);
+  return _token;
+}
 
 /**
  * Wrapper around fetch that:
  * - Always sends cookies (credentials: "include")
+ * - Adds Authorization: Bearer header when a token is available
  * - Never throws — returns { data, error, status }
  * - Fires "unauthorized" event on 401 for global logout handling
  * - Handles non-JSON server error bodies gracefully
@@ -23,10 +47,17 @@ export async function apiFetch<T = unknown>(
   url: string,
   options?: RequestInit,
 ): Promise<ApiResponse<T>> {
+  const token = _token ?? loadAuthToken();
+  const authHeader = token ? { Authorization: `Bearer ${token}` } : {};
+
   try {
     const res = await fetch(url, {
       ...options,
       credentials: "include",
+      headers: {
+        ...authHeader,
+        ...options?.headers,
+      },
     });
 
     const contentType = res.headers.get("content-type") ?? "";

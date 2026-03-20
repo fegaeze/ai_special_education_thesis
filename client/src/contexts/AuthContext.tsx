@@ -13,7 +13,7 @@ import { toast } from "sonner";
 
 import { API_ENDPOINTS, ROUTES } from "@/lib/config";
 import { AUTH_ERRORS, SUCCESS_MESSAGES } from "@/lib/errors";
-import { apiFetch, unauthorizedEvent } from "@/lib/api-fetch";
+import { apiFetch, unauthorizedEvent, setAuthToken, loadAuthToken } from "@/lib/api-fetch";
 import type { LoginData, RegisterData, AuthUser, AuthState } from "@/hooks/useAuth";
 
 // ── user persistence (localStorage stores user data only — NOT the token) ───
@@ -46,8 +46,9 @@ function initState(): AuthState {
     return { user: null, token: null, isAuthenticated: false, isLoading: false };
   }
   const user = loadUser();
+  const token = loadAuthToken(); // restore token for Bearer header on API calls
   return user
-    ? { user, token: null, isAuthenticated: true, isLoading: false }
+    ? { user, token, isAuthenticated: true, isLoading: false }
     : { user: null, token: null, isAuthenticated: false, isLoading: false };
 }
 
@@ -101,6 +102,7 @@ export function AuthProvider({ children }: Readonly<{ children: React.ReactNode 
 
     const handle = () => {
       clearUser();
+      setAuthToken(null);
       redirectToLogin("session_expired");
     };
 
@@ -111,7 +113,7 @@ export function AuthProvider({ children }: Readonly<{ children: React.ReactNode 
   // ── login ─────────────────────────────────────────────────────────────────
   const login = useCallback(
     async (data: LoginData): Promise<boolean> => {
-      const { data: result, error } = await apiFetch<{ user: AuthUser }>(
+      const { data: result, error } = await apiFetch<{ user: AuthUser; token: string }>(
         API_ENDPOINTS.login,
         {
           method: "POST",
@@ -126,9 +128,10 @@ export function AuthProvider({ children }: Readonly<{ children: React.ReactNode 
       }
 
       saveUser(result.user);
+      setAuthToken(result.token); // persist for cross-domain Bearer auth
       setAuthState({
         user: result.user,
-        token: null,
+        token: result.token,
         isAuthenticated: true,
         isLoading: false,
       });
@@ -173,6 +176,7 @@ export function AuthProvider({ children }: Readonly<{ children: React.ReactNode 
       method: "POST",
     }).catch(() => {});
     clearUser();
+    setAuthToken(null);
     globalThis.window.location.replace("/login");
   }, []);
 

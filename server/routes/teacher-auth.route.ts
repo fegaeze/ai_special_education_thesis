@@ -99,11 +99,12 @@ router.post(
 
       const { token, user } = await loginTeacher({ email, password, ip });
 
-      // Set JWT in httpOnly cookie — JS cannot read this
+      // Set JWT in httpOnly cookie for Next.js middleware (same-domain)
       res.cookie("token", token, COOKIE_OPTIONS);
 
-      // Return only user data (not the token)
-      res.json({ user });
+      // Also return the token in the body so the client can send it as a
+      // Bearer header on cross-origin API calls (frontend on Vercel, API on Render).
+      res.json({ user, token });
     } catch (err) {
       return next(err);
     }
