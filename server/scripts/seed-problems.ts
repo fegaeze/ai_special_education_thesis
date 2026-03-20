@@ -244,7 +244,17 @@ async function clearAllProblems() {
 async function seedProblems() {
   console.log("🌱 Seeding started...");
 
-  await clearAllProblems();
+  const force = process.argv.includes("--force");
+
+  if (force) {
+    await clearAllProblems();
+  } else {
+    const existing = await prisma.problem.count();
+    if (existing > 0) {
+      console.log(`✅ Database already has ${existing} problems — skipping seed. Use --force to wipe and reseed.`);
+      return;
+    }
+  }
 
   const seedDir = join(__dirname, "../data/seed");
   const files = readdirSync(seedDir).filter((f) => f.endsWith(".json"));

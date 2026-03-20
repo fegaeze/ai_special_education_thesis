@@ -14,6 +14,7 @@
     "prisma:migrate:deploy": "prisma migrate deploy",
     "prisma:studio": "prisma studio",
     "seed:problems": "ts-node scripts/seed-problems.ts",
+    "seed:problems:force": "ts-node scripts/seed-problems.ts --force",
     "seed:problems:prod": "NODE_ENV=production ts-node scripts/seed-problems.ts",
     "lint": "eslint .",
     "format": "prettier --write ."
