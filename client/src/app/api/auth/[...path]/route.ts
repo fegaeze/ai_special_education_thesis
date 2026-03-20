@@ -138,12 +138,14 @@ export async function GET(
   req: NextRequest,
   { params }: { params: Promise<{ path: string[] }> },
 ) {
-  return proxyAuth(req, await params);
+  const { path } = await params;
+  return proxyAuth(req, path);
 }
 
 export async function POST(
   req: NextRequest,
   { params }: { params: Promise<{ path: string[] }> },
 ) {
-  return proxyAuth(req, await params);
+  const { path } = await params;
+  return proxyAuth(req, path);
 }
