@@ -1,7 +1,7 @@
 "use client";
 
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useState } from "react";
+import { zodSafeResolver } from "@/lib/zod-safe-resolver";
+import { useState, useCallback } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
@@ -14,7 +14,6 @@ import {
 } from "@/components/ui/dialog";
 import { useClassContext } from "@/contexts/ClassContext";
 import { Button } from "@/components/ui/button";
-import { StudentUpload } from "./StudentUpload";
 import { VALIDATION_MESSAGES } from "@/lib/errors";
 
 interface AddClassModalProps {
@@ -51,6 +50,7 @@ export default function AddClassModal({
   createClass,
 }: AddClassModalProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [studentsText, setStudentsText] = useState("");
 
   const { classes } = useClassContext();
 
@@ -64,7 +64,7 @@ export default function AddClassModal({
     setError,
     setValue,
   } = useForm<ClassForm>({
-    resolver: zodResolver(classSchema),
+    resolver: zodSafeResolver(classSchema),
     mode: "onSubmit",
     defaultValues: {
       name: "",
@@ -85,11 +85,35 @@ export default function AddClassModal({
 
   const handleClose = () => {
     reset();
+    setStudentsText("");
     onClose();
   };
 
-  const handleStudentsUploaded = (students: { name: string }[]) => {
+  const parseNamesFromText = useCallback(
+    (text: string): { name: string }[] => {
+      const names = text
+        .split(/\n/)
+        .map((line) => line.trim())
+        .filter((line) => line.length > 0);
+      const seen = new Set<string>();
+      return names
+        .filter((name) => {
+          const key = name.toLowerCase();
+          if (seen.has(key)) return false;
+          seen.add(key);
+          return true;
+        })
+        .map((name) => ({ name }));
+    },
+    [],
+  );
+
+  const handleStudentsTextChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const text = e.target.value;
+    setStudentsText(text);
+    const students = parseNamesFromText(text);
     setValue("students", students);
+    if (students.length > 0) clearErrors("students");
   };
 
   const onSubmit = async (data: ClassForm) => {
@@ -122,7 +146,7 @@ export default function AddClassModal({
             Create New Class
           </DialogTitle>
           <DialogDescription className="text-sm text-gray-500 -mt-2">
-            Add a new class and upload your student list.
+            Add a new class and enter your students’ names.
           </DialogDescription>
         </DialogHeader>
 
@@ -130,10 +154,14 @@ export default function AddClassModal({
           <div className="space-y-6">
             {/* Class Name Field */}
             <div>
-              <label className="block text-xs font-medium text-gray-700 mb-2">
+              <label
+                htmlFor="add-class-name"
+                className="block text-xs font-medium text-gray-700 mb-2"
+              >
                 Class Name <span className="text-red-500">*</span>
               </label>
               <input
+                id="add-class-name"
                 {...register("name")}
                 type="text"
                 className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
@@ -146,17 +174,31 @@ export default function AddClassModal({
               )}
             </div>
 
-            {/* Student Upload Field */}
+            {/* Student names (manual entry) */}
             <div>
-              <label className="block text-xs font-medium text-gray-700 mb-2">
-                Upload Students (CSV) <span className="text-red-500">*</span>
+              <label
+                htmlFor="add-class-students"
+                className="block text-xs font-medium text-gray-700 mb-2"
+              >
+                Student Names <span className="text-red-500">*</span>
               </label>
-              <StudentUpload
-                onStudentsUploaded={handleStudentsUploaded}
-                currentStudents={watchedValues.students}
-                setError={setError}
-                clearErrors={clearErrors}
+              <p className="text-xs text-gray-500 mb-2">
+                Enter one name per line. Duplicates are ignored.
+              </p>
+              <textarea
+                id="add-class-students"
+                value={studentsText}
+                placeholder="e.g.&#10;Anna Smith&#10;Ben Jones&#10;Maria Garcia"
+                rows={5}
+                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 resize-y min-h-[100px]"
+                onChange={handleStudentsTextChange}
               />
+              {watchedValues.students.length > 0 && (
+                <p className="text-xs text-green-600 mt-2">
+                  {watchedValues.students.length} student
+                  {watchedValues.students.length === 1 ? "" : "s"} added
+                </p>
+              )}
               {errors.students && (
                 <p className="text-sm text-red-600 mt-2">
                   {errors.students.message}
@@ -179,7 +221,7 @@ export default function AddClassModal({
               type="submit"
               disabled={
                 isSubmitting ||
-                !watchedValues.name.trim() ||
+                watchedValues.name.trim() === "" ||
                 watchedValues.students.length === 0
               }
             >

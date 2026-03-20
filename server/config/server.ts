@@ -20,22 +20,33 @@ if (!JWT_SECRET) {
   throw new Error("JWT_SECRET environment variable is required");
 }
 
+const JWT_EXPIRES_SECONDS = 7 * 24 * 60 * 60; // 7 days in seconds
+
 export const SERVER_CONFIG = {
   PORT: parseInt(PORT.toString(), 10),
   NODE_ENV,
   DATABASE_URL,
   JWT_SECRET,
   JWT_EXPIRES_IN,
+  JWT_EXPIRES_SECONDS,
   DEFAULT_MODEL,
   IS_PRODUCTION: NODE_ENV === "production",
   IS_DEVELOPMENT: NODE_ENV === "development",
 } as const;
 
 // CORS Configuration
+const devOrigin = (origin: string | undefined, callback: (err: Error | null, allow?: boolean) => void) => {
+  if (!origin || origin.startsWith("http://localhost")) {
+    callback(null, true);
+  } else {
+    callback(new Error("Not allowed by CORS"));
+  }
+};
+
 export const CORS_CONFIG = {
-  origin: process.env.NODE_ENV === "production" 
-    ? [process.env.CORS_ORIGIN || "https://nutikas.vercel.app"]
-    : ["http://localhost:3000", "http://localhost:3001"],
+  origin: process.env.NODE_ENV === "production"
+    ? (process.env.CORS_ORIGIN || "https://nutikas.vercel.app")
+    : devOrigin,
   credentials: true,
   optionsSuccessStatus: 200,
-} as const;
+};

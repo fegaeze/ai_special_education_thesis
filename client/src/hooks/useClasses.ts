@@ -1,7 +1,9 @@
 import { useState, useEffect, useRef } from "react";
 import { API_ENDPOINTS } from "@/lib/config";
-import { FETCH_ERRORS, AUTH_ERRORS, getErrorMessage } from "@/lib/errors";
-import { useAuth } from "./useAuth";
+import { FETCH_ERRORS, getErrorMessage } from "@/lib/errors";
+import { apiFetch } from "@/lib/api-fetch";
+
+const AUTH_ERROR_CODES = new Set([401, 403]);
 
 export interface Student {
   id: number;
@@ -43,7 +45,6 @@ function normalizeClass(cls: Class): Class {
 }
 
 export function useClasses() {
-  const { getCurrentToken } = useAuth();
   const [classes, setClasses] = useState<Class[]>([]);
   const [selectedClass, setSelectedClassState] = useState<Class>(classes[0]);
   const [loading, setLoading] = useState(true);
@@ -80,61 +81,38 @@ export function useClasses() {
     setLoading(true);
     setError(null);
 
-    try {
-      const token = getCurrentToken();
-      if (!token) {
-        throw new Error(AUTH_ERRORS.NOT_LOGGED_IN);
+    const { data, error: fetchError, status } = await apiFetch<Class[]>(API_ENDPOINTS.classes);
+
+    if (fetchError || !data) {
+      // 401/403 are handled globally by AuthContext — don't crash the component
+      if (!AUTH_ERROR_CODES.has(status)) {
+        setError(fetchError || FETCH_ERRORS.CLASSES_FETCH);
       }
-
-      const res = await fetch(API_ENDPOINTS.classes, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-
-      if (!res.ok) {
-        const errorData = await res.json().catch(() => ({}));
-        throw new Error(errorData.message || FETCH_ERRORS.CLASSES_FETCH);
-      }
-
-      const data: Class[] = await res.json();
-      const normalized = data.map(normalizeClass);
-      setClasses(normalized);
-    } catch (error: unknown) {
-      const message = getErrorMessage(error, FETCH_ERRORS.CLASSES_FETCH);
-      setError(message);
       setClasses([]);
-    } finally {
-      setLoading(false);
+    } else {
+      setClasses(data.map(normalizeClass));
     }
+    setLoading(false);
   };
 
   const createClass = async (
     data: CreateClassData,
   ): Promise<CreateClassResponse> => {
     try {
-      const token = getCurrentToken();
-      if (!token) {
-        throw new Error(AUTH_ERRORS.NOT_LOGGED_IN);
-      }
-
-      const res = await fetch(API_ENDPOINTS.classes, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
+      const { data: result, error: fetchError } = await apiFetch<Class>(
+        API_ENDPOINTS.classes,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
         },
-        body: JSON.stringify(data),
-      });
+      );
 
-      const result = await res.json();
-
-      if (!res.ok) {
-        const message = result?.message || FETCH_ERRORS.CLASS_CREATE;
-        return { success: false, message };
+      if (fetchError || !result) {
+        return { success: false, message: fetchError || FETCH_ERRORS.CLASS_CREATE };
       }
 
-      const newClass = normalizeClass(result);
+      const newClass = normalizeClass(result as Class);
 
       setClasses((prev) => {
         const updated = [...prev, newClass];

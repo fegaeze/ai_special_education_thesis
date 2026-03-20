@@ -1,4 +1,6 @@
 import { z } from "zod";
+import Joi from "joi";
+import { createAppError } from "../middleware/error-handler";
 
 // Problem filter schemas
 export const problemFilterSchema = z.object({
@@ -28,4 +30,12 @@ export function validateParams<T extends z.ZodType>(
   params: any,
 ): z.infer<T> {
   return schema.parse(params);
+}
+
+export function validateOrThrow<T>(schema: Joi.ObjectSchema<T>, payload: unknown): T {
+  const { error, value } = schema.validate(payload);
+  if (error) {
+    throw createAppError(error.details[0].message, 400, "BAD_REQUEST");
+  }
+  return value as T;
 }

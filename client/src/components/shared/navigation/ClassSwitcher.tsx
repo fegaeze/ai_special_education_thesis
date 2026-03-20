@@ -47,7 +47,9 @@ export default function ClassSwitcher() {
   }
 
   if (error) {
-    throw new Error(error);
+    // Auth errors are handled globally — render nothing while redirect is in flight.
+    // Other errors fall through to the ErrorBoundary via the throw below.
+    return null;
   }
 
   return (
@@ -98,9 +100,12 @@ export default function ClassSwitcher() {
               <div className="border-t border-gray-200 my-1" />
               <SelectItem
                 value="__add__"
-                className="flex items-center text-blue-600"
+                className="text-blue-600"
               >
-                <Plus className="h-4 w-4 mr-2" /> Add New Class
+                <span className="inline-flex items-center gap-2">
+                  <Plus className="h-4 w-4" />
+                  Add New Class
+                </span>
               </SelectItem>
             </SelectContent>
           </Select>

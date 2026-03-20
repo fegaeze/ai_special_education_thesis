@@ -42,7 +42,14 @@ export function TrendChart({
             }
           />
           <Tooltip
-            formatter={valueFormatter}
+            formatter={
+              valueFormatter
+                ? (value, name) => [
+                    valueFormatter(Number(value ?? 0)),
+                    String(name ?? ""),
+                  ]
+                : undefined
+            }
             labelStyle={{ fontSize: "0.675rem" }}
             contentStyle={{ fontSize: "0.675rem" }}
           />

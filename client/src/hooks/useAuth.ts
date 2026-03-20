@@ -1,8 +1,10 @@
 import { useState, useEffect, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
+import { jwtDecode } from "jwt-decode";
 import { API_ENDPOINTS, ROUTES } from "@/lib/config";
 import { AUTH_ERRORS, SUCCESS_MESSAGES, getErrorMessage } from "@/lib/errors";
+import { apiFetch } from "@/lib/api-fetch";
 
 // Types
 export interface LoginData {
@@ -30,6 +32,13 @@ export interface AuthState {
   isLoading: boolean;
 }
 
+interface JwtPayload {
+  teacherId: number;
+  name: string;
+  email: string;
+  exp: number;
+}
+
 // Token management utilities
 const getToken = (): string | null => {
   if (typeof window === "undefined") return null;
@@ -46,112 +55,88 @@ const removeToken = (): void => {
   localStorage.removeItem("token");
 };
 
+/** Decode token and return user + validity without a network call. */
+function readTokenLocally(token: string): {
+  user: AuthUser;
+  valid: boolean;
+} | null {
+  try {
+    const payload = jwtDecode<JwtPayload>(token);
+    const valid = payload.exp * 1000 > Date.now();
+    return {
+      user: { id: payload.teacherId, name: payload.name, email: payload.email },
+      valid,
+    };
+  } catch {
+    return null;
+  }
+}
+
 export function useAuth() {
   const router = useRouter();
-  const [authState, setAuthState] = useState<AuthState>({
-    user: null,
-    token: null,
-    isAuthenticated: false,
-    isLoading: true,
+
+  // Initialise synchronously from localStorage so there is no loading flash.
+  const [authState, setAuthState] = useState<AuthState>(() => {
+    const token = getToken();
+    if (!token) {
+      return { user: null, token: null, isAuthenticated: false, isLoading: false };
+    }
+    const decoded = readTokenLocally(token);
+    if (!decoded || !decoded.valid) {
+      removeToken();
+      return { user: null, token: null, isAuthenticated: false, isLoading: false };
+    }
+    return { user: decoded.user, token, isAuthenticated: true, isLoading: false };
   });
 
-  // Initialize auth state on mount
+  // Background re-validation: silently invalidate if the server rejects the token
+  // (e.g. secret rotated). Does NOT block rendering.
   useEffect(() => {
-    const validateToken = async () => {
-      const token = getToken();
-      if (!token) {
-        setAuthState({
-          user: null,
-          token: null,
-          isAuthenticated: false,
-          isLoading: false,
-        });
-        return;
-      }
+    const token = getToken();
+    if (!token) return;
 
-      try {
-        // Validate token with backend
-        const response = await fetch(
-          `${API_ENDPOINTS.base}/api/teachers/auth/validate`,
-          {
-            method: "GET",
-            headers: {
-              Authorization: `Bearer ${token}`,
-              "Content-Type": "application/json",
-            },
-          },
-        );
-
-        if (response.ok) {
-          const userData = await response.json();
-          setAuthState({
-            user: userData.user,
-            token,
-            isAuthenticated: true,
-            isLoading: false,
-          });
-        } else {
-          // Token is invalid, remove it and redirect to login
+    fetch(`${API_ENDPOINTS.base}/api/teachers/auth/validate`, {
+      headers: { Authorization: `Bearer ${token}` },
+    })
+      .then((res) => {
+        if (!res.ok) {
           removeToken();
-          setAuthState({
-            user: null,
-            token: null,
-            isAuthenticated: false,
-            isLoading: false,
-          });
+          setAuthState({ user: null, token: null, isAuthenticated: false, isLoading: false });
           router.push(ROUTES.login);
         }
-      } catch (error) {
-        console.error("Token validation error:", error);
-        // On network error, remove token and redirect to login
-        removeToken();
-        setAuthState({
-          user: null,
-          token: null,
-          isAuthenticated: false,
-          isLoading: false,
-        });
-        router.push(ROUTES.login);
-      }
-    };
-
-    validateToken();
+      })
+      .catch(() => {
+        // Network error — keep the locally-decoded state, don't log out.
+      });
   }, [router]);
 
   // Login function
   const login = useCallback(
     async (data: LoginData): Promise<boolean> => {
-      try {
-        const res = await fetch(API_ENDPOINTS.login, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(data),
-        });
+      const { data: result, error } = await apiFetch<{
+        token: string;
+        user?: AuthUser;
+      }>(API_ENDPOINTS.login, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
 
-        if (!res.ok) {
-          const result = await res.json();
-          toast.error(result.error || AUTH_ERRORS.LOGIN_FAILED);
-          return false;
-        }
-
-        const result = await res.json();
-        setToken(result.token);
-
-        setAuthState({
-          user: result.user || null, // Backend should return user info
-          token: result.token,
-          isAuthenticated: true,
-          isLoading: false,
-        });
-
-        toast.success(SUCCESS_MESSAGES.LOGIN_SUCCESS);
-        router.push(ROUTES.dashboard);
-        return true;
-      } catch (error) {
-        console.error("Login error:", error);
-        toast.error(AUTH_ERRORS.LOGIN_NETWORK_ERROR);
+      if (error || !result) {
+        toast.error(error || AUTH_ERRORS.LOGIN_FAILED);
         return false;
       }
+
+      setToken(result.token);
+      setAuthState({
+        user: result.user || null,
+        token: result.token,
+        isAuthenticated: true,
+        isLoading: false,
+      });
+      toast.success(SUCCESS_MESSAGES.LOGIN_SUCCESS);
+      router.push(ROUTES.dashboard);
+      return true;
     },
     [router],
   );
@@ -159,31 +144,24 @@ export function useAuth() {
   // Register function
   const register = useCallback(
     async (data: RegisterData): Promise<boolean> => {
-      try {
-        const res = await fetch(API_ENDPOINTS.register, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            email: data.email,
-            password: data.password,
-            name: data.fullName,
-          }),
-        });
+      const { error } = await apiFetch(API_ENDPOINTS.register, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: data.email,
+          password: data.password,
+          name: data.fullName,
+        }),
+      });
 
-        if (!res.ok) {
-          const result = await res.json();
-          toast.error(result.error || AUTH_ERRORS.REGISTER_FAILED);
-          return false;
-        }
-
-        toast.success(SUCCESS_MESSAGES.REGISTER_SUCCESS);
-        router.push(ROUTES.login);
-        return true;
-      } catch (error) {
-        console.error("Registration error:", error);
-        toast.error(AUTH_ERRORS.REGISTER_NETWORK_ERROR);
+      if (error) {
+        toast.error(error);
         return false;
       }
+
+      toast.success(SUCCESS_MESSAGES.REGISTER_SUCCESS);
+      router.push(ROUTES.login);
+      return true;
     },
     [router],
   );

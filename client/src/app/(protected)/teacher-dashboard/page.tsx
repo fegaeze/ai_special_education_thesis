@@ -1,8 +1,14 @@
 "use client";
 
-import { useState } from "react";
-import { BarChart3, BookOpen, RefreshCw, Play, Trophy } from "lucide-react";
+import { useState, useEffect } from "react";
+import { BarChart3, BookOpen, Plus, Trophy } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import { useClassContext } from "@/contexts/ClassContext";
 import { useQuizManagement } from "@/hooks/useQuizManagement";
 import { useAnalytics } from "@/hooks/useAnalytics";
@@ -24,9 +30,9 @@ export default function DashboardPage() {
   const {
     quizSessions,
     loading: quizLoading,
+    lastCompletedAt,
     createQuiz,
     deleteQuiz,
-    fetchQuizSessions,
   } = useQuizManagement(selectedClass?.id || null);
   const [showStartQuizModal, setShowStartQuizModal] = useState(false);
   const [activeTab, setActiveTab] = useState<"analytics" | "quizzes">(
@@ -36,16 +42,33 @@ export default function DashboardPage() {
   const {
     students,
     classOverview,
+    sessionDates,
     loading: analyticsLoading,
     selectedDate,
     setSelectedDate,
     refetchAnalytics,
   } = useAnalytics(selectedClass?.id || null);
 
+  const hasActiveQuiz = quizSessions.some((q) => q.status === "ACTIVE");
+
+  // When the poll detects the active quiz just auto-completed, refetch analytics
+  // immediately so the teacher sees the final results without waiting 30 s.
+  useEffect(() => {
+    if (lastCompletedAt > 0) refetchAnalytics().catch(() => {});
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [lastCompletedAt]);
+
+  // Wraps deleteQuiz so that analytics clears immediately after deletion
+  // instead of waiting for the next 30 s poll.
+  const handleDeleteQuiz = async (quizId: number): Promise<boolean> => {
+    const ok = await deleteQuiz(quizId);
+    if (ok) refetchAnalytics().catch(() => {});
+    return ok;
+  };
+
   const handleQuizCreated = () => {
-    setActiveTab("quizzes"); // Switch to quiz management tab
-    fetchQuizSessions(); // Refresh quiz sessions list
-    refetchAnalytics(); // Refresh analytics after creating a quiz
+    setActiveTab("quizzes");
+    refetchAnalytics();
   };
 
   if (classes.length === 0 || !selectedClass) {
@@ -65,6 +88,37 @@ export default function DashboardPage() {
     );
   }
 
+  const summaryCards =
+    classOverview.totalSessions === 0 ? (
+      <div className="md:col-span-3 rounded-lg bg-gray-50 border border-gray-200 px-6 py-8">
+        <div className="text-center min-h-[200px] flex flex-col items-center justify-center">
+          <BarChart3 className="h-6 w-6 text-gray-400 mx-auto mb-4" />
+          <h3 className="text-lg font-medium text-gray-900">No Analytics Data</h3>
+          <p className="text-sm text-gray-500">
+            Start a quiz session to see class performance analytics
+          </p>
+        </div>
+      </div>
+    ) : (
+      <>
+        <SnapshotCard
+          title="CLASS ACCURACY"
+          value={`${classOverview.avgClassAccuracy}%`}
+          tooltip="Average accuracy across all students in the class"
+        />
+        <SnapshotCard
+          title="TOTAL SESSIONS"
+          value={classOverview.totalSessions.toString()}
+          tooltip="Total number of quiz sessions conducted"
+        />
+        <SnapshotCard
+          title="AVG TIME PER PROBLEM"
+          value={formatTime(classOverview.avgClassTime)}
+          tooltip="Average time students spend on each problem"
+        />
+      </>
+    );
+
   return (
     <div className="px-4 py-6 sm:px-0">
       {/* Header with Start Quiz Button */}
@@ -75,33 +129,27 @@ export default function DashboardPage() {
             Monitor your class performance and manage quizzes
           </p>
         </div>
-        <div className="flex items-center gap-2">
-          <Button
-            onClick={() => {
-              fetchQuizSessions();
-              refetchAnalytics();
-            }}
-            variant="ghost"
-            size="icon"
-            title="Refresh Data"
-            className="mr-1 hover:text-primary"
-            disabled={quizLoading || analyticsLoading}
-          >
-            <RefreshCw
-              className={
-                "h-5 w-5 transition-transform " +
-                (quizLoading || analyticsLoading ? "animate-spin" : "")
-              }
-            />
-          </Button>
-          <Button
-            onClick={() => setShowStartQuizModal(true)}
-            className="rounded-lg font-medium flex items-center text-sm"
-          >
-            <Play className="h-4 w-4" />
-            <span>Start Quiz</span>
-          </Button>
-        </div>
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <span>
+                <Button
+                  onClick={() => setShowStartQuizModal(true)}
+                  className="rounded-lg font-medium text-sm"
+                  disabled={hasActiveQuiz}
+                >
+                  <Plus className="h-4 w-4" />
+                  Start New Quiz
+                </Button>
+              </span>
+            </TooltipTrigger>
+            {hasActiveQuiz && (
+              <TooltipContent>
+                <p>A quiz is already active. All students must finish (or delete it) first.</p>
+              </TooltipContent>
+            )}
+          </Tooltip>
+        </TooltipProvider>
       </div>
 
       {/* Tab Navigation */}
@@ -138,7 +186,6 @@ export default function DashboardPage() {
           {/* Summary Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {analyticsLoading ? (
-              // Loading state for cards
               <>
                 <div className="rounded-lg bg-white shadow-sm border border-gray-100 px-4 py-3 min-h-[64px] animate-pulse">
                   <div className="h-3 bg-gray-200 rounded mb-2"></div>
@@ -153,47 +200,14 @@ export default function DashboardPage() {
                   <div className="h-6 bg-gray-200 rounded"></div>
                 </div>
               </>
-            ) : classOverview.totalSessions === 0 ? (
-              // Empty state for cards
-              <div className="md:col-span-3 rounded-lg bg-gray-50 border border-gray-200 px-6 py-8">
-                <div className="text-center min-h-[200px] flex flex-col items-center justify-center">
-                  <>
-                    <BarChart3 className="h-6 w-6 text-gray-400 mx-auto mb-4" />
-                    <h3 className="text-lg font-medium text-gray-900">
-                      No Analytics Data
-                    </h3>
-                    <p className="text-sm text-gray-500">
-                      Start a quiz session to see class performance analytics
-                    </p>
-                  </>
-                </div>
-              </div>
-            ) : (
-              // Normal cards
-              <>
-                <SnapshotCard
-                  title="CLASS ACCURACY"
-                  value={`${classOverview.avgClassAccuracy}%`}
-                  tooltip="Average accuracy across all students in the class"
-                />
-                <SnapshotCard
-                  title="TOTAL SESSIONS"
-                  value={classOverview.totalSessions.toString()}
-                  tooltip="Total number of quiz sessions conducted"
-                />
-                <SnapshotCard
-                  title="AVG TIME PER PROBLEM"
-                  value={formatTime(classOverview.avgClassTime)}
-                  tooltip="Average time students spend on each problem"
-                />
-              </>
-            )}
+            ) : summaryCards}
           </div>
 
           {/* Student Progress Table */}
           <StudentProgress
             students={students}
             loading={analyticsLoading}
+            sessionDates={sessionDates}
             selectedDate={selectedDate}
             onDateChange={setSelectedDate}
           />
@@ -203,8 +217,7 @@ export default function DashboardPage() {
           selectedClass={selectedClass}
           quizSessions={quizSessions}
           loading={quizLoading}
-          deleteQuiz={deleteQuiz}
-          fetchQuizSessions={fetchQuizSessions}
+          deleteQuiz={handleDeleteQuiz}
         />
       )}
 

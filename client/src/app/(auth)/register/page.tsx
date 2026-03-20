@@ -1,13 +1,14 @@
 "use client";
 
-import { zodResolver } from "@hookform/resolvers/zod";
+import { zodSafeResolver } from "@/lib/zod-safe-resolver";
 import { Loader2 } from "lucide-react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import Link from "next/link";
 
 import { ROUTES } from "@/lib/config";
-import { useAuth } from "@/hooks/useAuth";
+import { useAuth } from "@/contexts/AuthContext";
 import { Button } from "@/components/ui/button";
 import { VALIDATION_MESSAGES } from "@/lib/errors";
 
@@ -36,7 +37,8 @@ export default function TeacherRegisterPage() {
     formState: { errors },
     reset,
   } = useForm<RegisterForm>({
-    resolver: zodResolver(registerSchema),
+    resolver: zodSafeResolver(registerSchema),
+    mode: "onBlur",
   });
 
   const onSubmit = async (data: RegisterForm) => {
@@ -132,12 +134,13 @@ export default function TeacherRegisterPage() {
       </form>
       <div className="mt-6 text-center text-sm text-gray-600">
         Already have an account?{" "}
-        <a
+        <Link
+          prefetch
           href={ROUTES.login}
           className="text-blue-700 font-semibold hover:underline"
         >
           Sign in
-        </a>
+        </Link>
       </div>
     </>
   );

@@ -243,12 +243,12 @@ export function QuizProvider({ children }: QuizProviderProps) {
 
           // Check if this is a completed quiz error (400 status)
           if (response.status === 400 && errorData.completed) {
-            setError(errorData.error || "Quiz already completed");
+            setError(errorData.message || "Quiz already completed");
             return { valid: false, data: errorData };
           }
 
           setError(
-            errorData.error ||
+            errorData.message ||
               "Sorry, we couldn't find your quiz. Please check with your teacher and try again!",
           );
           return { valid: false };

@@ -3,7 +3,9 @@ import Joi from "joi";
 import { v4 as uuidv4 } from "uuid";
 
 import prisma from "../config/prisma";
+import { paramToString } from "../lib/route-params";
 import authMiddleware from "../middleware/auth";
+import { AuthenticatedRequest } from "../types/auth";
 
 const router = express.Router();
 
@@ -20,13 +22,33 @@ const classCreateSchema = Joi.object({
     .optional(),
 });
 
+async function ensureTeacherOwnsClass(
+  teacherId: number,
+  classId: number,
+  next: NextFunction,
+) {
+  const classExists = await prisma.class.findFirst({
+    where: { id: classId, teacherId },
+    select: { id: true },
+  });
+
+  if (!classExists) {
+    const err = new Error("Class not found or access denied");
+    (err as any).status = 404;
+    next(err);
+    return false;
+  }
+
+  return true;
+}
+
 // List all classes for the authenticated teacher
 router.get(
   "/",
   authMiddleware,
   async (req: Request, res: Response, next: NextFunction) => {
     try {
-      const teacherId = (req as any).teacher.teacherId;
+      const teacherId = (req as AuthenticatedRequest).teacher.teacherId;
       // Only fetch active classes. If you have an 'active' or 'status' field, filter here.
       // Example: where: { teacherId, status: 'ACTIVE' }
       // If not, all classes are considered active by default.
@@ -65,7 +87,7 @@ router.post(
     }
 
     try {
-      const teacherId = (req as any).teacher.teacherId;
+      const teacherId = (req as AuthenticatedRequest).teacher.teacherId;
       const { name, students } = req.body;
 
       const normalizedName = name.trim().toLowerCase();
@@ -165,12 +187,16 @@ router.get(
   authMiddleware,
   async (req: Request, res: Response, next: NextFunction) => {
     try {
-      const classId = parseInt(req.params.id, 10);
-      if (isNaN(classId)) {
+      const classId = Number.parseInt(paramToString(req.params.id), 10);
+      if (Number.isNaN(classId)) {
         const err = new Error("Invalid class ID");
         (err as any).status = 400;
         return next(err);
       }
+      const teacherId = (req as AuthenticatedRequest).teacher.teacherId;
+      const ownsClass = await ensureTeacherOwnsClass(teacherId, classId, next);
+      if (!ownsClass) return;
+
       const search = (req.query.search as string) || "";
       // Get all students in the class
       const students = await prisma.student.findMany({
@@ -237,12 +263,16 @@ router.post(
   authMiddleware,
   async (req: Request, res: Response, next: NextFunction) => {
     try {
-      const classId = parseInt(req.params.id, 10);
-      if (isNaN(classId)) {
+      const classId = Number.parseInt(paramToString(req.params.id), 10);
+      if (Number.isNaN(classId)) {
         const err = new Error("Invalid class ID");
         (err as any).status = 400;
         return next(err);
       }
+      const teacherId = (req as AuthenticatedRequest).teacher.teacherId;
+      const ownsClass = await ensureTeacherOwnsClass(teacherId, classId, next);
+      if (!ownsClass) return;
+
       const { students } = req.body;
       if (!Array.isArray(students) || students.length === 0) {
         const err = new Error("No students provided");
@@ -300,19 +330,19 @@ router.get(
   authMiddleware,
   async (req: Request, res: Response, next: NextFunction) => {
     try {
-      const classId = parseInt(req.params.id, 10);
+      const classId = Number.parseInt(paramToString(req.params.id), 10);
       const selectedDate = req.query.date
         ? new Date(req.query.date as string)
         : null;
 
-      if (isNaN(classId)) {
+      if (Number.isNaN(classId)) {
         const err = new Error("Invalid class ID");
         (err as any).status = 400;
         return next(err);
       }
 
       // Verify the class belongs to the teacher
-      const teacherId = (req as any).teacher.teacherId;
+      const teacherId = (req as AuthenticatedRequest).teacher.teacherId;
       const classExists = await prisma.class.findFirst({
         where: { id: classId, teacherId },
       });
@@ -395,14 +425,10 @@ router.get(
               trendResponses = [];
             }
           } else {
-            // Default: last 30 days
-            const thirtyDaysAgo = new Date();
-            thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
-
-            relevantResponses = studentAttempts
-              .filter((attempt) => attempt.startTime >= thirtyDaysAgo)
-              .flatMap((attempt) => attempt.responses);
-
+            // Default: full history
+            relevantResponses = studentAttempts.flatMap(
+              (attempt) => attempt.responses,
+            );
             trendResponses = relevantResponses;
           }
 
@@ -586,9 +612,18 @@ router.get(
         avgClassTime: classTime,
       };
 
+      // Unique session dates (ISO strings) so the client calendar can
+      // highlight which dates have quiz data.
+      const sessionDates = [
+        ...new Set(
+          sessions.map((s) => s.startTime.toISOString().split("T")[0]),
+        ),
+      ].sort();
+
       res.json({
         students: studentAnalytics,
         classOverview,
+        sessionDates,
       });
     } catch (err) {
       return next(err);

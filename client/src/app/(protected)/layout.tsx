@@ -1,27 +1,16 @@
 "use client";
 
-import { useEffect } from "react";
-import { useRouter } from "next/navigation";
-import { useAuth } from "@/hooks/useAuth";
-
 import Header from "@/components/shared/navigation/Header";
 import { ErrorBoundary } from "@/components/shared/ErrorBoundary";
 import { ClassProvider } from "@/contexts/ClassContext";
 
+// Middleware enforces authentication before this layout renders, so we can
+// trust that any visitor here has a valid session. No client-side guard needed.
 export default function ProtectedLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
-  const router = useRouter();
-  const { isAuthenticated, isLoading } = useAuth();
-
-  useEffect(() => {
-    if (!isLoading && !isAuthenticated) {
-      router.push("/login");
-    }
-  }, [router, isAuthenticated, isLoading]);
-
+}>) {
   return (
     <ErrorBoundary>
       <ClassProvider>

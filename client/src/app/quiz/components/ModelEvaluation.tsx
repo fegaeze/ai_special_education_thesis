@@ -8,9 +8,6 @@ import {
   BoxState,
 } from "@/lib/types/quiz";
 
-// Constants
-const MAX_RETRIES = 3;
-
 // Simple state interface
 interface State {
   phase: string;
@@ -20,9 +17,6 @@ interface State {
 
   // Final answer input
   finalAnswer: string;
-
-  // Retry tracking
-  retryCount: number;
 
   // Current prompt index for story grammar
   currentPromptIndex: number;
@@ -36,15 +30,13 @@ type Action =
   | { type: "NEXT_PROMPT" }
   | { type: "SHOW_FINAL_ANSWER_INPUT" }
   | { type: "SHOW_SUCCESS_MESSAGE" }
-  | { type: "SHOW_RETRY_MESSAGE" }
-  | { type: "RETRY_QUIZ" }
+  | { type: "SHOW_FAILED_MESSAGE" }
   | { type: "SHOW_CORRECT_MODEL" };
 
 const INITIAL_STATE: State = {
   phase: "story-grammar",
   boxValues: {},
   finalAnswer: "",
-  retryCount: MAX_RETRIES,
   currentPromptIndex: 0,
 };
 
@@ -74,22 +66,11 @@ const reducer = (state: State, action: Action): State => {
     case "SHOW_SUCCESS_MESSAGE":
       return { ...state, phase: "show-success-message" };
 
-    case "SHOW_RETRY_MESSAGE":
-      return {
-        ...state,
-        retryCount: state.retryCount - 1,
-        phase: "show-retry-message",
-      };
+    case "SHOW_FAILED_MESSAGE":
+      return { ...state, phase: "show-failed-message" };
 
     case "SHOW_CORRECT_MODEL":
       return { ...state, phase: "show-correct-model" };
-
-    case "RETRY_QUIZ":
-      return {
-        ...INITIAL_STATE,
-        retryCount: state.retryCount,
-        phase: "story-grammar",
-      };
 
     default:
       return state;
@@ -100,7 +81,8 @@ export const ModelEvaluation: React.FC<{
   problem: WordProblem;
   isLastQuestion: boolean;
   onNext?: (result: SingleQuestionResult) => void;
-}> = ({ problem, isLastQuestion, onNext }) => {
+  onAnswered?: () => void;
+}> = ({ problem, isLastQuestion, onNext, onAnswered }) => {
   const { modelEvaluations } = problem;
   const {
     predictedSubcategory: subtype,
@@ -170,10 +152,12 @@ export const ModelEvaluation: React.FC<{
       isThirdBoxCorrect &&
       isFinalAnswerCorrect;
 
+    onAnswered?.();
+
     if (isCorrect) {
       dispatch({ type: "SHOW_SUCCESS_MESSAGE" });
     } else {
-      dispatch({ type: "SHOW_RETRY_MESSAGE" });
+      dispatch({ type: "SHOW_FAILED_MESSAGE" });
     }
   };
 
@@ -204,7 +188,7 @@ export const ModelEvaluation: React.FC<{
     if (state.phase === "show-success-message") {
       return "border-green-500";
     }
-    if (state.phase === "show-retry-message") {
+    if (state.phase === "show-failed-message") {
       const isBoxCorrect = checkIfVisualAnswerIsCorrect(box);
       return isBoxCorrect ? "border-green-500" : "border-red-500";
     }
@@ -225,12 +209,13 @@ export const ModelEvaluation: React.FC<{
         : (groundTruthModelMappedAnswers?.[box] || "").toString();
     }
 
-    // Show retry message with final answer for empty boxes
-    if (state.phase === "show-retry-message") {
-      const boxValue = state.boxValues?.[box]?.value;
-      if (boxValue === null || boxValue === undefined) {
-        return state.finalAnswer.toString();
+    // Show user's input when in failed phase (before they see correct answer)
+    if (state.phase === "show-failed-message") {
+      const userValue = state.boxValues?.[box]?.value;
+      if (userValue !== undefined && userValue !== null) {
+        return userValue.toString();
       }
+      return state.finalAnswer ? state.finalAnswer.toString() : "?";
     }
 
     // Show user's input or "?" for empty boxes
@@ -249,7 +234,7 @@ export const ModelEvaluation: React.FC<{
     if (state.phase === "show-success-message") {
       return true;
     }
-    if (state.phase === "show-retry-message") {
+    if (state.phase === "show-failed-message") {
       return checkIfVisualAnswerIsCorrect(box);
     }
     return false;
@@ -414,14 +399,14 @@ export const ModelEvaluation: React.FC<{
 
       {/* Final Answer Input */}
       {state.phase === "final-answer" && (
-        <div className="min-w-120 min-h-40 flex flex-col justify-center mb-4 p-4 bg-gray-100 border border-gray-300 rounded-md">
+        <div className="min-w-450 p-4 bg-gray-100 border border-grey-300 rounded-md">
           <p className="text-left text-lg font-semibold text-purple-700 mb-2">
             What is the missing number?
           </p>
           <div className="flex gap-4 w-full items-center justify-center">
             <input
               type="number"
-              className="w-3/4 border-2 rounded-lg px-4 py-2 border-purple-500 text-center"
+              className=" border-2 rounded-lg px-4 py-2 border-purple-500 text-center"
               placeholder="Your answer"
               value={state.finalAnswer}
               onChange={(e) =>
@@ -431,7 +416,7 @@ export const ModelEvaluation: React.FC<{
             <button
               onClick={handleSubmitFinalAnswer}
               disabled={!state.finalAnswer}
-              className="w-1/4 bg-purple-600 text-white font-semibold px-4 py-2 rounded-lg hover:bg-purple-700 disabled:bg-gray-300"
+              className="bg-purple-600 text-white font-semibold px-4 py-2 rounded-lg hover:bg-purple-700 disabled:bg-gray-300"
             >
               Submit
             </button>
@@ -441,12 +426,18 @@ export const ModelEvaluation: React.FC<{
 
       {/* Success Message */}
       {state.phase === "show-success-message" && (
-        <div className="mt-6 text-center">
+        <div className="min-w-120 min-h-40 flex flex-col items-center justify-center mb-4 p-4 bg-purple-50 border border-purple-300 rounded-md">
           <p className="text-md font-semibold text-green-700 mb-4">
             {isLastQuestion
               ? "🎉 Great job! You've completed the quiz!"
               : "🎉 Great job! Let's keep going :)"}
           </p>
+          <p className="text-center text-md font-semibold text-purple-700 max-w-lg">
+            AI Explanation:
+          </p>
+          <div className="text-center text-xs text-gray-600 mt-4 mb-6 max-w-xl">
+            <p>{problem.modelEvaluations[0].modelAnswerReasoning}</p>
+          </div>
           <button
             onClick={handleContinue}
             className="bg-purple-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-purple-700"
@@ -456,29 +447,19 @@ export const ModelEvaluation: React.FC<{
         </div>
       )}
 
-      {/* Retry Message */}
-      {state.phase === "show-retry-message" && (
+      {/* Failed message: tell them they failed, then offer to see correct answer */}
+      {state.phase === "show-failed-message" && (
         <div className="mt-6 text-center">
-          <p className="text-md font-semibold text-red-700 mb-4 max-w-lg">
-            {state.retryCount === 0
-              ? "You didn't get it right this time, but don't worry! Let's look at the correct answer together."
-              : "Oops! No worries, you can try again! Take a close look at the story questions and look for the numbers that answer them."}
+          <p className="text-md font-semibold text-orange-500 mb-4 max-w-lg mx-auto">
+            Not quite — but that&apos;s okay, everyone learns! 💪 Let&apos;s
+            see how to work it out together.
           </p>
-          {state.retryCount === 0 ? (
-            <button
-              onClick={() => dispatch({ type: "SHOW_CORRECT_MODEL" })}
-              className="bg-purple-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-purple-700"
-            >
-              Show Correct Answer
-            </button>
-          ) : (
-            <button
-              onClick={() => dispatch({ type: "RETRY_QUIZ" })}
-              className="bg-purple-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-red-700"
-            >
-              Try Again
-            </button>
-          )}
+          <button
+            onClick={() => dispatch({ type: "SHOW_CORRECT_MODEL" })}
+            className="bg-purple-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-purple-700"
+          >
+            Show me how! 🌟
+          </button>
         </div>
       )}
 

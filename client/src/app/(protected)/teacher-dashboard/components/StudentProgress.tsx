@@ -16,11 +16,19 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import type { StudentAnalytics } from "@/lib/types/quiz";
 
 interface StudentProgressProps {
   students: StudentAnalytics[];
   loading: boolean;
+  sessionDates?: Date[];
   classId?: number | null;
   selectedDate?: Date | undefined;
   onDateChange?: (date: Date | undefined) => void;
@@ -33,25 +41,11 @@ function formatTime(seconds: number | null) {
   return `${minutes}:${remainingSeconds.toString().padStart(2, "0")}`;
 }
 
-function getTrendIcon(trend: number[]) {
-  if (trend.length < 2) return null;
-  const recent = trend[trend.length - 1];
-  const previous = trend[trend.length - 2];
-
-  // Don&apos;t show trend for very small differences (less than 5%)
-  const difference = Math.abs(recent - previous);
-  if (difference < 5) return null;
-
-  if (recent > previous)
-    return <TrendingUp className="h-4 w-4 text-green-500" />;
-  if (recent < previous)
-    return <TrendingDown className="h-4 w-4 text-red-500" />;
-  return null;
-}
 
 export function StudentProgress({
   students,
   loading,
+  sessionDates = [],
   selectedDate,
   onDateChange,
 }: StudentProgressProps) {
@@ -147,6 +141,11 @@ export function StudentProgress({
     );
   }
 
+  const emptyHeading = selectedDate ? "No Data for Selected Date" : "No Student Data";
+  const emptyBody = selectedDate
+    ? "No students participated in this session. Try a different date or clear the filter."
+    : "No students have attempted any problems yet. Start a quiz to see progress.";
+
   return (
     <div className="my-6 mt-16">
       <div className="flex items-center justify-between mb-6">
@@ -159,31 +158,31 @@ export function StudentProgress({
           </p>
         </div>
         <div className="flex gap-2">
-          <select
+          <Select
             value={sortBy}
-            onChange={(e) =>
-              setSortBy(
-                e.target.value as "name" | "accuracy" | "problems" | "time",
-              )
+            onValueChange={(v) =>
+              setSortBy(v as "name" | "accuracy" | "problems" | "time")
             }
-            className="text-sm text-gray-700 rounded-md border border-gray-300 bg-white px-3 py-2 text-sm shadow-sm
-                 focus:outline-none focus:ring-0 focus:border-gray-400 transition focus-visible:ring-0 w-[180px] flex items-center justify-between"
           >
-            <option value="name">Sort by Name</option>
-            <option value="accuracy">Sort by Accuracy</option>
-            <option value="problems">Sort by Problems Attempted</option>
-            <option value="time">Sort by Avg Time</option>
-          </select>
+            <SelectTrigger className="w-[220px] h-9 text-sm text-gray-700 bg-white border-gray-300 shadow-sm rounded-md focus:ring-0 focus-visible:ring-0 focus:border-gray-400">
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent align="end" className="bg-white border-gray-200 shadow-lg text-gray-700 text-sm">
+              <SelectItem value="name">Sort by Name</SelectItem>
+              <SelectItem value="accuracy">Sort by Accuracy</SelectItem>
+              <SelectItem value="problems">Sort by Problems Attempted</SelectItem>
+              <SelectItem value="time">Sort by Avg Time</SelectItem>
+            </SelectContent>
+          </Select>
           <SessionCalendar
-            availableDates={[]}
+            availableDates={sessionDates}
             selectedDate={selectedDate}
-            onSelect={onDateChange || (() => {})}
+            onSelect={onDateChange ?? (() => {})}
           />
         </div>
       </div>
 
       {loading ? (
-        // Loading state
         <div className="text-center py-8">
           <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
           <h4 className="text-lg font-medium text-gray-900 mb-2">
@@ -192,18 +191,15 @@ export function StudentProgress({
           <p className="text-gray-500">Fetching analytics information...</p>
         </div>
       ) : sortedStudents.length === 0 ? (
-        // Empty state - no students or no data
-        <div className="text-center py-8">
-          <Activity className="h-12 w-12 text-gray-400 mx-auto mb-4" />
-          <h4 className="text-lg font-medium text-gray-900 mb-2">
-            {selectedDate ? "No Data for Selected Date" : "No Student Data"}
+        <Card className="min-h-[200px] p-4 text-center bg-white gap-0 text-gray-500 flex flex-col items-center justify-center shadow-sm border border-gray-100">
+          <Activity className="h-9 w-9 text-gray-400 mb-3" />
+          <h4 className="text-sm font-medium text-gray-700 mt-1">
+            {emptyHeading}
           </h4>
-          <p className="text-gray-500">
-            {selectedDate
-              ? "No students participated in the selected session. Try selecting a different date or view all data."
-              : "No students have attempted any problems yet. Start a quiz to see student progress."}
+          <p className="text-xs text-gray-400 mt-1 max-w-xs">
+            {emptyBody}
           </p>
-        </div>
+        </Card>
       ) : (
         <TooltipProvider>
           <div className="overflow-x-auto">

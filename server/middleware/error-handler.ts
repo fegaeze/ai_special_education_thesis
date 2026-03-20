@@ -1,5 +1,9 @@
 import { Request, Response, NextFunction } from "express";
-import { Prisma } from "@prisma/client";
+import {
+  PrismaClientKnownRequestError,
+  PrismaClientValidationError,
+} from "@prisma/client/runtime/client";
+import { logger } from "../lib/logger";
 
 // Error Classes
 export class AppError extends Error {
@@ -40,17 +44,15 @@ export const errorHandler = (
   res: Response,
   next: NextFunction,
 ) => {
-  // Log error for debugging (in production, use proper logging service)
-  console.error("Error:", {
-    message: error.message,
-    stack: error.stack,
-    url: req.url,
-    method: req.method,
-    timestamp: new Date().toISOString(),
-  });
+  const isOperational = error instanceof AppError && error.status < 500;
+  // Operational errors (4xx) are info-level — 5xx are genuine problems.
+  logger[isOperational ? "info" : "error"](
+    { err: error, method: req.method, url: req.url },
+    error.message,
+  );
 
   // Handle Prisma errors
-  if (error instanceof Prisma.PrismaClientKnownRequestError) {
+  if (error instanceof PrismaClientKnownRequestError) {
     switch (error.code) {
       case "P2002":
         return res.status(409).json({
@@ -74,7 +76,7 @@ export const errorHandler = (
   }
 
   // Handle Prisma validation errors
-  if (error instanceof Prisma.PrismaClientValidationError) {
+  if (error instanceof PrismaClientValidationError) {
     return res.status(400).json({
       error: true,
       message: "Invalid data provided",
@@ -113,13 +115,14 @@ export const errorHandler = (
   }
 
   // Default error response
-  return res.status(500).json({
+  const status = (error as any).status || 500;
+  return res.status(status).json({
     error: true,
     message:
-      process.env.NODE_ENV === "production"
+      process.env.NODE_ENV === "production" && status === 500
         ? "Internal server error"
         : error.message,
-    code: "INTERNAL_ERROR",
+    code: status === 500 ? "INTERNAL_ERROR" : "REQUEST_ERROR",
   });
 };
 

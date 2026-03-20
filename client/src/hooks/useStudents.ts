@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
 import { API_ENDPOINTS } from "@/lib/config";
 import type { Student } from "./useClasses";
-import { useAuth } from "./useAuth";
-import { FETCH_ERRORS, AUTH_ERRORS, getErrorMessage } from "@/lib/errors";
+import { FETCH_ERRORS, getErrorMessage } from "@/lib/errors";
+import { apiFetch } from "@/lib/api-fetch";
 
 export function useStudents(classId: number | null) {
-  const { getCurrentToken } = useAuth();
   const [students, setStudents] = useState<Student[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -14,35 +13,20 @@ export function useStudents(classId: number | null) {
     setLoading(true);
     setError(null);
 
-    try {
-      const token = getCurrentToken();
-      if (!token) {
-        throw new Error(AUTH_ERRORS.NOT_LOGGED_IN);
-      }
+    const { data, error: fetchError } = await apiFetch<Student[]>(
+      `${API_ENDPOINTS.classes}/${id}/students`,
+    );
 
-      const res = await fetch(`${API_ENDPOINTS.classes}/${id}/students`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-
-      if (!res.ok) {
-        const errorData = await res.json().catch(() => ({}));
-        throw new Error(errorData.message || FETCH_ERRORS.STUDENTS_FETCH);
-      }
-
-      const data: Student[] = await res.json();
-      setStudents(data);
-    } catch (error: unknown) {
-      const message = getErrorMessage(error, FETCH_ERRORS.STUDENTS_FETCH);
+    if (fetchError || !data) {
+      const message = fetchError || FETCH_ERRORS.STUDENTS_FETCH;
       setError(message);
       setStudents([]);
-    } finally {
-      setLoading(false);
+    } else {
+      setStudents(data);
     }
+    setLoading(false);
   };
 
-  // Fetch students when classId changes
   useEffect(() => {
     if (classId) {
       fetchStudents(classId);
@@ -50,6 +34,7 @@ export function useStudents(classId: number | null) {
       setStudents([]);
       setError(null);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [classId]);
 
   return {

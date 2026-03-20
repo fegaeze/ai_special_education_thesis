@@ -119,7 +119,7 @@ export const VALIDATION_MESSAGES = {
   CONFIRM_PASSWORD_REQUIRED: "Please confirm your password",
   PASSWORDS_DONT_MATCH: "Passwords do not match",
   FULL_NAME_REQUIRED: "Full name is required",
-  STUDENTS_REQUIRED: "Please upload at least one student",
+  STUDENTS_REQUIRED: "Please add at least one student",
   CSV_FILE_REQUIRED: "Please upload a CSV file",
   HEADER_NOT_FOUND: "Please make sure the first column has the header 'name'",
   NO_VALID_STUDENTS: "No valid student names found in CSV",

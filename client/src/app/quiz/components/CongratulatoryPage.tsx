@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import Lottie from "lottie-react";
+import React from "react";
 
 interface CongratulatoryPageProps {
   onExitHome: () => void;
@@ -8,29 +7,12 @@ interface CongratulatoryPageProps {
 export const CongratulatoryPage: React.FC<CongratulatoryPageProps> = ({
   onExitHome,
 }) => {
-  const [animationData, setAnimationData] = useState(null);
-
-  useEffect(() => {
-    fetch("/animations/CuteDancingStar.json")
-      .then((res) => res.json())
-      .then(setAnimationData)
-      .catch(() => setAnimationData(null));
-  }, []);
-
   return (
     <div className="h-120 w-full p-8 border-0 text-center flex flex-col items-center justify-center">
       <div className="mb-6">
-        {/* Dancing Star Animation */}
+        {/* Bouncing star — smooth vertical bounce, no side-to-side */}
         <div className="flex justify-center mb-4">
-          <div className="w-24 h-24">
-            {animationData && (
-              <Lottie
-                animationData={animationData}
-                loop={true}
-                autoplay={true}
-              />
-            )}
-          </div>
+          <span className="text-7xl select-none animate-bounce">⭐</span>
         </div>
         <h3 className="text-3xl font-semibold text-purple-700">
           Quiz Complete! 🎉
@@ -41,7 +23,7 @@ export const CongratulatoryPage: React.FC<CongratulatoryPageProps> = ({
       </div>
       <button
         onClick={onExitHome}
-        className=" text-sm px-8 py-3 bg-purple-500 text-white font-semibold rounded-lg hover:bg-purple-600"
+        className="text-sm px-8 py-3 bg-purple-500 text-white font-semibold rounded-lg hover:bg-purple-600"
       >
         Finish Adventure
       </button>

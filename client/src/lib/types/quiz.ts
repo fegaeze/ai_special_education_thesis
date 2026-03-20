@@ -12,7 +12,7 @@ export enum CompSuperType {
 }
 
 // Type alias for problem types used in forms and UI
-export type ProblemType = CompSuperType | "All" | "Mixed";
+export type ProblemType = CompSuperType | "All";
 
 // Type for selected problem types in mixed mode
 export type SelectedProblemType = CompSuperType;
@@ -173,6 +173,7 @@ export interface ClassAnalytics {
 export interface AnalyticsData {
   students: StudentAnalytics[];
   classOverview: ClassAnalytics;
+  sessionDates: Date[];
   loading: boolean;
   error: string | null;
 }

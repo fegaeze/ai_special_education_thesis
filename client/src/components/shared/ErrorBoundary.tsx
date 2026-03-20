@@ -1,21 +1,24 @@
+"use client"
+
 import Lottie from "lottie-react";
 import { useEffect, useState } from "react";
 import {
-  FallbackProps,
+  type FallbackProps,
   ErrorBoundary as ReactErrorBoundary,
+  getErrorMessage,
 } from "react-error-boundary";
 
 import Header from "./navigation/Header";
 import { Button } from "../ui/button";
 import { UI_MESSAGES } from "@/lib/errors";
 
-function ErrorFallback({ error, resetErrorBoundary }: FallbackProps) {
-  const [animationData, setAnimationData] = useState<any>(null);
+function ErrorFallback({ error }: Readonly<Pick<FallbackProps, "error">>) {
+  const [animationData, setAnimationData] = useState<object | null>(null);
 
   useEffect(() => {
     fetch("/animations/errorIllustration.json")
       .then((res) => res.json())
-      .then(setAnimationData)
+      .then((data: object) => setAnimationData(data))
       .catch(() => setAnimationData(null));
   }, []);
 
@@ -36,16 +39,18 @@ function ErrorFallback({ error, resetErrorBoundary }: FallbackProps) {
             Oops! Something went wrong.
           </h2>
           <p className="text-gray-500 mb-6 text-center max-w-md text-sm md:text-base">
-            {error?.message || UI_MESSAGES.UNEXPECTED_ERROR}
+            {getErrorMessage(error) || UI_MESSAGES.UNEXPECTED_ERROR}
           </p>
-          <Button onClick={() => window.location.reload()}>Refresh Page</Button>
+          <Button onClick={() => globalThis.window.location.reload()}>
+            Refresh Page
+          </Button>
         </div>
       </div>
     </div>
   );
 }
 
-export function ErrorBoundary({ children }: { children: React.ReactNode }) {
+export function ErrorBoundary({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <ReactErrorBoundary FallbackComponent={ErrorFallback}>
       {children}

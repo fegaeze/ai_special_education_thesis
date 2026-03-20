@@ -1,28 +1,15 @@
-"use client";
-
-import { useEffect } from "react";
-import { useRouter } from "next/navigation";
-import { useAuth } from "@/hooks/useAuth";
 import Image from "next/image";
-import { ROUTES } from "@/lib/config";
 
+// Middleware redirects authenticated visitors away from auth pages before this
+// layout renders, so we can unconditionally show the auth shell.
 export default function AuthLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
-  const router = useRouter();
-  const { isAuthenticated, isLoading } = useAuth();
-
-  useEffect(() => {
-    if (!isLoading && isAuthenticated) {
-      router.push(ROUTES.dashboard);
-    }
-  }, [router, isAuthenticated, isLoading]);
-
+}>) {
   return (
     <div className="min-h-screen flex flex-col md:flex-row">
-      {/* Illustration/Branding Section */}
+      {/* Branding panel */}
       <div className="relative hidden md:flex w-2/3 bg-gradient-to-br from-blue-700 to-orange-500 items-center justify-center overflow-hidden">
         <Image
           src="/images/auth-bg.jpg"
@@ -32,7 +19,8 @@ export default function AuthLayout({
           priority
         />
       </div>
-      {/* Form Section */}
+
+      {/* Form panel */}
       <div className="flex flex-1 items-center justify-center bg-gradient-to-br from-white to-blue-50 py-12 px-8">
         <div className="w-full max-w-md mx-auto min-h-[500px] flex flex-col justify-center">
           <Image
@@ -43,7 +31,6 @@ export default function AuthLayout({
             height={100}
             priority
           />
-
           {children}
         </div>
       </div>
