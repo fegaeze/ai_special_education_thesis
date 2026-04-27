@@ -32,8 +32,8 @@ export const modelConfig: Record<ModelType, ModelConfigEntry> = {
     },
   },
   [ModelType.ChangeSeparate]: {
-    boxes: [ModelAnswerKey.start, ModelAnswerKey.change, ModelAnswerKey.end],
-    symbols: [ModelEquationSymbol.Minus, ModelEquationSymbol.Equals],
+    boxes: [ModelAnswerKey.end, ModelAnswerKey.change, ModelAnswerKey.start],
+    symbols: [ModelEquationSymbol.Plus, ModelEquationSymbol.Equals],
     labels: {
       [ModelAnswerKey.start]: "start",
       [ModelAnswerKey.change]: "change",
@@ -109,9 +109,9 @@ export const grammarPoints: Record<CompSubType, GrammarPoint> = {
     type: CompSubType.CSWU,
     model: ModelType.ChangeSeparate,
     prompts: [
-      { text: "How many at the start?", boxTarget: ModelAnswerKey.start },
-      { text: "How many were taken away?", boxTarget: ModelAnswerKey.change },
       { text: "How many are left?", boxTarget: ModelAnswerKey.end },
+      { text: "How many were taken away?", boxTarget: ModelAnswerKey.change },
+      { text: "How many at the start?", boxTarget: ModelAnswerKey.start },
     ],
     ...modelConfig[ModelType.ChangeSeparate],
   },
@@ -119,9 +119,9 @@ export const grammarPoints: Record<CompSubType, GrammarPoint> = {
     type: CompSubType.CSPU,
     model: ModelType.ChangeSeparate,
     prompts: [
-      { text: "How many at the start?", boxTarget: ModelAnswerKey.start },
-      { text: "How many were taken away?", boxTarget: ModelAnswerKey.change },
       { text: "How many are left?", boxTarget: ModelAnswerKey.end },
+      { text: "How many were taken away?", boxTarget: ModelAnswerKey.change },
+      { text: "How many at the start?", boxTarget: ModelAnswerKey.start },
     ],
     ...modelConfig[ModelType.ChangeSeparate],
   },

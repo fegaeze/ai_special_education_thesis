@@ -12,13 +12,6 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { Card } from "@/components/ui/card";
 import { type CreateQuizData } from "@/hooks/useQuizManagement";
 import { QuizSession } from "@/lib/types/quiz";
@@ -40,7 +33,7 @@ const schema = z.object({
       },
       { message: "Enter a number of at least 1" },
     ),
-  problemType: z.enum(["All", "Change", "Combine", "Compare"]),
+  problemType: z.literal("All"),
 });
 
 type FormData = z.infer<typeof schema>;
@@ -66,8 +59,6 @@ export function StartQuizModal({
     register,
     handleSubmit,
     reset,
-    setValue,
-    watch,
     formState: { errors },
   } = useForm<FormData>({
     resolver: zodSafeResolver(schema),
@@ -77,8 +68,6 @@ export function StartQuizModal({
     },
   });
 
-  const watchedProblemType = watch("problemType");
-
   const onSubmit = async (data: FormData) => {
     if (!selectedClass) return;
 
@@ -86,7 +75,7 @@ export function StartQuizModal({
       classId: selectedClass.id,
       settings: {
         problemCount: Number.parseInt(data.problemCount),
-        problemType: data.problemType,
+        problemType: "All",
       },
     };
 
@@ -159,25 +148,12 @@ export function StartQuizModal({
             >
               Problem Type <span className="text-red-500">*</span>
             </Label>
-            <Select
-              value={watchedProblemType}
-              onValueChange={(val) => {
-                setValue(
-                  "problemType",
-                  val as "All" | "Change" | "Combine" | "Compare",
-                );
-              }}
-            >
-              <SelectTrigger className="mt-1 w-full border-gray-300 focus:ring-primary focus:ring-0">
-                <SelectValue placeholder="Select problem type" />
-              </SelectTrigger>
-              <SelectContent className="bg-white text-gray-500">
-                <SelectItem value="All">All</SelectItem>
-                <SelectItem value="Change">Change</SelectItem>
-                <SelectItem value="Combine">Combine</SelectItem>
-                <SelectItem value="Compare">Compare</SelectItem>
-              </SelectContent>
-            </Select>
+            <Input
+              id="problemType"
+              value="All"
+              readOnly
+              className="mt-1 w-full border-gray-300 bg-gray-50 text-gray-500 focus:ring-0"
+            />
             {errors.problemType && (
               <p className="text-sm text-red-600 mt-1">
                 {errors.problemType.message}

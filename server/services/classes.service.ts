@@ -150,7 +150,9 @@ export async function getClassStudentsStats(input: {
       });
       const problemsAttempted = new Set(responses.map((r: any) => r.problemId)).size;
       const totalResponses = responses.length;
-      const correctCount = responses.filter((r: any) => r.isCorrect).length;
+      const correctCount = responses.filter(
+        (r: any) => r.finalAnswerCorrect === true && r.storyGrammarCorrect === true,
+      ).length;
       const avgAccuracy =
         totalResponses > 0 ? Math.round((correctCount / totalResponses) * 100) : null;
       const avgTime =

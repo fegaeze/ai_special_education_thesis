@@ -228,7 +228,9 @@ router.get(
             responses.map((r: any) => r.problemId),
           ).size;
           const totalResponses = responses.length;
-          const correctCount = responses.filter((r: any) => r.isCorrect).length;
+          const correctCount = responses.filter(
+            (r: any) => r.finalAnswerCorrect === true && r.storyGrammarCorrect === true,
+          ).length;
           const avgAccuracy =
             totalResponses > 0
               ? Math.round((correctCount / totalResponses) * 100)

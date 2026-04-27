@@ -123,14 +123,14 @@ export function QuizProvider({ children }: QuizProviderProps) {
   useEffect(() => {
     if (typeof window === "undefined") return;
 
-    const savedProgress = localStorage.getItem("quiz-progress");
-    if (!savedProgress) {
+    const savedSession = localStorage.getItem("quiz-session");
+    if (!savedSession) {
       setSessionState((prev) => ({ ...prev, isInitialized: true }));
       return;
     }
 
     try {
-      const parsed = JSON.parse(savedProgress);
+      const parsed = JSON.parse(savedSession);
       if (!parsed.currentQuizCode) {
         setSessionState((prev) => ({ ...prev, isInitialized: true }));
         return;
@@ -157,17 +157,22 @@ export function QuizProvider({ children }: QuizProviderProps) {
                 isQuizActive: true,
                 quizData: data,
                 currentProblemCounter: parsed.currentProblemCounter || 0,
+                answers: Array.isArray(parsed.answers) ? parsed.answers : [],
+                draftAnswers:
+                  parsed.draftAnswers && typeof parsed.draftAnswers === "object"
+                    ? parsed.draftAnswers
+                    : undefined,
                 isInitialized: true,
               };
             });
           } else {
             // Quiz code is no longer valid, clear it
-            localStorage.removeItem("quiz-progress");
+            localStorage.removeItem("quiz-session");
             setSessionState((prev) => ({ ...prev, isInitialized: true }));
           }
         } catch (error) {
           console.error("Failed to restore quiz session:", error);
-          localStorage.removeItem("quiz-progress");
+          localStorage.removeItem("quiz-session");
           setSessionState((prev) => ({ ...prev, isInitialized: true }));
         }
       };
@@ -175,7 +180,7 @@ export function QuizProvider({ children }: QuizProviderProps) {
       restoreQuizSession();
     } catch (error) {
       console.error("Failed to parse saved progress:", error);
-      localStorage.removeItem("quiz-progress");
+      localStorage.removeItem("quiz-session");
       setSessionState((prev) => ({ ...prev, isInitialized: true }));
     }
   }, []);
@@ -205,9 +210,12 @@ export function QuizProvider({ children }: QuizProviderProps) {
     (code: string, problemCounter: number) => {
       if (typeof window === "undefined") return;
 
+      const existingRaw = localStorage.getItem("quiz-session");
+      const existing = existingRaw ? JSON.parse(existingRaw) : {};
       localStorage.setItem(
-        "quiz-progress",
+        "quiz-session",
         JSON.stringify({
+          ...(existing && typeof existing === "object" ? existing : {}),
           currentQuizCode: code,
           currentProblemCounter: problemCounter,
         }),
@@ -221,7 +229,7 @@ export function QuizProvider({ children }: QuizProviderProps) {
    */
   const clearProgressFromStorage = useCallback(() => {
     if (typeof window === "undefined") return;
-    localStorage.removeItem("quiz-progress");
+    localStorage.removeItem("quiz-session");
   }, []);
 
   // ============================================================================
@@ -472,7 +480,7 @@ export function QuizProvider({ children }: QuizProviderProps) {
         if (!response.ok) {
           const data = await response.json();
           console.error("Submit error:", data);
-          setError(data?.error || "Failed to submit quiz");
+          setError(data?.message || "Failed to submit quiz");
           return { success: false };
         }
 

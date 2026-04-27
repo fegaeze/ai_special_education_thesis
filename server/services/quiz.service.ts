@@ -9,6 +9,15 @@ type QuizSettingsInput = {
   selectedTypes?: string[];
 };
 
+function generateJoinCode(length = 6) {
+  return Math.random()
+    .toString(36)
+    .slice(2)
+    .toUpperCase()
+    .replace(/[^A-Z0-9]/g, "")
+    .slice(0, length);
+}
+
 function getSubcategoryCodes(problemType: string, selectedTypes?: string[]) {
   const changeCodes = ["CJPU", "CJWU", "CSPU", "CSWU"];
   const combineCodes = ["CPU", "CWU"];
@@ -54,22 +63,6 @@ export async function createQuizSession(input: {
       "CONFLICT",
     );
   }
-
-  const quizSession = await prisma.quizSession.create({
-    data: {
-      classId,
-      teacherId,
-      status: "ACTIVE",
-      settings: {
-        problemCount: initialProblemCount,
-        problemType: initialProblemType,
-        selectedTypes: initialSelectedTypes,
-      },
-    },
-    include: {
-      class: { select: { name: true } },
-    },
-  });
 
   const problemType = initialProblemType || "All";
   const selectedTypes = initialSelectedTypes || [];
@@ -123,39 +116,87 @@ export async function createQuizSession(input: {
       order: index + 1,
     }));
 
-  await prisma.quizSession.update({
-    where: { id: quizSession.id },
-    data: {
-      settings: {
-        problemCount: initialProblemCount,
-        problemType: initialProblemType,
-        selectedTypes: initialSelectedTypes,
-        selectedProblems,
-      },
-    },
-  });
-
   const students = await prisma.student.findMany({
     where: { classId },
     select: { id: true, name: true },
   });
 
-  const quizCodes = students.map((student) => ({
-    code: Math.random().toString(36).substring(2, 6).toUpperCase(),
-    sessionId: quizSession.id,
-    studentId: student.id,
-  }));
+  const { quizSession, codes } = await prisma.$transaction(async (tx) => {
+    const quizSession = await tx.quizSession.create({
+      data: {
+        classId,
+        teacherId,
+        status: "ACTIVE",
+        settings: {
+          problemCount: initialProblemCount,
+          problemType: initialProblemType,
+          selectedTypes: initialSelectedTypes,
+          selectedProblems,
+        },
+      },
+      include: {
+        class: { select: { name: true } },
+      },
+    });
 
-  await prisma.quizCode.createMany({ data: quizCodes });
+    const codes: Array<{
+      code: string;
+      sessionId: number;
+      studentId: number;
+      studentName: string;
+    }> = [];
+
+    for (const student of students) {
+      // Retry on unique code collisions (code is primary key).
+      for (let attempt = 0; attempt < 10; attempt++) {
+        const code = generateJoinCode(6);
+        try {
+          await tx.quizCode.create({
+            data: {
+              code,
+              sessionId: quizSession.id,
+              studentId: student.id,
+            },
+          });
+          codes.push({
+            code,
+            sessionId: quizSession.id,
+            studentId: student.id,
+            studentName: student.name,
+          });
+          break;
+        } catch (err: any) {
+          // Prisma unique violation: retry with a new code.
+          if (err?.code === "P2002") continue;
+          throw err;
+        }
+      }
+    }
+
+    return { quizSession, codes };
+  });
 
   return {
     success: true,
     session: {
       id: quizSession.id,
+      startTime: quizSession.startTime,
+      endTime: quizSession.endTime,
+      status: quizSession.status,
       class: quizSession.class,
-      settings: quizSession.settings,
+      settings:
+        (quizSession.settings as any) || ({
+          problemCount: 10,
+          problemType: "All",
+          selectedTypes: [],
+        } satisfies any),
+      attempts: [],
+      codes: codes.map((c) => ({
+        code: c.code,
+        studentId: c.studentId,
+        studentName: c.studentName,
+      })),
     },
-    codes: quizCodes,
     message: "Quiz session created successfully",
   };
 }
@@ -216,12 +257,12 @@ export async function getQuizSessionDetail(input: {
       class: { select: { name: true } },
       attempts: {
         include: {
-          student: { select: { name: true } },
+          student: { select: { id: true, name: true } },
           responses: { include: { problem: { select: { content: true } } } },
         },
       },
       quizCodes: {
-        include: { student: { select: { name: true } } },
+        include: { student: { select: { id: true, name: true } } },
       },
     },
   });
@@ -233,18 +274,26 @@ export async function getQuizSessionDetail(input: {
   return {
     session: {
       id: session.id,
-      class: session.class.name,
       startTime: session.startTime,
+      endTime: session.endTime,
+      status: session.status,
+      class: session.class,
+      settings:
+        (session.settings as any) || ({
+          problemCount: 10,
+          problemType: "All",
+          selectedTypes: [],
+        } satisfies any),
       attempts: session.attempts.map((attempt) => ({
         id: attempt.id,
-        student: attempt.student.name,
+        student: attempt.student,
         startTime: attempt.startTime,
         endTime: attempt.endTime,
-        progress: attempt.responses.length,
       })),
-      codes: session.quizCodes.map((qc) => ({
-        code: qc.code,
-        student: qc.student.name,
+      codes: session.quizCodes.map((code) => ({
+        code: code.code,
+        studentId: code.student.id,
+        studentName: code.student.name,
       })),
     },
   };
@@ -261,12 +310,14 @@ export async function deleteQuizSession(input: {
     throw createAppError("Quiz session not found", 404, "NOT_FOUND");
   }
 
-  await prisma.quizCode.deleteMany({ where: { sessionId: input.sessionId } });
-  await prisma.quizResponse.deleteMany({
-    where: { attempt: { sessionId: input.sessionId } },
+  await prisma.$transaction(async (tx) => {
+    await tx.quizCode.deleteMany({ where: { sessionId: input.sessionId } });
+    await tx.quizResponse.deleteMany({
+      where: { attempt: { sessionId: input.sessionId } },
+    });
+    await tx.quizAttempt.deleteMany({ where: { sessionId: input.sessionId } });
+    await tx.quizSession.delete({ where: { id: input.sessionId } });
   });
-  await prisma.quizAttempt.deleteMany({ where: { sessionId: input.sessionId } });
-  await prisma.quizSession.delete({ where: { id: input.sessionId } });
 
   return { success: true, message: "Quiz session deleted successfully" };
 }
@@ -379,6 +430,7 @@ export async function getQuizByCode(quizCode: string) {
   return {
     completed: false,
     payload: {
+      student: { id: student.id, name: student.name },
       problems: orderedProblems.map((problem: any, index: number) => ({
         id: problem.id,
         content: problem.content,
@@ -436,68 +488,135 @@ export async function submitQuizByCode(input: {
   }
 
   const { sessionId, studentId } = quizCodeEntry;
-  let attempt = await prisma.quizAttempt.findFirst({
-    where: { sessionId, studentId },
+  const problemIds = Array.isArray(answers)
+    ? answers
+        .map((a: any) => Number(a?.problemId))
+        .filter((id: number) => Number.isFinite(id))
+    : [];
+
+  const modelEvaluations = await prisma.modelEvaluation.findMany({
+    where: {
+      problemId: { in: problemIds },
+      modelName: SERVER_CONFIG.DEFAULT_MODEL as AIModelName,
+    },
+    select: { problemId: true, modelAnswers: true, answer: true },
   });
-
-  if (!attempt) {
-    attempt = await prisma.quizAttempt.create({
-      data: { sessionId, studentId },
-    });
-  }
-
-  const responses = await Promise.all(
-    answers.map(async (answer: any) => {
-      let storyGrammarCorrect = null;
-
-      if (answer.boxStates) {
-        const boxStates = answer.boxStates;
-        const correctAnswers = Object.values(boxStates).filter(
-          (box: any) => box.isCorrect,
-        ).length;
-        const totalBoxes = Object.keys(boxStates).length;
-        storyGrammarCorrect = totalBoxes > 0 ? correctAnswers === totalBoxes : null;
-      }
-
-      return prisma.quizResponse.create({
-        data: {
-          attemptId: attempt.id,
-          problemId: answer.problemId,
-          studentAnswer: answer.finalAnswer,
-          timeSpent: answer.timeSpent,
-          storyGrammarAnswers: answer.boxStates,
-          finalAnswerCorrect: answer.finalAnswerCorrect,
-          storyGrammarCorrect,
-        },
-      });
-    }),
+  const expectedByProblemId = new Map<
+    number,
+    { modelAnswers: Record<string, number | null> | null; answer: number | null }
+  >(
+    modelEvaluations.map((me) => [
+      me.problemId,
+      {
+        modelAnswers: (me.modelAnswers as any) || null,
+        answer: typeof me.answer === "number" ? me.answer : null,
+      },
+    ]),
   );
 
-  await prisma.quizAttempt.update({
-    where: { id: attempt.id },
-    data: { endTime: new Date() },
-  });
+  const { attempt, responses } = await prisma.$transaction(async (tx) => {
+    const attempt =
+      (await tx.quizAttempt.findFirst({
+        where: { sessionId, studentId },
+      })) ||
+      (await tx.quizAttempt.create({
+        data: { sessionId, studentId },
+      }));
 
-  const session = await prisma.quizSession.findUnique({
-    where: { id: sessionId },
-    include: {
-      quizCodes: true,
-      attempts: true,
-    },
-  });
-  if (session) {
-    const totalStudents = session.quizCodes.length;
-    const completedAttempts = session.attempts.filter((a) => a.endTime).length;
-    if (totalStudents > 0 && completedAttempts === totalStudents) {
-      await prisma.quizSession.update({
-        where: { id: sessionId },
-        data: {
-          status: "COMPLETED",
-          endTime: new Date(),
-        },
-      });
+    const responses = await Promise.all(
+      (answers || []).map(async (answer: any) => {
+        const problemId = Number(answer?.problemId);
+        const timeSpent = Number(answer?.timeSpent) || 0;
+        const finalAnswer = Number(answer?.finalAnswer);
+
+        // Normalize box answers to { [boxKey]: number|null }
+        const rawBoxStates = answer?.boxStates || {};
+        const normalizedBoxAnswers: Record<string, number | null> = {};
+        if (rawBoxStates && typeof rawBoxStates === "object") {
+          for (const [k, v] of Object.entries(rawBoxStates)) {
+            if (v && typeof v === "object" && "value" in (v as any)) {
+              normalizedBoxAnswers[k] = (v as any).value ?? null;
+            } else {
+              normalizedBoxAnswers[k] = (v as any) ?? null;
+            }
+          }
+        }
+
+        const expected = expectedByProblemId.get(problemId);
+        const expectedModelAnswers = expected?.modelAnswers || null;
+        const expectedFinal = expected?.answer ?? null;
+
+        const finalAnswerCorrect =
+          typeof expectedFinal === "number" &&
+          Number.isFinite(finalAnswer) &&
+          finalAnswer === expectedFinal;
+
+        let storyGrammarCorrect: boolean | null = null;
+        if (expectedModelAnswers) {
+          const keys = Object.keys(expectedModelAnswers);
+          if (keys.length > 0) {
+            storyGrammarCorrect = keys.every((key) => {
+              const expectedVal = expectedModelAnswers[key];
+              if (expectedVal === null) return true; // unknown box
+              return normalizedBoxAnswers[key] === expectedVal;
+            });
+          }
+        }
+
+        return tx.quizResponse.upsert({
+          where: {
+            // Requires @@unique([attemptId, problemId]) in Prisma schema.
+            attemptId_problemId: {
+              attemptId: attempt.id,
+              problemId,
+            },
+          } as any,
+          create: {
+            attemptId: attempt.id,
+            problemId,
+            studentAnswer: Number.isFinite(finalAnswer) ? finalAnswer : null,
+            timeSpent,
+            storyGrammarAnswers: normalizedBoxAnswers,
+            finalAnswerCorrect,
+            storyGrammarCorrect,
+          },
+          update: {
+            studentAnswer: Number.isFinite(finalAnswer) ? finalAnswer : null,
+            timeSpent,
+            storyGrammarAnswers: normalizedBoxAnswers,
+            finalAnswerCorrect,
+            storyGrammarCorrect,
+          },
+        });
+      }),
+    );
+
+    await tx.quizAttempt.update({
+      where: { id: attempt.id },
+      data: { endTime: new Date() },
+    });
+
+    const session = await tx.quizSession.findUnique({
+      where: { id: sessionId },
+      include: { quizCodes: true, attempts: true },
+    });
+
+    if (session) {
+      const totalStudents = session.quizCodes.length;
+      const completedAttempts = session.attempts.filter((a) => a.endTime).length;
+      if (totalStudents > 0 && completedAttempts === totalStudents) {
+        await tx.quizSession.update({
+          where: { id: sessionId },
+          data: {
+            status: "COMPLETED",
+            endTime: new Date(),
+          },
+        });
+      }
     }
-  }
+
+    return { attempt, responses };
+  });
 
   return {
     success: true,

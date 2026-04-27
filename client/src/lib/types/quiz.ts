@@ -1,7 +1,7 @@
 export enum ModelType {
   PartPartWhole = "Part + Part = Whole",
   ChangeJoin = "Start + Change = End",
-  ChangeSeparate = "Start − Change = End",
+  ChangeSeparate = "End + Change = Start",
   Compare = "Bigger = Smaller + Difference",
 }
 

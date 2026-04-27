@@ -120,16 +120,25 @@ export const ModelEvaluation: React.FC<{
 
   const handleSubmitFinalAnswer = () => {
     const boxValues = state.boxValues;
-    const boxValue1 = boxValues[boxes[0]]?.value;
-    const boxValue2 = boxValues[boxes[1]]?.value;
-    const boxValue3 = boxValues[boxes[2]]?.value;
+    const parsedFinal = Number.parseInt(state.finalAnswer, 10);
+    const getEffectiveValue = (box: ModelAnswerKey) => {
+      if (box === unknownBox) {
+        return Number.isFinite(parsedFinal) ? parsedFinal : undefined;
+      }
+      return boxValues[box]?.value;
+    };
+
+    const boxValue1 = getEffectiveValue(boxes[0]);
+    const boxValue2 = getEffectiveValue(boxes[1]);
+    const boxValue3 = getEffectiveValue(boxes[2]);
 
     if (
       boxValue1 === undefined ||
       boxValue2 === undefined ||
       boxValue3 === undefined
     ) {
-      throw new Error("Box values are undefined");
+      // Guard against partial state; don't crash the whole quiz UI.
+      return;
     }
 
     const isFirstBoxCorrect = checkIfStoryGrammarAnswerIsCorrect(
@@ -171,7 +180,7 @@ export const ModelEvaluation: React.FC<{
     }
 
     if (onNext) {
-      const finalAnswer = parseInt(state.finalAnswer);
+      const finalAnswer = Number.parseInt(state.finalAnswer, 10);
       onNext({
         timeSpent: timeSpentRef.current || 0,
         finalAnswer: finalAnswer,
@@ -245,6 +254,9 @@ export const ModelEvaluation: React.FC<{
     value: number | null,
   ): boolean => {
     const expectedValue = groundTruthModelMappedAnswers?.[box];
+    // In this dataset/model mapping, the unknown box is represented as `null`.
+    // That box should be graded via the final answer check, not by comparing to `null`.
+    if (expectedValue === null) return true;
     return value === expectedValue;
   };
 
@@ -261,7 +273,7 @@ export const ModelEvaluation: React.FC<{
     );
 
     if (box === unknownBox) {
-      const finalAnswerNum = parseInt(state.finalAnswer);
+      const finalAnswerNum = Number.parseInt(state.finalAnswer, 10);
       return isBoxCorrect && finalAnswerNum === groundTruthUnknownAnswer;
     }
 
@@ -433,10 +445,10 @@ export const ModelEvaluation: React.FC<{
               : "🎉 Great job! Let's keep going :)"}
           </p>
           <p className="text-center text-md font-semibold text-purple-700 max-w-lg">
-            AI Explanation:
+            Nutikas Guide:
           </p>
           <div className="text-center text-xs text-gray-600 mt-4 mb-6 max-w-xl">
-            <p>{problem.modelEvaluations[0].modelAnswerReasoning}</p>
+            <p>{problem.modelEvaluations[0].modelAnswerReasoning ?? ""}</p>
           </div>
           <button
             onClick={handleContinue}
@@ -467,12 +479,12 @@ export const ModelEvaluation: React.FC<{
       {state.phase === "show-correct-model" && (
         <div className="min-w-120 min-h-40 flex flex-col items-center justify-center mb-4 p-4 bg-purple-50 border border-purple-300 rounded-md">
           <p className="text-center text-md font-semibold text-purple-700 max-w-lg">
-            AI Explanation:
+            Nutikas Guide:
           </p>
 
           {/* Placeholder explanation */}
           <div className="text-center text-xs text-gray-600 mt-4 mb-6 max-w-xl">
-            <p>{problem.modelEvaluations[0].modelAnswerReasoning}</p>
+            <p>{problem.modelEvaluations[0].modelAnswerReasoning ?? ""}</p>
           </div>
 
           <button

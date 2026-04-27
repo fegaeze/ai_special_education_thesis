@@ -1,7 +1,6 @@
 "use client";
 
 import { useParams, useRouter } from "next/navigation";
-import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
@@ -22,6 +21,7 @@ export default function QuizAttemptPage() {
     problems,
     loading,
     error,
+    answers,
     currentProblemCounter,
     saveAnswer,
     goToNextQuestion,
@@ -29,10 +29,6 @@ export default function QuizAttemptPage() {
     submitAllAnswers,
     isInitialized,
   } = useQuizContext();
-
-  // Tracks how many questions have been answered so the progress bar
-  // jumps forward as soon as the student submits, not after clicking Continue.
-  const [answeredCount, setAnsweredCount] = useState(0);
 
   // Quiz is already validated when setQuizCode was called
   // No need to verify again
@@ -80,7 +76,7 @@ export default function QuizAttemptPage() {
         (() => {
           const currentProblem: WordProblem = problems[currentProblemCounter];
           const progressPercentage =
-            Math.round(((answeredCount / problems.length) * 100) / 10) * 10;
+            Math.round(((answers.length / problems.length) * 100) / 10) * 10;
           const isLast = currentProblemCounter + 1 >= problems.length;
 
           return (
@@ -115,7 +111,6 @@ export default function QuizAttemptPage() {
                     problem={currentProblem}
                     isLastQuestion={isLast}
                     onNext={handleNextQuestion}
-                    onAnswered={() => setAnsweredCount((n) => n + 1)}
                   />
                 </Card>
               </div>
